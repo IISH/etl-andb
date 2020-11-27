@@ -23,6 +23,6 @@ gegevens op <https://druid.datalegend.net/andb> vinden.
 
 Dit repository bevat de volgende directories:
 
-- [[img][~/img~]] :: Afbeeldingen die aspecten van de ANDB dataset toelichten.
-- [[rdf][~/rdf~]] :: Statische RDF bestanden die deel uitmaken van de ANDB
+- [[img][/img]] :: Afbeeldingen die aspecten van de ANDB dataset toelichten.
+- [[rdf][/rdf]] :: Statische RDF bestanden die deel uitmaken van de ANDB
   dataset.
