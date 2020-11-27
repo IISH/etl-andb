@@ -1,0 +1,403 @@
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix dct: <http://purl.org/dc/terms/>
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix graph: <https://iisg.amsterdam/resource/adb-andb/graph/>
+prefix occupation: <https://iisg.amsterdam/resource/adb-andb/occupation/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix sdo: <https://schema.org/>
+prefix sex: <https://iisg.amsterdam/resource/adb-andb/sex/>
+prefix sh: <http://www.w3.org/ns/shacl#>
+prefix shape: <https://iisg.amsterdam/resource/adb-andb/shape/>
+prefix time: <http://www.w3.org/2006/time#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+graph:shapes {
+  shape:Address
+    sh:property
+      [ sh:datatype xsd:integer; #xsd:nonNegativeInteger
+        sh:path andb:houseNumber ],
+      [ sh:datatype xsd:string;
+        sh:path andb:houseNumberAddition ],
+      [ sh:class andb:Street;
+        sh:path andb:street ],
+      [ sh:class andb:Place; #sdo:Place
+        sh:path geo:sfWithin ],
+      # {street} {house-number} {house-number-addition}
+      shape:label;
+    sh:targetClass andb:Address. #sdo:PostalAddress
+
+  shape:Card
+    sh:property
+      [ sh:class sdo:Person;
+        sh:path andb:aboutBrother ],
+      [ sh:class sdo:Person;
+        sh:path andb:aboutChild ],
+      [ sh:class andb:Examination;
+        sh:path andb:aboutExamination ],
+      [ sh:class andb:Marriage;
+        sh:path andb:aboutMarriage ],
+      [ sh:class andb:Membership;
+        sh:path andb:aboutMembership ],
+      [ sh:class andb:Parent;
+        sh:path andb:aboutParent ],
+      [ sh:class andb:Residency;
+        sh:path andb:aboutResidency ],
+      [ sh:class sdo:Person;
+        sh:path andb:aboutSister ],
+      [ sh:class sdo:Person;
+        sh:path andb:aboutSpouse ],
+      [ sh:class sdo:Person;
+        sh:path andb:aboutStudent ],
+      [ sh:class sdo:Person;
+        sh:path andb:aboutWorker ],
+      [ sh:class andb:WorkEvent;
+        sh:path andb:aboutWorkEvent ],
+      [ dct:source "adb:adm_image_uuid";
+        sh:class sdo:ImageObject;
+        sh:description "Every card must have exactly one image."@en;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:path sdo:image ],
+      [ sh:class andb:CardSeries;
+        sh:description "Every card must belong to exactly one series of cards."@nl;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:path
+          [ sh:inversePath rdfs:member ] ],
+      [ sh:class andb:Remark;
+        sh:description "Cards can have zero or more remarks."@en;
+        sh:path andb:remark ], #[ sh:inversePath oa:hasTarget ]
+      # card {identifier}
+      # kaart {identifier}
+      shape:label;
+    sh:targetClass andb:Card.
+
+  shape:CardSeries
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:description "Card series have exactly one human-readable title."@en;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:path dct:title ],
+      [ sh:class andb:Card;
+        sh:description "Card series contain one or more cards."@en;
+        sh:minCount 1;
+        sh:path rdfs:member ],
+      shape:label,
+      shape:name;
+    sh:targetClass andb:CardSeries.
+
+  shape:Country
+    sh:property
+      shape:label,
+      shape:name; #new
+    sh:targetClass andb:Country. #cshapes:Country
+
+  shape:Examination
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path andb:examinator ],
+      [ sh:class sdo:Person;
+       sh:path andb:examinee ],
+      shape:after,
+      shape:before,
+      shape:date,
+      # Examination of {examinee-name}
+      # Examen van {examinee-name}
+      shape:label;
+    sh:targetClass andb:Examination.
+
+  shape:Image
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:description "Every image has an MD5 hash code, possibly for validating the image content."@en;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:name "has MD5 hash"@en;
+        sh:path andb:md5 ],
+      [ sh:datatype xsd:nonNegativeInteger;
+        sh:description "The size of the image in bytes."@en;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:path sdo:contentSize ],
+      [ sh:datatype xsd:anyURI;
+        sh:description """<p lang="en">Every image has exactly one URL where it ca be downloaded from.  The download location has the form <code>http://hdl.handle.net/10796/{adm_image_uuid}</code>.</p>"""^^rdf:HTML;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:path sdo:contentUrl ],
+      [ sh:datatype xsd:string;
+        sh:description "The Media Type that is used to encoding the image."@en;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:path sdo:encodingFormat ],
+      [ sh:class sdo:ImageObject;
+        sh:description "Images have a thumbnail version."@en;
+        sh:maxCount 1;
+        sh:path sdo:thumbnail ],
+      [ sh:class sdo:ImageObject;
+        sh:description "Images have a screen friendly version."@en;
+        sh:maxCount 1;
+        sh:path andb:screenVersion ],
+      # Full image of card {identifier}
+      # Volledige afbeelding van kaart {identifier}
+      # Screen friendly image of card {identifier}
+      # Schermvriendelijke afbeelding van kaart {identifier}
+      # Thumbnail image of card {identifier}
+      # Miniatuurafbeelding van kaart {identifier}
+      shape:label;
+    sh:targetClass sdo:ImageObject.
+
+  shape:Marriage
+    sh:property
+      [ sh:class sdo:Person;
+        sh:path andb:spouse ], #bio:partner
+      # Huweijk van {spouse} en {spouse}
+      # Marriage of {spouse} and {spouse}
+      shape:label;
+    sh:targetClass andb:Marriage. #bio:Marriage
+
+  shape:Membership
+    sh:description "In de ANDB passen we bio:Enrolment toe voor lidmaatschap."@nl;
+    sh:property
+      [ sh:class sdo:Person;
+        sh:path andb:member ],
+      [ sh:or
+          ( [ sh:class andb:Subsection ]
+            [ sh:class andb:Section ]
+            [ sh:class andb:Union ] );
+        sh:path
+          [ sh:alternativePath
+              ( andb:organization
+                andb:union ) ] ],
+      shape:after,
+      shape:before,
+      shape:date,
+      # Union membership of {member}
+      # Lidmaatschap van {member}
+      shape:label;
+    sh:targetClass andb:Membership. #bio:Enrolment
+
+  shape:Person
+    sh:property
+      [ sh:datatype xsd:date;
+        sh:name "has birth date"@en;
+        sh:path sdo:birthDate ],
+      [ sh:class andb:Place;
+        sh:lessThanOrEquals shape:deathDate;
+        sh:name "has birth date"@en;
+        sh:path sdo:birthDate ],
+      [ sh:class sdo:Person;
+        sh:path andb:brother ],
+      [ sh:class sdo:Person;
+        sh:path andb:child ], #bio:child
+      [ sh:class sdo:Person;
+        sh:path andb:daughter ],
+      [ sh:class andb:Examination;
+        sh:path andb:examination ],
+      [ sh:datatype xsd:string;
+        sh:path sdo:familyName ],
+      [ sh:class sdo:Person;
+        sh:maxCount 1;
+        sh:path andb:father ], #bio:father
+      [ sh:datatype xsd:string;
+        sh:path sdo:givenName ],
+      [ sh:datatype xsd:string;
+        sh:path andb:maidenName ],
+      [ sh:class andb:Marriage;
+        sh:path andb:marriage ],
+      [ sh:class andb:Membership;
+        sh:path andb:membership ],
+      [ sh:datatype xsd:string;
+        sh:path andb:middleName ],
+      [ sh:class sdo:Person;
+        sh:maxCount 1;
+        sh:path andb:mother ], #bio:mother
+      [ sh:in
+          ( occupation:brillantslijpen
+            occupation:brillantsnijden
+            occupation:brillantverstellen
+            occupation:kapbewerken
+            occupation:klooven
+            occupation:roosjesslijpen
+            occupation:roosjessnijden
+            occupation:roosjesverstellen
+            occupation:zagen );
+        sh:path andb:occupation ],
+      [ sh:class sdo:Person;
+        sh:maxCount 2;
+        sh:path andb:parent ], # bio:parent
+      [ sh:class andb:Residency;
+        sh:path andb:residency ],
+      [ sh:in
+          ( sex:female #sdo:Female
+            sex:male ); #sdo:Male
+        sh:path andb:sex ], #sdo:gender
+      [ sh:class sdo:Person;
+        sh:path andb:sister ],
+      [ sh:class sdo:Person;
+        sh:path andb:son ],
+      [ sh:class andb:WorkEvent;
+        sh:path andb:workEvent ],
+      shape:deathDate,
+      # Person with unknown name
+      # Persoon met onbekende naam
+      # {givenName} {middleName} {familyName}
+      shape:label;
+    sh:targetClass sdo:Person.
+
+  shape:Place
+    sh:property
+      [ sh:class andb:Country; #cshapes:Country
+        sh:description "Places are geospatially within countries."@en;
+        sh:path geo:sfWithin ],
+      shape:label,
+      shape:name; #new
+    sh:targetClass andb:Place. #sdo:Place
+
+  shape:Remark
+    sh:property
+      [ dct:source
+          "adb:par_remarks-01",
+          "adb:par_remarks-02",
+          "andb:adm_remarks-01",
+          "andb:adm_remarks-02",
+          "andb:adm_remarks-03",
+          "andb:adm_remarks-04",
+          "andb:adm_remarks-05",
+          "andb:adm_remarks-06",
+          "andb:adm_remarks-07";
+        sh:datatype xsd:string;
+        sh:description "Every remark has exactly one content string."@en;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:path andb:content ], #oa:bodyValue
+      [ dct:source
+          "adb:par_remarks_date-01",
+          "adb:par_remarks_date-02",
+          "andb:adm_remarks_date-01",
+          "andb:adm_remarks_date-02",
+          "andb:adm_remarks_date-03",
+          "andb:adm_remarks_date-04",
+          "andb:adm_remarks_date-05",
+          "andb:adm_remarks_date-06",
+          "andb:adm_remarks_date-07";
+        sh:datatype xsd:string; #xsd:dateTime
+        sh:description "Every remark has exactly one date."@en;
+        sh:maxCount 1;
+        sh:minCount 1;
+        sh:path andb:date ]; #dct:created
+    sh:targetClass andb:Remark. #oa:Annotation
+
+  shape:Residency
+    sh:property
+      [ sh:class sdo:Person;
+        sh:path andb:inhabitant ],
+      shape:address,
+      shape:after,
+      shape:before,
+      shape:date, #new
+      # Bewoning van {inhabitant} in {address}
+      # Residency of {inhabitant} at {address}
+      shape:label;
+    sh:tagetClass andb:Residency.
+
+  shape:Section
+    sh:property
+      [ sh:class andb:Union;
+        sh:path andb:partOf ],
+      # Union {union}, section {section}
+      # Bond {union}, sectie {section}
+      shape:label,
+      shape:name;
+    sh:targetClass andb:Section.
+
+  shape:Street
+    sh:property
+      [ sh:class andb:Place; #sdo:Place
+        sh:description "Streets are geospatially within places, which are geospatially within countries."@en;
+        sh:name "is within"@en;
+        sh:path geo:sfWithin ],
+      shape:label,
+      shape:name;
+    sh:targetClass andb:Street.
+
+  shape:Subsection
+    sh:property
+      [ sh:class andb:Section;
+        sh:path andb:partOf ],
+      # Union {union}, section {section}, membership {value}
+      # Bond {union}, sectie {section}, lidmaatschap {value}
+      shape:label,
+      shape:name;
+    sh:targetClass andb:Subsection.
+
+  shape:Union
+    sh:property
+      shape:label,
+      shape:name;
+    sh:targetClass andb:Union.
+
+  shape:WorkEvent
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path andb:master ],
+      [ sh:class andb:Worker;
+        sh:path andb:worker ],
+      [ sh:class andb:Workshop;
+        sh:path andb:workshop ],
+      shape:after,
+      shape:before,
+      shape:date,
+      # Admission of {woker} into a workshop with unknown name.
+      # Admission of {worker} into workshop {workshop}.
+      # Toelating van {worker} tot een onbekende werkplaats.
+      # Toelating van {worker} tot werkplaats {workshop}.
+      shape:label;
+    sh:targetClass andb:WorkEvent. #bio:Employment
+
+  shape:Workshop
+    sh:property
+      shape:address,
+      shape:label,
+      shape:name;
+    sh:targetClass andb:Workshop.
+
+  shape:address
+    sh:class andb:Address;
+    sh:path andb:address.
+
+  shape:after
+    sh:class andb:Membership;
+    sh:description "Another membership event that occurred directly after this one."@en;
+    sh:path time:after.
+
+  shape:before
+    sh:class andb:Membership;
+    sh:description "Another membership event that occurred directly before this one."@en;
+    sh:path time:before.
+
+  shape:date
+    sh:datatype xsd:date;
+    sh:description "Events should have at most one date."@en;
+    sh:maxCount 1;
+    sh:path time:isXSDDate.
+
+  shape:deathDate
+    sh:datatype xsd:date;
+    sh:name "has death date"@en;
+    sh:path sdo:deathDate.
+
+  shape:label
+    sh:languageIn ( "en" "nl" );
+    sh:description "We try to give every none a human-readable label."@en;
+    sh:name "has label"@en;
+    sh:path rdfs:label.
+
+  shape:name
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "has name"@en;
+    sh:path sdo:name.
+}

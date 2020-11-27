@@ -1,0 +1,821 @@
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix graph: <https://iisg.amsterdam/resource/adb-andb/graph/>
+prefix occupation: <https://iisg.amsterdam/resource/adb-andb/occupation/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix sdo: <https://schema.org/>
+prefix sex: <https://iisg.amsterdam/resource/adb-andb/sex/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+graph:vocab {
+
+  # Classes
+
+  andb:Address
+    a owl:Class;
+    owl:equivalentClass sdo:PostalAddress;
+    rdfs:label
+      "address"@en,
+      "adres"@nl.
+
+  andb:Card
+    a owl:Class;
+    rdfs:label
+      "card"@en,
+      "kaart"@nl.
+
+  andb:CardSeries
+    a owl:Class;
+    rdfs:label
+      "card series"@en,
+      "serie kaarten"@nl;
+    rdfs:subClassOf rdf:Bag.
+
+  andb:Country
+    a owl:Class;
+    owl:equivalentClass sdo:Country;
+    rdfs:label
+      "country"@en,
+      "land"@nl;
+    rdfs:subClassOf andb:Place.
+
+  andb:Event
+    a owl:Class;
+    owl:equivalentClass sdo:Event;
+    rdfs:label
+      "event"@en,
+      "evenement"@nl.
+
+  andb:Examination
+    a owl:Class;
+    rdfs:label
+      "examination"@en,
+      "examen"@nl;
+    rdfs:subClassOf andb:Event.
+
+  andb:Marriage
+    a owl:Class;
+    owl:equivalentClass sdo:MarryAction;
+    rdfs:label
+      "marriage"@en,
+      "huwelijk"@nl;
+    rdfs:subClassOf andb:Event.
+
+  andb:Membership
+    a owl:Class;
+    rdfs:label
+      "membership"@en,
+      "lidmaatschap"@nl;
+    rdfs:subClassOf andb:Event.
+
+  andb:Occupation
+    owl:equivalentClass
+      sdo:Occupation,
+      [ owl:oneOf
+          ( occupation:brillantslijpen
+            occupation:brillantsnijden
+            occupation:brillantverstellen
+            occupation:kapbewerken
+            occupation:klooven
+            occupation:roosjesslijpen
+            occupation:roosjessnijden
+            occupation:roosjesverstellen
+            occupation:zagen ) ];
+    rdfs:label
+      "occupation"@en,
+      "beroep"@nl.
+
+  andb:Organization
+    a owl:Class;
+    owl:equivalentClass sdo:Organization;
+    rdfs:label
+      "organization"@en,
+      "organisatie"@nl.
+
+  andb:Person
+    a owl:Class;
+    owl:equivalentClass sdo:Person;
+    rdfs:label
+      "person"@en,
+      "persoon"@nl.
+
+  andb:Place
+    a owl:Class;
+    rdfs:label
+      "place"@en,
+      "woonplaats"@nl;
+    rdfs:subClassOf sdo:Place.
+
+  andb:Remark
+    a owl:Class;
+    rdfs:label
+      "remark"@en,
+      "opmerking"@nl.
+
+  andb:Residency
+    a owl:Class;
+    rdfs:label
+      "residency"@en,
+      "bewoning"@nl;
+    rdfs:subClassOf andb:Event.
+
+  andb:Section
+    a owl:Class;
+    rdfs:label
+      "section"@en,
+      "afdeling"@nl;
+    rdfs:subClassOf andb:Organization.
+
+  andb:Sex
+    owl:equivalentClass
+      [ owl:oneOf
+          ( sex:female
+            sex:male ) ];
+    rdfs:label
+      "sex"@en,
+      "sekse"@nl.
+
+  andb:Street
+    a owl:Class;
+    rdfs:label
+      "street"@en,
+      "straat"@nl.
+
+  andb:Subsection
+    a owl:Class;
+    rdfs:label
+      "subsection"@en,
+      "onderafdeling"@nl;
+    rdfs:subClassOf andb:Organization.
+
+  andb:Union
+    a owl:Class;
+    rdfs:label
+      "labor union"@en,
+      "vakbond"@nl;
+    rdfs:subClassOf andb:Organization.
+
+  andb:WorkEvent
+    a owl:Class;
+    rdfs:label
+      "work event"@en,
+      "werk evenement"@nl;
+    rdfs:subClassOf andb:Event.
+
+  andb:Workshop
+    a owl:Class;
+    rdfs:label
+      "workshop"@en,
+      "werkplaats"@nl;
+    rdfs:subClassOf andb:Organization.
+
+
+
+  # Properties
+
+  andb:aboutBrother
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about brother"@en,
+      "gaat over broer"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:aboutPerson.
+
+  andb:aboutChild
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about child"@en,
+      "gaat over kind"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:aboutPerson.
+
+  andb:aboutEvent
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about event"@en,
+      "gaat over evenement"@nl;
+    rdfs:range andb:Event.
+
+  andb:aboutExamination
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about examination"@en,
+      "gaat over examen"@nl;
+    rdfs:range andb:Examination;
+    rdfs:subPropertyOf andb:aboutEvent.
+
+  andb:aboutMarriage
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about marriage"@en,
+      "gaat over huwelijk"@nl;
+    rdfs:range andb:Marriage;
+    rdfs:subPropertyOf andb:aboutEvent.
+
+  andb:aboutMembership
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about membership"@en,
+      "gaat over lidmaatschap evenement"@nl;
+    rdfs:range andb:Membership;
+    rdfs:subPropertyOf andb:aboutEvent.
+
+  andb:aboutParent
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about parent"@en,
+      "gaat over ouder"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:aboutPerson.
+
+  andb:aboutPerson
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about person"@en,
+      "gaat over persoon"@nl;
+    rdfs:range andb:Person.
+
+  andb:aboutResidency
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about residency"@en,
+      "gaat over bewoning"@nl;
+    rdfs:range andb:Residency;
+    rdfs:subPropertyOf andb:aboutEvent.
+
+  andb:aboutSister
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about sister"@en,
+      "gaat over zus"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:aboutPerson.
+
+  andb:aboutSpouse
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about spouse"@en,
+      "gaat over echtgenoot"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:aboutPerson.
+
+  andb:aboutStudent
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about student"@en,
+      "gaat over student"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:aboutPerson.
+
+  andb:aboutWorkEvent
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about work event"@en,
+      "gaat over werk evenement"@nl;
+    rdfs:range andb:WorkEvent;
+    rdfs:subPropertyOf andb:aboutEvent.
+
+  andb:aboutWorker
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "about worker"@en,
+      "gaat over werknemer"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:aboutPerson.
+
+  andb:address
+    a owl:ObjectProperty;
+    rdfs:domain owl:Thing;
+    rdfs:label
+      "address"@en,
+      "adres"@nl;
+    rdfs:range andb:Address.
+
+  andb:answer
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "answer"@en,
+      "antwoord"@nl;
+    rdfs:range rdf:langString.
+
+  andb:birthPlace
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "birth place"@en,
+      "geboorteplaats"@nl;
+    rdfs:range andb:Place.
+
+  andb:brother
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "brother"@en,
+      "heeft broer"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:relative.
+
+  andb:cardId
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "card id"@en,
+      "kaart nummer";
+    rdfs:range xsd:string.
+
+  andb:child
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    owl:inverseOf andb:parent;
+    rdfs:label
+      "has child"@en,
+      "heeft kind"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:relative.
+
+  andb:content
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Remark;
+    rdfs:label
+      "content"@en,
+      "inhoud"@nl;
+    rdfs:range xsd:string.
+
+  andb:date
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Remark;
+    rdfs:label
+      "date"@en,
+      "datum"@nl;
+    rdfs:range xsd:date.
+
+  andb:daughter
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has daughter"@en,
+      "heeft dochter"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:child.
+
+  andb:deathDate
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has death date"@en,
+      "heeft sterftedatum"@nl;
+    rdfs:range xsd:gMonthDay.
+
+  andb:event
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has event"@en,
+      "heeft evenement"@nl;
+    rdfs:range andb:Event.
+
+  andb:examination
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has examination"@en,
+      "heeft tentaminering"@nl;
+    rdfs:range andb:Examination;
+    rdfs:subPropertyOf andb:event.
+
+  andb:examinator
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Examination;
+    rdfs:label
+      "has examinator"@en,
+      "heeft examinator"@nl;
+    rdfs:range xsd:string.
+
+  andb:examinee
+    a owl:ObjectProperty;
+    rdfs:domain andb:Examination;
+    rdfs:label
+      "has examinee"@en,
+      "heeft geëxamineerde"@nl;
+    rdfs:range andb:Person.
+
+  andb:father
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has father"@en,
+      "heeft vader"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:parent.
+
+  andb:fosterChild
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    owl:inverseOf andb:fosterParent;
+    rdfs:label
+      "has foster child"@en,
+      "heeft pleegkind"@nl;
+    rdfs:range andb:Person.
+
+  andb:fosterDaughter
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has foster daughter"@en,
+      "heeft pleegdochter"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:fosterChild.
+
+  andb:fosterFather
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has foster father"@en,
+      "heeft pleegvader"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:fosterParent.
+
+  andb:fosterParent
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has foster parent"@en,
+      "heeft pleegouder"@nl;
+    rdfs:range andb:Person.
+
+  andb:fosterSon
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has foster son"@en,
+      "heeft pleegzoon"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:fosterChild.
+
+  andb:houseNumber
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Address;
+    rdfs:label "house number"@en;
+    rdfs:range xsd:string.
+
+  andb:houseNumberAddition
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Address;
+    rdfs:label "house number addition"@en;
+    rdfs:range xsd:string.
+
+  andb:inhabitant
+    a owl:ObjectProperty;
+    rdfs:domain andb:Residency;
+    rdfs:label
+      "has inhabitant"@en,
+      "heeft bewoner"@nl;
+    rdfs:range andb:Person.
+
+  andb:jobCategory
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "profession"@en,
+      "beroep"@nl;
+    rdfs:range andb:Occupation.
+
+  andb:maidenName
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "maiden name"@en,
+      "meisjesnaam"@nl;
+    rdfs:range xsd:string.
+
+  andb:marriage
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has marriage"@en,
+      "heeft huwelijk"@nl;
+    rdfs:range andb:Marriage;
+    rdfs:subPropertyOf andb:event.
+
+  andb:master
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Examination;
+    rdfs:label
+      "has master"@en,
+      "heeft meester"@nl;
+    rdfs:range xsd:string.
+
+  andb:md5
+    a owl:DatatypeProperty;
+    rdfs:domain sdo:ImageObject;
+    rdfs:label "MD5";
+    rdfs:range xsd:string.
+
+  andb:member
+    a owl:ObjectProperty;
+    rdfs:domain andb:Membership;
+    rdfs:label
+      "member"@en,
+      "lid"@nl;
+    rdfs:range andb:Person.
+
+  andb:membership
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has membership"@en,
+      "heeft lidmaatchap"@nl;
+    rdfs:range andb:Membership.
+
+  andb:middleName
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Person;
+    rdfs:label "middle name"@en;
+    rdfs:range xsd:string.
+
+  andb:mother
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has mother"@en,
+      "heeft moeder"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:parent.
+
+  andb:occupation
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label
+      "has occupation"@en,
+      "heeft beroep"@nl;
+    rdfs:range andb:Occupation.
+
+  andb:organization
+    a owl:ObjectProperty;
+    rdfs:domain andb:Membership;
+    rdfs:label
+      "has organization"@en,
+      "heeft organizatie"@nl;
+    rdfs:range andb:Organization.
+
+  andb:parent
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has parent"@en,
+      "heeft ouder"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:relative.
+
+  andb:partOf
+    a owl:ObjectProperty;
+    rdfs:domain andb:Organization;
+    rdfs:label
+      "part of"@en,
+      "onderdeel van"@nl;
+    rdfs:range andb:Organization.
+
+  andb:relative
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has relative"@en,
+      "heeft familielid"@nl;
+    rdfs:range andb:Person.
+
+  andb:remark
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:label "remark"@en;
+    rdfs:range andb:Remark.
+
+  andb:residency
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "residency"@en,
+      "bewoning"@nl;
+    rdfs:range andb:Residency;
+    rdfs:subPropertyOf andb:event.
+
+  andb:screenVersion
+    a owl:ObjectProperty;
+    rdfs:domain sdo:ImageObject;
+    rdfs:label "screen version"@en;
+    rdfs:range sdo:ImageObject.
+
+  andb:sex
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has sex"@en,
+      "heeft sekse"@nl;
+    rdfs:range andb:Sex.
+
+  andb:sister
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "sister"@en,
+      "heeft zus"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:relative.
+
+  andb:son
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has son"@en,
+      "heeft zoon"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:child.
+
+  andb:spouse
+    a owl:ObjectProperty;
+    rdfs:domain andb:Marriage;
+    rdfs:label
+      "has spouse"@en,
+      "heeft echtgenoot"@nl;
+    rdfs:range andb:Person.
+
+  andb:stepChild
+    a owl:ObjectProperty;
+    owl:inverseOf andb:stepParent;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has stepchild"@en,
+      "heeft stiefkind"@nl;
+    rdfs:range andb:Person.
+
+  andb:stepDaughter
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has stepdaughter"@en,
+      "heeft stiefdochter"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:stepChild.
+
+  andb:stepFather
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has stepfather"@en,
+      "heeft stiefvader"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:stepParent.
+
+  andb:stepMother
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has stepmother"@en,
+      "heeft stiefmoeder"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:stepParent.
+
+  andb:stepParent
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has stepparent"@en,
+      "heeft stiefouder"@nl;
+    rdfs:range andb:Person.
+
+  andb:stepSon
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has stepson"@en,
+      "heeft stiefzoon"@nl;
+    rdfs:range andb:Person;
+    rdfs:subPropertyOf andb:stepChild.
+
+  andb:street
+    a owl:ObjectProperty;
+    rdfs:domain andb:Address;
+    rdfs:label
+      "has street"@en,
+      "heeft straat"@nl;
+    rdfs:range andb:Street.
+
+  andb:union
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has union"@en,
+      "heeft bond"@nl;
+    rdfs:range andb:Organization.
+
+  andb:worker
+    a owl:ObjectProperty;
+    rdfs:domain andb:WorkEvent;
+    rdfs:label
+      "has worker"@en,
+      "heeft arbeider"@nl;
+    rdfs:range andb:Person.
+
+  andb:workEvent
+    a owl:ObjectProperty;
+    rdfs:domain andb:Person;
+    rdfs:label
+      "has work event"@en,
+      "heeft werk evenement"@nl;
+    rdfs:range andb:WorkEvent;
+    rdfs:subPropertyOf andb:event.
+
+  andb:workshop
+    a owl:ObjectProperty;
+    rdfs:domain andb:WorkEvent;
+    rdfs:label
+      "has workshop"@en,
+      "heeft werkplaats"@nl;
+    rdfs:range andb:Workshop.
+
+
+
+  # Instances
+
+  [ a owl:AllDifferentFrom;
+    owl:distinctMembers
+      ( occupation:brillantslijpen
+        occupation:brillantsnijden
+        occupation:brillantverstellen
+        occupation:kapbewerken
+        occupation:klooven
+        occupation:roosjesslijpen
+        occupation:roosjessnijden
+        occupation:roosjesverstellen
+        occupation:zagen ) ].
+
+  occupation:brillantslijpen
+    a andb:Occupation;
+    rdfs:label "brillantslijpen"@nl.
+
+  occupation:brillantsnijden
+    a andb:Occupation;
+    rdfs:label "brillantsnijden"@nl.
+
+  occupation:brillantverstellen
+    a andb:Occupation;
+    rdfs:label "brillantverstellen"@nl.
+
+  occupation:kapbewerken
+    a andb:Occupation;
+    rdfs:label "kapbewerken"@nl.
+
+  occupation:klooven
+    a andb:Occupation;
+    rdfs:label "klooven"@nl.
+
+  occupation:roosjesslijpen
+    a andb:Occupation;
+    rdfs:label "roosjesslijpen"@nl.
+
+  occupation:roosjessnijden
+    a andb:Occupation;
+    rdfs:label "roosjessnijden"@nl.
+
+  occupation:roosjesverstellen
+    a andb:Occupation;
+    rdfs:label "roosjesverstellen"@nl.
+
+  occupation:zagen
+    a andb:Occupation;
+    rdfs:label "zagen"@nl.
+
+  [ a owl:AllDifferentFrom;
+    owl:distinctMembers
+      ( sex:female
+        sex:male ) ].
+
+  sex:female
+    a andb:Sex;
+    rdfs:label
+      "female"@en,
+      "vrouw"@nl.
+
+  sex:male
+    a andb:Sex;
+    rdfs:label
+      "male"@en,
+      "man"@nl.
+}

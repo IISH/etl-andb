@@ -2,5 +2,28 @@
 #+subtitle: Werk repository voor de ANDB dataset in linked data
 
 * Wat is de ANDB?
+
+De Algemene Nederlandse Diamantbewerkers Bond is een historische
+dataset waarin mensen die in de diamantbewerkers sector gewerkt hebben
+zijn opgeslagen.  Deze dataset wordt gebruikt in verschillende
+historische onderzoeken.
+
 * Waarom linked data?
-* Voor zie is dit repository?
+
+Linked data is een methode waarmee ingewikkelde gegevens op een
+betekenisvolle manier kunnen worden ontsloten.
+
+* Voor wie is dit repository bedoeld?
+
+Dit repository is bedoeld voor ontwikkelaars die aan de ANDB dataset
+werken.  Gebruikers van de ANDB dataset kunnen de gepubliceerde
+gegevens op <https://druid.datalegend.net/andb> vinden.
+
+* Inhoudsopgave
+
+Dit repository bevat de volgende directories:
+
+- [~/img~](img) :: Afbeeldingen die aspecten van de ANDB dataset
+  toelichten.
+- [~/rdf~](rdf) :: Statische RDF bestanden die deel uitmaken van
+  de ANDB dataset.

@@ -1,0 +1,30 @@
+#+title: URI strategie
+
+Dit document legt de URI strategie vast die voor de ABND dataset wordt
+toegepast.
+
+* Template
+
+We gaan uit van het volgende template:
+
+```
+{schema}://{domein}/{type}/{subtype}/{referentie}
+```
+
+Vervolgens worden de 5 componenten uit het template als volgt
+ingevuld:
+
+- ~{schema}~ :: ~https~
+- ~{domein}~ :: ~iisg.amsterdam~
+- ~{type}~ :: ~resource~ voor instanties; ~vocab~ voor definities
+- -{subtype}~ :: ~adb-andb~ [?]
+- ~{referentie}~ :: ~EenKlasse~ of ~eenEigenschap~ of een arbitraire
+  string voor instanties.
+
+* Voorbeelden
+
+De volgende voorbeelden maken gebruik van deze URI strategie:
+
+- Een klasse :: https://iisg.amsterdam/vocab/adb-andb/Person
+- Een eigenschap :: https://iisg.amsterdam/vocab/adb-andb/aboutEvent
+- Een instantie ::  https://iisg.amsterdam/resource/adb-andb/card/andb-leden-10

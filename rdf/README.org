@@ -1,0 +1,4 @@
+#+TITLE: RDF
+
+In deze directory worden statische RDF bestanden die deel uitmaken van
+de ANDB dataset opgeslagen.
