@@ -1,0 +1,293 @@
+{
+ "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv",
+ "@context": [
+  "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
+  {
+   "@language": "nl",
+   "@base": "https://iisg.amsterdam/andb/uniekepersonen/"
+  },
+  {
+   "vocab": "https://iisg.amsterdam/vocab/adb-andb/", 
+   "bibo": "http://purl.org/ontology/bibo/",
+   "bio": "http://purl.org/vocab/bio/0.1/",
+   "canfam": "https://iisg.amsterdam/canfam/dataset/canada1901/",
+   "canfam-auke": "https://iisg.amsterdam/canfam/auke/",
+   "canfam-dimension": "http://data.socialhistory.org/vocab/canfam/dimension/",
+   "clio": "https://iisg.amsterdam/clio/",
+   "clioctr": "https://iisg.amsterdam/clio/country/",
+   "clioind": "https://iisg.amsterdam/clio/indicator/",
+   "clioprop": "https://iisg.amsterdam/clio/property/",
+   "csvw": "http://www.w3.org/ns/csvw#",
+   "dbo": "http://dbpedia.org/ontology/",
+   "dbp": "http://dbpedia.org/property/",
+   "dbpedia": "http://dbpedia.org/resource/",
+   "dbr": "http://dbpedia.org/resource/",
+   "dc": "http://purl.org/dc/terms/",
+   "dc11": "http://purl.org/dc/elements/1.1/",
+   "dcterms": "http://purl.org/dc/terms/",
+   "dcmi": "http://purl.org/dc/dcmitype/",
+   "foaf": "http://xmlns.com/foaf/0.1/",
+   "hiscam": "https://iisg.amsterdam/hiscam/",
+   "hisclass": "https://iisg.amsterdam/hisclass/",
+   "hisclass5": "https://iisg.amsterdam/hisclass5/",
+   "hisco": "https://iisg.amsterdam/hisco/",
+   "hisco-product": "https://iisg.amsterdam/hisco/product/",
+   "hisco-relation": "https://iisg.amsterdam/hisco/relation/",
+   "hisco-status": "https://iisg.amsterdam/hisco/status/",
+   "hsn": "https://iisg.amsterdam/hsn2013a/",
+   "ldp": "http://www.w3.org/ns/ldp#",
+   "microheights": "https://iisg.amsterdam/microheights/",
+   "napp": "https://iisg.amsterdam/napp/",
+   "napp-can91": "https://iisg.amsterdam/napp/dataset/canada1891/",
+   "napp-dimension": "http://data.socialhistory.org/vocab/napp/dimension/",
+   "napp-eng81": "https://iisg.amsterdam/napp/dataset/englandwales1881/",
+   "napp-sct81": "https://iisg.amsterdam/napp/dataset/scotland1881/",
+   "np": "http://www.nanopub.org/nschema#",
+   "occhisco": "https://iisg.amsterdam/napp/OCCHISCO/",
+   "owl": "http://www.w3.org/2002/07/owl#",
+   "prov": "http://www.w3.org/ns/prov#",
+   "qb": "http://purl.org/linked-data/cube#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "schema": "http://schema.org/",
+   "sdmx-code": "http://purl.org/linked-data/sdmx/2009/code#",
+   "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+   "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+   "sdmx-measure": "http://purl.org/linked-data/sdmx/2009/measure#",
+   "sdr": "https://iisg.amsterdam/",
+   "sdv": "https://iisg.amsterdam/vocab/",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "time": "http://www.w3.org/2006/time#",
+   "xml": "http://www.w3.org/XML/1998/namespace/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+ ],
+ "url": "andb_adb_all_unique-2020_10_21.csv",
+ "dialect": {
+  "delimiter": ",",
+  "encoding": "utf-8",
+  "quoteChar": "\""
+ },
+ "dc:title": "ANDB en ADB unieke personen",
+ "dcat:keyword": [],
+ "dc:publisher": {
+  "schema:name": "CLARIAH Structured Data Hub - Datalegend",
+  "schema:url": {
+   "@id": "http://datalegend.net"
+  }
+ },
+ "dc:license": {
+  "@id": "http://opendefinition.org/licenses/cc-by/"
+ },
+ "dc:modified": {
+  "@value": "2020-10-21",
+  "@type": "xsd:date"
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/person_uuid",
+    "name": "person_uuid",
+    "titles": [
+     "Persoonsidentifier"
+    ],
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:person",
+    "dc:description": "Unieke persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/adb_identifier",
+    "name": "adb_identifier",
+    "titles": [
+     "Kaartidentifier ADB"
+    ],
+    "propertyUrl": "vocab:adm_image_no",
+    "dc:description": "Identifier ADB kaart van deze persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/sdn_adm_id3",
+    "name": "sdn_adm_id3",
+    "titles": [
+     "Leerlingkaartidentifier"
+    ],
+    "propertyUrl": "vocab:sdn_adm_id",
+    "dc:description": "Identifier leerlingkaart van deze persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/sdn_adm_id2",
+    "name": "sdn_adm_id2",
+    "titles": [
+     "Leerlingkaartidentifier"
+    ],
+    "propertyUrl": "vocab:sdn_adm_id",
+    "dc:description": "Identifier leerlingkaart van deze persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/sdn_adm_id1",
+    "name": "sdn_adm_id1",
+    "titles": [
+     "Leerlingkaartidentifier"
+    ],
+    "propertyUrl": "vocab:sdn_adm_id",
+    "dc:description": "Identifier leerlingkaart van deze persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/adm_id3",
+    "name": "adm_id3",
+    "titles": [
+     "Kaartidentifier ANDB"
+    ],
+    "propertyUrl": "vocab:adm_id",
+    "dc:description": "Identifier ANDB kaart van deze persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/adm_id2",
+    "name": "adm_id2",
+    "titles": [
+     "Kaartidentifier ANDB"
+    ],
+    "propertyUrl": "vocab:adm_id",
+    "dc:description": "Identifier ANDB kaart van deze persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/adm_id1",
+    "name": "adm_id1",
+    "titles": [
+     "Kaartidentifier ANDB"
+    ],
+    "propertyUrl": "vocab:adm_id",
+    "dc:description": "Identifier ANDB kaart van deze persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_first_name",
+    "name": "mbr_first_name",
+    "titles": [
+     "Voornaam"
+    ],
+    "propertyUrl": "schema:givenName",
+    "dc:description": "Voornaam persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_middle_name",
+    "name": "mbr_middle_name",
+    "titles": [
+     "Tussenvoegsel"
+    ],
+    "propertyUrl": "schema:additionalName",
+    "dc:description": "Tussenvoegsel achternaam persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_last_name",
+    "name": "mbr_last_name",
+    "titles": [
+     "Achternaam"
+    ],
+    "propertyUrl": "schema:familyName",
+    "dc:description": "Achternaam persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_maiden_name_prefix",
+    "name": "mbr_maiden_name_prefix",
+    "titles": [
+     "Tussenvoegsel meisjesnaam"
+    ],
+    "propertyUrl": "vocab:mbr_maiden_name_prefix",
+    "dc:description": "Tussenvoegsel meisjesnaam persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_maiden_name",
+    "name": "mbr_maiden_name",
+    "titles": [
+     "Meisjesnaam"
+    ],
+    "propertyUrl": "vocab:mbr_maiden_name",
+    "dc:description": "Meisjesnaam persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_gender",
+    "name": "mbr_gender",
+    "titles": [
+     "Geslacht"
+    ],
+    "propertyUrl": "schema:gender",
+    "dc:description": "Geslacht persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_birth_date",
+    "name": "mbr_birth_date",
+    "titles": [
+     "Geboortedatum"
+    ],
+    "propertyUrl": "schema:birthDate",
+    "dc:description": "Geboortedatum persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_birth_place",
+    "name": "mbr_birth_place",
+    "titles": [
+     "Geboorteplaats persoon"
+    ],
+    "propertyUrl": "schema:birthPlace",
+    "dc:description": "Geboorteplaats persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/mbr_death_date",
+    "name": "mbr_death_date",
+    "titles": [
+     "Overlijdensdatum"
+    ],
+    "propertyUrl": "schema:deathDate",
+    "dc:description": "Overlijdensdatum persoon",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/oorlogslevens_deathDate",
+    "name": "oorlogslevens_deathDate",
+    "titles": [
+     "Overlijdensdatum Oorlogslevens"
+    ],
+    "propertyUrl": "schema:deathDate",
+    "dc:description": "Overlijdensdatum volgens Oorlogslevens.nl",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/oorlogslevens_deathPlace",
+    "name": "oorlogslevens_deathPlace",
+    "titles": [
+     "Plaats van overlijden"
+    ],
+    "propertyUrl": "schema:deathPlace",
+    "dc:description": "Plaats van overlijden volgens Oorlogslevens.nl",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_10_21.csv/column/oorlogslevens_uri",
+    "name": "oorlogslevens_uri",
+    "titles": [
+     "Oorlogslevens URI"
+    ],
+    "propertyUrl": "vocab:oorlogslevens",
+    "dc:description": "URI persoon op Oorlogslevens.nl",
+    "datatype": "xsd:anyURI"
+   }
+  ],
+  "primaryKey": "person_uuid",
+  "aboutUrl": "{person_uuid}"
+ }
+}
