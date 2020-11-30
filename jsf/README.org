@@ -1,0 +1,3 @@
+#+title: Documentatie
+
+Deze directory bevat CoW scripts voor de transformatie van de ANDB dataset naar linked data.
