@@ -18,6 +18,7 @@ ingevuld:
 - ~{domein}~ :: ~iisg.amsterdam~
 - ~{type}~ :: ~resource~ voor instanties; ~vocab~ voor definities
 - -{subtype}~ :: ~adb-andb~ [?]
+#refereert dit aan de betreffende dataset? Oftewel, als we als de personen een aparte dataset zouden zijn, zouden er dan meerdere subtypes zijn?
 - ~{referentie}~ :: ~EenKlasse~ of ~eenEigenschap~ of een arbitraire
   string voor instanties.
 
@@ -28,3 +29,4 @@ De volgende voorbeelden maken gebruik van deze URI strategie:
 - Een klasse :: https://iisg.amsterdam/vocab/adb-andb/Person
 - Een eigenschap :: https://iisg.amsterdam/vocab/adb-andb/aboutEvent
 - Een instantie ::  https://iisg.amsterdam/resource/adb-andb/card/andb-leden-10
+#Wat is de instantie: ‘card’, ‘andb-leden-10’ of het geheel van ‘card/andb-leden-10’?
