@@ -1,6 +1,6 @@
 #+title: URI strategie
 
-Dit document legt de URI strategie vast die voor de ABND dataset wordt
+Dit document legt de URI strategie vast die voor de ANDB dataset wordt
 toegepast.
 
 * Template
