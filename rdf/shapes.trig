@@ -11,6 +11,7 @@ prefix sh: <http://www.w3.org/ns/shacl#>
 prefix shape: <https://iisg.amsterdam/resource/adb-andb/shape/>
 prefix time: <http://www.w3.org/2006/time#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+@prefix hg: <http://rdf.histograph.io/>
 
 graph:shapes {
   
@@ -186,8 +187,11 @@ graph:shapes {
   shape:Residency
     sh:property
       [ sh:class schema:Person;
-        sh:path andb:inhabitant ],
+        sh:path andb:inhabitant;
+        sh:name "has inhabitant"@en;
+        sh:description "The residency's inhabitant"; ],
       shape:Address,
+      
       shape:moveAction
       shape:after,
       shape:before,
@@ -198,143 +202,83 @@ graph:shapes {
      
   shape:Address
     sh:property
+      shape:Street,
       [ sh:datatype xsd:string;
         sh:path andb:houseNumber;
+        sh:name "has house number"@en;
+        sh:description "The house number of the address";
         dct:source 
-        "mbr_street_no-01",
-        "mbr_street_no-02",
-        "mbr_street_no-03",
-        "mbr_street_no-04",
-        "mbr_street_no-05",
-        "mbr_street_no-06",
-        "mbr_street_no-07",
-        "mbr_street_no-08",
-        "mbr_street_no-09",
-        "mbr_street_no-10",
-        "mbr_street_no-11",
-        "mbr_street_no-12",
-        "mbr_street_no-13",
-        "mbr_street_no-14",
-        "mbr_street_no-15",
-        "mbr_street_no-16",
-        "mbr_street_no-17",
-        "mbr_street_no-18",
-        "mbr_street_no-19",
-        "mbr_street_no-20",
-        "mbr_street_no-21",
-        "mbr_street_no-22",
-        "mbr_street_no-23",
-        "mbr_street_no-24",
-        "mbr_street_no-25",
-        "mbr_street_no-26",
-        "sdn_street_no-01",
-        "sdn_street_no-02",
-        "sdn_street_no-03",
-        "sdn_street_no-04",
-        "sdn_street_no-05",
-        "wsp_street_no-01",
-        "wsp_street_no-02",
-        "wsp_street_no-03",
-        "wsp_street_no-04",
-        "wsp_street_no-05",
-        "wsp_street_no-06",
-        "wsp_street_no-07",
-        "wsp_street_no-08",
-        "wsp_street_no-09",
-        "wsp_street_no-10"
-         ],
+        "adb/mbr_street_no-01 t/m 5",
+        "andb/mbr_street_no-01 t/m 26",
+        "apprentice/sdn_street_no-01 t/m 5",
+        "apprentice/wsp_street_no-01 t/m 10";
+        sh:order 1 ;
+		sh:group andb:AddressGroup ],
       [ sh:datatype xsd:string;
         sh:path andb:houseNumberAddition;
+        sh:name "has addition to house number"@en;
+        sh:description "The house number addition of the address";
         dct:source 
-        "mbr_street_no_add-01",
-        "mbr_street_no_add-02",
-        "mbr_street_no_add-03",
-        "mbr_street_no_add-04",
-        "mbr_street_no_add-05",
-        "mbr_street_no_add-06",
-        "mbr_street_no_add-07",
-        "mbr_street_no_add-08",
-        "mbr_street_no_add-09",
-        "mbr_street_no_add-10",
-        "mbr_street_no_add-11",
-        "mbr_street_no_add-12",
-        "mbr_street_no_add-13",
-        "mbr_street_no_add-14",
-        "mbr_street_no_add-15",
-        "mbr_street_no_add-16",
-        "mbr_street_no_add-17",
-        "mbr_street_no_add-18",
-        "mbr_street_no_add-19",
-        "mbr_street_no_add-20",
-        "mbr_street_no_add-21",
-        "mbr_street_no_add-22",
-        "mbr_street_no_add-23",
-        "mbr_street_no_add-24",
-        "mbr_street_no_add-25",
-        "mbr_street_no_add-26",
-        "sdn_street_no_add-01",
-        "sdn_street_no_add-02",
-        "sdn_street_no_add-03",
-        "sdn_street_no_add-04",
-        "sdn_street_no_add-05",
-        "wsp_street_no_ad-01",
-        "wsp_street_no_ad-02",
-        "wsp_street_no_ad-03",
-        "wsp_street_no_ad-04",
-        "wsp_street_no_ad-05",
-        "wsp_street_no_ad-06",
-        "wsp_street_no_ad-07",
-        "wsp_street_no_ad-08",
-        "wsp_street_no_ad-09",
-        "wsp_street_no_ad-10" ],
-      [ sh:class andb:Street;
-        sh:path andb:street;
+        "adb/mbr_street_no_add-01 t/m 5",
+        "andb/mbr_street_no_add-01 t/m 26",
+        "apprentice/sdn_street_no_add-01 t/m 5",
+        "apprentice/wsp_street_no_add-01 t/m 10";
+        sh:order 2 ;
+		sh:group andb:AddressGroup ],
+      [ sh:datatype xsd:anyURI;
+        sh:path schema:identifier;
+        sh:name "has hisgis identifier"@en;
+        sh:description "The HISGIS identifier of the address";
         dct:source 
-        "mbr_street-01",
-        "mbr_street-02",
-        "mbr_street-03",
-        "mbr_street-04",
-        "mbr_street-05",
-        "mbr_street-06",
-        "mbr_street-07",
-        "mbr_street-08",
-        "mbr_street-09",
-        "mbr_street-10",
-        "mbr_street-11",
-        "mbr_street-12",
-        "mbr_street-13",
-        "mbr_street-14",
-        "mbr_street-15",
-        "mbr_street-16",
-        "mbr_street-17",
-        "mbr_street-18",
-        "mbr_street-19",
-        "mbr_street-20",
-        "mbr_street-21",
-        "mbr_street-22",
-        "mbr_street-23",
-        "mbr_street-24",
-        "mbr_street-25",
-        "mbr_street-26",
-        "sdn_street-01",
-        "sdn_street-02",
-        "sdn_street-03",
-        "sdn_street-04",
-        "sdn_street-05",
-        "wsp_street-01",
-        "wsp_street-02",
-        "wsp_street-03",
-        "wsp_street-04",
-        "wsp_street-05",
-        "wsp_street-06",
-        "wsp_street-07",
-        "wsp_street-08",
-        "wsp_street-09",
-        "wsp_street-10" ],
+        "apprentice/sdn_address_locationPoint-01 t/m 5",
+        "andb/mbr_address_locationPoint-01 t/m 26" ],
+      [ sh:class schema:Place;
+        sh:path geo:sfWithin;
+        sh:name "is within"@en;
+        sh:description "Adresses are geospatially within places, not necessarily cities"@en ],
       # {street} {house-number} {house-number-addition}
       shape:label;
-    sh:targetClass schema:PostalAddress.
+    sh:targetClass andb:Address.
 
+  shape:Street
+    sh:property
+      [ sh:class hgStreet;
+        sh:path hg:street;
+        sh:name "is a street"@en;
+        sh:description "This is a street";
+        dct:source 
+        "adb/mbr_street-01 t/m 5",
+        "andb/mbr_street-01 t/m 26",
+        "apprentice/sdn_street-01 t/m 5",
+        "apprentice/wsp_street-01 t/m 10" ], 
+      [ sh:class andb:Address;
+        sh:path andb:partOf;
+        sh:name "is part of an address"@en;
+        sh:description "Streets are part of an address."@en ],
+      [ sh:datatype xsd:anyURI;
+        sh:path owl:sameAs;
+        sh:name "has adamlink identifier"@en;
+        sh:description "The Adamlink identifier of the street";
+        dct:source 
+        "apprentice/sdn_address_locationPoint-01 t/m 5",
+        "andb/mbr_address_locationPoint-01 t/m 26" ],  
+      shape:label;
+      sh:targetClass andb:Street.
+    
+  shape:Place
+    sh:property
+      [ sh:class cshapes:Country;
+        sh:description "Places are geospatially within countries."@en;
+        sh:path geo:sfWithin ],
+      shape:label,
+      shape:name; #new
+    sh:targetClass schema:Place
+    
+  shape:Country
+    sh:property
+      shape:label,
+      shape:name; #new
+    sh:targetClass andb:Country. #cshapes:Country  
         
       [ sh:in
           ( occupation:brillantslijpen
@@ -362,21 +306,8 @@ graph:shapes {
     sh:targetClass bio:Marriage.
     
   
-  
-  shape:Place
-    sh:property
-      [ sh:class andb:Country; #cshapes:Country
-        sh:description "Places are geospatially within countries."@en;
-        sh:path geo:sfWithin ],
-      shape:label,
-      shape:name; #new
-    sh:targetClass andb:Place. #schema:Place
     
-  shape:Country
-    sh:property
-      shape:label,
-      shape:name; #new
-    sh:targetClass andb:Country. #cshapes:Country  
+
   
   
   shape:Membership
@@ -500,15 +431,7 @@ graph:shapes {
         sh:path andb:date ]; #dct:created
     sh:targetClass andb:Remark. #oa:Annotation
 
-  shape:Street
-    sh:property
-      [ sh:class andb:Place; #schema:Place
-        sh:description "Streets are geospatially within places, which are geospatially within countries."@en;
-        sh:name "is within"@en;
-        sh:path geo:sfWithin ],
-      shape:label,
-      shape:name;
-    sh:targetClass andb:Street.
+
 
   shape:WorkEvent
     sh:property
