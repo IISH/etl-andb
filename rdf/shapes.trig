@@ -2,77 +2,92 @@ prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
 prefix dct: <http://purl.org/dc/terms/>
 prefix geo: <http://www.opengis.net/ont/geosparql#>
 prefix graph: <https://iisg.amsterdam/resource/adb-andb/graph/>
+prefix group: <https://iisg.amsterdam/resource/adb-andb/group/>
 prefix occupation: <https://iisg.amsterdam/resource/adb-andb/occupation/>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix schema: <https://schema.org/>
-prefix sex: <https://iisg.amsterdam/resource/adb-andb/sex/>
+prefix sex: <https://iisg.amsterdam/resource/adb-andb/sex/># Use schema instead.
 prefix sh: <http://www.w3.org/ns/shacl#>
 prefix shape: <https://iisg.amsterdam/resource/adb-andb/shape/>
 prefix time: <http://www.w3.org/2006/time#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 graph:shapes {
-  
-  
+  group:Name
+    a sh:PropertyGroup;
+    rdfs:comment "Groups of properties that together specify a person's name."@en;
+    rdfs:label "name group"@en.
+
   shape:Person
     sh:property
 # source: unieke personenbestand
       [ sh:datatype xsd:string;
         sh:path schema:givenName;
-        sh:name "has first name"@en;
-        sh:description "The person's given name(s)";
+        sh:name
+          "heeft voornaam"@nl,
+          "has first name"@en;
+        sh:description "The person's given name(s)"@en;
         dct:source "first_name";
         sh:order 0 ;
-		sh:group andb:NameGroup ],
+		sh:group group:Name ],
       [ sh:datatype xsd:string;
         sh:path schema:additionalName;
         sh:name "has middle name"@en;
-        sh:description "The person's middle name";
+        sh:description "The person's middle name"@en;
         dct:source "middle_name";
         sh:order 1 ;
-		sh:group andb:NameGroup ],
+		sh:group group:Name ],
       [ sh:datatype xsd:string;
         sh:path schema:familyName;
         sh:name "has last name"@en;
-        sh:description "The person's last name";
+        sh:description "The person's last name"@en;
         dct:source "last_name";
         sh:order 2 ;
-		sh:group andb:NameGroup ],
+		sh:group group:Name ],
       [ sh:datatype xsd:string;
         sh:path andb:maidenNamePrefix;
         sh:name "has maiden middle name"@en;
-        sh:description "The person's maiden name's middle name";
+        sh:description "The person's maiden name's middle name"@en;
         dct:source "maiden_name_prefix";
         sh:order 3 ;
-		sh:group andb:NameGroup ],
+		sh:group group:Name ],
       [ sh:datatype xsd:string;
-        sh:path andb:maidenName;
+        sh:path andb:maidenName; # Maybe use pnv:patronym?
         sh:name "has maiden name"@en;
         sh:description "The person's maiden name";
         dct:source "maiden_name";
         sh:order 4 ;
-		sh:group andb:NameGroup ],
+		sh:group group:Name ],
       [ sh:in ( schema:Female schema:Male );
         sh:path schema:gender;
         sh:name "has gender"@en;
-        sh:description "The person's gender, in this case male or female";
+        sh:description "The person's gender, in this case male or female"@en;
         dct:source "gender" ],
       [ sh:datatype xsd:date;
         sh:path schema:birthDate;
         sh:name "has birth date"@en;
-        sh:description "The person's birth date";
+        sh:description "The person's birth date"@en;
         dct:source "birth_date" ],
-      shape:deathDate,
+      [ sh:datatype xsd:date;
+        sh:name "has death date"@en;
+        sh:description "The person's death date";
+        sh:path schema:deathDate;
+        dct:source "death_date" ],
+      [ sh:datatype xsd:date;
+        sh:name "has death date"@en;
+        sh:description "The person's death date according to oorlogslevens.nl";
+        sh:path schema:deathDate;
+        dct:source "oorlogslevens_deathDate" ],
       [ sh:datatype xsd:string;
         sh:path schema:deathPlace;
         sh:name "has death place"@en;
-        sh:description "The person's place of death";
+        sh:description "The person's place of death"@en;
         dct:source "oorlogslevens_deathPlace" ],
       [ sh:datatype xsd:string;
-        sh:path andb:cardId; 
+        sh:path andb:cardId;
         sh:name "has card"@en;
-        sh:description "The person's card(s)";
+        sh:description "The person's card(s)"@en;
         dct:source "adb_identifier",
                    "sdn_adm_id1",
         		   "sdn_adm_id2",
@@ -85,21 +100,21 @@ graph:shapes {
         sh:name "bio oorlogslevens"@en;
         sh:description "The person's biography on oorlogslevens.nl";
         dct:source "oorlogslevens_uri" ],
-      
+
       # persoonsgegevens, source: lidmaatschapskaart ANDB/ADB
       #[ sh:datatype xsd:string;
       #  sh:path schema:birthPlace;
       #  sh:name "has birth place"@en;
       #  sh:description "The person's place of birth";
       #  dct:source "mbr_birth_place" ],
-        
+
       # familierelaties, source: leerlingkaart
       # brother(s): hiervan weten we alleen het kaartnummer (niet de adm_id) (heet un_number_brother, maar doelt op card_id)
       # sister(s): hiervan weten we alleen het kaartnummer (niet de adm_id)(heet un_number_sister, maar doelt op card_id)
       # [ sh:class schema:Person;
           sh:path andb:sister ],
       # son/daughter: persoon is zoon of dochter van parent
-      # father/mother: ouder van deze persoon is vader of moeder 
+      # father/mother: ouder van deze persoon is vader of moeder
       # parent: persoonsgegevens van ouder (naam/geboortedatum/membership)
       # [ sh:class schema:Person;
           sh:path andb:son ],
@@ -111,8 +126,8 @@ graph:shapes {
       #  sh:path bio:mother ],
       # [ sh:class schema:Person;
       #   sh:maxCount 1;
-      #  sh:path bio:father ], 
-      
+      #  sh:path bio:father ],
+
       # familierelaties, source: lidmaatschapskaart ADB
       # marriage: persoonsgegevens van echtgeno(o)t(e) (naam/geboortedatum), trouwdatum
       # [ sh:class bio:Marriage;
@@ -121,22 +136,22 @@ graph:shapes {
       # son/daughter: persoon is zoon of dochter van parent
       # father/mother: ouder van deze persoon is vader of moeder
       # parent: persoonsgegevens van ouder (naam/geboortedatum/opmerkingen)
-      
+
       #residency, source: alle kaarten
       # [ sh:class andb:Residency;
       #   sh:path andb:residency ],
-      
+
       #membership, source: alle kaarten
       # [ sh:class andb:Membership;
           sh:path andb:membership ],
-      
+
       # Person with unknown name
       # Persoon met onbekende naam
       # {givenName} {middleName} {familyName}
       shape:label;
     sh:targetClass schema:Person.
-        
-      
+
+
       [ sh:in
           ( occupation:brillantslijpen
             occupation:brillantsnijden
@@ -152,7 +167,7 @@ graph:shapes {
       [ sh:class andb:WorkEvent;
         sh:path andb:workEvent ],
 
-      
+
   shape:Marriage
     sh:property
       [ sh:class schema:Person;
@@ -161,8 +176,8 @@ graph:shapes {
       # Marriage of {spouse} and {spouse}
       shape:label;
     sh:targetClass bio:Marriage.
-    
-  
+
+
   shape:Residency
     sh:property
       [ sh:class schema:Person;
@@ -175,7 +190,7 @@ graph:shapes {
       # Residency of {inhabitant} at {address}
       shape:label;
     sh:tagetClass andb:Residency.
-  
+
   shape:Address
     sh:property
       [ sh:datatype xsd:integer; #xsd:nonNegativeInteger
@@ -188,8 +203,8 @@ graph:shapes {
         sh:path geo:sfWithin ],
       # {street} {house-number} {house-number-addition}
       shape:label;
-    sh:targetClass andb:Address. #schema:PostalAddress  
-  
+    sh:targetClass andb:Address. #schema:PostalAddress
+
   shape:Place
     sh:property
       [ sh:class andb:Country; #cshapes:Country
@@ -198,14 +213,14 @@ graph:shapes {
       shape:label,
       shape:name; #new
     sh:targetClass andb:Place. #schema:Place
-    
+
   shape:Country
     sh:property
       shape:label,
       shape:name; #new
-    sh:targetClass andb:Country. #cshapes:Country  
-  
-  
+    sh:targetClass andb:Country. #cshapes:Country
+
+
   shape:Membership
     sh:description "In de ANDB passen we bio:Enrolment toe voor lidmaatschap."@nl;
     sh:property
@@ -226,13 +241,13 @@ graph:shapes {
       # Lidmaatschap van {member}
       shape:label;
     sh:targetClass andb:Membership. #bio:Enrolment
-  
+
   shape:Union
     sh:property
       shape:label,
       shape:name;
     sh:targetClass andb:Union.
-  
+
   shape:Section
     sh:property
       [ sh:class andb:Union;
@@ -242,7 +257,7 @@ graph:shapes {
       shape:label,
       shape:name;
     sh:targetClass andb:Section.
-  
+
   shape:Subsection
     sh:property
       [ sh:class andb:Section;
@@ -252,8 +267,8 @@ graph:shapes {
       shape:label,
       shape:name;
     sh:targetClass andb:Subsection.
-  
-    
+
+
   shape:Card
     sh:property
       [ sh:class schema:Person;
@@ -314,8 +329,8 @@ graph:shapes {
       shape:label,
       shape:name;
     sh:targetClass andb:CardSeries.
-    
-  
+
+
   shape:Image
     sh:property
       [ sh:datatype xsd:string;
@@ -356,8 +371,8 @@ graph:shapes {
       shape:label;
     sh:targetClass schema:ImageObject.
 
-  
-    
+
+
   shape:Remark
     sh:property
       [ dct:source
@@ -404,7 +419,7 @@ graph:shapes {
       shape:name;
     sh:targetClass andb:Street.
 
-  
+
   shape:WorkEvent
     sh:property
       [ sh:datatype xsd:string;
@@ -429,7 +444,7 @@ graph:shapes {
       shape:label,
       shape:name;
     sh:targetClass andb:Workshop.
-    
+
   shape:Examination
     sh:property
       [ sh:datatype xsd:string;
@@ -443,7 +458,7 @@ graph:shapes {
       # Examen van {examinee-name}
       shape:label;
     sh:targetClass andb:Examination.
-  
+
 
   shape:address
     sh:class andb:Address;
@@ -471,7 +486,7 @@ graph:shapes {
     sh:description "Date structure for all life and workevents."@en;
     sh:maxCount 1;
     sh:targetClass xsd:date.
-    
+
   shape:yearMonth
     sh:property
       [ shape:month;
@@ -482,7 +497,7 @@ graph:shapes {
     sh:description "Date structure for all life and workevents were the day of the month is mising."@en;
     sh:maxCount 1;
     sh:targetClass xsd:gYearMonth.
-    
+
   shape:monthDay
     sh:property
       [ shape:day;
@@ -492,32 +507,32 @@ graph:shapes {
       # {month}-{day}
     sh:description "Date structure for all life and workevents were the year is mising."@en;
     sh:maxCount 1;
-    sh:targetClass xsd:gMonthDay.  
-    
+    sh:targetClass xsd:gMonthDay.
+
   shape:day
     sh:datatype xsd:gDay;
-    dct:source 
+    dct:source
       "sdn_addr_day-01",
       "sdn_addr_day-02",
       "sdn_addr_day-03",
       "etc.".
-    
+
   shape:month
     sh:datatype xsd:gMonth;
-    dct:source 
+    dct:source
       "sdn_addr_month-01",
       "sdn_addr_month-02",
       "sdn_addr_month-03",
       "etc.".
-  
+
   shape:year
     sh:datatype xsd:gYear;
-    dct:source 
+    dct:source
       "sdn_addr_year-01",
       "sdn_addr_year-02",
       "sdn_addr_year-03",
       "etc.".
-    
+
   shape:date
     sh:property
       [ sh:datatype xsd:nonNegativeInteger;
@@ -532,23 +547,6 @@ graph:shapes {
     sh:maxCount 1;
     sh:targetClass xsd:date.
 
-  shape:deathDate
-    sh:datatype xsd:date;
-    sh:name "has death date"@en;
-    sh:path schema:deathDate.
-    
-#ingevoegd
-    [ sh:datatype xsd:date;
-        sh:name "has death date"@en;
-        sh:description "The person's death date";
-        sh:path schema:deathDate;
-        dct:source "death_date" ],
-      [ sh:datatype xsd:date;
-        sh:name "has death date"@en;
-        sh:description "The person's death date according to oorlogslevens.nl";
-        sh:path schema:deathDate;
-        dct:source "oorlogslevens_deathDate" ],
-
   shape:label
     sh:languageIn ( "en" "nl" );
     sh:name "has label"@en;
@@ -561,9 +559,9 @@ graph:shapes {
     sh:minCount 1;
     sh:name "has name"@en;
     sh:path schema:name.
-    
-  andb:NameGroup
+
+  group:Name
 	a sh:PropertyGroup ;
 	sh:order 0 ;
-	rdfs:label "Name" 
+	rdfs:label "Name"
 }
