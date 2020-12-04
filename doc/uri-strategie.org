@@ -14,12 +14,12 @@ We gaan uit van het volgende template:
 Vervolgens worden de 5 componenten uit het template als volgt
 ingevuld:
 
-- ~{schema}~ :: ~https~
-- ~{domein}~ :: ~iisg.amsterdam~
-- ~{type}~ :: ~resource~ voor instanties; ~vocab~ voor definities
-- -{subtype}~ :: ~adb-andb~ [?]
+- {schema} :: ~https~
+- {domein} :: ~iisg.amsterdam~
+- {type} :: ~resource~ voor instanties; ~vocab~ voor definities
+- {subtype} :: ~adb-andb~ [?]
 #refereert dit aan de betreffende dataset? Oftewel, als we als de personen een aparte dataset zouden zijn, zouden er dan meerdere subtypes zijn?
-- ~{referentie}~ :: ~EenKlasse~ of ~eenEigenschap~ of een arbitraire
+- {referentie} :: ~EenKlasse~ of ~eenEigenschap~ of een arbitraire
   string voor instanties.
 
 * Voorbeelden
