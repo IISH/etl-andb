@@ -17,10 +17,9 @@ ingevuld:
 - {schema} :: ~https~
 - {domein} :: ~iisg.amsterdam~
 - {type} :: ~resource~ voor instanties; ~vocab~ voor definities
-- {subtype} :: ~adb-andb~ [?]
-#refereert dit aan de betreffende dataset? Oftewel, als we als de personen een aparte dataset zouden zijn, zouden er dan meerdere subtypes zijn?
+- {subtype} :: ~adb~, ~andb~, ~diamantbewerkers~ [todo]
 - {referentie} :: ~EenKlasse~ of ~eenEigenschap~ of een arbitraire
-  string voor instanties.
+  string (bijv. een binnen de dataset unieke code) voor instanties.
 
 * Voorbeelden
 
