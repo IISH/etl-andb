@@ -7,9 +7,9 @@ toegepast.
 
 We gaan uit van het volgende template:
 
-#+begin_txt
+#+begin_src
 {schema}://{domein}/{type}/{subtype}/{referentie}
-#+end_txt
+#+end_src
 
 Vervolgens worden de 5 componenten uit het template als volgt
 ingevuld:
