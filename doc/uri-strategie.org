@@ -16,7 +16,7 @@ ingevuld:
 
 - {schema} :: ~https~
 - {domein} :: ~iisg.amsterdam~
-- {type} :: ~resource~ voor instanties; ~vocab~ voor definities
+- {type} :: ~id~ voor instanties; ~vocab~ voor definities
 - {subtype} :: ~adb~, ~andb~, ~diamantbewerkers~ [todo]
 - {referentie} :: ~EenKlasse~ of ~eenEigenschap~ of een arbitraire
   string (bijv. een binnen de dataset unieke code) voor instanties.
@@ -25,7 +25,7 @@ ingevuld:
 
 De volgende voorbeelden maken gebruik van deze URI strategie:
 
-- Een klasse :: https://iisg.amsterdam/vocab/adb-andb/Person
-- Een eigenschap :: https://iisg.amsterdam/vocab/adb-andb/aboutEvent
-- Een instantie ::  https://iisg.amsterdam/resource/adb-andb/card/andb-leden-10
-#Wat is de instantie: ‘card’, ‘andb-leden-10’ of het geheel van ‘card/andb-leden-10’?
+- Een klasse :: https://iisg.amsterdam/vocab/diamantbewerkers/Examinator
+- Een eigenschap :: https://iisg.amsterdam/vocab/diamantbewerkers/hasExaminator
+- Een instantie ::  https://iisg.amsterdam/id/adb/1234
+- Een instantie ::  https://iisg.amsterdam/id/andb/1234
