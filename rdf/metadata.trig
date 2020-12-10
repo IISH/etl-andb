@@ -8,7 +8,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix sd: <http://www.w3.org/ns/sparql-service-description#>
-prefix sdo: <https://schema.org/>
+prefix schema: <https://schema.org/>
 prefix sh: <http://www.w3.org/ns/shacl#>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix vann: <http://purl.org/vocab/vann/>
@@ -37,11 +37,11 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     foaf:depiction "https://druid.datalegend.net/imgs/avatars/d/5e466b1020e09b037eea7cd1.png?v=1"^^xsd:anyURI;
     foaf:homepage "https://diamantbewerkers.nl/en"^^xsd:anyURI;
     owl:versionInfo "0.0.0";
-    sdo:distribution
-      [ sdo:contentUrl "https://iisg.amsterdam/andb/andb/download.trig.gz"^^xsd:anyURI ],
-      [ sdo:contentUrl "https://iisg.amsterdam/andb/andb/download.nq.gz"^^xsd:anyURI ],
-      [ sdo:contentUrl "https://iisg.amsterdam/andb/andb/download.nt.gz"^^xsd:anyURI ],
-      [ sdo:contentUrl "https://iisg.amsterdam/andb/andb/download.ttl.gz"^^xsd:anyURI ];
+    schema:distribution
+      [ schema:contentUrl "https://iisg.amsterdam/andb/andb/download.trig.gz"^^xsd:anyURI ],
+      [ schema:contentUrl "https://iisg.amsterdam/andb/andb/download.nq.gz"^^xsd:anyURI ],
+      [ schema:contentUrl "https://iisg.amsterdam/andb/andb/download.nt.gz"^^xsd:anyURI ],
+      [ schema:contentUrl "https://iisg.amsterdam/andb/andb/download.ttl.gz"^^xsd:anyURI ];
     void:exampleResource <https://iisg.amsterdam/resource/adb-andb/card/andb-leden-11>;
     void:sparqlEndpoint <https://iisg.amsterdam/andb/andb/sparql/andb>;
     void:subSet
@@ -54,7 +54,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
       foaf:,
       owl:,
       rdfs:,
-      sdo:,
+      schema:,
       skos:,
       vann:.
 
@@ -64,7 +64,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
       owl:,
       rdf:,
       rdfs:,
-      sdo:,
+      schema:,
       skos:;
     vann:preferredNamespacePrefix "andb";
     vann:preferredNamespaceUri "https://iisg.amsterdam/vocab/adb-andb/".

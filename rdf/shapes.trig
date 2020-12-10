@@ -15,7 +15,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
 prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
 
-id:shapesGraph {
+#id:shapesGraph {
   vocab:afterShape
     sh:class time:ProperInterval;
     sh:description "Another event that occurred directly after this one."@en;
@@ -27,69 +27,90 @@ id:shapesGraph {
     sh:path time:before.
 
   vocab:labelShape
+    sh:datatype rdf:langString;
     sh:description "We try to give every node a human-readable label."@en;
     sh:languageIn ( "en" "nl" );
+    sh:minCount 1;
     sh:name "has label"@en;
     sh:path rdfs:label;
     sh:uniqueLang true.
 
   vocab:nameShape
-    sh:datatype xsd:string;
-    sh:maxCount 1;
+    sh:datatype rdf:langString;
+    sh:languageIn ( "en" "nl" );
     sh:minCount 1;
     sh:name "has name"@en;
-    sh:path schema:name.
+    sh:path schema:name;
+    sh:uniqueLang true.
 
 
   vocab:AddressShape
     sh:property
-      [ sh:class hg:Street;
-        sh:path hg:street;
-        sh:name "has street"@en;
-        sh:description "The street part of the address."@en;
-        dct:source
-          "adb/mbr_street_01 t/m 5",
-          "andb/mbr_street-01 t/m 26",
-          "apprentice/sdn_street-01 t/m 5",
-          "apprentice/wsp_street-01 t/m 10";
-        sh:order 0;
-        sh:group id:addressGroup ],
-      [ sh:datatype xsd:string;
-        sh:path vocab:houseNumber;
-        sh:name "has house number"@en;
-        sh:description "The house number of the address."@en;
-        dct:source
-          "adb/mbr_street_no_01 t/m 5",
-          "andb/mbr_street_no-01 t/m 26",
-          "apprentice/sdn_street_no-01 t/m 5",
-          "apprentice/wsp_street_no-01 t/m 10";
-        sh:order 1;
-        sh:group id:addressGroup ],
-      [ sh:datatype xsd:string;
-        sh:path vocab:houseNumberAddition;
-        sh:name "has house number addition"@en;
-        sh:description "The house number addition of the address."@en;
-        dct:source
-          "adb/mbr_street_no_add-01 t/m 5",
-          "andb/mbr_street_no_add-01 t/m 26",
-          "apprentice/sdn_street_no_add-01 t/m 5",
-          "apprentice/wsp_street_no_ad-01 t/m 10";
-        sh:order 2;
-        sh:group id:addressGroup ],
-      [ sh:datatype xsd:string;
-        sh:path schema:identifier;
-        sh:name "has hisgis identifier"@en;
-        sh:description "The HISGIS identifier of the (Amsterdam) address."@en;
-        dct:source
-          "apprentice/sdn_address_locationPoint-01 t/m 5",
-          "andb/mbr_address_locationPoint-01 t/m 26" ],
-      [ sh:class schema:Place;
-        sh:path geo:sfWithin;
-        sh:name "is within"@en;
-        sh:description "Adresses are geospatially within places"@en ],
+      vocab:Address_identifier,
+     #vocab:Address_within,
+      vocab:houseNumberAdditionShape,
+      vocab:houseNumberShape,
       vocab:labelShape,
-      vocab:nameShape;
+      vocab:nameShape,
+      vocab:streetShape;
     sh:targetClass schema:PostalAddress.
+
+  vocab:Address_identifier
+    dct:source
+      "apprentice/sdn_address_locationPoint-01 t/m 5",
+      "andb/mbr_address_locationPoint-01 t/m 26";
+    sh:datatype xsd:string;
+    sh:description "The HISGIS identifier of the (Amsterdam) address."@en;
+    sh:name "has hisgis identifier"@en;
+    sh:path schema:identifier.
+
+  #vocab:Address_within
+  #  sh:class schema:Place;
+  #  sh:description "Adresses are geospatially within places"@en;
+  #  sh:name "is within"@en;
+  #  sh:path geo:sfWithin.
+
+  vocab:houseNumberAdditionShape
+    dct:source
+      "adb/mbr_street_no_add-01 t/m 5",
+      "andb/mbr_street_no_add-01 t/m 26",
+      "apprentice/sdn_street_no_add-01 t/m 5",
+      "apprentice/wsp_street_no_ad-01 t/m 10";
+    sh:datatype xsd:string;
+    sh:group id:addressGroup;
+    sh:maxCount 1;
+    sh:order 2;
+    sh:path vocab:houseNumberAddition.
+
+  vocab:houseNumberShape
+    dct:source
+      "adb/mbr_street_no_01 t/m 5",
+      "andb/mbr_street_no-01 t/m 26",
+      "apprentice/sdn_street_no-01 t/m 5",
+      "apprentice/wsp_street_no-01 t/m 10";
+    sh:datatype xsd:positiveInteger;
+    sh:group id:addressGroup;
+    sh:maxCount 1;
+    sh:order 1;
+    sh:path vocab:houseNumber;
+    sh:pattern "[0-9]+".
+
+  vocab:streetShape
+    dct:source
+      "adb/mbr_street_01 t/m 5",
+      "andb/mbr_street-01 t/m 26",
+      "apprentice/sdn_street-01 t/m 5",
+      "apprentice/wsp_street-01 t/m 10";
+    sh:class hg:Street;
+    sh:description "The street part of the address."@en;
+    sh:group id:addressGroup;
+    sh:languageIn ( "nl" );
+    sh:name "has street"@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:order 0;
+    sh:path vocab:street;
+    sh:uniqueLang true.
 
 
   vocab:BiographyShape
@@ -172,9 +193,6 @@ id:shapesGraph {
 
   vocab:CardShape
     sh:property
-      [ sh:class vocab:Biography;
-        sh:path vocab:aboutPerson;
-        sh:description "Cards contain biographical information about the card holder."@en ],
       [ sh:class schema:Residence;
         sh:path vocab:aboutResidence;
         sh:description "Cards can contain information about the addresses the card holder lived at."@en ],
@@ -203,18 +221,29 @@ id:shapesGraph {
         sh:name "comment on card"@en;
         sh:description "ANDB Cards can contain several comments."@en;
         dct:source "andb/History-01 t/m 03" ],
-      [ sh:class schema:ImageObject;
-        sh:path schema:image;
-        sh:description "Every card is depicted in a scanned image."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        dct:source
-          "adb/adm_image_uuid",
-          "andb/adm_image_uuid",
-          "apprentice/adm_image_uuid" ],
+      vocab:imageShape,
       vocab:labelShape,
-      vocab:nameShape;
-    sh:targetClass vocab:Card.
+      vocab:nameShape,
+      vocab:personShape;
+    sh:targetClass foaf:Document.
+
+  vocab:imageShape
+    dct:source
+      "adb/adm_image_uuid",
+      "andb/adm_image_uuid",
+      "apprentice/adm_image_uuid";
+    sh:class schema:ImageObject;
+    sh:description "Every card is depicted in exactly one scanned image."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path schema:image.
+
+  vocab:personShape
+    sh:class schema:Person;
+    sh:description "Cards contain biographical information about a person."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path foaf:primaryTopic.
 
 
   vocab:ChildShape
@@ -321,43 +350,56 @@ id:shapesGraph {
 
   vocab:ImageShape
     sh:property
-      [ sh:datatype xsd:string;
-        sh:description "Every image has an MD5 hash code, possibly for validating the image content."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:name "has MD5 hash"@en;
-        sh:path vocab:md5;
-        sh:pattern "[0-9a-f]{32}" ],
-      [ sh:datatype xsd:nonNegativeInteger;
-        sh:description "The size of the image in bytes."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path schema:contentSize ],
-      [ sh:datatype xsd:anyURI;
-        sh:description """
-<section lang="en">
-  <p>Every image has exactly one URL where it ca be downloaded from.  The download location has the form <code>http://hdl.handle.net/10796/{adm_image_uuid}</code>.</p>
-</section>"""^^rdf:HTML;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path schema:contentUrl;
-        sh:pattern "https://hdl.handle.net/[0-9]{5}/[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}?locatt=view:[level2|level3|master]" ],
-      [ sh:datatype xsd:string;
-        sh:description "The Media Type that is used to encoding the image (JPEG or TIFF)."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path schema:encodingFormat;
-        sh:pattern "image/[jpeg|tiff]" ],
-      [ sh:class schema:ImageObject;
-        sh:description "Some images have a thumbnail version."@en;
-        sh:maxCount 1;
-        sh:path schema:thumbnail ],
-      [ sh:class schema:ImageObject;
-        sh:description "Some images have a screen friendly version."@en;
-        sh:maxCount 1;
-        sh:path vocab:screenVersion ],
+      vocab:contentSizeShape,
+      vocab:contentUrlShape,
+      vocab:md5Shape,
+      vocab:mediaTypeShape,
+      vocab:screenVersionShape,
+      vocab:thumbnailShape,
       vocab:labelShape;
     sh:targetClass schema:ImageObject.
+
+  vocab:contentSizeShape
+    sh:datatype xsd:positiveInteger;
+    sh:description "The size of the binary image in bytes."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path schema:contentSize.
+
+  vocab:contentUrlShape
+    sh:datatype xsd:anyURI;
+    sh:description "Every image has exactly one URL where it can be downloaded."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path schema:contentUrl;
+    sh:pattern "https://hdl.handle.net/[0-9]{5}/[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}?locatt=view:[level2|level3|master]".
+
+  vocab:md5Shape
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path vocab:md5;
+    sh:pattern "[0-9a-f]{32}".
+
+  vocab:mediaTypeShape
+    sh:datatype xsd:string;
+    sh:description "The Media Type that is used to encoding the image (JPEG or TIFF)."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path schema:encodingFormat;
+    sh:pattern "image/[jpeg|tiff]".
+
+  vocab:screenVersionShape
+    sh:class schema:ImageObject;
+    sh:description "Some images have a screen friendly version."@en;
+    sh:maxCount 1;
+    sh:path vocab:screenVersion.
+
+  vocab:thumbnailShape
+    sh:class schema:ImageObject;
+    sh:description "Some images have a thumbnail version."@en;
+    sh:maxCount 1;
+    sh:path schema:thumbnail.
 
 
   vocab:InternshipShape
@@ -526,12 +568,13 @@ id:shapesGraph {
     sh:path schema:additionalName.
 
   vocab:birthDateShape
-    dct:source "unique/birth_date";
+    #dct:source "unique/birth_date";
     sh:datatype xsd:date;
-    sh:description "The person's birth date."@en;
-    sh:group id:personGroup;
-    sh:maxCount 1;
-    sh:name "has birth date"@en;
+    #sh:description "The person's birth date."@en;
+    #sh:group id:personGroup;
+    #sh:maxCount 1;
+    sh:minCount 1;
+    #sh:name "has birth date"@en;
     sh:path schema:birthDate.
 
   vocab:birthPlaceShape
@@ -552,7 +595,7 @@ id:shapesGraph {
       "unique/mbr_adm_id1",
       "unique/mbr_adm_id2",
       "unique/mbr_adm_id3";
-    sh:class vocab:Card;
+    sh:class foaf:Document;
     sh:description "A person can have one or more cards."@en;
     sh:group id:personGroup;
     sh:minCount 1;
@@ -929,4 +972,4 @@ id:shapesGraph {
   id:streetGroup
     a sh:PropertyGroup;
     rdfs:comment "The name of a street as a string and, where available, the Adamlink identifier of the street"@en.
-}
+#}
