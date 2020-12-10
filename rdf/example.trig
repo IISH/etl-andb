@@ -1,0 +1,43 @@
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix schema: <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
+
+id:instances {
+  id:11
+    a foaf:Document;
+    foaf:primaryTopic id:todo;
+    schema:image id:ARCH00210-9421-0055-master.
+
+  id:ARCH00210-9421-0055-level2
+    a schema:ImageObject;
+    schema:contentSize "116664"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/1177040C-5EF2-4A6E-A384-63E993B5A80C?locatt=view:level2"^^xsd:anyURI;
+    schema:encodingFormat "image/jpeg";
+    vocab:md5 "a9f09562be7ca5b0ac7cbef8b2446caf".
+
+  id:ARCH00210-9421-0055-level3
+    a schema:ImageObject;
+    schema:contentSize "9496"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/1177040C-5EF2-4A6E-A384-63E993B5A80C?locatt=view:level3"^^xsd:anyURI;
+    schema:encodingFormat "image/jpeg";
+    vocab:md5 "b347378db5481e65a1f86afda0194e11".
+
+  id:ARCH00210-9421-0055-master
+    a schema:ImageObject;
+    schema:contentSize "23917832"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/1177040C-5EF2-4A6E-A384-63E993B5A80C?locatt=view:master"^^xsd:anyURI;
+    schema:encodingFormat "image/tiff";
+    schema:thumbnail id:ARCH00210-9421-0055-level3;
+    vocab:md5 "40b50b034a56361dafccb7faaea14580";
+    vocab:screenVersion id:ARCH00210-9421-0055-level2.
+
+  id:todo
+    a schema:Person;
+    schema:birthDate "1873-02-01"^^xsd:date;
+    schema:familyName "Agsteribbe";
+    schema:firstName "Sophia";
+    vocab:maidenName "Aärons".
+}
