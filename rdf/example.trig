@@ -9,7 +9,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
 prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
 
-#id:instances {
+id:instances {
   id:ARCH00210-9421-0055-level2
     a schema:ImageObject;
     rdfs:label
@@ -81,4 +81,4 @@ prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
     schema:firstName "Sophia";
     schema:name "Sophia Aärons Agsteribbe";
     vocab:maidenName "Aärons".
-#}
+}

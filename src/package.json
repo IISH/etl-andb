@@ -1,0 +1,26 @@
+{
+  "name": "etl-andb",
+  "version": "1.0.0",
+  "description": "* Wat is de ANDB?",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wouterbeek/etl-andb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wouterbeek/etl-andb/issues"
+  },
+  "homepage": "https://github.com/wouterbeek/etl-andb#readme",
+  "dependencies": {
+    "@zazuko/rdf-vocabularies": "^2020.11.3",
+    "rdf-validate-shacl": "^0.2.4"
+  }
+}

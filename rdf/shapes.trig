@@ -15,7 +15,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
 prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
 
-#id:shapesGraph {
+id:shapesGraph {
   vocab:afterShape
     sh:class time:ProperInterval;
     sh:description "Another event that occurred directly after this one."@en;
@@ -972,4 +972,4 @@ prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
   id:streetGroup
     a sh:PropertyGroup;
     rdfs:comment "The name of a street as a string and, where available, the Adamlink identifier of the street"@en.
-#}
+}
