@@ -1,0 +1,958 @@
+{
+ "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv",
+ "@context": [
+  "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
+  {
+   "@language": "en",
+   "@base": "https://iisg.amsterdam/"
+  },
+  {
+   "aat": "http://vocab.getty.edu/aat/",
+   "bibo": "http://purl.org/ontology/bibo/",
+   "bio": "http://purl.org/vocab/bio/0.1/",
+   "cidoc": "http://www.cidoc-crm.org/cidoc-crm/",
+   "csvw": "http://www.w3.org/ns/csvw#",
+   "dbo": "http://dbpedia.org/ontology/",
+   "dc": "http://purl.org/dc/terms/",
+   "dc11": "http://purl.org/dc/elements/1.1/",
+   "dcterms": "http://purl.org/dc/terms/",
+   "ecpo": "http://purl.org/ontology/ecpo#",
+   "foaf": "http://xmlns.com/foaf/0.1/",
+   "frbr": "http://purl.org/spar/frbr/core#",
+   "geo": "http://www.opengis.net/ont/geosparql#",
+   "geonames": "http://www.geonames.org/ontology#",
+   "gvp": "http://vocab.getty.edu/ontology#'",
+   "juso": "http://http://rdfs.co/juso/",
+   "lemon": "http://lemon-model.net/lemon#",
+   "midi": "http://purl.org/midi-ld/midi#",
+   "np": "http://www.nanopub.org/nschema#",
+   "owl": "http://www.w3.org/2002/07/owl#",
+   "periodo": "http://n2t.net/ark:/99152/p0v#",
+   "pnv": "https://www.lodewijkpetram.nl/vocab/pnv/doc/",
+   "prov": "http://www.w3.org/ns/prov#",
+   "qb": "http://purl.org/linked-data/cube#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "schema": "http://schema.org/",
+   "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+   "sdr": "https://iisg.amsterdam/",
+   "sdv": "https://iisg.amsterdam/vocab/",
+   "sem": "http://semanticweb.cs.vu.nl/2009/11/sem/",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "time": "http://www.w3.org/2006/time#",
+   "ulan": "http://vocab.getty.edu/ulan/",
+   "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+   "xml": "http://www.w3.org/XML/1998/namespace/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+ ],
+ "url": "ADB-2020_12_09.csv",
+ "dialect": {
+  "delimiter": ",",
+  "encoding": "utf-8",
+  "quoteChar": "\""
+ },
+ "dc:title": "ANDB",
+ "dcat:keyword": [],
+ "dc:publisher": {
+  "schema:name": "CLARIAH Structured Data Hub - Datalegend",
+  "schema:url": {
+   "@id": "http://datalegend.net"
+  }
+ },
+ "dc:license": {
+  "@id": "http://opendefinition.org/licenses/cc-by/"
+ },
+ "dc:modified": {
+  "@value": "2020-12-14",
+  "@type": "xsd:date"
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_image_no",
+    "name": "adm_image_no",
+    "titles": [
+     "adm_image_no"
+    ],
+    "dc:description": "adm_image_no",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/person_uuid",
+    "name": "person_uuid",
+    "titles": [
+     "person_uuid"
+    ],
+    "dc:description": "person_uuid",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_image_uuid",
+    "name": "adm_image_uuid",
+    "titles": [
+     "adm_image_uuid"
+    ],
+    "dc:description": "adm_image_uuid",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_last_name",
+    "name": "mbr_last_name",
+    "titles": [
+     "mbr_last_name"
+    ],
+    "dc:description": "mbr_last_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_first_name",
+    "name": "mbr_first_name",
+    "titles": [
+     "mbr_first_name"
+    ],
+    "dc:description": "mbr_first_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_birth_day",
+    "name": "mbr_birth_day",
+    "titles": [
+     "mbr_birth_day"
+    ],
+    "dc:description": "mbr_birth_day",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_birth_month",
+    "name": "mbr_birth_month",
+    "titles": [
+     "mbr_birth_month"
+    ],
+    "dc:description": "mbr_birth_month",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_birth_year",
+    "name": "mbr_birth_year",
+    "titles": [
+     "mbr_birth_year"
+    ],
+    "dc:description": "mbr_birth_year",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_birth_place",
+    "name": "mbr_birth_place",
+    "titles": [
+     "mbr_birth_place"
+    ],
+    "dc:description": "mbr_birth_place",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_birth_country",
+    "name": "mbr_birth_country",
+    "titles": [
+     "mbr_birth_country"
+    ],
+    "dc:description": "mbr_birth_country",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_death_day",
+    "name": "mbr_death_day",
+    "titles": [
+     "mbr_death_day"
+    ],
+    "dc:description": "mbr_death_day",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_death_month",
+    "name": "mbr_death_month",
+    "titles": [
+     "mbr_death_month"
+    ],
+    "dc:description": "mbr_death_month",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_death_year",
+    "name": "mbr_death_year",
+    "titles": [
+     "mbr_death_year"
+    ],
+    "dc:description": "mbr_death_year",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_death_place",
+    "name": "mbr_death_place",
+    "titles": [
+     "mbr_death_place"
+    ],
+    "dc:description": "mbr_death_place",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_01",
+    "name": "mbr_street_01",
+    "titles": [
+     "mbr_street_01"
+    ],
+    "dc:description": "mbr_street_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_01",
+    "name": "mbr_street_no_01",
+    "titles": [
+     "mbr_street_no_01"
+    ],
+    "dc:description": "mbr_street_no_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_add-01",
+    "name": "mbr_street_no_add-01",
+    "titles": [
+     "mbr_street_no_add-01"
+    ],
+    "dc:description": "mbr_street_no_add-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_city_01",
+    "name": "mbr_city_01",
+    "titles": [
+     "mbr_city_01"
+    ],
+    "dc:description": "mbr_city_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_02",
+    "name": "mbr_street_02",
+    "titles": [
+     "mbr_street_02"
+    ],
+    "dc:description": "mbr_street_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_02",
+    "name": "mbr_street_no_02",
+    "titles": [
+     "mbr_street_no_02"
+    ],
+    "dc:description": "mbr_street_no_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_add-02",
+    "name": "mbr_street_no_add-02",
+    "titles": [
+     "mbr_street_no_add-02"
+    ],
+    "dc:description": "mbr_street_no_add-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_city_02",
+    "name": "mbr_city_02",
+    "titles": [
+     "mbr_city_02"
+    ],
+    "dc:description": "mbr_city_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_03",
+    "name": "mbr_street_03",
+    "titles": [
+     "mbr_street_03"
+    ],
+    "dc:description": "mbr_street_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_03",
+    "name": "mbr_street_no_03",
+    "titles": [
+     "mbr_street_no_03"
+    ],
+    "dc:description": "mbr_street_no_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_add-03",
+    "name": "mbr_street_no_add-03",
+    "titles": [
+     "mbr_street_no_add-03"
+    ],
+    "dc:description": "mbr_street_no_add-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_city_03",
+    "name": "mbr_city_03",
+    "titles": [
+     "mbr_city_03"
+    ],
+    "dc:description": "mbr_city_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_04",
+    "name": "mbr_street_04",
+    "titles": [
+     "mbr_street_04"
+    ],
+    "dc:description": "mbr_street_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_04",
+    "name": "mbr_street_no_04",
+    "titles": [
+     "mbr_street_no_04"
+    ],
+    "dc:description": "mbr_street_no_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_add-04",
+    "name": "mbr_street_no_add-04",
+    "titles": [
+     "mbr_street_no_add-04"
+    ],
+    "dc:description": "mbr_street_no_add-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_city_04",
+    "name": "mbr_city_04",
+    "titles": [
+     "mbr_city_04"
+    ],
+    "dc:description": "mbr_city_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_05",
+    "name": "mbr_street_05",
+    "titles": [
+     "mbr_street_05"
+    ],
+    "dc:description": "mbr_street_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_05",
+    "name": "mbr_street_no_05",
+    "titles": [
+     "mbr_street_no_05"
+    ],
+    "dc:description": "mbr_street_no_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_no_add-05",
+    "name": "mbr_street_no_add-05",
+    "titles": [
+     "mbr_street_no_add-05"
+    ],
+    "dc:description": "mbr_street_no_add-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_city_05",
+    "name": "mbr_city_05",
+    "titles": [
+     "mbr_city_05"
+    ],
+    "dc:description": "mbr_city_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/spo_last_name",
+    "name": "spo_last_name",
+    "titles": [
+     "spo_last_name"
+    ],
+    "dc:description": "spo_last_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/spo_first_name",
+    "name": "spo_first_name",
+    "titles": [
+     "spo_first_name"
+    ],
+    "dc:description": "spo_first_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/spo_birth_day",
+    "name": "spo_birth_day",
+    "titles": [
+     "spo_birth_day"
+    ],
+    "dc:description": "spo_birth_day",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/spo_birth_month",
+    "name": "spo_birth_month",
+    "titles": [
+     "spo_birth_month"
+    ],
+    "dc:description": "spo_birth_month",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/spo_birth_year",
+    "name": "spo_birth_year",
+    "titles": [
+     "spo_birth_year"
+    ],
+    "dc:description": "spo_birth_year",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/spo_birth_place",
+    "name": "spo_birth_place",
+    "titles": [
+     "spo_birth_place"
+    ],
+    "dc:description": "spo_birth_place",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/spo_birth_country",
+    "name": "spo_birth_country",
+    "titles": [
+     "spo_birth_country"
+    ],
+    "dc:description": "spo_birth_country",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mar_date",
+    "name": "mar_date",
+    "titles": [
+     "mar_date"
+    ],
+    "dc:description": "mar_date",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mar_month",
+    "name": "mar_month",
+    "titles": [
+     "mar_month"
+    ],
+    "dc:description": "mar_month",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mar_year",
+    "name": "mar_year",
+    "titles": [
+     "mar_year"
+    ],
+    "dc:description": "mar_year",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_first_name_01",
+    "name": "chi_first_name_01",
+    "titles": [
+     "chi_first_name_01"
+    ],
+    "dc:description": "chi_first_name_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_day_01",
+    "name": "chi_birth_day_01",
+    "titles": [
+     "chi_birth_day_01"
+    ],
+    "dc:description": "chi_birth_day_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_month_01",
+    "name": "chi_birth_month_01",
+    "titles": [
+     "chi_birth_month_01"
+    ],
+    "dc:description": "chi_birth_month_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_year_01",
+    "name": "chi_birth_year_01",
+    "titles": [
+     "chi_birth_year_01"
+    ],
+    "dc:description": "chi_birth_year_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_first_name_02",
+    "name": "chi_first_name_02",
+    "titles": [
+     "chi_first_name_02"
+    ],
+    "dc:description": "chi_first_name_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_day_02",
+    "name": "chi_birth_day_02",
+    "titles": [
+     "chi_birth_day_02"
+    ],
+    "dc:description": "chi_birth_day_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_month_02",
+    "name": "chi_birth_month_02",
+    "titles": [
+     "chi_birth_month_02"
+    ],
+    "dc:description": "chi_birth_month_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_year_02",
+    "name": "chi_birth_year_02",
+    "titles": [
+     "chi_birth_year_02"
+    ],
+    "dc:description": "chi_birth_year_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_first_name_03",
+    "name": "chi_first_name_03",
+    "titles": [
+     "chi_first_name_03"
+    ],
+    "dc:description": "chi_first_name_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_day_03",
+    "name": "chi_birth_day_03",
+    "titles": [
+     "chi_birth_day_03"
+    ],
+    "dc:description": "chi_birth_day_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_month_03",
+    "name": "chi_birth_month_03",
+    "titles": [
+     "chi_birth_month_03"
+    ],
+    "dc:description": "chi_birth_month_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_year_03",
+    "name": "chi_birth_year_03",
+    "titles": [
+     "chi_birth_year_03"
+    ],
+    "dc:description": "chi_birth_year_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_first_name_04",
+    "name": "chi_first_name_04",
+    "titles": [
+     "chi_first_name_04"
+    ],
+    "dc:description": "chi_first_name_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_day_04",
+    "name": "chi_birth_day_04",
+    "titles": [
+     "chi_birth_day_04"
+    ],
+    "dc:description": "chi_birth_day_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_month_04",
+    "name": "chi_birth_month_04",
+    "titles": [
+     "chi_birth_month_04"
+    ],
+    "dc:description": "chi_birth_month_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_year_04",
+    "name": "chi_birth_year_04",
+    "titles": [
+     "chi_birth_year_04"
+    ],
+    "dc:description": "chi_birth_year_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_first_name_05",
+    "name": "chi_first_name_05",
+    "titles": [
+     "chi_first_name_05"
+    ],
+    "dc:description": "chi_first_name_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_day_05",
+    "name": "chi_birth_day_05",
+    "titles": [
+     "chi_birth_day_05"
+    ],
+    "dc:description": "chi_birth_day_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_month_05",
+    "name": "chi_birth_month_05",
+    "titles": [
+     "chi_birth_month_05"
+    ],
+    "dc:description": "chi_birth_month_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/chi_birth_year_05",
+    "name": "chi_birth_year_05",
+    "titles": [
+     "chi_birth_year_05"
+    ],
+    "dc:description": "chi_birth_year_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/par_last_name_01",
+    "name": "par_last_name_01",
+    "titles": [
+     "par_last_name_01"
+    ],
+    "dc:description": "par_last_name_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/par_first_name_01",
+    "name": "par_first_name_01",
+    "titles": [
+     "par_first_name_01"
+    ],
+    "dc:description": "par_first_name_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/par_remarks_01",
+    "name": "par_remarks_01",
+    "titles": [
+     "par_remarks_01"
+    ],
+    "dc:description": "par_remarks_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/father_or_mother_01",
+    "name": "father_or_mother_01",
+    "titles": [
+     "father_or_mother_01"
+    ],
+    "dc:description": "father_or_mother_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/par_last_name_02",
+    "name": "par_last_name_02",
+    "titles": [
+     "par_last_name_02"
+    ],
+    "dc:description": "par_last_name_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/par_first_name_02",
+    "name": "par_first_name_02",
+    "titles": [
+     "par_first_name_02"
+    ],
+    "dc:description": "par_first_name_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/par_remarks_02",
+    "name": "par_remarks_02",
+    "titles": [
+     "par_remarks_02"
+    ],
+    "dc:description": "par_remarks_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/father_or_mother_02",
+    "name": "father_or_mother_02",
+    "titles": [
+     "father_or_mother_02"
+    ],
+    "dc:description": "father_or_mother_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/un_section_no",
+    "name": "un_section_no",
+    "titles": [
+     "un_section_no"
+    ],
+    "dc:description": "un_section_no",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/un_section",
+    "name": "un_section",
+    "titles": [
+     "un_section"
+    ],
+    "dc:description": "un_section",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_occupation",
+    "name": "mbr_occupation",
+    "titles": [
+     "mbr_occupation"
+    ],
+    "dc:description": "mbr_occupation",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/card_id1",
+    "name": "card_id1",
+    "titles": [
+     "card_id1"
+    ],
+    "dc:description": "card_id1",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_01",
+    "name": "mmb_01",
+    "titles": [
+     "mmb_01"
+    ],
+    "dc:description": "mmb_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_day_01",
+    "name": "mmb_day_01",
+    "titles": [
+     "mmb_day_01"
+    ],
+    "dc:description": "mmb_day_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_month_01",
+    "name": "mmb_month_01",
+    "titles": [
+     "mmb_month_01"
+    ],
+    "dc:description": "mmb_month_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_year_01",
+    "name": "mmb_year_01",
+    "titles": [
+     "mmb_year_01"
+    ],
+    "dc:description": "mmb_year_01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_02",
+    "name": "mmb_02",
+    "titles": [
+     "mmb_02"
+    ],
+    "dc:description": "mmb_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_day_02",
+    "name": "mmb_day_02",
+    "titles": [
+     "mmb_day_02"
+    ],
+    "dc:description": "mmb_day_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_month_02",
+    "name": "mmb_month_02",
+    "titles": [
+     "mmb_month_02"
+    ],
+    "dc:description": "mmb_month_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_year_02",
+    "name": "mmb_year_02",
+    "titles": [
+     "mmb_year_02"
+    ],
+    "dc:description": "mmb_year_02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_03",
+    "name": "mmb_03",
+    "titles": [
+     "mmb_03"
+    ],
+    "dc:description": "mmb_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_day_03",
+    "name": "mmb_day_03",
+    "titles": [
+     "mmb_day_03"
+    ],
+    "dc:description": "mmb_day_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_month_03",
+    "name": "mmb_month_03",
+    "titles": [
+     "mmb_month_03"
+    ],
+    "dc:description": "mmb_month_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_year_03",
+    "name": "mmb_year_03",
+    "titles": [
+     "mmb_year_03"
+    ],
+    "dc:description": "mmb_year_03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_04",
+    "name": "mmb_04",
+    "titles": [
+     "mmb_04"
+    ],
+    "dc:description": "mmb_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_day_04",
+    "name": "mmb_day_04",
+    "titles": [
+     "mmb_day_04"
+    ],
+    "dc:description": "mmb_day_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_month_04",
+    "name": "mmb_month_04",
+    "titles": [
+     "mmb_month_04"
+    ],
+    "dc:description": "mmb_month_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_year_04",
+    "name": "mmb_year_04",
+    "titles": [
+     "mmb_year_04"
+    ],
+    "dc:description": "mmb_year_04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_05",
+    "name": "mmb_05",
+    "titles": [
+     "mmb_05"
+    ],
+    "dc:description": "mmb_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_day_05",
+    "name": "mmb_day_05",
+    "titles": [
+     "mmb_day_05"
+    ],
+    "dc:description": "mmb_day_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_month_05",
+    "name": "mmb_month_05",
+    "titles": [
+     "mmb_month_05"
+    ],
+    "dc:description": "mmb_month_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_year_05",
+    "name": "mmb_year_05",
+    "titles": [
+     "mmb_year_05"
+    ],
+    "dc:description": "mmb_year_05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_remarks",
+    "name": "adm_remarks",
+    "titles": [
+     "adm_remarks"
+    ],
+    "dc:description": "adm_remarks",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/un_name",
+    "name": "un_name",
+    "titles": [
+     "un_name"
+    ],
+    "dc:description": "un_name",
+    "datatype": "string"
+   }
+  ],
+  "primaryKey": "adm_image_no",
+  "aboutUrl": "{_row}"
+ }
+}
