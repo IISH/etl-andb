@@ -1,403 +1,975 @@
-prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix bio: <http://purl.org/vocab/bio/0.1/>
+prefix hg: <http://rdf.histograph.io/>
 prefix dct: <http://purl.org/dc/terms/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix geo: <http://www.opengis.net/ont/geosparql#>
-prefix graph: <https://iisg.amsterdam/resource/adb-andb/graph/>
-prefix occupation: <https://iisg.amsterdam/resource/adb-andb/occupation/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix pnv: <https://w3id.org/pnv#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix sdo: <https://schema.org/>
-prefix sex: <https://iisg.amsterdam/resource/adb-andb/sex/>
+prefix schema: <https://schema.org/>
 prefix sh: <http://www.w3.org/ns/shacl#>
-prefix shape: <https://iisg.amsterdam/resource/adb-andb/shape/>
 prefix time: <http://www.w3.org/2006/time#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-graph:shapes {
-  shape:Address
-    sh:property
-      [ sh:datatype xsd:integer; #xsd:nonNegativeInteger
-        sh:path andb:houseNumber ],
-      [ sh:datatype xsd:string;
-        sh:path andb:houseNumberAddition ],
-      [ sh:class andb:Street;
-        sh:path andb:street ],
-      [ sh:class andb:Place; #sdo:Place
-        sh:path geo:sfWithin ],
-      # {street} {house-number} {house-number-addition}
-      shape:label;
-    sh:targetClass andb:Address. #sdo:PostalAddress
+prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
 
-  shape:Card
-    sh:property
-      [ sh:class sdo:Person;
-        sh:path andb:aboutBrother ],
-      [ sh:class sdo:Person;
-        sh:path andb:aboutChild ],
-      [ sh:class andb:Examination;
-        sh:path andb:aboutExamination ],
-      [ sh:class andb:Marriage;
-        sh:path andb:aboutMarriage ],
-      [ sh:class andb:Membership;
-        sh:path andb:aboutMembership ],
-      [ sh:class andb:Parent;
-        sh:path andb:aboutParent ],
-      [ sh:class andb:Residency;
-        sh:path andb:aboutResidency ],
-      [ sh:class sdo:Person;
-        sh:path andb:aboutSister ],
-      [ sh:class sdo:Person;
-        sh:path andb:aboutSpouse ],
-      [ sh:class sdo:Person;
-        sh:path andb:aboutStudent ],
-      [ sh:class sdo:Person;
-        sh:path andb:aboutWorker ],
-      [ sh:class andb:WorkEvent;
-        sh:path andb:aboutWorkEvent ],
-      [ dct:source "adb:adm_image_uuid";
-        sh:class sdo:ImageObject;
-        sh:description "Every card must have exactly one image."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path sdo:image ],
-      [ sh:class andb:CardSeries;
-        sh:description "Every card must belong to exactly one series of cards."@nl;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path
-          [ sh:inversePath rdfs:member ] ],
-      [ sh:class andb:Remark;
-        sh:description "Cards can have zero or more remarks."@en;
-        sh:path andb:remark ], #[ sh:inversePath oa:hasTarget ]
-      # card {identifier}
-      # kaart {identifier}
-      shape:label;
-    sh:targetClass andb:Card.
-
-  shape:CardSeries
-    sh:property
-      [ sh:datatype xsd:string;
-        sh:description "Card series have exactly one human-readable title."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path dct:title ],
-      [ sh:class andb:Card;
-        sh:description "Card series contain one or more cards."@en;
-        sh:minCount 1;
-        sh:path rdfs:member ],
-      shape:label,
-      shape:name;
-    sh:targetClass andb:CardSeries.
-
-  shape:Country
-    sh:property
-      shape:label,
-      shape:name; #new
-    sh:targetClass andb:Country. #cshapes:Country
-
-  shape:Examination
-    sh:property
-      [ sh:datatype xsd:string;
-        sh:path andb:examinator ],
-      [ sh:class sdo:Person;
-       sh:path andb:examinee ],
-      shape:after,
-      shape:before,
-      shape:date,
-      # Examination of {examinee-name}
-      # Examen van {examinee-name}
-      shape:label;
-    sh:targetClass andb:Examination.
-
-  shape:Image
-    sh:property
-      [ sh:datatype xsd:string;
-        sh:description "Every image has an MD5 hash code, possibly for validating the image content."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:name "has MD5 hash"@en;
-        sh:path andb:md5 ],
-      [ sh:datatype xsd:nonNegativeInteger;
-        sh:description "The size of the image in bytes."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path sdo:contentSize ],
-      [ sh:datatype xsd:anyURI;
-        sh:description """<p lang="en">Every image has exactly one URL where it ca be downloaded from.  The download location has the form <code>http://hdl.handle.net/10796/{adm_image_uuid}</code>.</p>"""^^rdf:HTML;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path sdo:contentUrl ],
-      [ sh:datatype xsd:string;
-        sh:description "The Media Type that is used to encoding the image."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path sdo:encodingFormat ],
-      [ sh:class sdo:ImageObject;
-        sh:description "Images have a thumbnail version."@en;
-        sh:maxCount 1;
-        sh:path sdo:thumbnail ],
-      [ sh:class sdo:ImageObject;
-        sh:description "Images have a screen friendly version."@en;
-        sh:maxCount 1;
-        sh:path andb:screenVersion ],
-      # Full image of card {identifier}
-      # Volledige afbeelding van kaart {identifier}
-      # Screen friendly image of card {identifier}
-      # Schermvriendelijke afbeelding van kaart {identifier}
-      # Thumbnail image of card {identifier}
-      # Miniatuurafbeelding van kaart {identifier}
-      shape:label;
-    sh:targetClass sdo:ImageObject.
-
-  shape:Marriage
-    sh:property
-      [ sh:class sdo:Person;
-        sh:path andb:spouse ], #bio:partner
-      # Huweijk van {spouse} en {spouse}
-      # Marriage of {spouse} and {spouse}
-      shape:label;
-    sh:targetClass andb:Marriage. #bio:Marriage
-
-  shape:Membership
-    sh:description "In de ANDB passen we bio:Enrolment toe voor lidmaatschap."@nl;
-    sh:property
-      [ sh:class sdo:Person;
-        sh:path andb:member ],
-      [ sh:or
-          ( [ sh:class andb:Subsection ]
-            [ sh:class andb:Section ]
-            [ sh:class andb:Union ] );
-        sh:path
-          [ sh:alternativePath
-              ( andb:organization
-                andb:union ) ] ],
-      shape:after,
-      shape:before,
-      shape:date,
-      # Union membership of {member}
-      # Lidmaatschap van {member}
-      shape:label;
-    sh:targetClass andb:Membership. #bio:Enrolment
-
-  shape:Person
-    sh:property
-      [ sh:datatype xsd:date;
-        sh:name "has birth date"@en;
-        sh:path sdo:birthDate ],
-      [ sh:class andb:Place;
-        sh:lessThanOrEquals shape:deathDate;
-        sh:name "has birth date"@en;
-        sh:path sdo:birthDate ],
-      [ sh:class sdo:Person;
-        sh:path andb:brother ],
-      [ sh:class sdo:Person;
-        sh:path andb:child ], #bio:child
-      [ sh:class sdo:Person;
-        sh:path andb:daughter ],
-      [ sh:class andb:Examination;
-        sh:path andb:examination ],
-      [ sh:datatype xsd:string;
-        sh:path sdo:familyName ],
-      [ sh:class sdo:Person;
-        sh:maxCount 1;
-        sh:path andb:father ], #bio:father
-      [ sh:datatype xsd:string;
-        sh:path sdo:givenName ],
-      [ sh:datatype xsd:string;
-        sh:path andb:maidenName ],
-      [ sh:class andb:Marriage;
-        sh:path andb:marriage ],
-      [ sh:class andb:Membership;
-        sh:path andb:membership ],
-      [ sh:datatype xsd:string;
-        sh:path andb:middleName ],
-      [ sh:class sdo:Person;
-        sh:maxCount 1;
-        sh:path andb:mother ], #bio:mother
-      [ sh:in
-          ( occupation:brillantslijpen
-            occupation:brillantsnijden
-            occupation:brillantverstellen
-            occupation:kapbewerken
-            occupation:klooven
-            occupation:roosjesslijpen
-            occupation:roosjessnijden
-            occupation:roosjesverstellen
-            occupation:zagen );
-        sh:path andb:occupation ],
-      [ sh:class sdo:Person;
-        sh:maxCount 2;
-        sh:path andb:parent ], # bio:parent
-      [ sh:class andb:Residency;
-        sh:path andb:residency ],
-      [ sh:in
-          ( sex:female #sdo:Female
-            sex:male ); #sdo:Male
-        sh:path andb:sex ], #sdo:gender
-      [ sh:class sdo:Person;
-        sh:path andb:sister ],
-      [ sh:class sdo:Person;
-        sh:path andb:son ],
-      [ sh:class andb:WorkEvent;
-        sh:path andb:workEvent ],
-      shape:deathDate,
-      # Person with unknown name
-      # Persoon met onbekende naam
-      # {givenName} {middleName} {familyName}
-      shape:label;
-    sh:targetClass sdo:Person.
-
-  shape:Place
-    sh:property
-      [ sh:class andb:Country; #cshapes:Country
-        sh:description "Places are geospatially within countries."@en;
-        sh:path geo:sfWithin ],
-      shape:label,
-      shape:name; #new
-    sh:targetClass andb:Place. #sdo:Place
-
-  shape:Remark
-    sh:property
-      [ dct:source
-          "adb:par_remarks-01",
-          "adb:par_remarks-02",
-          "andb:adm_remarks-01",
-          "andb:adm_remarks-02",
-          "andb:adm_remarks-03",
-          "andb:adm_remarks-04",
-          "andb:adm_remarks-05",
-          "andb:adm_remarks-06",
-          "andb:adm_remarks-07";
-        sh:datatype xsd:string;
-        sh:description "Every remark has exactly one content string."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path andb:content ], #oa:bodyValue
-      [ dct:source
-          "adb:par_remarks_date-01",
-          "adb:par_remarks_date-02",
-          "andb:adm_remarks_date-01",
-          "andb:adm_remarks_date-02",
-          "andb:adm_remarks_date-03",
-          "andb:adm_remarks_date-04",
-          "andb:adm_remarks_date-05",
-          "andb:adm_remarks_date-06",
-          "andb:adm_remarks_date-07";
-        sh:datatype xsd:string; #xsd:dateTime
-        sh:description "Every remark has exactly one date."@en;
-        sh:maxCount 1;
-        sh:minCount 1;
-        sh:path andb:date ]; #dct:created
-    sh:targetClass andb:Remark. #oa:Annotation
-
-  shape:Residency
-    sh:property
-      [ sh:class sdo:Person;
-        sh:path andb:inhabitant ],
-      shape:address,
-      shape:after,
-      shape:before,
-      shape:date, #new
-      # Bewoning van {inhabitant} in {address}
-      # Residency of {inhabitant} at {address}
-      shape:label;
-    sh:tagetClass andb:Residency.
-
-  shape:Section
-    sh:property
-      [ sh:class andb:Union;
-        sh:path andb:partOf ],
-      # Union {union}, section {section}
-      # Bond {union}, sectie {section}
-      shape:label,
-      shape:name;
-    sh:targetClass andb:Section.
-
-  shape:Street
-    sh:property
-      [ sh:class andb:Place; #sdo:Place
-        sh:description "Streets are geospatially within places, which are geospatially within countries."@en;
-        sh:name "is within"@en;
-        sh:path geo:sfWithin ],
-      shape:label,
-      shape:name;
-    sh:targetClass andb:Street.
-
-  shape:Subsection
-    sh:property
-      [ sh:class andb:Section;
-        sh:path andb:partOf ],
-      # Union {union}, section {section}, membership {value}
-      # Bond {union}, sectie {section}, lidmaatschap {value}
-      shape:label,
-      shape:name;
-    sh:targetClass andb:Subsection.
-
-  shape:Union
-    sh:property
-      shape:label,
-      shape:name;
-    sh:targetClass andb:Union.
-
-  shape:WorkEvent
-    sh:property
-      [ sh:datatype xsd:string;
-        sh:path andb:master ],
-      [ sh:class andb:Worker;
-        sh:path andb:worker ],
-      [ sh:class andb:Workshop;
-        sh:path andb:workshop ],
-      shape:after,
-      shape:before,
-      shape:date,
-      # Admission of {woker} into a workshop with unknown name.
-      # Admission of {worker} into workshop {workshop}.
-      # Toelating van {worker} tot een onbekende werkplaats.
-      # Toelating van {worker} tot werkplaats {workshop}.
-      shape:label;
-    sh:targetClass andb:WorkEvent. #bio:Employment
-
-  shape:Workshop
-    sh:property
-      shape:address,
-      shape:label,
-      shape:name;
-    sh:targetClass andb:Workshop.
-
-  shape:address
-    sh:class andb:Address;
-    sh:path andb:address.
-
-  shape:after
-    sh:class andb:Membership;
-    sh:description "Another membership event that occurred directly after this one."@en;
+#id:shapesGraph {
+  vocab:afterShape
+    sh:class time:ProperInterval;
+    sh:description "Another event that occurred directly after this one."@en;
     sh:path time:after.
 
-  shape:before
-    sh:class andb:Membership;
-    sh:description "Another membership event that occurred directly before this one."@en;
+  vocab:beforeShape
+    sh:class time:ProperInterval;
+    sh:description "Another event that occurred directly before this one."@en;
     sh:path time:before.
 
-  shape:date
-    sh:datatype xsd:date;
-    sh:description "Events should have at most one date."@en;
-    sh:maxCount 1;
-    sh:path time:isXSDDate.
-
-  shape:deathDate
-    sh:datatype xsd:date;
-    sh:name "has death date"@en;
-    sh:path sdo:deathDate.
-
-  shape:label
+  vocab:labelShape
+    sh:datatype rdf:langString;
+    sh:description "We try to give every node a human-readable label."@en;
     sh:languageIn ( "en" "nl" );
-    sh:description "We try to give every none a human-readable label."@en;
+    sh:minCount 1;
     sh:name "has label"@en;
-    sh:path rdfs:label.
+    sh:path rdfs:label;
+    sh:uniqueLang true.
 
-  shape:name
+  vocab:nameShape
+    sh:datatype rdf:langString;
+    sh:languageIn ( "en" "nl" );
+    sh:minCount 1;
+    sh:name "has name"@en;
+    sh:path schema:name;
+    sh:uniqueLang true.
+
+
+  vocab:AddressShape
+    sh:property
+      vocab:Address_identifier,
+     #vocab:Address_within,
+      vocab:houseNumberAdditionShape,
+      vocab:houseNumberShape,
+      vocab:labelShape,
+      vocab:nameShape,
+      vocab:streetShape;
+    sh:targetClass schema:PostalAddress.
+
+  vocab:Address_identifier
+    dct:source
+      "apprentice/sdn_address_locationPoint-01 t/m 5",
+      "andb/mbr_address_locationPoint-01 t/m 26";
+    sh:datatype xsd:string;
+    sh:description "The HISGIS identifier of the (Amsterdam) address."@en;
+    sh:name "has hisgis identifier"@en;
+    sh:path schema:identifier.
+
+  #vocab:Address_within
+  #  sh:class schema:Place;
+  #  sh:description "Adresses are geospatially within places"@en;
+  #  sh:name "is within"@en;
+  #  sh:path geo:sfWithin.
+
+  vocab:houseNumberAdditionShape
+    dct:source
+      "adb/mbr_street_no_add-01 t/m 5",
+      "andb/mbr_street_no_add-01 t/m 26",
+      "apprentice/sdn_street_no_add-01 t/m 5",
+      "apprentice/wsp_street_no_ad-01 t/m 10";
+    sh:datatype xsd:string;
+    sh:group id:addressGroup;
+    sh:maxCount 1;
+    sh:order 2;
+    sh:path vocab:houseNumberAddition.
+
+  vocab:houseNumberShape
+    dct:source
+      "adb/mbr_street_no_01 t/m 5",
+      "andb/mbr_street_no-01 t/m 26",
+      "apprentice/sdn_street_no-01 t/m 5",
+      "apprentice/wsp_street_no-01 t/m 10";
+    sh:datatype xsd:positiveInteger;
+    sh:group id:addressGroup;
+    sh:maxCount 1;
+    sh:order 1;
+    sh:path vocab:houseNumber;
+    sh:pattern "[0-9]+".
+
+  vocab:streetShape
+    dct:source
+      "adb/mbr_street_01 t/m 5",
+      "andb/mbr_street-01 t/m 26",
+      "apprentice/sdn_street-01 t/m 5",
+      "apprentice/wsp_street-01 t/m 10";
+    sh:class hg:Street;
+    sh:description "The street part of the address."@en;
+    sh:group id:addressGroup;
+    sh:languageIn ( "nl" );
+    sh:name "has street"@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:order 0;
+    sh:path vocab:street;
+    sh:uniqueLang true.
+
+
+  vocab:BiographyShape
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path vocab:givenName;
+        sh:name "first name on card"@en;
+        sh:description "The person's first name(s) as presented on the card."@en;
+        dct:source
+          "adb/mbr_first_name",
+          "andb/mbr_first_name",
+          "apprentice/sdn_first_name";
+        sh:order 0;
+        sh:group id:cardNameGroup ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:additionalName;
+        sh:name "middle name on card"@en;
+        sh:description "The person's middle name as presented on the card."@en;
+        dct:source
+          "andb/mbr_middle_name",
+          "apprentice/sdn_middle_name";
+        sh:order 1;
+        sh:group id:cardNameGroup ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:familyName;
+        sh:name "family name on card"@en;
+        sh:description "The person's family name as presented on the card."@en;
+        dct:source
+          "adb/mbr_last_name",
+          "andb/mbr_last_name",
+          "apprentice/sdn_last_name";
+        sh:order 2;
+        sh:group id:cardNameGroup ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:maidenName;
+        sh:name "maiden name on card"@en;
+        sh:description "unique/The person's maiden name as presented on the card."@en;
+        dct:source
+          "andb/mbr_maiden_name",
+          "apprentice/sdn_maiden_name";
+        sh:order 3;
+        sh:group id:cardNameGroup ],
+      [ sh:datatype xsd:date;
+        sh:path vocab:birthDate;
+        sh:name "birth date on card"@en;
+        sh:description "The person's birth date as presented on the card."@en;
+        dct:source
+          "adb/mbr_birth_day/month/year", # datum moet nog worden samengevoegd
+          "andb/mbr_birth_day/month/year", # datum moet nog worden samengevoegd
+          "apprentice/sdn_birth_day/month/year" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:string;
+        sh:path vocab:birthPlace;
+        sh:name "birth place on card"@en;
+        sh:description "The person's place of birth as presented on the card."@en;
+        dct:source
+          "adb/mbr_birth_place",
+          "andb/mbr_birth_place",
+          "apprentice/sdn_birth_place" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:birthCountry;
+        sh:name "country of birth on card"@en;
+        sh:description "The person's country of birth as presented on the card."@en;
+        dct:source "adb/mbr_birth_country" ],
+      [ sh:datatype xsd:date;
+        sh:path vocab:deathDate;
+        sh:name "death date on card"@en;
+        sh:description "The person's death date as presented on the card."@en;
+        dct:source
+          "adb/mbr_death_day/month/year", # datum moet nog worden samengevoegd
+          "andb/mbr_death_day/month/year" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:string;
+        sh:path vocab:deathPlace;
+        sh:name "place of death on card"@en;
+        sh:description "The person's place of death as presented on the card."@en;
+        dct:source "adb/mbr_death_place" ],
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Biography.
+
+
+  vocab:CardShape
+    sh:property
+      [ sh:class schema:Residence;
+        sh:path vocab:aboutResidence;
+        sh:description "Cards can contain information about the addresses the card holder lived at."@en ],
+      [ sh:class vocab:Education;
+        sh:path vocab:aboutEducation;
+        sh:description "Cards can contain information about the card holder's formal education."@en ],
+      [ sh:class vocab:Membership;
+        sh:path vocab:aboutMembership;
+        sh:description "Cards can contain information about the union membership of the card holder."@en ],
+      [ sh:class vocab:Relations;
+        sh:path vocab:aboutRelations;
+        sh:description "Cards can contain information about the family relations of the card holder."@en ],
+      [ sh:class vocab:Migration;
+        sh:path vocab:migration;
+        sh:description "Cards can contain information about migration to Antwerp and back."@en ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:stamp;
+        sh:name "stamp on card"@en;
+        sh:description "ANDB Cards can contain several stamps."@en;
+        # Er is ook een gestandaardiseerde versie van dit veld voor
+        # betere doorzoekbaarheid(stamp_standard-01 t/m 03). Kunnen we
+        # ook allebei aanbieden?
+        dct:source "andb/stamp-01 t/m 03" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:comment;
+        sh:name "comment on card"@en;
+        sh:description "ANDB Cards can contain several comments."@en;
+        dct:source "andb/History-01 t/m 03" ],
+      vocab:imageShape,
+      vocab:labelShape,
+      vocab:nameShape,
+      vocab:personShape;
+    sh:targetClass foaf:Document.
+
+  vocab:imageShape
+    dct:source
+      "adb/adm_image_uuid",
+      "andb/adm_image_uuid",
+      "apprentice/adm_image_uuid";
+    sh:class schema:ImageObject;
+    sh:description "Every card is depicted in exactly one scanned image."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path schema:image.
+
+  vocab:personShape
+    sh:class schema:Person;
+    sh:description "Cards contain biographical information about a person."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path foaf:primaryTopic.
+
+
+  vocab:ChildShape
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path vocab:givenName;
+        sh:name "first name of the child"@en;
+        sh:description "First name of the card holder's child."@en;
+        dct:source "adb/chi_first_name_01 t/m 05" ],
+      [ sh:datatype xsd:date;
+        sh:path vocab:birthDate;
+        sh:name "birth date of child"@en;
+        sh:description "The child's birth date."@en;
+        dct:source "adb/chi_birth_day/month/year_01 t/m 05" ], # datum moet nog worden samengevoegd
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Child.
+
+
+  vocab:DismissionShape
+    sh:property
+      [ sh:datatype xsd:date;
+        sh:path vocab:dismissionDate;
+        sh:name "dismission date"@en;
+        sh:description "The date of the dismission."@en;
+        dct:source "andb/dismission_day/month/year-01 t/m 05" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:string;
+        sh:path vocab:dismissionReason;
+        sh:name "dismission reason"@en;
+        sh:description "The reason for the dismission from the union."@en;
+        dct:source "andb/dismission_reason-01 t/m 05" ],
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Dismission.
+
+
+  vocab:EducationShape
+    sh:property
+      [ sh:class schema:Person;
+        sh:path vocab:student;
+        sh:name "has student"@en;
+        sh:description "The student's education"@en ],
+      [ sh:in
+          ( id:brillantslijpen
+            id:brillantsnijden
+            id:brillantverstellen
+            id:kapbewerken
+            id:klooven
+            id:roosjesslijpen
+            id:roosjessnijden
+            id:roosjesverstellen
+            id:zagen );
+        sh:path schema:occupation;
+        sh:name "has occupation";
+        sh:description "Occupation the education is preparing for"@en;
+        dct:source: "apprentice/sdn_occupation" ],
+      [ sh:datatype xsd:date;
+        sh:path schema:startDate;
+        sh:name "has start date"@en;
+        sh:description "Begin date for the formal education"@en;
+        dct:source "apprentice/admission_day/month/year-01" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:date;
+        sh:path schema:endDate;
+        sh:name "has end date"@en;
+        sh:description "End date for the formal education"@en;
+        dct:source "apprentice/edu_end_day/month/year-01" ], # datum moet nog worden samengevoegd
+      [ sh:class vocab:Internship;
+        sh:path vocab:internship;
+        sh:name "Internship at diamond factory"@en;
+        sh:description "Internship at diamond factory as part of the formal education"@en ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:examinator;
+        sh:name "Name of the examinator"@en;
+        sh:description "The full name of the examinator as a string"@en;
+        dct:source "apprentice/edu_examinator" ],
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Education.
+
+
+  vocab:FactoryShape
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path schema:name;
+        sh:name "has name"@en;
+        sh:description "The name of the factory."@en;
+        dct:source "wsp_name-01 t/m 10" ],
+      [ sh:class schema:PostalAddress;
+        sh:path schema:address;
+        sh:name "has address"@en;
+        sh:description "The address of the factory."@en ],
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Factory.
+
+
+  vocab:ImageShape
+    sh:property
+      vocab:contentSizeShape,
+      vocab:contentUrlShape,
+      vocab:md5Shape,
+      vocab:mediaTypeShape,
+      vocab:screenVersionShape,
+      vocab:thumbnailShape,
+      vocab:labelShape;
+    sh:targetClass schema:ImageObject.
+
+  vocab:contentSizeShape
+    sh:datatype xsd:positiveInteger;
+    sh:description "The size of the binary image in bytes."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path schema:contentSize.
+
+  vocab:contentUrlShape
+    sh:datatype xsd:anyURI;
+    sh:description "Every image has exactly one URL where it can be downloaded."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path schema:contentUrl;
+    sh:pattern "https://hdl.handle.net/[0-9]{5}/[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}?locatt=view:[level2|level3|master]".
+
+  vocab:md5Shape
     sh:datatype xsd:string;
     sh:maxCount 1;
     sh:minCount 1;
-    sh:name "has name"@en;
-    sh:path sdo:name.
-}
+    sh:path vocab:md5;
+    sh:pattern "[0-9a-f]{32}".
+
+  vocab:mediaTypeShape
+    sh:datatype xsd:string;
+    sh:description "The Media Type that is used to encoding the image (JPEG or TIFF)."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:path schema:encodingFormat;
+    sh:pattern "image/[jpeg|tiff]".
+
+  vocab:screenVersionShape
+    sh:class schema:ImageObject;
+    sh:description "Some images have a screen friendly version."@en;
+    sh:maxCount 1;
+    sh:path vocab:screenVersion.
+
+  vocab:thumbnailShape
+    sh:class schema:ImageObject;
+    sh:description "Some images have a thumbnail version."@en;
+    sh:maxCount 1;
+    sh:path schema:thumbnail.
+
+
+  vocab:InternshipShape
+    sh:property
+      [ sh:class vocab:Master;
+        sh:path vocab:master ],
+      [ sh:class vocab:Factory;
+        sh:path vocab:factory ],
+      [ sh:datatype xsd:date;
+        sh:path schema:startDate;
+        sh:name "has start date"@en;
+        sh:description "Begin date for the internship at the factory"@en;
+        dct:source "apprentice/wsp_day/month/year-01 t/m 10" ], # datum moet nog worden samengevoegd
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Internship.
+
+
+  vocab:MasterShape
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path schema:name;
+        sh:name "Name of the master"@en;
+        sh:description "The full name of the master as a string."@en;
+        dct:source
+          "apprentice/mst_name-01 t/m 10",
+          "apprentice/mst_name_leermeester-01 t/m 10" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:membership; #conformeert niet aan vocab:MembershipShape, want is samenstelling section-membershipnumber
+        sh:name "Section and membershipnumber of the master"@en;
+        sh:description "The combination of ANDB section- and membershipnumber that the master possibly can be identified by."@en;
+        dct:source "apprentice/mst_name_mbc-01 t/m 10" ],
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Master.
+
+
+  vocab:MembershipShape
+    sh:property
+      [ sh:class schema:Person;
+        sh:path bio:participant;
+        sh:name "has member"@en;
+        sh:description "This is the membership information of a person."@en ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:union;
+        sh:name "has union name"@en;
+        sh:description "The union to which the membership applies (apprentices only)."@en;
+        dct:source
+          "adb/un_name",
+          "apprentice/un_name",
+          "apprentice/par_un_name" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:section;
+        sh:name "has section number"@en;
+        sh:description "The section of the union to which the membership applies."@en;
+        dct:source
+          "adb/un_section",
+          "andb/un_section-01 t/m 07",
+          "apprentice/un_section",
+          "apprentice/par_un_section" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:membershipNumber;
+        sh:name "has membership number"@en;
+        sh:description "The administrative number of the union member."@en;
+        dct:source
+          "adb/un_section_no",
+          "andb/un_section_no-01 t/m 07",
+          "apprentice/un_section_no",
+          "apprentice/par_un_section_no" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:cardNumber;
+        sh:name "has membership card number"@en;
+        sh:description "The administrative number of the membership card."@en;
+        dct:source
+          "adb/card_id1",
+          "andb/card_id1 t/m 4",
+          "apprentice/card_id1 t/m 2" ],
+      [ sh:datatype xsd:date;
+        sh:path schema:startDate;
+        sh:name "has start date"@en;
+        sh:description "Begin date for the union membership."@en;
+        dct:source
+          "adb/mmb_day/month/year-01", # datum moet nog worden samengevoegd
+          "andb/mmb_day/month/year-01 t/m 07", # datum moet nog worden samengevoegd
+          "apprentice/mmb_day/month/year" ], # datum moet nog worden samengevoegd
+      [ sh:class vocab:Withdrawal;
+        sh:path vocab:withdrawal;
+        sh:name "member ends membership"@en;
+        sh:description "The member ends his membership of the union."@en ],
+      [ sh:class vocab:Dismission;
+        sh:path vocab:dismission;
+        sh:name "union ends membership"@en;
+        sh:description "The membership is ended by the union."@en ],
+      [ sh:class vocab:Readmission;
+        sh:path vocab:readmission;
+        sh:name "member is readmitted"@en;
+        sh:description "The member is readmitted by the union union."@en ],
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Membership.
+
+
+  vocab:MigrationShape
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path vocab:departedFor;
+        sh:name "destination"@en;
+        sh:description "Destination of the migration."@en;
+        dct:source "andb/departure_place-01 t/m 08" ],
+      [ sh:datatype xsd:date;
+        sh:path vocab:departureDate;
+        sh:name "date of departure"@en;
+        sh:description "The date of migration."@en;
+        dct:source "andb/return_day/month/year_01 t/m 08" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:date;
+        sh:path vocab:returnDate;
+        sh:name "date of return"@en;
+        sh:description "The date of return (to Amsterdam)."@en;
+        dct:source "andb/departure_day/month/year_01 t/m 08" ], # datum moet nog worden samengevoegd
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum,
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum,
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Migration.
+
+
+  vocab:PersonShape
+    sh:property
+      vocab:additionalNameShape,
+      vocab:birthDateShape,
+      vocab:birthPlaceShape,
+      vocab:cardShape,
+      vocab:deathDateShape,
+      vocab:familyNameShape,
+      vocab:firstNameShape,
+      vocab:genderShape,
+      vocab:labelShape,
+      vocab:maidenNamePrefixShape,
+      vocab:maidenNameShape,
+      vocab:nameShape,
+      vocab:oorlogslevensShape;
+    sh:targetClass schema:Person.
+
+  vocab:additionalNameShape
+    dct:source "unique/middle_name";
+    sh:datatype xsd:string;
+    sh:description "The person's middle name."@en;
+    sh:group id:personNameGroup;
+    sh:name "has middle name"@en;
+    sh:maxCount 1;
+    sh:order 1;
+    sh:path schema:additionalName.
+
+  vocab:birthDateShape
+    #dct:source "unique/birth_date";
+    sh:datatype xsd:date;
+    #sh:description "The person's birth date."@en;
+    #sh:group id:personGroup;
+    #sh:maxCount 1;
+    sh:minCount 1;
+    #sh:name "has birth date"@en;
+    sh:path schema:birthDate.
+
+  vocab:birthPlaceShape
+    dct:source "unique/mbr_birth_place";
+    sh:datatype xsd:string;
+    sh:description "The person's place of birth."@en;
+    sh:group id:personGroup;
+    sh:maxCount 1;
+    sh:name "has birth place"@en;
+    sh:path schema:birthPlace.
+
+  vocab:cardShape
+    dct:source
+      "unique/adb_identifier",
+      "unique/sdn_adm_id1",
+      "unique/sdn_adm_id2",
+      "unique/sdn_adm_id3",
+      "unique/mbr_adm_id1",
+      "unique/mbr_adm_id2",
+      "unique/mbr_adm_id3";
+    sh:class foaf:Document;
+    sh:description "A person can have one or more cards."@en;
+    sh:group id:personGroup;
+    sh:minCount 1;
+    sh:name "has card"@en;
+    sh:path foaf:isPrimaryTopicOf.
+
+  vocab:deathDateShape
+    dct:source "unique/death_date";
+    sh:datatype xsd:date;
+    sh:description "The person's death date."@en;
+    sh:group id:personGroup;
+    sh:name "has death date"@en;
+    sh:path schema:deathDate.
+
+  vocab:familyNameShape
+    dct:source "unique/last_name";
+    sh:datatype xsd:string;
+    sh:description "The person's family name."@en;
+    sh:group id:personNameGroup;
+    sh:maxCount 1;
+    sh:name "has family name"@en;
+    sh:order 2;
+    sh:path schema:familyName.
+
+  vocab:firstNameShape
+    dct:source "unique/first_name";
+    sh:datatype xsd:string;
+    sh:description "The person's first name(s)."@en;
+    sh:group id:personNameGroup;
+    sh:maxCount 1;
+    sh:name "has first name"@en;
+    sh:order 0;
+    sh:path schema:givenName.
+
+  vocab:genderShape
+    dct:source "unique/gender";
+    sh:class schema:GenderType;
+    sh:description "The person's gender, in this case male or female."@en;
+    sh:group id:personGroup;
+    sh:in
+      ( schema:Female
+        schema:Male );
+    sh:maxCount 1;
+    sh:name "has gender"@en;
+    sh:path schema:gender.
+
+  vocab:maidenNamePrefixShape
+    dct:source "unique/maiden_name_prefix";
+    sh:datatype xsd:string;
+    sh:description "The person's maiden name's middle name."@en;
+    sh:group id:personNameGroup;
+    sh:maxCount 1;
+    sh:name "has maiden middle name"@en;
+    sh:order 3;
+    sh:path vocab:maidenNamePrefix.
+
+  vocab:maidenNameShape
+    dct:source "unique/maiden_name";
+    sh:datatype xsd:string;
+    sh:description "The person's maiden name."@en;
+    sh:group id:personNameGroup;
+    sh:maxCount 1;
+    sh:name "has maiden name"@en;
+    sh:order 4;
+    sh:path pnv:patronym.
+
+  vocab:oorlogslevensShape
+    dct:source "unique/oorlogslevens_uri";
+    sh:datatype xsd:anyURI;
+    sh:description """
+<section lang="en">
+  <p>The person's biography on <a href="https://oorlogslevens.nl">Oorlogslevens</a>.</p>
+</section>"""^^rdf:HTML;
+    sh:group id:personGroup;
+    sh:name "has biography on Oorlogslevens"@en;
+    sh:path rdfs:seeAlso.
+
+
+  vocab:PlaceShape
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path schema:location;
+        sh:name "Place name"@en;
+        sh:description "The place name as referred to in an address"@en;
+        dct:source
+          "adb/mbr_city_01 t/m 5",
+          "andb/mbr_city-01 t/m 26",
+          "apprentice/sdn_city-01 t/m 5",
+          "apprentice/wsp_city-01 t/m 10" ],
+      [ sh:class schema:Country;
+        sh:description "Places are geospatially within countries."@en;
+        sh:path geo:sfWithin ],
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass schema:Place.
+
+
+  vocab:ResidenceShape
+    sh:property
+      [ sh:class schema:Person;
+        sh:path vocab:inhabitant;
+        sh:name "has inhabitant"@en;
+        sh:description "The residency's inhabitant."@en ],
+      [ sh:class schema:PostalAddress;
+        sh:path schema:address;
+        sh:name "has address"@en;
+        sh:description "The address of the residence."@en ],
+     [ sh:datatype xsd:date;
+        sh:path schema:startDate;
+        sh:name "has start date"@en;
+        sh:description "Begin date for the residence."@en;
+        dct:source
+          "apprentice/sdn_addr_day/month/year 1 t/m 25", # datum moet nog worden samengevoegd
+          "andb/mbr_addr_day/month/year 1 t/m 26" ], # datum moet nog worden samengevoegd
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass schema:Residence.
+
+
+  vocab:StreetShape
+    sh:property
+      [ sh:datatype xsd:anyURI;
+        sh:path owl:sameAs;
+        sh:name "adamlink identifier"@en;
+        sh:description "The Adamlink identifier of the street"@en;
+        dct:source
+          "apprentice/sdn_address_locationPoint-01 t/m 5",
+          "andb/mbr_address_locationPoint-01 t/m 26" ],
+      vocab:labelShape,
+      vocab:nameShape;
+      sh:targetClass hg:Street.
+
+
+  vocab:WithdrawalShape
+    #sh:description "Group of properties that describe the withdrawal of the card holder from the union."@en;
+    sh:property
+      [ sh:datatype xsd:date;
+        sh:path vocab:withdrawalDate;
+        sh:name "withdrawal date"@en;
+        sh:description "The date of the withdrawal."@en;
+        dct:source "andb/withdrawal_day/month/year-01 t/m 05" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:string;
+        sh:path vocab:withdrawalReason;
+        sh:name "withdrawal reason"@en;
+        sh:description "The reason for the withdrawal from the union."@en;
+        dct:source "andb/withdrawal_reason-01 t/m 05" ],
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Withdrawal.
+
+
+  vocab:ReadmissionShape
+    sh:property
+      [ sh:datatype xsd:date;
+        sh:path vocab:readmissionDate;
+        sh:name "readmission date"@en;
+        sh:description "The date of the readmission."@en;
+        dct:source "andb/readmission_day/month/year-01 t/m 06" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:string;
+        sh:path vocab:readmissionCondition;
+        sh:name "readmission condition"@en;
+        sh:description "The condition for the readmission to the union."@en;
+        dct:source "andb/readmission_condition-01 t/m 06" ],
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:afterShape,
+      # TODO: Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum.
+      vocab:beforeShape,
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Readmission.
+
+
+  vocab:RelationsShape
+    #sh:description "Group of properties that describe the family relations of the card holder."@en;
+    sh:property
+      [ sh:datatype xsd:date;
+        sh:path vocab:marriageDate;
+        sh:name "marriage date"@en;
+        sh:description "The date of the marriage."@en;
+        dct:source "adb/mar_date/month/year" ], # datum moet nog worden samengevoegd
+      [ sh:class vocab:Spouse;
+        sh:path vocab:marriage;
+        sh:name "is married with"@en;
+        sh:description "The marriage of the card holder with another person."@en ],
+      [ sh:class vocab:Child;
+        sh:path vocab:aboutChild;
+        sh:name "has child"@en;
+        sh:description "The child(ren) of the card holder."@en ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:aboutBrother;
+        sh:name "card id of brother(s)"@en;
+        sh:description "Card number of card holder's brother(s)."@en;
+        dct:source "apprentice/un_number_brother-1 t/m 5" ], # van broers weten we alleen het kaartnummer (niet adm_id!) (veld heet un_number_brother, maar doelt op card_id)
+      [ sh:datatype xsd:string;
+        sh:path vocab:aboutSister;
+        sh:name "card id of sister(s)"@en;
+        sh:description "Card number of card holder's sister(s)."@en;
+        dct:source "apprentice/un_number_sister-1 t/m 3" ], # van zussen weten we alleen het kaartnummer (niet adm_id!) (veld heet un_number_sister, maar doelt op card_id)
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Relations.
+
+
+  vocab:SpouseShape
+    #sh:description "Group of properties that describe the spouse of the card holder"
+    sh:property
+      [ sh:datatype xsd:string;
+        sh:path vocab:givenName;
+        sh:name "first name of the spouse"@en;
+        sh:description "First name of the card holder's spouse."@en;
+        dct:source "adb/spo_first_name" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:familyName;
+        sh:name "last name of the spouse"@en;
+        sh:description "Last name of the card holder's spouse."@en;
+        dct:source "adb/spo_last_name" ],
+      [ sh:datatype xsd:date;
+        sh:description "The spouse's birth date."@en;
+        sh:path vocab:birthDate;
+        sh:name "birth date of spouse"@en;
+        dct:source "adb/spo_birth_day/month/year" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:string;
+        sh:path vocab:birthPlace;
+        sh:name "birth place of spouse"@en;
+        sh:description "The spouse's place of birth."@en;
+        dct:source "adb/spo_birth_place" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:birthCountry;
+        sh:name "country of birth of spouse"@en;
+        sh:description "The spouse's country of birth."@en;
+        dct:source "adb/spo_birth_country" ],
+      vocab:labelShape,
+      vocab:nameShape;
+    sh:targetClass vocab:Spouse.
+
+
+  vocab:ParentShape
+    sh:property
+      #[ sh:in (
+      #    parent:vader
+      #    parent:moeder
+      #    parent:pleegvader
+      #    parent:stiefvader );
+      #  sh:path bio:parent;
+      #  sh:name "has parent type"@en;
+      #  sh:description "The type of parent we are referring to here."@en;
+      #  dct:source
+      #    "adb/father_or_mother_01 t/m 02",
+      #    "apprentice/father_or_mother" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:givenName;
+        sh:name "first name of the parent"@en;
+        sh:description "First name of the card holder's parent."@en;
+        dct:source
+          "adb/par_first_name_01 t/m 02",
+          "apprentice/par_first_name" ],
+      [ sh:datatype xsd:string;
+        sh:path schema:additionalName;
+        sh:name "middle name of the parent"@en;
+        sh:description "Middle name of the card holder's parent."@en;
+        dct:source "apprentice/par_middle_name" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:familyName;
+        sh:name "last name of the parent"@en;
+        sh:description "Last name of the card holder's parent."@en;
+        dct:source
+          "adb/par_last_name_01 t/m 02",
+          "apprentice/par_last_name" ],
+      [ sh:datatype xsd:string;
+        sh:path vocab:maidenName;
+        sh:name "maiden name of the parent"@en;
+        sh:description "Maiden name of the card holder's parent."@en;
+        dct:source "apprentice/par_maiden_name" ],
+      [ sh:datatype xsd:date;
+        sh:path vocab:birthDate;
+        sh:name "birth date of parent"@en;
+        sh:description "Birth date of the card holder's parent."@en;
+        dct:source "apprentice/par_birth_day/month/year" ], # datum moet nog worden samengevoegd
+      [ sh:datatype xsd:string;
+        sh:path vocab:birthPlace;
+        sh:name "birth place of parent"@en;
+        sh:description "Birth date of the card holder's parent."@en;
+        dct:source "apprentice/par_birth_place" ],
+      [ sh:datatype xsd:date;
+        sh:path vocab:deathDate;
+        sh:name "death date of parent"@en;
+        sh:description "Death date of the card holder's parent."@en;
+        dct:source "apprentice/par_death_day/month/year" ], # datum moet nog worden samengevoegd
+      [ sh:class vocab:Membership;
+        sh:path vocab:aboutMembership;
+        sh:name "membership of the parent"@en;
+        sh:description "Membership information of the card holder's parent."@en ],
+      vocab:nameShape,
+      vocab:labelShape;
+    sh:targetClass vocab:Parent.
+
+
+  id:addressGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that together form an address."@en.
+
+  id:biographyGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Groups of properties with biographical information about the card holder."@en.
+
+  id:cardGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Groups of properties that together form the contents of a person's card."@en.
+
+  id:cardNameGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that specify a person's name, as represented on their card."@en.
+
+  id:childGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that describe the card holder's child(ren)."@en.
+
+  id:dismission
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that describe the dismission of the card holder from the union."@en.
+
+  id:educationGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Groups of properties that describe the card holder's formal education in the diamond industry."@en.
+
+  id:factoryGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that the describe a diamond factory as part of an internship."@en.
+
+  id:internshipGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that describe the place and time of the internship of the card holder."@en.
+
+  id:masterGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that describe the name(s) and union membership of the internship's master."@en.
+
+  id:membershipGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Information about the Union membership of the card holder."@en.
+
+  id:migrationGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that describe the card holder's migration to Antwerp and back."@en.
+
+  id:parentGroup
+    a sh:PropertyGroup;
+    sh:description "Group of properties that describe the parent of the card holder"@en.
+
+  id:personGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Groups of properties with biographical information about a person."@en.
+
+  id:personNameGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that are used to specify a person's name."@en.
+
+  id:readmissionGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Group of properties that describe the readmission of the card holder to the union."@en.
+
+  id:residenceGroup
+    a sh:PropertyGroup;
+    rdfs:comment "Groups of properties that describe the housing addresses and move dates of the card holder."@en.
+
+  id:streetGroup
+    a sh:PropertyGroup;
+    rdfs:comment "The name of a street as a string and, where available, the Adamlink identifier of the street"@en.
+#}
