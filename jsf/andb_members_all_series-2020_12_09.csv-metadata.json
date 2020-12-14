@@ -1,0 +1,4297 @@
+{
+ "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv",
+ "@context": [
+  "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
+  {
+   "@language": "en",
+   "@base": "https://iisg.amsterdam/"
+  },
+  {
+   "aat": "http://vocab.getty.edu/aat/",
+   "bibo": "http://purl.org/ontology/bibo/",
+   "bio": "http://purl.org/vocab/bio/0.1/",
+   "cidoc": "http://www.cidoc-crm.org/cidoc-crm/",
+   "csvw": "http://www.w3.org/ns/csvw#",
+   "dbo": "http://dbpedia.org/ontology/",
+   "dc": "http://purl.org/dc/terms/",
+   "dc11": "http://purl.org/dc/elements/1.1/",
+   "dcterms": "http://purl.org/dc/terms/",
+   "ecpo": "http://purl.org/ontology/ecpo#",
+   "foaf": "http://xmlns.com/foaf/0.1/",
+   "frbr": "http://purl.org/spar/frbr/core#",
+   "geo": "http://www.opengis.net/ont/geosparql#",
+   "geonames": "http://www.geonames.org/ontology#",
+   "gvp": "http://vocab.getty.edu/ontology#'",
+   "juso": "http://http://rdfs.co/juso/",
+   "lemon": "http://lemon-model.net/lemon#",
+   "midi": "http://purl.org/midi-ld/midi#",
+   "np": "http://www.nanopub.org/nschema#",
+   "owl": "http://www.w3.org/2002/07/owl#",
+   "periodo": "http://n2t.net/ark:/99152/p0v#",
+   "pnv": "https://www.lodewijkpetram.nl/vocab/pnv/doc/",
+   "prov": "http://www.w3.org/ns/prov#",
+   "qb": "http://purl.org/linked-data/cube#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "schema": "http://schema.org/",
+   "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+   "sdr": "https://iisg.amsterdam/",
+   "sdv": "https://iisg.amsterdam/vocab/",
+   "sem": "http://semanticweb.cs.vu.nl/2009/11/sem/",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "time": "http://www.w3.org/2006/time#",
+   "ulan": "http://vocab.getty.edu/ulan/",
+   "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+   "xml": "http://www.w3.org/XML/1998/namespace/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+ ],
+ "url": "andb_members_all_series-2020_12_09.csv",
+ "dialect": {
+  "delimiter": ",",
+  "encoding": "utf-8",
+  "quoteChar": "\""
+ },
+ "dc:title": "ANDB",
+ "dcat:keyword": [],
+ "dc:publisher": {
+  "schema:name": "CLARIAH Structured Data Hub - Datalegend",
+  "schema:url": {
+   "@id": "http://datalegend.net"
+  }
+ },
+ "dc:license": {
+  "@id": "http://opendefinition.org/licenses/cc-by/"
+ },
+ "dc:modified": {
+  "@value": "2020-12-14",
+  "@type": "xsd:date"
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_id",
+    "name": "adm_id",
+    "titles": [
+     "adm_id"
+    ],
+    "dc:description": "adm_id",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/person_uuid",
+    "name": "person_uuid",
+    "titles": [
+     "person_uuid"
+    ],
+    "dc:description": "person_uuid",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-01",
+    "name": "mbr_street-01",
+    "titles": [
+     "mbr_street-01"
+    ],
+    "dc:description": "mbr_street-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-01",
+    "name": "mbr_street_no-01",
+    "titles": [
+     "mbr_street_no-01"
+    ],
+    "dc:description": "mbr_street_no-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-01",
+    "name": "mbr_street_no_add-01",
+    "titles": [
+     "mbr_street_no_add-01"
+    ],
+    "dc:description": "mbr_street_no_add-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-01",
+    "name": "mbr_city-01",
+    "titles": [
+     "mbr_city-01"
+    ],
+    "dc:description": "mbr_city-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-01",
+    "name": "mbr_street_adamlink_uri-01",
+    "titles": [
+     "mbr_street_adamlink_uri-01"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-01",
+    "name": "mbr_address_locationPoint-01",
+    "titles": [
+     "mbr_address_locationPoint-01"
+    ],
+    "dc:description": "mbr_address_locationPoint-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-10",
+    "name": "mbr_street-10",
+    "titles": [
+     "mbr_street-10"
+    ],
+    "dc:description": "mbr_street-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-10",
+    "name": "mbr_street_no-10",
+    "titles": [
+     "mbr_street_no-10"
+    ],
+    "dc:description": "mbr_street_no-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-10",
+    "name": "mbr_street_no_add-10",
+    "titles": [
+     "mbr_street_no_add-10"
+    ],
+    "dc:description": "mbr_street_no_add-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-10",
+    "name": "mbr_city-10",
+    "titles": [
+     "mbr_city-10"
+    ],
+    "dc:description": "mbr_city-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-10",
+    "name": "mbr_street_adamlink_uri-10",
+    "titles": [
+     "mbr_street_adamlink_uri-10"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-10",
+    "name": "mbr_address_locationPoint-10",
+    "titles": [
+     "mbr_address_locationPoint-10"
+    ],
+    "dc:description": "mbr_address_locationPoint-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-11",
+    "name": "mbr_street-11",
+    "titles": [
+     "mbr_street-11"
+    ],
+    "dc:description": "mbr_street-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-11",
+    "name": "mbr_street_no-11",
+    "titles": [
+     "mbr_street_no-11"
+    ],
+    "dc:description": "mbr_street_no-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-11",
+    "name": "mbr_street_no_add-11",
+    "titles": [
+     "mbr_street_no_add-11"
+    ],
+    "dc:description": "mbr_street_no_add-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-11",
+    "name": "mbr_city-11",
+    "titles": [
+     "mbr_city-11"
+    ],
+    "dc:description": "mbr_city-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-11",
+    "name": "mbr_street_adamlink_uri-11",
+    "titles": [
+     "mbr_street_adamlink_uri-11"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-11",
+    "name": "mbr_address_locationPoint-11",
+    "titles": [
+     "mbr_address_locationPoint-11"
+    ],
+    "dc:description": "mbr_address_locationPoint-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-12",
+    "name": "mbr_street-12",
+    "titles": [
+     "mbr_street-12"
+    ],
+    "dc:description": "mbr_street-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-12",
+    "name": "mbr_street_no-12",
+    "titles": [
+     "mbr_street_no-12"
+    ],
+    "dc:description": "mbr_street_no-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-12",
+    "name": "mbr_street_no_add-12",
+    "titles": [
+     "mbr_street_no_add-12"
+    ],
+    "dc:description": "mbr_street_no_add-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-12",
+    "name": "mbr_city-12",
+    "titles": [
+     "mbr_city-12"
+    ],
+    "dc:description": "mbr_city-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-12",
+    "name": "mbr_street_adamlink_uri-12",
+    "titles": [
+     "mbr_street_adamlink_uri-12"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-12",
+    "name": "mbr_address_locationPoint-12",
+    "titles": [
+     "mbr_address_locationPoint-12"
+    ],
+    "dc:description": "mbr_address_locationPoint-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-13",
+    "name": "mbr_street-13",
+    "titles": [
+     "mbr_street-13"
+    ],
+    "dc:description": "mbr_street-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-13",
+    "name": "mbr_street_no-13",
+    "titles": [
+     "mbr_street_no-13"
+    ],
+    "dc:description": "mbr_street_no-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-13",
+    "name": "mbr_street_no_add-13",
+    "titles": [
+     "mbr_street_no_add-13"
+    ],
+    "dc:description": "mbr_street_no_add-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-13",
+    "name": "mbr_city-13",
+    "titles": [
+     "mbr_city-13"
+    ],
+    "dc:description": "mbr_city-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-13",
+    "name": "mbr_street_adamlink_uri-13",
+    "titles": [
+     "mbr_street_adamlink_uri-13"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-13",
+    "name": "mbr_address_locationPoint-13",
+    "titles": [
+     "mbr_address_locationPoint-13"
+    ],
+    "dc:description": "mbr_address_locationPoint-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-14",
+    "name": "mbr_street-14",
+    "titles": [
+     "mbr_street-14"
+    ],
+    "dc:description": "mbr_street-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-14",
+    "name": "mbr_street_no-14",
+    "titles": [
+     "mbr_street_no-14"
+    ],
+    "dc:description": "mbr_street_no-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-14",
+    "name": "mbr_street_no_add-14",
+    "titles": [
+     "mbr_street_no_add-14"
+    ],
+    "dc:description": "mbr_street_no_add-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-14",
+    "name": "mbr_city-14",
+    "titles": [
+     "mbr_city-14"
+    ],
+    "dc:description": "mbr_city-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-14",
+    "name": "mbr_street_adamlink_uri-14",
+    "titles": [
+     "mbr_street_adamlink_uri-14"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-14",
+    "name": "mbr_address_locationPoint-14",
+    "titles": [
+     "mbr_address_locationPoint-14"
+    ],
+    "dc:description": "mbr_address_locationPoint-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-15",
+    "name": "mbr_street-15",
+    "titles": [
+     "mbr_street-15"
+    ],
+    "dc:description": "mbr_street-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-15",
+    "name": "mbr_street_no-15",
+    "titles": [
+     "mbr_street_no-15"
+    ],
+    "dc:description": "mbr_street_no-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-15",
+    "name": "mbr_street_no_add-15",
+    "titles": [
+     "mbr_street_no_add-15"
+    ],
+    "dc:description": "mbr_street_no_add-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-15",
+    "name": "mbr_city-15",
+    "titles": [
+     "mbr_city-15"
+    ],
+    "dc:description": "mbr_city-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-15",
+    "name": "mbr_street_adamlink_uri-15",
+    "titles": [
+     "mbr_street_adamlink_uri-15"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-15",
+    "name": "mbr_address_locationPoint-15",
+    "titles": [
+     "mbr_address_locationPoint-15"
+    ],
+    "dc:description": "mbr_address_locationPoint-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-16",
+    "name": "mbr_street-16",
+    "titles": [
+     "mbr_street-16"
+    ],
+    "dc:description": "mbr_street-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-16",
+    "name": "mbr_street_no-16",
+    "titles": [
+     "mbr_street_no-16"
+    ],
+    "dc:description": "mbr_street_no-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-16",
+    "name": "mbr_street_no_add-16",
+    "titles": [
+     "mbr_street_no_add-16"
+    ],
+    "dc:description": "mbr_street_no_add-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-16",
+    "name": "mbr_city-16",
+    "titles": [
+     "mbr_city-16"
+    ],
+    "dc:description": "mbr_city-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-16",
+    "name": "mbr_street_adamlink_uri-16",
+    "titles": [
+     "mbr_street_adamlink_uri-16"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-16",
+    "name": "mbr_address_locationPoint-16",
+    "titles": [
+     "mbr_address_locationPoint-16"
+    ],
+    "dc:description": "mbr_address_locationPoint-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-17",
+    "name": "mbr_street-17",
+    "titles": [
+     "mbr_street-17"
+    ],
+    "dc:description": "mbr_street-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-17",
+    "name": "mbr_street_no-17",
+    "titles": [
+     "mbr_street_no-17"
+    ],
+    "dc:description": "mbr_street_no-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-17",
+    "name": "mbr_street_no_add-17",
+    "titles": [
+     "mbr_street_no_add-17"
+    ],
+    "dc:description": "mbr_street_no_add-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-17",
+    "name": "mbr_city-17",
+    "titles": [
+     "mbr_city-17"
+    ],
+    "dc:description": "mbr_city-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-17",
+    "name": "mbr_street_adamlink_uri-17",
+    "titles": [
+     "mbr_street_adamlink_uri-17"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-17",
+    "name": "mbr_address_locationPoint-17",
+    "titles": [
+     "mbr_address_locationPoint-17"
+    ],
+    "dc:description": "mbr_address_locationPoint-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-18",
+    "name": "mbr_street-18",
+    "titles": [
+     "mbr_street-18"
+    ],
+    "dc:description": "mbr_street-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-18",
+    "name": "mbr_street_no-18",
+    "titles": [
+     "mbr_street_no-18"
+    ],
+    "dc:description": "mbr_street_no-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-18",
+    "name": "mbr_street_no_add-18",
+    "titles": [
+     "mbr_street_no_add-18"
+    ],
+    "dc:description": "mbr_street_no_add-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-18",
+    "name": "mbr_city-18",
+    "titles": [
+     "mbr_city-18"
+    ],
+    "dc:description": "mbr_city-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-18",
+    "name": "mbr_street_adamlink_uri-18",
+    "titles": [
+     "mbr_street_adamlink_uri-18"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-18",
+    "name": "mbr_address_locationPoint-18",
+    "titles": [
+     "mbr_address_locationPoint-18"
+    ],
+    "dc:description": "mbr_address_locationPoint-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-19",
+    "name": "mbr_street-19",
+    "titles": [
+     "mbr_street-19"
+    ],
+    "dc:description": "mbr_street-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-19",
+    "name": "mbr_street_no-19",
+    "titles": [
+     "mbr_street_no-19"
+    ],
+    "dc:description": "mbr_street_no-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-19",
+    "name": "mbr_street_no_add-19",
+    "titles": [
+     "mbr_street_no_add-19"
+    ],
+    "dc:description": "mbr_street_no_add-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-19",
+    "name": "mbr_city-19",
+    "titles": [
+     "mbr_city-19"
+    ],
+    "dc:description": "mbr_city-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-19",
+    "name": "mbr_street_adamlink_uri-19",
+    "titles": [
+     "mbr_street_adamlink_uri-19"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-19",
+    "name": "mbr_address_locationPoint-19",
+    "titles": [
+     "mbr_address_locationPoint-19"
+    ],
+    "dc:description": "mbr_address_locationPoint-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-02",
+    "name": "mbr_street-02",
+    "titles": [
+     "mbr_street-02"
+    ],
+    "dc:description": "mbr_street-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-02",
+    "name": "mbr_street_no-02",
+    "titles": [
+     "mbr_street_no-02"
+    ],
+    "dc:description": "mbr_street_no-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-02",
+    "name": "mbr_street_no_add-02",
+    "titles": [
+     "mbr_street_no_add-02"
+    ],
+    "dc:description": "mbr_street_no_add-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-02",
+    "name": "mbr_city-02",
+    "titles": [
+     "mbr_city-02"
+    ],
+    "dc:description": "mbr_city-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-02",
+    "name": "mbr_street_adamlink_uri-02",
+    "titles": [
+     "mbr_street_adamlink_uri-02"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-02",
+    "name": "mbr_address_locationPoint-02",
+    "titles": [
+     "mbr_address_locationPoint-02"
+    ],
+    "dc:description": "mbr_address_locationPoint-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-20",
+    "name": "mbr_street-20",
+    "titles": [
+     "mbr_street-20"
+    ],
+    "dc:description": "mbr_street-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-20",
+    "name": "mbr_street_no-20",
+    "titles": [
+     "mbr_street_no-20"
+    ],
+    "dc:description": "mbr_street_no-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-20",
+    "name": "mbr_street_no_add-20",
+    "titles": [
+     "mbr_street_no_add-20"
+    ],
+    "dc:description": "mbr_street_no_add-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-20",
+    "name": "mbr_city-20",
+    "titles": [
+     "mbr_city-20"
+    ],
+    "dc:description": "mbr_city-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-20",
+    "name": "mbr_street_adamlink_uri-20",
+    "titles": [
+     "mbr_street_adamlink_uri-20"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-20",
+    "name": "mbr_address_locationPoint-20",
+    "titles": [
+     "mbr_address_locationPoint-20"
+    ],
+    "dc:description": "mbr_address_locationPoint-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-21",
+    "name": "mbr_street-21",
+    "titles": [
+     "mbr_street-21"
+    ],
+    "dc:description": "mbr_street-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-21",
+    "name": "mbr_street_no-21",
+    "titles": [
+     "mbr_street_no-21"
+    ],
+    "dc:description": "mbr_street_no-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-21",
+    "name": "mbr_street_no_add-21",
+    "titles": [
+     "mbr_street_no_add-21"
+    ],
+    "dc:description": "mbr_street_no_add-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-21",
+    "name": "mbr_city-21",
+    "titles": [
+     "mbr_city-21"
+    ],
+    "dc:description": "mbr_city-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-21",
+    "name": "mbr_street_adamlink_uri-21",
+    "titles": [
+     "mbr_street_adamlink_uri-21"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-21",
+    "name": "mbr_address_locationPoint-21",
+    "titles": [
+     "mbr_address_locationPoint-21"
+    ],
+    "dc:description": "mbr_address_locationPoint-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-22",
+    "name": "mbr_street-22",
+    "titles": [
+     "mbr_street-22"
+    ],
+    "dc:description": "mbr_street-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-22",
+    "name": "mbr_street_no-22",
+    "titles": [
+     "mbr_street_no-22"
+    ],
+    "dc:description": "mbr_street_no-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-22",
+    "name": "mbr_street_no_add-22",
+    "titles": [
+     "mbr_street_no_add-22"
+    ],
+    "dc:description": "mbr_street_no_add-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-22",
+    "name": "mbr_city-22",
+    "titles": [
+     "mbr_city-22"
+    ],
+    "dc:description": "mbr_city-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-22",
+    "name": "mbr_street_adamlink_uri-22",
+    "titles": [
+     "mbr_street_adamlink_uri-22"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-22",
+    "name": "mbr_address_locationPoint-22",
+    "titles": [
+     "mbr_address_locationPoint-22"
+    ],
+    "dc:description": "mbr_address_locationPoint-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-23",
+    "name": "mbr_street-23",
+    "titles": [
+     "mbr_street-23"
+    ],
+    "dc:description": "mbr_street-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-23",
+    "name": "mbr_street_no-23",
+    "titles": [
+     "mbr_street_no-23"
+    ],
+    "dc:description": "mbr_street_no-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-23",
+    "name": "mbr_street_no_add-23",
+    "titles": [
+     "mbr_street_no_add-23"
+    ],
+    "dc:description": "mbr_street_no_add-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-23",
+    "name": "mbr_city-23",
+    "titles": [
+     "mbr_city-23"
+    ],
+    "dc:description": "mbr_city-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-23",
+    "name": "mbr_street_adamlink_uri-23",
+    "titles": [
+     "mbr_street_adamlink_uri-23"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-23",
+    "name": "mbr_address_locationPoint-23",
+    "titles": [
+     "mbr_address_locationPoint-23"
+    ],
+    "dc:description": "mbr_address_locationPoint-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-24",
+    "name": "mbr_street-24",
+    "titles": [
+     "mbr_street-24"
+    ],
+    "dc:description": "mbr_street-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-24",
+    "name": "mbr_street_no-24",
+    "titles": [
+     "mbr_street_no-24"
+    ],
+    "dc:description": "mbr_street_no-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-24",
+    "name": "mbr_street_no_add-24",
+    "titles": [
+     "mbr_street_no_add-24"
+    ],
+    "dc:description": "mbr_street_no_add-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-24",
+    "name": "mbr_city-24",
+    "titles": [
+     "mbr_city-24"
+    ],
+    "dc:description": "mbr_city-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-24",
+    "name": "mbr_street_adamlink_uri-24",
+    "titles": [
+     "mbr_street_adamlink_uri-24"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-24",
+    "name": "mbr_address_locationPoint-24",
+    "titles": [
+     "mbr_address_locationPoint-24"
+    ],
+    "dc:description": "mbr_address_locationPoint-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-25",
+    "name": "mbr_street-25",
+    "titles": [
+     "mbr_street-25"
+    ],
+    "dc:description": "mbr_street-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-25",
+    "name": "mbr_street_no-25",
+    "titles": [
+     "mbr_street_no-25"
+    ],
+    "dc:description": "mbr_street_no-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-25",
+    "name": "mbr_street_no_add-25",
+    "titles": [
+     "mbr_street_no_add-25"
+    ],
+    "dc:description": "mbr_street_no_add-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-25",
+    "name": "mbr_city-25",
+    "titles": [
+     "mbr_city-25"
+    ],
+    "dc:description": "mbr_city-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-25",
+    "name": "mbr_street_adamlink_uri-25",
+    "titles": [
+     "mbr_street_adamlink_uri-25"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-25",
+    "name": "mbr_address_locationPoint-25",
+    "titles": [
+     "mbr_address_locationPoint-25"
+    ],
+    "dc:description": "mbr_address_locationPoint-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-26",
+    "name": "mbr_street-26",
+    "titles": [
+     "mbr_street-26"
+    ],
+    "dc:description": "mbr_street-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-26",
+    "name": "mbr_street_no-26",
+    "titles": [
+     "mbr_street_no-26"
+    ],
+    "dc:description": "mbr_street_no-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-26",
+    "name": "mbr_street_no_add-26",
+    "titles": [
+     "mbr_street_no_add-26"
+    ],
+    "dc:description": "mbr_street_no_add-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-26",
+    "name": "mbr_city-26",
+    "titles": [
+     "mbr_city-26"
+    ],
+    "dc:description": "mbr_city-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-26",
+    "name": "mbr_street_adamlink_uri-26",
+    "titles": [
+     "mbr_street_adamlink_uri-26"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-26",
+    "name": "mbr_address_locationPoint-26",
+    "titles": [
+     "mbr_address_locationPoint-26"
+    ],
+    "dc:description": "mbr_address_locationPoint-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-03",
+    "name": "mbr_street-03",
+    "titles": [
+     "mbr_street-03"
+    ],
+    "dc:description": "mbr_street-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-03",
+    "name": "mbr_street_no-03",
+    "titles": [
+     "mbr_street_no-03"
+    ],
+    "dc:description": "mbr_street_no-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-03",
+    "name": "mbr_street_no_add-03",
+    "titles": [
+     "mbr_street_no_add-03"
+    ],
+    "dc:description": "mbr_street_no_add-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-03",
+    "name": "mbr_city-03",
+    "titles": [
+     "mbr_city-03"
+    ],
+    "dc:description": "mbr_city-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-03",
+    "name": "mbr_street_adamlink_uri-03",
+    "titles": [
+     "mbr_street_adamlink_uri-03"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-03",
+    "name": "mbr_address_locationPoint-03",
+    "titles": [
+     "mbr_address_locationPoint-03"
+    ],
+    "dc:description": "mbr_address_locationPoint-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-04",
+    "name": "mbr_street-04",
+    "titles": [
+     "mbr_street-04"
+    ],
+    "dc:description": "mbr_street-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-04",
+    "name": "mbr_street_no-04",
+    "titles": [
+     "mbr_street_no-04"
+    ],
+    "dc:description": "mbr_street_no-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-04",
+    "name": "mbr_street_no_add-04",
+    "titles": [
+     "mbr_street_no_add-04"
+    ],
+    "dc:description": "mbr_street_no_add-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-04",
+    "name": "mbr_city-04",
+    "titles": [
+     "mbr_city-04"
+    ],
+    "dc:description": "mbr_city-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-04",
+    "name": "mbr_street_adamlink_uri-04",
+    "titles": [
+     "mbr_street_adamlink_uri-04"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-04",
+    "name": "mbr_address_locationPoint-04",
+    "titles": [
+     "mbr_address_locationPoint-04"
+    ],
+    "dc:description": "mbr_address_locationPoint-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-05",
+    "name": "mbr_street-05",
+    "titles": [
+     "mbr_street-05"
+    ],
+    "dc:description": "mbr_street-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-05",
+    "name": "mbr_street_no-05",
+    "titles": [
+     "mbr_street_no-05"
+    ],
+    "dc:description": "mbr_street_no-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-05",
+    "name": "mbr_street_no_add-05",
+    "titles": [
+     "mbr_street_no_add-05"
+    ],
+    "dc:description": "mbr_street_no_add-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-05",
+    "name": "mbr_city-05",
+    "titles": [
+     "mbr_city-05"
+    ],
+    "dc:description": "mbr_city-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-05",
+    "name": "mbr_street_adamlink_uri-05",
+    "titles": [
+     "mbr_street_adamlink_uri-05"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-05",
+    "name": "mbr_address_locationPoint-05",
+    "titles": [
+     "mbr_address_locationPoint-05"
+    ],
+    "dc:description": "mbr_address_locationPoint-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-06",
+    "name": "mbr_street-06",
+    "titles": [
+     "mbr_street-06"
+    ],
+    "dc:description": "mbr_street-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-06",
+    "name": "mbr_street_no-06",
+    "titles": [
+     "mbr_street_no-06"
+    ],
+    "dc:description": "mbr_street_no-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-06",
+    "name": "mbr_street_no_add-06",
+    "titles": [
+     "mbr_street_no_add-06"
+    ],
+    "dc:description": "mbr_street_no_add-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-06",
+    "name": "mbr_city-06",
+    "titles": [
+     "mbr_city-06"
+    ],
+    "dc:description": "mbr_city-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-06",
+    "name": "mbr_street_adamlink_uri-06",
+    "titles": [
+     "mbr_street_adamlink_uri-06"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-06",
+    "name": "mbr_address_locationPoint-06",
+    "titles": [
+     "mbr_address_locationPoint-06"
+    ],
+    "dc:description": "mbr_address_locationPoint-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-07",
+    "name": "mbr_street-07",
+    "titles": [
+     "mbr_street-07"
+    ],
+    "dc:description": "mbr_street-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-07",
+    "name": "mbr_street_no-07",
+    "titles": [
+     "mbr_street_no-07"
+    ],
+    "dc:description": "mbr_street_no-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-07",
+    "name": "mbr_street_no_add-07",
+    "titles": [
+     "mbr_street_no_add-07"
+    ],
+    "dc:description": "mbr_street_no_add-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-07",
+    "name": "mbr_city-07",
+    "titles": [
+     "mbr_city-07"
+    ],
+    "dc:description": "mbr_city-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-07",
+    "name": "mbr_street_adamlink_uri-07",
+    "titles": [
+     "mbr_street_adamlink_uri-07"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-07",
+    "name": "mbr_address_locationPoint-07",
+    "titles": [
+     "mbr_address_locationPoint-07"
+    ],
+    "dc:description": "mbr_address_locationPoint-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-08",
+    "name": "mbr_street-08",
+    "titles": [
+     "mbr_street-08"
+    ],
+    "dc:description": "mbr_street-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-08",
+    "name": "mbr_street_no-08",
+    "titles": [
+     "mbr_street_no-08"
+    ],
+    "dc:description": "mbr_street_no-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-08",
+    "name": "mbr_street_no_add-08",
+    "titles": [
+     "mbr_street_no_add-08"
+    ],
+    "dc:description": "mbr_street_no_add-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-08",
+    "name": "mbr_city-08",
+    "titles": [
+     "mbr_city-08"
+    ],
+    "dc:description": "mbr_city-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-08",
+    "name": "mbr_street_adamlink_uri-08",
+    "titles": [
+     "mbr_street_adamlink_uri-08"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-08",
+    "name": "mbr_address_locationPoint-08",
+    "titles": [
+     "mbr_address_locationPoint-08"
+    ],
+    "dc:description": "mbr_address_locationPoint-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street-09",
+    "name": "mbr_street-09",
+    "titles": [
+     "mbr_street-09"
+    ],
+    "dc:description": "mbr_street-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no-09",
+    "name": "mbr_street_no-09",
+    "titles": [
+     "mbr_street_no-09"
+    ],
+    "dc:description": "mbr_street_no-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_no_add-09",
+    "name": "mbr_street_no_add-09",
+    "titles": [
+     "mbr_street_no_add-09"
+    ],
+    "dc:description": "mbr_street_no_add-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_city-09",
+    "name": "mbr_city-09",
+    "titles": [
+     "mbr_city-09"
+    ],
+    "dc:description": "mbr_city-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_street_adamlink_uri-09",
+    "name": "mbr_street_adamlink_uri-09",
+    "titles": [
+     "mbr_street_adamlink_uri-09"
+    ],
+    "dc:description": "mbr_street_adamlink_uri-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_address_locationPoint-09",
+    "name": "mbr_address_locationPoint-09",
+    "titles": [
+     "mbr_address_locationPoint-09"
+    ],
+    "dc:description": "mbr_address_locationPoint-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/Order",
+    "name": "Order",
+    "titles": [
+     "Order"
+    ],
+    "dc:description": "Order",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_image_no",
+    "name": "adm_image_no",
+    "titles": [
+     "adm_image_no"
+    ],
+    "dc:description": "adm_image_no",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/serie_id",
+    "name": "serie_id",
+    "titles": [
+     "serie_id"
+    ],
+    "dc:description": "serie_id",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_record_count",
+    "name": "adm_record_count",
+    "titles": [
+     "adm_record_count"
+    ],
+    "dc:description": "adm_record_count",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_scan_id",
+    "name": "adm_scan_id",
+    "titles": [
+     "adm_scan_id"
+    ],
+    "dc:description": "adm_scan_id",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_image_id",
+    "name": "adm_image_id",
+    "titles": [
+     "adm_image_id"
+    ],
+    "dc:description": "adm_image_id",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_date_creation",
+    "name": "adm_date_creation",
+    "titles": [
+     "adm_date_creation"
+    ],
+    "dc:description": "adm_date_creation",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_user_id",
+    "name": "adm_user_id",
+    "titles": [
+     "adm_user_id"
+    ],
+    "dc:description": "adm_user_id",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_date_entry",
+    "name": "adm_date_entry",
+    "titles": [
+     "adm_date_entry"
+    ],
+    "dc:description": "adm_date_entry",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_uuid",
+    "name": "adm_uuid",
+    "titles": [
+     "adm_uuid"
+    ],
+    "dc:description": "adm_uuid",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/card_id1",
+    "name": "card_id1",
+    "titles": [
+     "card_id1"
+    ],
+    "dc:description": "card_id1",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/card_id2",
+    "name": "card_id2",
+    "titles": [
+     "card_id2"
+    ],
+    "dc:description": "card_id2",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/card_id3",
+    "name": "card_id3",
+    "titles": [
+     "card_id3"
+    ],
+    "dc:description": "card_id3",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/card_id4",
+    "name": "card_id4",
+    "titles": [
+     "card_id4"
+    ],
+    "dc:description": "card_id4",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_first_name_orig",
+    "name": "mbr_first_name_orig",
+    "titles": [
+     "mbr_first_name_orig"
+    ],
+    "dc:description": "mbr_first_name_orig",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_first_name",
+    "name": "mbr_first_name",
+    "titles": [
+     "mbr_first_name"
+    ],
+    "dc:description": "mbr_first_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_middle_name_orig",
+    "name": "mbr_middle_name_orig",
+    "titles": [
+     "mbr_middle_name_orig"
+    ],
+    "dc:description": "mbr_middle_name_orig",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_middle_name",
+    "name": "mbr_middle_name",
+    "titles": [
+     "mbr_middle_name"
+    ],
+    "dc:description": "mbr_middle_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_last_name_orig",
+    "name": "mbr_last_name_orig",
+    "titles": [
+     "mbr_last_name_orig"
+    ],
+    "dc:description": "mbr_last_name_orig",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_last_name",
+    "name": "mbr_last_name",
+    "titles": [
+     "mbr_last_name"
+    ],
+    "dc:description": "mbr_last_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_maiden_name_prefix",
+    "name": "mbr_maiden_name_prefix",
+    "titles": [
+     "mbr_maiden_name_prefix"
+    ],
+    "dc:description": "mbr_maiden_name_prefix",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_maiden_name_orig",
+    "name": "mbr_maiden_name_orig",
+    "titles": [
+     "mbr_maiden_name_orig"
+    ],
+    "dc:description": "mbr_maiden_name_orig",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_maiden_name",
+    "name": "mbr_maiden_name",
+    "titles": [
+     "mbr_maiden_name"
+    ],
+    "dc:description": "mbr_maiden_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_birth_day_orig",
+    "name": "mbr_birth_day_orig",
+    "titles": [
+     "mbr_birth_day_orig"
+    ],
+    "dc:description": "mbr_birth_day_orig",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_birth_date",
+    "name": "mbr_birth_date",
+    "titles": [
+     "mbr_birth_date"
+    ],
+    "dc:description": "mbr_birth_date",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_birth_month_orig",
+    "name": "mbr_birth_month_orig",
+    "titles": [
+     "mbr_birth_month_orig"
+    ],
+    "dc:description": "mbr_birth_month_orig",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_birth_month",
+    "name": "mbr_birth_month",
+    "titles": [
+     "mbr_birth_month"
+    ],
+    "dc:description": "mbr_birth_month",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_birth_year_orig",
+    "name": "mbr_birth_year_orig",
+    "titles": [
+     "mbr_birth_year_orig"
+    ],
+    "dc:description": "mbr_birth_year_orig",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_birth_year",
+    "name": "mbr_birth_year",
+    "titles": [
+     "mbr_birth_year"
+    ],
+    "dc:description": "mbr_birth_year",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_death_day",
+    "name": "mbr_death_day",
+    "titles": [
+     "mbr_death_day"
+    ],
+    "dc:description": "mbr_death_day",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_death_month",
+    "name": "mbr_death_month",
+    "titles": [
+     "mbr_death_month"
+    ],
+    "dc:description": "mbr_death_month",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_death_year",
+    "name": "mbr_death_year",
+    "titles": [
+     "mbr_death_year"
+    ],
+    "dc:description": "mbr_death_year",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_birth_place",
+    "name": "mbr_birth_place",
+    "titles": [
+     "mbr_birth_place"
+    ],
+    "dc:description": "mbr_birth_place",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-01",
+    "name": "mbr_addr_day-01",
+    "titles": [
+     "mbr_addr_day-01"
+    ],
+    "dc:description": "mbr_addr_day-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-01",
+    "name": "mbr_addr_month-01",
+    "titles": [
+     "mbr_addr_month-01"
+    ],
+    "dc:description": "mbr_addr_month-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-01",
+    "name": "mbr_addr_year-01",
+    "titles": [
+     "mbr_addr_year-01"
+    ],
+    "dc:description": "mbr_addr_year-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-02",
+    "name": "mbr_addr_day-02",
+    "titles": [
+     "mbr_addr_day-02"
+    ],
+    "dc:description": "mbr_addr_day-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-02",
+    "name": "mbr_addr_month-02",
+    "titles": [
+     "mbr_addr_month-02"
+    ],
+    "dc:description": "mbr_addr_month-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-02",
+    "name": "mbr_addr_year-02",
+    "titles": [
+     "mbr_addr_year-02"
+    ],
+    "dc:description": "mbr_addr_year-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-03",
+    "name": "mbr_addr_day-03",
+    "titles": [
+     "mbr_addr_day-03"
+    ],
+    "dc:description": "mbr_addr_day-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-03",
+    "name": "mbr_addr_month-03",
+    "titles": [
+     "mbr_addr_month-03"
+    ],
+    "dc:description": "mbr_addr_month-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-03",
+    "name": "mbr_addr_year-03",
+    "titles": [
+     "mbr_addr_year-03"
+    ],
+    "dc:description": "mbr_addr_year-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-04",
+    "name": "mbr_addr_day-04",
+    "titles": [
+     "mbr_addr_day-04"
+    ],
+    "dc:description": "mbr_addr_day-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-04",
+    "name": "mbr_addr_month-04",
+    "titles": [
+     "mbr_addr_month-04"
+    ],
+    "dc:description": "mbr_addr_month-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-04",
+    "name": "mbr_addr_year-04",
+    "titles": [
+     "mbr_addr_year-04"
+    ],
+    "dc:description": "mbr_addr_year-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-05",
+    "name": "mbr_addr_day-05",
+    "titles": [
+     "mbr_addr_day-05"
+    ],
+    "dc:description": "mbr_addr_day-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-05",
+    "name": "mbr_addr_month-05",
+    "titles": [
+     "mbr_addr_month-05"
+    ],
+    "dc:description": "mbr_addr_month-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-05",
+    "name": "mbr_addr_year-05",
+    "titles": [
+     "mbr_addr_year-05"
+    ],
+    "dc:description": "mbr_addr_year-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-06",
+    "name": "mbr_addr_day-06",
+    "titles": [
+     "mbr_addr_day-06"
+    ],
+    "dc:description": "mbr_addr_day-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-06",
+    "name": "mbr_addr_month-06",
+    "titles": [
+     "mbr_addr_month-06"
+    ],
+    "dc:description": "mbr_addr_month-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-06",
+    "name": "mbr_addr_year-06",
+    "titles": [
+     "mbr_addr_year-06"
+    ],
+    "dc:description": "mbr_addr_year-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-07",
+    "name": "mbr_addr_day-07",
+    "titles": [
+     "mbr_addr_day-07"
+    ],
+    "dc:description": "mbr_addr_day-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-07",
+    "name": "mbr_addr_month-07",
+    "titles": [
+     "mbr_addr_month-07"
+    ],
+    "dc:description": "mbr_addr_month-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-07",
+    "name": "mbr_addr_year-07",
+    "titles": [
+     "mbr_addr_year-07"
+    ],
+    "dc:description": "mbr_addr_year-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-08",
+    "name": "mbr_addr_day-08",
+    "titles": [
+     "mbr_addr_day-08"
+    ],
+    "dc:description": "mbr_addr_day-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-08",
+    "name": "mbr_addr_month-08",
+    "titles": [
+     "mbr_addr_month-08"
+    ],
+    "dc:description": "mbr_addr_month-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-08",
+    "name": "mbr_addr_year-08",
+    "titles": [
+     "mbr_addr_year-08"
+    ],
+    "dc:description": "mbr_addr_year-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-09",
+    "name": "mbr_addr_day-09",
+    "titles": [
+     "mbr_addr_day-09"
+    ],
+    "dc:description": "mbr_addr_day-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-09",
+    "name": "mbr_addr_month-09",
+    "titles": [
+     "mbr_addr_month-09"
+    ],
+    "dc:description": "mbr_addr_month-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-09",
+    "name": "mbr_addr_year-09",
+    "titles": [
+     "mbr_addr_year-09"
+    ],
+    "dc:description": "mbr_addr_year-09",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-10",
+    "name": "mbr_addr_day-10",
+    "titles": [
+     "mbr_addr_day-10"
+    ],
+    "dc:description": "mbr_addr_day-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-10",
+    "name": "mbr_addr_month-10",
+    "titles": [
+     "mbr_addr_month-10"
+    ],
+    "dc:description": "mbr_addr_month-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-10",
+    "name": "mbr_addr_year-10",
+    "titles": [
+     "mbr_addr_year-10"
+    ],
+    "dc:description": "mbr_addr_year-10",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-11",
+    "name": "mbr_addr_day-11",
+    "titles": [
+     "mbr_addr_day-11"
+    ],
+    "dc:description": "mbr_addr_day-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-11",
+    "name": "mbr_addr_month-11",
+    "titles": [
+     "mbr_addr_month-11"
+    ],
+    "dc:description": "mbr_addr_month-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-11",
+    "name": "mbr_addr_year-11",
+    "titles": [
+     "mbr_addr_year-11"
+    ],
+    "dc:description": "mbr_addr_year-11",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-12",
+    "name": "mbr_addr_day-12",
+    "titles": [
+     "mbr_addr_day-12"
+    ],
+    "dc:description": "mbr_addr_day-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-12",
+    "name": "mbr_addr_month-12",
+    "titles": [
+     "mbr_addr_month-12"
+    ],
+    "dc:description": "mbr_addr_month-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-12",
+    "name": "mbr_addr_year-12",
+    "titles": [
+     "mbr_addr_year-12"
+    ],
+    "dc:description": "mbr_addr_year-12",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-13",
+    "name": "mbr_addr_day-13",
+    "titles": [
+     "mbr_addr_day-13"
+    ],
+    "dc:description": "mbr_addr_day-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-13",
+    "name": "mbr_addr_month-13",
+    "titles": [
+     "mbr_addr_month-13"
+    ],
+    "dc:description": "mbr_addr_month-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-13",
+    "name": "mbr_addr_year-13",
+    "titles": [
+     "mbr_addr_year-13"
+    ],
+    "dc:description": "mbr_addr_year-13",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-14",
+    "name": "mbr_addr_day-14",
+    "titles": [
+     "mbr_addr_day-14"
+    ],
+    "dc:description": "mbr_addr_day-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-14",
+    "name": "mbr_addr_month-14",
+    "titles": [
+     "mbr_addr_month-14"
+    ],
+    "dc:description": "mbr_addr_month-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-14",
+    "name": "mbr_addr_year-14",
+    "titles": [
+     "mbr_addr_year-14"
+    ],
+    "dc:description": "mbr_addr_year-14",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-15",
+    "name": "mbr_addr_day-15",
+    "titles": [
+     "mbr_addr_day-15"
+    ],
+    "dc:description": "mbr_addr_day-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-15",
+    "name": "mbr_addr_month-15",
+    "titles": [
+     "mbr_addr_month-15"
+    ],
+    "dc:description": "mbr_addr_month-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-15",
+    "name": "mbr_addr_year-15",
+    "titles": [
+     "mbr_addr_year-15"
+    ],
+    "dc:description": "mbr_addr_year-15",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-16",
+    "name": "mbr_addr_day-16",
+    "titles": [
+     "mbr_addr_day-16"
+    ],
+    "dc:description": "mbr_addr_day-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-16",
+    "name": "mbr_addr_month-16",
+    "titles": [
+     "mbr_addr_month-16"
+    ],
+    "dc:description": "mbr_addr_month-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-16",
+    "name": "mbr_addr_year-16",
+    "titles": [
+     "mbr_addr_year-16"
+    ],
+    "dc:description": "mbr_addr_year-16",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-17",
+    "name": "mbr_addr_day-17",
+    "titles": [
+     "mbr_addr_day-17"
+    ],
+    "dc:description": "mbr_addr_day-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-17",
+    "name": "mbr_addr_month-17",
+    "titles": [
+     "mbr_addr_month-17"
+    ],
+    "dc:description": "mbr_addr_month-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-17",
+    "name": "mbr_addr_year-17",
+    "titles": [
+     "mbr_addr_year-17"
+    ],
+    "dc:description": "mbr_addr_year-17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-18",
+    "name": "mbr_addr_day-18",
+    "titles": [
+     "mbr_addr_day-18"
+    ],
+    "dc:description": "mbr_addr_day-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-18",
+    "name": "mbr_addr_month-18",
+    "titles": [
+     "mbr_addr_month-18"
+    ],
+    "dc:description": "mbr_addr_month-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-18",
+    "name": "mbr_addr_year-18",
+    "titles": [
+     "mbr_addr_year-18"
+    ],
+    "dc:description": "mbr_addr_year-18",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-19",
+    "name": "mbr_addr_day-19",
+    "titles": [
+     "mbr_addr_day-19"
+    ],
+    "dc:description": "mbr_addr_day-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-19",
+    "name": "mbr_addr_month-19",
+    "titles": [
+     "mbr_addr_month-19"
+    ],
+    "dc:description": "mbr_addr_month-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-19",
+    "name": "mbr_addr_year-19",
+    "titles": [
+     "mbr_addr_year-19"
+    ],
+    "dc:description": "mbr_addr_year-19",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-20",
+    "name": "mbr_addr_day-20",
+    "titles": [
+     "mbr_addr_day-20"
+    ],
+    "dc:description": "mbr_addr_day-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-20",
+    "name": "mbr_addr_month-20",
+    "titles": [
+     "mbr_addr_month-20"
+    ],
+    "dc:description": "mbr_addr_month-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-20",
+    "name": "mbr_addr_year-20",
+    "titles": [
+     "mbr_addr_year-20"
+    ],
+    "dc:description": "mbr_addr_year-20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-21",
+    "name": "mbr_addr_day-21",
+    "titles": [
+     "mbr_addr_day-21"
+    ],
+    "dc:description": "mbr_addr_day-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-21",
+    "name": "mbr_addr_month-21",
+    "titles": [
+     "mbr_addr_month-21"
+    ],
+    "dc:description": "mbr_addr_month-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-21",
+    "name": "mbr_addr_year-21",
+    "titles": [
+     "mbr_addr_year-21"
+    ],
+    "dc:description": "mbr_addr_year-21",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-22",
+    "name": "mbr_addr_day-22",
+    "titles": [
+     "mbr_addr_day-22"
+    ],
+    "dc:description": "mbr_addr_day-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-22",
+    "name": "mbr_addr_month-22",
+    "titles": [
+     "mbr_addr_month-22"
+    ],
+    "dc:description": "mbr_addr_month-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-22",
+    "name": "mbr_addr_year-22",
+    "titles": [
+     "mbr_addr_year-22"
+    ],
+    "dc:description": "mbr_addr_year-22",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-23",
+    "name": "mbr_addr_day-23",
+    "titles": [
+     "mbr_addr_day-23"
+    ],
+    "dc:description": "mbr_addr_day-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-23",
+    "name": "mbr_addr_month-23",
+    "titles": [
+     "mbr_addr_month-23"
+    ],
+    "dc:description": "mbr_addr_month-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-23",
+    "name": "mbr_addr_year-23",
+    "titles": [
+     "mbr_addr_year-23"
+    ],
+    "dc:description": "mbr_addr_year-23",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-24",
+    "name": "mbr_addr_day-24",
+    "titles": [
+     "mbr_addr_day-24"
+    ],
+    "dc:description": "mbr_addr_day-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-24",
+    "name": "mbr_addr_month-24",
+    "titles": [
+     "mbr_addr_month-24"
+    ],
+    "dc:description": "mbr_addr_month-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-24",
+    "name": "mbr_addr_year-24",
+    "titles": [
+     "mbr_addr_year-24"
+    ],
+    "dc:description": "mbr_addr_year-24",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-25",
+    "name": "mbr_addr_day-25",
+    "titles": [
+     "mbr_addr_day-25"
+    ],
+    "dc:description": "mbr_addr_day-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-25",
+    "name": "mbr_addr_month-25",
+    "titles": [
+     "mbr_addr_month-25"
+    ],
+    "dc:description": "mbr_addr_month-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-25",
+    "name": "mbr_addr_year-25",
+    "titles": [
+     "mbr_addr_year-25"
+    ],
+    "dc:description": "mbr_addr_year-25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_day-26",
+    "name": "mbr_addr_day-26",
+    "titles": [
+     "mbr_addr_day-26"
+    ],
+    "dc:description": "mbr_addr_day-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_month-26",
+    "name": "mbr_addr_month-26",
+    "titles": [
+     "mbr_addr_month-26"
+    ],
+    "dc:description": "mbr_addr_month-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_addr_year-26",
+    "name": "mbr_addr_year-26",
+    "titles": [
+     "mbr_addr_year-26"
+    ],
+    "dc:description": "mbr_addr_year-26",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/stamp-01",
+    "name": "stamp-01",
+    "titles": [
+     "stamp-01"
+    ],
+    "dc:description": "stamp-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/stamp_standard-01",
+    "name": "stamp_standard-01",
+    "titles": [
+     "stamp_standard-01"
+    ],
+    "dc:description": "stamp_standard-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/Stamp-02",
+    "name": "Stamp-02",
+    "titles": [
+     "Stamp-02"
+    ],
+    "dc:description": "Stamp-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/stamp_standard-02",
+    "name": "stamp_standard-02",
+    "titles": [
+     "stamp_standard-02"
+    ],
+    "dc:description": "stamp_standard-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/Stamp-03",
+    "name": "Stamp-03",
+    "titles": [
+     "Stamp-03"
+    ],
+    "dc:description": "Stamp-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/stamp_standard-03",
+    "name": "stamp_standard-03",
+    "titles": [
+     "stamp_standard-03"
+    ],
+    "dc:description": "stamp_standard-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_day-01",
+    "name": "mmb_day-01",
+    "titles": [
+     "mmb_day-01"
+    ],
+    "dc:description": "mmb_day-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_month-01",
+    "name": "mmb_month-01",
+    "titles": [
+     "mmb_month-01"
+    ],
+    "dc:description": "mmb_month-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_year-01",
+    "name": "mmb_year-01",
+    "titles": [
+     "mmb_year-01"
+    ],
+    "dc:description": "mmb_year-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_year_add-01",
+    "name": "mmb_year_add-01",
+    "titles": [
+     "mmb_year_add-01"
+    ],
+    "dc:description": "mmb_year_add-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section-01",
+    "name": "un_section-01",
+    "titles": [
+     "un_section-01"
+    ],
+    "dc:description": "un_section-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_add-01",
+    "name": "un_section_add-01",
+    "titles": [
+     "un_section_add-01"
+    ],
+    "dc:description": "un_section_add-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no-01",
+    "name": "un_section_no-01",
+    "titles": [
+     "un_section_no-01"
+    ],
+    "dc:description": "un_section_no-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no_add-01",
+    "name": "un_section_no_add-01",
+    "titles": [
+     "un_section_no_add-01"
+    ],
+    "dc:description": "un_section_no_add-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_day-02",
+    "name": "mmb_day-02",
+    "titles": [
+     "mmb_day-02"
+    ],
+    "dc:description": "mmb_day-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_month-02",
+    "name": "mmb_month-02",
+    "titles": [
+     "mmb_month-02"
+    ],
+    "dc:description": "mmb_month-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_year-02",
+    "name": "mmb_year-02",
+    "titles": [
+     "mmb_year-02"
+    ],
+    "dc:description": "mmb_year-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section-02",
+    "name": "un_section-02",
+    "titles": [
+     "un_section-02"
+    ],
+    "dc:description": "un_section-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_add-02",
+    "name": "un_section_add-02",
+    "titles": [
+     "un_section_add-02"
+    ],
+    "dc:description": "un_section_add-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no-02",
+    "name": "un_section_no-02",
+    "titles": [
+     "un_section_no-02"
+    ],
+    "dc:description": "un_section_no-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no_add-02",
+    "name": "un_section_no_add-02",
+    "titles": [
+     "un_section_no_add-02"
+    ],
+    "dc:description": "un_section_no_add-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_day-03",
+    "name": "mmb_day-03",
+    "titles": [
+     "mmb_day-03"
+    ],
+    "dc:description": "mmb_day-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_month-03",
+    "name": "mmb_month-03",
+    "titles": [
+     "mmb_month-03"
+    ],
+    "dc:description": "mmb_month-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_year-03",
+    "name": "mmb_year-03",
+    "titles": [
+     "mmb_year-03"
+    ],
+    "dc:description": "mmb_year-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section-03",
+    "name": "un_section-03",
+    "titles": [
+     "un_section-03"
+    ],
+    "dc:description": "un_section-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_add-03",
+    "name": "un_section_add-03",
+    "titles": [
+     "un_section_add-03"
+    ],
+    "dc:description": "un_section_add-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no-03",
+    "name": "un_section_no-03",
+    "titles": [
+     "un_section_no-03"
+    ],
+    "dc:description": "un_section_no-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no_add-03",
+    "name": "un_section_no_add-03",
+    "titles": [
+     "un_section_no_add-03"
+    ],
+    "dc:description": "un_section_no_add-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_day-04",
+    "name": "mmb_day-04",
+    "titles": [
+     "mmb_day-04"
+    ],
+    "dc:description": "mmb_day-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_month-04",
+    "name": "mmb_month-04",
+    "titles": [
+     "mmb_month-04"
+    ],
+    "dc:description": "mmb_month-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_year-04",
+    "name": "mmb_year-04",
+    "titles": [
+     "mmb_year-04"
+    ],
+    "dc:description": "mmb_year-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section-04",
+    "name": "un_section-04",
+    "titles": [
+     "un_section-04"
+    ],
+    "dc:description": "un_section-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_add-04",
+    "name": "un_section_add-04",
+    "titles": [
+     "un_section_add-04"
+    ],
+    "dc:description": "un_section_add-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no-04",
+    "name": "un_section_no-04",
+    "titles": [
+     "un_section_no-04"
+    ],
+    "dc:description": "un_section_no-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no_add-04",
+    "name": "un_section_no_add-04",
+    "titles": [
+     "un_section_no_add-04"
+    ],
+    "dc:description": "un_section_no_add-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_day-05",
+    "name": "mmb_day-05",
+    "titles": [
+     "mmb_day-05"
+    ],
+    "dc:description": "mmb_day-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_month-05",
+    "name": "mmb_month-05",
+    "titles": [
+     "mmb_month-05"
+    ],
+    "dc:description": "mmb_month-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_year-05",
+    "name": "mmb_year-05",
+    "titles": [
+     "mmb_year-05"
+    ],
+    "dc:description": "mmb_year-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section-05",
+    "name": "un_section-05",
+    "titles": [
+     "un_section-05"
+    ],
+    "dc:description": "un_section-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no-05",
+    "name": "un_section_no-05",
+    "titles": [
+     "un_section_no-05"
+    ],
+    "dc:description": "un_section_no-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no_add-05",
+    "name": "un_section_no_add-05",
+    "titles": [
+     "un_section_no_add-05"
+    ],
+    "dc:description": "un_section_no_add-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_day-06",
+    "name": "mmb_day-06",
+    "titles": [
+     "mmb_day-06"
+    ],
+    "dc:description": "mmb_day-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_month-06",
+    "name": "mmb_month-06",
+    "titles": [
+     "mmb_month-06"
+    ],
+    "dc:description": "mmb_month-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_year-06",
+    "name": "mmb_year-06",
+    "titles": [
+     "mmb_year-06"
+    ],
+    "dc:description": "mmb_year-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section-06",
+    "name": "un_section-06",
+    "titles": [
+     "un_section-06"
+    ],
+    "dc:description": "un_section-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no-06",
+    "name": "un_section_no-06",
+    "titles": [
+     "un_section_no-06"
+    ],
+    "dc:description": "un_section_no-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no_add-06",
+    "name": "un_section_no_add-06",
+    "titles": [
+     "un_section_no_add-06"
+    ],
+    "dc:description": "un_section_no_add-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason-01",
+    "name": "withdrawal_reason-01",
+    "titles": [
+     "withdrawal_reason-01"
+    ],
+    "dc:description": "withdrawal_reason-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_day-01",
+    "name": "withdrawal_day-01",
+    "titles": [
+     "withdrawal_day-01"
+    ],
+    "dc:description": "withdrawal_day-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_month-01",
+    "name": "withdrawal_month-01",
+    "titles": [
+     "withdrawal_month-01"
+    ],
+    "dc:description": "withdrawal_month-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_year-01",
+    "name": "withdrawal_year-01",
+    "titles": [
+     "withdrawal_year-01"
+    ],
+    "dc:description": "withdrawal_year-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason-02",
+    "name": "withdrawal_reason-02",
+    "titles": [
+     "withdrawal_reason-02"
+    ],
+    "dc:description": "withdrawal_reason-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_day-02",
+    "name": "withdrawal_day-02",
+    "titles": [
+     "withdrawal_day-02"
+    ],
+    "dc:description": "withdrawal_day-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_month-02",
+    "name": "withdrawal_month-02",
+    "titles": [
+     "withdrawal_month-02"
+    ],
+    "dc:description": "withdrawal_month-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_year-02",
+    "name": "withdrawal_year-02",
+    "titles": [
+     "withdrawal_year-02"
+    ],
+    "dc:description": "withdrawal_year-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason-01",
+    "name": "dismission_reason-01",
+    "titles": [
+     "dismission_reason-01"
+    ],
+    "dc:description": "dismission_reason-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_day-01",
+    "name": "dismission_day-01",
+    "titles": [
+     "dismission_day-01"
+    ],
+    "dc:description": "dismission_day-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_month-01",
+    "name": "dismission_month-01",
+    "titles": [
+     "dismission_month-01"
+    ],
+    "dc:description": "dismission_month-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_year-01",
+    "name": "dismission_year-01",
+    "titles": [
+     "dismission_year-01"
+    ],
+    "dc:description": "dismission_year-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason-02",
+    "name": "dismission_reason-02",
+    "titles": [
+     "dismission_reason-02"
+    ],
+    "dc:description": "dismission_reason-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_day-02",
+    "name": "dismission_day-02",
+    "titles": [
+     "dismission_day-02"
+    ],
+    "dc:description": "dismission_day-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_month-02",
+    "name": "dismission_month-02",
+    "titles": [
+     "dismission_month-02"
+    ],
+    "dc:description": "dismission_month-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_year-02",
+    "name": "dismission_year-02",
+    "titles": [
+     "dismission_year-02"
+    ],
+    "dc:description": "dismission_year-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition-01",
+    "name": "readmission_condition-01",
+    "titles": [
+     "readmission_condition-01"
+    ],
+    "dc:description": "readmission_condition-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_day-01",
+    "name": "readmission_day-01",
+    "titles": [
+     "readmission_day-01"
+    ],
+    "dc:description": "readmission_day-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_month-01",
+    "name": "readmission_month-01",
+    "titles": [
+     "readmission_month-01"
+    ],
+    "dc:description": "readmission_month-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_year-01",
+    "name": "readmission_year-01",
+    "titles": [
+     "readmission_year-01"
+    ],
+    "dc:description": "readmission_year-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition-02",
+    "name": "readmission_condition-02",
+    "titles": [
+     "readmission_condition-02"
+    ],
+    "dc:description": "readmission_condition-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_day-02",
+    "name": "readmission_day-02",
+    "titles": [
+     "readmission_day-02"
+    ],
+    "dc:description": "readmission_day-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_month-02",
+    "name": "readmission_month-02",
+    "titles": [
+     "readmission_month-02"
+    ],
+    "dc:description": "readmission_month-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_year-02",
+    "name": "readmission_year-02",
+    "titles": [
+     "readmission_year-02"
+    ],
+    "dc:description": "readmission_year-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition-03",
+    "name": "readmission_condition-03",
+    "titles": [
+     "readmission_condition-03"
+    ],
+    "dc:description": "readmission_condition-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_day-03",
+    "name": "readmission_day-03",
+    "titles": [
+     "readmission_day-03"
+    ],
+    "dc:description": "readmission_day-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_month-03",
+    "name": "readmission_month-03",
+    "titles": [
+     "readmission_month-03"
+    ],
+    "dc:description": "readmission_month-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_year-03",
+    "name": "readmission_year-03",
+    "titles": [
+     "readmission_year-03"
+    ],
+    "dc:description": "readmission_year-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/History-01",
+    "name": "History-01",
+    "titles": [
+     "History-01"
+    ],
+    "dc:description": "History-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_place-01",
+    "name": "departure_place-01",
+    "titles": [
+     "departure_place-01"
+    ],
+    "dc:description": "departure_place-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_day-01",
+    "name": "departure_day-01",
+    "titles": [
+     "departure_day-01"
+    ],
+    "dc:description": "departure_day-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_month-01",
+    "name": "departure_month-01",
+    "titles": [
+     "departure_month-01"
+    ],
+    "dc:description": "departure_month-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_year-01",
+    "name": "departure_year-01",
+    "titles": [
+     "departure_year-01"
+    ],
+    "dc:description": "departure_year-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_day-01",
+    "name": "return_day-01",
+    "titles": [
+     "return_day-01"
+    ],
+    "dc:description": "return_day-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_month-01",
+    "name": "return_month-01",
+    "titles": [
+     "return_month-01"
+    ],
+    "dc:description": "return_month-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_year-01",
+    "name": "return_year-01",
+    "titles": [
+     "return_year-01"
+    ],
+    "dc:description": "return_year-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_place-02",
+    "name": "departure_place-02",
+    "titles": [
+     "departure_place-02"
+    ],
+    "dc:description": "departure_place-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_day-02",
+    "name": "departure_day-02",
+    "titles": [
+     "departure_day-02"
+    ],
+    "dc:description": "departure_day-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_month-02",
+    "name": "departure_month-02",
+    "titles": [
+     "departure_month-02"
+    ],
+    "dc:description": "departure_month-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_year-02",
+    "name": "departure_year-02",
+    "titles": [
+     "departure_year-02"
+    ],
+    "dc:description": "departure_year-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_day-02",
+    "name": "return_day-02",
+    "titles": [
+     "return_day-02"
+    ],
+    "dc:description": "return_day-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_month-02",
+    "name": "return_month-02",
+    "titles": [
+     "return_month-02"
+    ],
+    "dc:description": "return_month-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_year-02",
+    "name": "return_year-02",
+    "titles": [
+     "return_year-02"
+    ],
+    "dc:description": "return_year-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_place-03",
+    "name": "departure_place-03",
+    "titles": [
+     "departure_place-03"
+    ],
+    "dc:description": "departure_place-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_day-03",
+    "name": "departure_day-03",
+    "titles": [
+     "departure_day-03"
+    ],
+    "dc:description": "departure_day-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_month-03",
+    "name": "departure_month-03",
+    "titles": [
+     "departure_month-03"
+    ],
+    "dc:description": "departure_month-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_year-03",
+    "name": "departure_year-03",
+    "titles": [
+     "departure_year-03"
+    ],
+    "dc:description": "departure_year-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_day-03",
+    "name": "return_day-03",
+    "titles": [
+     "return_day-03"
+    ],
+    "dc:description": "return_day-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_month-03",
+    "name": "return_month-03",
+    "titles": [
+     "return_month-03"
+    ],
+    "dc:description": "return_month-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_year-03",
+    "name": "return_year-03",
+    "titles": [
+     "return_year-03"
+    ],
+    "dc:description": "return_year-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_place-04",
+    "name": "departure_place-04",
+    "titles": [
+     "departure_place-04"
+    ],
+    "dc:description": "departure_place-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_day-04",
+    "name": "departure_day-04",
+    "titles": [
+     "departure_day-04"
+    ],
+    "dc:description": "departure_day-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_month-04",
+    "name": "departure_month-04",
+    "titles": [
+     "departure_month-04"
+    ],
+    "dc:description": "departure_month-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_year-04",
+    "name": "departure_year-04",
+    "titles": [
+     "departure_year-04"
+    ],
+    "dc:description": "departure_year-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_day-04",
+    "name": "return_day-04",
+    "titles": [
+     "return_day-04"
+    ],
+    "dc:description": "return_day-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_month-04",
+    "name": "return_month-04",
+    "titles": [
+     "return_month-04"
+    ],
+    "dc:description": "return_month-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_year-04",
+    "name": "return_year-04",
+    "titles": [
+     "return_year-04"
+    ],
+    "dc:description": "return_year-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_data_id",
+    "name": "adm_data_id",
+    "titles": [
+     "adm_data_id"
+    ],
+    "dc:description": "adm_data_id",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/amd_workunit_name",
+    "name": "amd_workunit_name",
+    "titles": [
+     "amd_workunit_name"
+    ],
+    "dc:description": "amd_workunit_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_workunit_id",
+    "name": "adm_workunit_id",
+    "titles": [
+     "adm_workunit_id"
+    ],
+    "dc:description": "adm_workunit_id",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_image_uuid",
+    "name": "adm_image_uuid",
+    "titles": [
+     "adm_image_uuid"
+    ],
+    "dc:description": "adm_image_uuid",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_card_serie_name",
+    "name": "adm_card_serie_name",
+    "titles": [
+     "adm_card_serie_name"
+    ],
+    "dc:description": "adm_card_serie_name",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_card_serie_title",
+    "name": "adm_card_serie_title",
+    "titles": [
+     "adm_card_serie_title"
+    ],
+    "dc:description": "adm_card_serie_title",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks-01",
+    "name": "adm_remarks-01",
+    "titles": [
+     "adm_remarks-01"
+    ],
+    "dc:description": "adm_remarks-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks_date-01",
+    "name": "adm_remarks_date-01",
+    "titles": [
+     "adm_remarks_date-01"
+    ],
+    "dc:description": "adm_remarks_date-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_answer-01",
+    "name": "adm_answer-01",
+    "titles": [
+     "adm_answer-01"
+    ],
+    "dc:description": "adm_answer-01",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks-02",
+    "name": "adm_remarks-02",
+    "titles": [
+     "adm_remarks-02"
+    ],
+    "dc:description": "adm_remarks-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks_date-02",
+    "name": "adm_remarks_date-02",
+    "titles": [
+     "adm_remarks_date-02"
+    ],
+    "dc:description": "adm_remarks_date-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_answer-02",
+    "name": "adm_answer-02",
+    "titles": [
+     "adm_answer-02"
+    ],
+    "dc:description": "adm_answer-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks-03",
+    "name": "adm_remarks-03",
+    "titles": [
+     "adm_remarks-03"
+    ],
+    "dc:description": "adm_remarks-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks_date-03",
+    "name": "adm_remarks_date-03",
+    "titles": [
+     "adm_remarks_date-03"
+    ],
+    "dc:description": "adm_remarks_date-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_answer-03",
+    "name": "adm_answer-03",
+    "titles": [
+     "adm_answer-03"
+    ],
+    "dc:description": "adm_answer-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks-04",
+    "name": "adm_remarks-04",
+    "titles": [
+     "adm_remarks-04"
+    ],
+    "dc:description": "adm_remarks-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks_date-04",
+    "name": "adm_remarks_date-04",
+    "titles": [
+     "adm_remarks_date-04"
+    ],
+    "dc:description": "adm_remarks_date-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_answer-04",
+    "name": "adm_answer-04",
+    "titles": [
+     "adm_answer-04"
+    ],
+    "dc:description": "adm_answer-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks-05",
+    "name": "adm_remarks-05",
+    "titles": [
+     "adm_remarks-05"
+    ],
+    "dc:description": "adm_remarks-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks_date-05",
+    "name": "adm_remarks_date-05",
+    "titles": [
+     "adm_remarks_date-05"
+    ],
+    "dc:description": "adm_remarks_date-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_answer-05",
+    "name": "adm_answer-05",
+    "titles": [
+     "adm_answer-05"
+    ],
+    "dc:description": "adm_answer-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason-03",
+    "name": "withdrawal_reason-03",
+    "titles": [
+     "withdrawal_reason-03"
+    ],
+    "dc:description": "withdrawal_reason-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_day-03",
+    "name": "withdrawal_day-03",
+    "titles": [
+     "withdrawal_day-03"
+    ],
+    "dc:description": "withdrawal_day-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_month-03",
+    "name": "withdrawal_month-03",
+    "titles": [
+     "withdrawal_month-03"
+    ],
+    "dc:description": "withdrawal_month-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_year-03",
+    "name": "withdrawal_year-03",
+    "titles": [
+     "withdrawal_year-03"
+    ],
+    "dc:description": "withdrawal_year-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/History-02",
+    "name": "History-02",
+    "titles": [
+     "History-02"
+    ],
+    "dc:description": "History-02",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks-06",
+    "name": "adm_remarks-06",
+    "titles": [
+     "adm_remarks-06"
+    ],
+    "dc:description": "adm_remarks-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_remarks_date-06",
+    "name": "adm_remarks_date-06",
+    "titles": [
+     "adm_remarks_date-06"
+    ],
+    "dc:description": "adm_remarks_date-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_answer-06",
+    "name": "adm_answer-06",
+    "titles": [
+     "adm_answer-06"
+    ],
+    "dc:description": "adm_answer-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/History-03",
+    "name": "History-03",
+    "titles": [
+     "History-03"
+    ],
+    "dc:description": "History-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_day-07",
+    "name": "mmb_day-07",
+    "titles": [
+     "mmb_day-07"
+    ],
+    "dc:description": "mmb_day-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_month-07",
+    "name": "mmb_month-07",
+    "titles": [
+     "mmb_month-07"
+    ],
+    "dc:description": "mmb_month-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mmb_year-07",
+    "name": "mmb_year-07",
+    "titles": [
+     "mmb_year-07"
+    ],
+    "dc:description": "mmb_year-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section-07",
+    "name": "un_section-07",
+    "titles": [
+     "un_section-07"
+    ],
+    "dc:description": "un_section-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/un_section_no-07",
+    "name": "un_section_no-07",
+    "titles": [
+     "un_section_no-07"
+    ],
+    "dc:description": "un_section_no-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_place-05",
+    "name": "departure_place-05",
+    "titles": [
+     "departure_place-05"
+    ],
+    "dc:description": "departure_place-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_day-05",
+    "name": "departure_day-05",
+    "titles": [
+     "departure_day-05"
+    ],
+    "dc:description": "departure_day-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_month-05",
+    "name": "departure_month-05",
+    "titles": [
+     "departure_month-05"
+    ],
+    "dc:description": "departure_month-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_year-05",
+    "name": "departure_year-05",
+    "titles": [
+     "departure_year-05"
+    ],
+    "dc:description": "departure_year-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_day-05",
+    "name": "return_day-05",
+    "titles": [
+     "return_day-05"
+    ],
+    "dc:description": "return_day-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_month-05",
+    "name": "return_month-05",
+    "titles": [
+     "return_month-05"
+    ],
+    "dc:description": "return_month-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_year-05",
+    "name": "return_year-05",
+    "titles": [
+     "return_year-05"
+    ],
+    "dc:description": "return_year-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_place-06",
+    "name": "departure_place-06",
+    "titles": [
+     "departure_place-06"
+    ],
+    "dc:description": "departure_place-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_day-06",
+    "name": "departure_day-06",
+    "titles": [
+     "departure_day-06"
+    ],
+    "dc:description": "departure_day-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_month-06",
+    "name": "departure_month-06",
+    "titles": [
+     "departure_month-06"
+    ],
+    "dc:description": "departure_month-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_year-06",
+    "name": "departure_year-06",
+    "titles": [
+     "departure_year-06"
+    ],
+    "dc:description": "departure_year-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_day-06",
+    "name": "return_day-06",
+    "titles": [
+     "return_day-06"
+    ],
+    "dc:description": "return_day-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_month-06",
+    "name": "return_month-06",
+    "titles": [
+     "return_month-06"
+    ],
+    "dc:description": "return_month-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_year-06",
+    "name": "return_year-06",
+    "titles": [
+     "return_year-06"
+    ],
+    "dc:description": "return_year-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason-03",
+    "name": "dismission_reason-03",
+    "titles": [
+     "dismission_reason-03"
+    ],
+    "dc:description": "dismission_reason-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_day-03",
+    "name": "dismission_day-03",
+    "titles": [
+     "dismission_day-03"
+    ],
+    "dc:description": "dismission_day-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_month-03",
+    "name": "dismission_month-03",
+    "titles": [
+     "dismission_month-03"
+    ],
+    "dc:description": "dismission_month-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_year-03",
+    "name": "dismission_year-03",
+    "titles": [
+     "dismission_year-03"
+    ],
+    "dc:description": "dismission_year-03",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition-04",
+    "name": "readmission_condition-04",
+    "titles": [
+     "readmission_condition-04"
+    ],
+    "dc:description": "readmission_condition-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_day-04",
+    "name": "readmission_day-04",
+    "titles": [
+     "readmission_day-04"
+    ],
+    "dc:description": "readmission_day-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_month-04",
+    "name": "readmission_month-04",
+    "titles": [
+     "readmission_month-04"
+    ],
+    "dc:description": "readmission_month-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_year-04",
+    "name": "readmission_year-04",
+    "titles": [
+     "readmission_year-04"
+    ],
+    "dc:description": "readmission_year-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason-04",
+    "name": "dismission_reason-04",
+    "titles": [
+     "dismission_reason-04"
+    ],
+    "dc:description": "dismission_reason-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_day-04",
+    "name": "dismission_day-04",
+    "titles": [
+     "dismission_day-04"
+    ],
+    "dc:description": "dismission_day-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_month-04",
+    "name": "dismission_month-04",
+    "titles": [
+     "dismission_month-04"
+    ],
+    "dc:description": "dismission_month-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_year-04",
+    "name": "dismission_year-04",
+    "titles": [
+     "dismission_year-04"
+    ],
+    "dc:description": "dismission_year-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason-05",
+    "name": "dismission_reason-05",
+    "titles": [
+     "dismission_reason-05"
+    ],
+    "dc:description": "dismission_reason-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_day-05",
+    "name": "dismission_day-05",
+    "titles": [
+     "dismission_day-05"
+    ],
+    "dc:description": "dismission_day-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_month-05",
+    "name": "dismission_month-05",
+    "titles": [
+     "dismission_month-05"
+    ],
+    "dc:description": "dismission_month-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_year-05",
+    "name": "dismission_year-05",
+    "titles": [
+     "dismission_year-05"
+    ],
+    "dc:description": "dismission_year-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition-05",
+    "name": "readmission_condition-05",
+    "titles": [
+     "readmission_condition-05"
+    ],
+    "dc:description": "readmission_condition-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_day-05",
+    "name": "readmission_day-05",
+    "titles": [
+     "readmission_day-05"
+    ],
+    "dc:description": "readmission_day-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_month-05",
+    "name": "readmission_month-05",
+    "titles": [
+     "readmission_month-05"
+    ],
+    "dc:description": "readmission_month-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_year-05",
+    "name": "readmission_year-05",
+    "titles": [
+     "readmission_year-05"
+    ],
+    "dc:description": "readmission_year-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition-06",
+    "name": "readmission_condition-06",
+    "titles": [
+     "readmission_condition-06"
+    ],
+    "dc:description": "readmission_condition-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_day-06",
+    "name": "readmission_day-06",
+    "titles": [
+     "readmission_day-06"
+    ],
+    "dc:description": "readmission_day-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_month-06",
+    "name": "readmission_month-06",
+    "titles": [
+     "readmission_month-06"
+    ],
+    "dc:description": "readmission_month-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_year-06",
+    "name": "readmission_year-06",
+    "titles": [
+     "readmission_year-06"
+    ],
+    "dc:description": "readmission_year-06",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_place-07",
+    "name": "departure_place-07",
+    "titles": [
+     "departure_place-07"
+    ],
+    "dc:description": "departure_place-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_day-07",
+    "name": "departure_day-07",
+    "titles": [
+     "departure_day-07"
+    ],
+    "dc:description": "departure_day-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_month-07",
+    "name": "departure_month-07",
+    "titles": [
+     "departure_month-07"
+    ],
+    "dc:description": "departure_month-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_year-07",
+    "name": "departure_year-07",
+    "titles": [
+     "departure_year-07"
+    ],
+    "dc:description": "departure_year-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_day-07",
+    "name": "return_day-07",
+    "titles": [
+     "return_day-07"
+    ],
+    "dc:description": "return_day-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_month-07",
+    "name": "return_month-07",
+    "titles": [
+     "return_month-07"
+    ],
+    "dc:description": "return_month-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_year-07",
+    "name": "return_year-07",
+    "titles": [
+     "return_year-07"
+    ],
+    "dc:description": "return_year-07",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_place-08",
+    "name": "departure_place-08",
+    "titles": [
+     "departure_place-08"
+    ],
+    "dc:description": "departure_place-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_day-08",
+    "name": "departure_day-08",
+    "titles": [
+     "departure_day-08"
+    ],
+    "dc:description": "departure_day-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_month-08",
+    "name": "departure_month-08",
+    "titles": [
+     "departure_month-08"
+    ],
+    "dc:description": "departure_month-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/departure_year-08",
+    "name": "departure_year-08",
+    "titles": [
+     "departure_year-08"
+    ],
+    "dc:description": "departure_year-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_day-08",
+    "name": "return_day-08",
+    "titles": [
+     "return_day-08"
+    ],
+    "dc:description": "return_day-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_month-08",
+    "name": "return_month-08",
+    "titles": [
+     "return_month-08"
+    ],
+    "dc:description": "return_month-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/return_year-08",
+    "name": "return_year-08",
+    "titles": [
+     "return_year-08"
+    ],
+    "dc:description": "return_year-08",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason-04",
+    "name": "withdrawal_reason-04",
+    "titles": [
+     "withdrawal_reason-04"
+    ],
+    "dc:description": "withdrawal_reason-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_day-04",
+    "name": "withdrawal_day-04",
+    "titles": [
+     "withdrawal_day-04"
+    ],
+    "dc:description": "withdrawal_day-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_month-04",
+    "name": "withdrawal_month-04",
+    "titles": [
+     "withdrawal_month-04"
+    ],
+    "dc:description": "withdrawal_month-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_year-04",
+    "name": "withdrawal_year-04",
+    "titles": [
+     "withdrawal_year-04"
+    ],
+    "dc:description": "withdrawal_year-04",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason-05",
+    "name": "withdrawal_reason-05",
+    "titles": [
+     "withdrawal_reason-05"
+    ],
+    "dc:description": "withdrawal_reason-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_day-05",
+    "name": "withdrawal_day-05",
+    "titles": [
+     "withdrawal_day-05"
+    ],
+    "dc:description": "withdrawal_day-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_month-05",
+    "name": "withdrawal_month-05",
+    "titles": [
+     "withdrawal_month-05"
+    ],
+    "dc:description": "withdrawal_month-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_year-05",
+    "name": "withdrawal_year-05",
+    "titles": [
+     "withdrawal_year-05"
+    ],
+    "dc:description": "withdrawal_year-05",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/History-04",
+    "name": "History-04",
+    "titles": [
+     "History-04"
+    ],
+    "dc:description": "History-04",
+    "datatype": "string"
+   }
+  ],
+  "primaryKey": "adm_id",
+  "aboutUrl": "{_row}"
+ }
+}
