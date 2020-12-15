@@ -10,17 +10,40 @@ prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
 prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
 
 vocab: {
+  vocab:Card
+    rdfs:label
+      "card"@en,
+      "kaart"@nl;
+    rdfs:subClassOf foaf:Document.
+
+  vocab:Event
+    rdfs:label
+      "event"@en,
+      "evenement"@nl;
+    rdfs:subClassOf
+      schema:Event,
+      time:ProperInterval.
+
   vocab:Examination
     rdfs:label
       "examination"@en,
       "examen"@nl;
-    rdfs:subClassOf schema:Event.
+    rdfs:subClassOf vocab:Event.
+
+  vocab:Internship
+    rdfs:label
+      "internship"@en,
+      "stage"@nl;
+    rdfs:subClassOf vocab:Event.
 
   vocab:Membership
     rdfs:label
       "membership"@en,
       "lidmaatschap"@nl;
-    rdfs:subClassOf schema:Event.
+    rdfs:subClassOf vocab:Event.
+
+  vocab:MembershipCard
+    rdfs:subClassOf vocab:Card.
 
   vocab:Occupation
     owl:oneOf
@@ -42,7 +65,7 @@ vocab: {
     rdfs:label
       "residency"@en,
       "bewoning"@nl;
-    rdfs:subClassOf schema:Event.
+    rdfs:subClassOf vocab:Event.
 
   vocab:Section
     rdfs:label
@@ -66,7 +89,7 @@ vocab: {
     rdfs:label
       "work event"@en,
       "werk evenement"@nl;
-    rdfs:subClassOf schema:Event.
+    rdfs:subClassOf vocab:Event.
 
   vocab:Workshop
     rdfs:label

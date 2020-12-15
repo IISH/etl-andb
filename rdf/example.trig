@@ -1,9 +1,11 @@
-prefix cshapes: <>
+prefix cshapes: <https://iisg.amsterdam/vocab/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix geo: <http://www.opengis.net/ont/geosparql#>
 prefix hg: <http://rdf.histograph.io/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix schema: <https://schema.org/>
+prefix time: <http://www.w3.org/2006/time#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
@@ -42,43 +44,96 @@ id:instances {
     vocab:md5 "40b50b034a56361dafccb7faaea14580";
     vocab:screenVersion id:ARCH00210-9421-0055-level2.
 
-  id:someAddress
-    a schema:PostalAddress;
-    rdfs:label "Swammerdamstraat 25"@nl;
-    vocab:houseNumber "25"^^xsd:positiveInteger;
-    vocab:street id:someStreet.
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency-1
+    a vocab:Residency;
+    rdfs:label
+      "Residency of Adriaan Helsloot at Hazenstraat 8-II"@en,
+      "Bewoning van Hazenstraat 8-II door Adriaan Helsloot"@nl;
+    time:before id:residency2;
+    time:hasEnding
+      [ a time:Postition;
+        time:inXSDDate "1924-10-13" ];
+    vocab:address id:Hazenstraat_8_II_Amsterdam;
+    vocab:inhabitant id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3.
 
-  id:someCard
-    a foaf:Document;
+  id:Hazenstraat_8_II_Amsterdam
+    a schema:PostalAddress;
+    rdfs:label "Hazenstraat 8-II"@nl;
+    vocab:houseNumber "8"^^xsd:positiveInteger;
+    vocab:houseNumberAddition "II";
+    vocab:street id:Hazenstraat_Amsterdam.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency-2
+    a vocab:Residency;
+    rdfs:label
+      "Residency of Adriaan Helsloot at Nieuwe Karselaan 493"@en,
+      "Bewoning van Nieuwe Karselaan 493 door Adriaan Helsloot"@nl;
+    time:after id:residency1;
+    time:hasBeginning
+      [ a time:Postition;
+        time:inXSDDate "1924-10"^^xsd:date ];
+    vocab:address id:NieuweKarselaan_493_Amstelveen;
+    vocab:inhabitant id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3.
+
+  id:NieuweKarselaan_493_Amstelveen
+    a schema:PostalAddress;
+    rdfs:label "Nieuwe Karselaan 493"@nl;
+    vocab:houseNumber "493"^^xsd:positiveInteger;
+    vocab:street id:NieuweKarselaan_Amstelveen.
+
+  id:AMSAB_0558_3464
+    a
+      vocab:Card, # implied
+      vocab:MembershipCard.
+
+  id:2284
+    a
+      vocab:Card, # implied
+      vocab:StudentCard.
+
+  id:26266
+    a
+      vocab:Card, # implied
+      vocab:MembershipCard.
+
+  id:26456
+    a
+      vocab:Card, # implied
+      vocab:MembershipCard;
     foaf:primaryTopic id:somePerson;
-    rdfs:label "Card of Sophia Aärons Agsteribbe"@en;
+    rdfs:label
+      "ANDB membership card of Card of Adriaan Helsloot"@en,
+      "ANDB ledenkaart van Adriaan Helsloot"@nl;
     schema:identifier "11";
     schema:image id:ARCH00210-9421-0055-master.
 
-  id:someCountry
-    a cshapes:Country;
-    rdfs:label "Nederland"@nl;
-    schema:name "Nederland"@nl.
-
-  id:somePlace
+  id:Amsterdam
     a schema:Place;
-    geo:sfWithin id:someCountry;
+    geo:sfWithin <https://iisg.amsterdam/resource/country/Netherlands/1946>;
     rdfs:label "Amsterdam"@nl;
     schema:name "Amsterdam"@nl.
+  <https://iisg.amsterdam/resource/country/Netherlands/1946> a cshapes:CountrySlice.
 
-  id:someStreet
+  id:Hazenstraat_Amsterdam
     a hg:Street;
-    geo:sfWithin id:somePlace;
-    rdfs:label "Swammerdamstraat"@nl;
-    schema:name "Swammerdamstraat"@nl.
+    geo:sfWithin id:amsterdam;
+    owl:sameAs <https://adamlink.nl/geo/street/hazenstraat/1693>;
+    rdfs:label "Hazenstraat"@nl;
+    schema:name "Hazenstraat"@nl.
 
-  id:somePerson
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3
     a schema:Person;
-    foaf:isPrimaryTopicOf id:someCard;
-    rdfs:label "Sophia Aärons Agsteribbe";
-    schema:birthDate "1873-02-11"^^xsd:date;
-    schema:familyName "Agsteribbe";
-    schema:firstName "Sophia";
-    schema:name "Sophia Aärons Agsteribbe";
-    vocab:maidenName "Aärons".
+    foaf:isPrimaryTopicOf
+      id:2284,
+      id:26266,
+      id:26456,
+      id:AMSAB_0558_3464;
+    rdfs:label "Adriaan Helsloot";
+    schema:birthDate "1902-08-28"^^xsd:date;
+    schema:birthPlace "Amsterdam";
+    schema:gender schema:Male;
+    schema:familyName "Helsloot";
+    schema:firstName "Adriaan";
+    schema:name "Adriaan Helsloot".
+  schema:Male a schema:GenderType.
 }

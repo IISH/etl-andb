@@ -28,3 +28,13 @@ Dit repository bevat de volgende directories:
 - [[jsf][/jsf]] :: CoW scripts voor de transformatie van de ANDB dataset naar linked data.
 - [[rdf][/rdf]] :: Statische RDF bestanden die deel uitmaken van de ANDB
   dataset.
+
+* Installatie
+
+Voer de volgende commando's uit om SHACL validatie over de voorbeeld dataset uit te voeren:
+
+#+begin_src sh
+cd src
+npm install
+node script.js
+#+end_src

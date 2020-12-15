@@ -32,6 +32,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
    #dct:license
     dct:modified "2020-11-23"^^xsd:date;
     dct:publisher <https://iisg.amsterdam/iisg>;
+    dct:source "https://surfdrive.surf.nl/files/index.php/s/HMX1l8hU8d8s7I4"^^xsd:anyURI;
     dct:subject "Geschiedenis";
     dct:title "Algemene Nederlandse Diamantbewerkers Bond"@nl;
     foaf:depiction "https://druid.datalegend.net/imgs/avatars/d/5e466b1020e09b037eea7cd1.png?v=1"^^xsd:anyURI;
