@@ -11,9 +11,10 @@
    "bibo": "http://purl.org/ontology/bibo/",
    "bio": "http://purl.org/vocab/bio/0.1/",
    "cidoc": "http://www.cidoc-crm.org/cidoc-crm/",
+   "cshapes": "https://iisg.amsterdam/vocab/",
    "csvw": "http://www.w3.org/ns/csvw#",
    "dbo": "http://dbpedia.org/ontology/",
-   "dc": "http://purl.org/dc/terms/",
+   "dct": "http://purl.org/dc/terms/",
    "dc11": "http://purl.org/dc/elements/1.1/",
    "dcterms": "http://purl.org/dc/terms/",
    "ecpo": "http://purl.org/ontology/ecpo#",
@@ -22,13 +23,14 @@
    "geo": "http://www.opengis.net/ont/geosparql#",
    "geonames": "http://www.geonames.org/ontology#",
    "gvp": "http://vocab.getty.edu/ontology#'",
+   "hg": "http://rdf.histograph.io/",
    "juso": "http://http://rdfs.co/juso/",
    "lemon": "http://lemon-model.net/lemon#",
    "midi": "http://purl.org/midi-ld/midi#",
    "np": "http://www.nanopub.org/nschema#",
    "owl": "http://www.w3.org/2002/07/owl#",
    "periodo": "http://n2t.net/ark:/99152/p0v#",
-   "pnv": "https://www.lodewijkpetram.nl/vocab/pnv/doc/",
+   "pnv": "https://w3id.org/pnv#",
    "prov": "http://www.w3.org/ns/prov#",
    "qb": "http://purl.org/linked-data/cube#",
    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -38,12 +40,14 @@
    "sdr": "https://iisg.amsterdam/",
    "sdv": "https://iisg.amsterdam/vocab/",
    "sem": "http://semanticweb.cs.vu.nl/2009/11/sem/",
+   "sh": "http://www.w3.org/ns/shacl#",
    "skos": "http://www.w3.org/2004/02/skos/core#",
    "time": "http://www.w3.org/2006/time#",
    "ulan": "http://vocab.getty.edu/ulan/",
    "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
    "xml": "http://www.w3.org/XML/1998/namespace/",
    "xsd": "http://www.w3.org/2001/XMLSchema#"
+   
   }
  ],
  "url": "ADB-2020_12_09.csv",
@@ -736,15 +740,6 @@
     "datatype": "string"
    },
    {
-    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_occupation",
-    "name": "mbr_occupation",
-    "titles": [
-     "mbr_occupation"
-    ],
-    "dc:description": "mbr_occupation",
-    "datatype": "string"
-   },
-   {
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/card_id1",
     "name": "card_id1",
     "titles": [
@@ -931,15 +926,6 @@
      "mmb_year_05"
     ],
     "dc:description": "mmb_year_05",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_remarks",
-    "name": "adm_remarks",
-    "titles": [
-     "adm_remarks"
-    ],
-    "dc:description": "adm_remarks",
     "datatype": "string"
    },
    {

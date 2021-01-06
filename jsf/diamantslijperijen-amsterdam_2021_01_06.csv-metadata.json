@@ -1,0 +1,217 @@
+{
+ "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv",
+ "@context": [
+  "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
+  {
+   "@language": "en",
+   "@base": "https://iisg.amsterdam/id/andb/diamantslijperijen/"
+  },
+  {
+   "csvw": "http://www.w3.org/ns/csvw#",
+   "juso": "http://rdfs.co/juso/",
+   "owl": "http://www.w3.org/2002/07/owl#",
+   "pnv": "https://w3id.org/pnv#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "schema": "http://schema.org/",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "time": "http://www.w3.org/2006/time#",
+   "vocab": "https://iisg.amsterdam/vocab/adb-andb/",
+   "xml": "http://www.w3.org/XML/1998/namespace/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+ ],
+ "url": "diamantslijperijen-amsterdam_2020_10_22.csv",
+ "dialect": {
+  "delimiter": ",",
+  "encoding": "utf-8",
+  "quoteChar": "\""
+ },
+ "dc:title": "Diamantslijperijen in Amsterdam",
+ "dcat:keyword": [],
+ "dc:publisher": {
+  "schema:name": "CLARIAH Structured Data Hub - Datalegend",
+  "schema:url": {
+   "@id": "http://datalegend.net"
+  }
+ },
+ "dc:license": {
+  "@id": "http://opendefinition.org/licenses/cc-by/"
+ },
+ "dc:modified": {
+  "@value": "2021-01-06",
+  "@type": "xsd:date"
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/ID",
+    "name": "ID",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Factory",
+    "dc:description": "Identifier van de slijperij",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Naam",
+    "name": "Naam",
+    "propertyUrl": "rdfs:label",
+    "dc:description": "Naam van de slijperij",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Naamsvariatie_1",
+    "name": "Naamsvariatie_1",
+    "propertyUrl": "schema:alternateName",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest",
+    "datatype": "xsd:string"
+   },
+  {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Naamsvariatie_2",
+    "name": "Naamsvariatie_2",
+    "propertyUrl": "schema:alternateName",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest",
+    "datatype": "xsd:string"
+   },
+
+  {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Naamsvariatie_3",
+    "name": "Naamsvariatie_3",
+    "propertyUrl": "schema:alternateName",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Eigenaar_1",
+    "name": "Eigenaar_1",
+    "propertyUrl": "vocab:owner",
+    "dc:description": "Eigenaar van de slijperij",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Eigenaar_2",
+    "name": "Eigenaar_2",
+    "propertyUrl": "vocab:owner",
+    "dc:description": "Eigenaar van de slijperij",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Eigenaar_3",
+    "name": "Eigenaar_3",
+    "propertyUrl": "vocab:owner",
+    "dc:description": "Eigenaar van de slijperij",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Eigenaar_4",
+    "name": "Eigenaar_4",
+    "propertyUrl": "vocab:owner",
+    "dc:description": "Eigenaar van de slijperij",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Eigenaar_5",
+    "name": "Eigenaar_5",
+    "propertyUrl": "vocab:owner",
+    "dc:description": "Eigenaar van de slijperij",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Bedrijf",
+    "name": "Bedrijf",
+    "propertyUrl": "vocab:factory",
+    "dc:description": "Soort bedrijf",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Type",
+    "name": "Type",
+    "propertyUrl": "vocab:transmission",
+    "dc:description": "Type aandrijving",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Opgericht",
+    "name": "Opgericht",
+    "propertyUrl": "schema:foundingDate",
+    "dc:description": "Opgericht",
+    "datatype": "xsd:gYear"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Opgericht_onzeker",
+    "name": "Opgericht_onzeker",
+    "propertyUrl": "vocab:founded",
+    "dc:description": "Opgericht",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Uitgebreid",
+    "name": "Uitgebreid",
+    "propertyUrl": "vocab:expansionDate",
+    "dc:description": "Uitgebreid",
+    "datatype": "xsd:gYear"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Uitgebreid_onzeker",
+    "name": "Uitgebreid_onzeker",
+    "propertyUrl": "vocab:expanded",
+    "dc:description": "Uitgebreid",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Gesloten",
+    "name": "Gesloten",
+    "propertyUrl": "schema:dissolutionDate",
+    "dc:description": "Gesloten",
+    "datatype": "xsd:gYear"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Gesloten_onzeker",
+    "name": "Gesloten_onzeker",
+    "propertyUrl": "vocab:closed",
+    "dc:description": "Gesloten",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Adres",
+    "name": "Adres",
+    "dc:description": "Adres",
+    "propertyUrl": "juso:address",
+    "valueUrl": "{{Adres|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true",
+    "name": "Adres",
+    "aboutUrl": "{{Adres|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "dc:description": "Adres",
+    "datatype": "xsd:string"
+  },
+  {
+    "virtual": "true",
+    "name": "adamlink_uri",
+    "aboutUrl": "{{Adres|replace(' ', '_')}}",
+    "propertyUrl": "owl:sameAs",
+    "valueUrl": "{{adamlink_uri}}",
+    "datatype": "xsd:anyURI"
+  }, 
+  {
+    "virtual": "true",
+    "name": "locationPoint",
+    "aboutUrl": "{{Adres|replace(' ', '_')}}",
+    "propertyUrl": "owl:sameAs",
+    "valueUrl": "{{locationPoint}}",
+    "datatype": "xsd:anyURI"
+  }, 
+   {
+    "@id": "https://iisg.amsterdam/diamantslijperijen-amsterdam_2020_10_22.csv/column/Opmerkingen",
+    "name": "Opmerkingen",
+    "propertyUrl": "rdfs:comment",
+    "dc:description": "Opmerkingen",
+    "datatype": "xsd:string"
+   }
+  ],
+  "primaryKey": "ID",
+  "aboutUrl": "{ID}"
+ }
+}
