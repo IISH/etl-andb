@@ -16,8 +16,7 @@
   "name": "etl-andb",
   "repository": "git+https://github.com/wouterbeek/etl-andb.git",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "go": "tsc && node script.js"
   },
   "version": "1.0.0"
 }

@@ -4,7 +4,7 @@ Deze directorie bevat code waarmee de ANDB linked data automatisch gevalideerd k
 
 ** Installatie
 
-Installeer [Node.js](https://nodejs.org) en [Yarn](https://yarnpkg.com).
+Installeer [[Node.js][https://nodejs.org]] en [Yarn](https://yarnpkg.com).
 
 Voer de volgende commando's uit om met Yarn de benodigde afhankelijkheden te installeren:
 
@@ -14,20 +14,12 @@ yarn
 yarn install
 #+end_src
 
-* Compilatie
+** Uitvoer
 
-Voer de volgende commando's uit om het validatie script te bouwen:
+Voer de volgende commando's uit om het validatie script te bouwen en uit te voeren:
 
 #+begin_src sh
-yarn build
+yarn go
 #+end_src
 
 Dit hoeft alleen opnieuw te worden uitgevoerd wanneer ~script.ts~ wordt aangepast.
-
-* Uitvoer
-
-Met het volgende commando wordt de validatie uitgevoerd:
-
-#+begin_src sh
-node script.js
-#+end_src
