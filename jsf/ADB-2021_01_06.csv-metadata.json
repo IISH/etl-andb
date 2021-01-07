@@ -1,0 +1,177 @@
+{
+ "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv",
+ "@context": [
+  "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
+  {
+   "@language": "en",
+   "@base": "https://iisg.amsterdam/id/adb/"
+  },
+  {
+   "csvw": "http://www.w3.org/ns/csvw#",
+   "juso": "http://rdfs.co/juso/",
+   "owl": "http://www.w3.org/2002/07/owl#",
+   "pnv": "https://w3id.org/pnv#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "schema": "http://schema.org/",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "time": "http://www.w3.org/2006/time#",
+   "vocab": "https://iisg.amsterdam/vocab/adb-andb/",
+   "xml": "http://www.w3.org/XML/1998/namespace/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+ ],
+ "url": "ADB-2020_12_09.csv",
+ "dialect": {
+  "delimiter": ",",
+  "encoding": "utf-8",
+  "quoteChar": "\""
+ },
+ "dc:title": "ADB lidmaatschapskaartem",
+ "dcat:keyword": [],
+ "dc:publisher": {
+  "schema:name": "CLARIAH Structured Data Hub - Datalegend",
+  "schema:url": {
+   "@id": "http://datalegend.net"
+  }
+ },
+ "dc:license": {
+  "@id": "http://opendefinition.org/licenses/cc-by/"
+ },
+ "dc:modified": {
+  "@value": "2021-01-05",
+  "@type": "xsd:date"
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_image_no",
+    "name": "adm_image_no",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Card",
+    "dc:description": "Identifier van de kaart",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/person_uuid",
+    "name": "person_uuid",
+    "propertyUrl": "vocab:owner",
+    "dc:description": "Identifier eigenaar van de kaart",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_image_uuid",
+    "name": "adm_image_uuid",
+    "propertyUrl": "schema:image",
+    "dc:description": "Identifier afbeelding",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_last_name",
+    "name": "mbr_last_name",
+    "propertyUrl": "vocab:familyName",
+    "dc:description": "Achternaam",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_first_name",
+    "name": "mbr_first_name",
+    "propertyUrl": "vocab:givenName",
+    "dc:description": "Voornaam",
+    "datatype": "string"
+   },
+   {
+    "virtual": "true",
+    "datatype": "xsd:date",
+    "propertyUrl": "vocab:birthDate",
+    "dc:description": "Geboortedatum",
+    "csvw:value": "{{['%04d'| format(mbr_birth_year|int),'-','%02d' | format(mbr_birth_month|int),'-','%02d'|format(mbr_birth_day|int)]|join}}"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_birth_place",
+    "name": "mbr_birth_place",
+    "propertyUrl": "vocab:birthPlace",
+    "dc:description": "Geboorteplaats",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_birth_country",
+    "name": "mbr_birth_country",
+    "propertyUrl": "vocab:birthCountry",
+    "dc:description": "Geboorteland",
+    "datatype": "string"
+   },
+    {
+    "virtual": "true",
+    "datatype": "xsd:date",
+    "propertyUrl": "vocab:deathDate",
+    "dc:description": "Datum van overlijden",
+    "csvw:value": "{{['%04d'| format(mbr_death_year|int),'-','%02d' | format(mbr_death_month|int),'-','%02d'|format(mbr_death_day|int)]|join}}"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_death_place",
+    "name": "mbr_death_place",
+    "propertyUrl": "vocab:deathPlace",
+    "dc:description": "Plaats van overlijden",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_01",
+    "name": "mbr_street_01",
+    "propertyUrl": "vocab:residence",
+    "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true",
+    "name": "mbr_street_01",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "datatype": "xsd:string"
+  },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:postalAddress"
+   }, 
+   {
+    "virtual": "true",
+    "name": "mbr_street_01",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "hg:street",
+    "valueUrl": "{{mbr_street_01}}",
+    "datatype": "string"
+  },
+  {
+    "virtual": "true",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:houseNumber",
+    "valueUrl": "{{mbr_street_no_01}}",
+    "datatype": "string"
+  },
+  {
+    "virtual": "true",
+    "name": "mbr_street_no_add_01",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:houseNumberAddition",
+    "valueUrl": "{{mbr_street_no_add_01}}",
+    "datatype": "string"
+  },
+   {
+    "virtual": "true",
+    "name": "mbr_city_01",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "geo:sfWithin",
+    "valueUrl": "{{mbr_city_01}}"
+  },
+  {
+    "virtual": "true",
+    "aboutUrl": "mbr_city_01",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:place"
+   }
+  ],
+  "primaryKey": "adm_image_no",
+  "aboutUrl": "{adm_image_no}"
+ }
+}

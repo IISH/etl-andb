@@ -4,16 +4,17 @@
   "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
   {
    "@language": "en",
-   "@base": "https://iisg.amsterdam/"
+   "@base": "https://iisg.amsterdam/id/andb/"
   },
   {
    "aat": "http://vocab.getty.edu/aat/",
    "bibo": "http://purl.org/ontology/bibo/",
    "bio": "http://purl.org/vocab/bio/0.1/",
    "cidoc": "http://www.cidoc-crm.org/cidoc-crm/",
+   "cshapes": "https://iisg.amsterdam/vocab/",
    "csvw": "http://www.w3.org/ns/csvw#",
    "dbo": "http://dbpedia.org/ontology/",
-   "dc": "http://purl.org/dc/terms/",
+   "dct": "http://purl.org/dc/terms/",
    "dc11": "http://purl.org/dc/elements/1.1/",
    "dcterms": "http://purl.org/dc/terms/",
    "ecpo": "http://purl.org/ontology/ecpo#",
@@ -22,13 +23,14 @@
    "geo": "http://www.opengis.net/ont/geosparql#",
    "geonames": "http://www.geonames.org/ontology#",
    "gvp": "http://vocab.getty.edu/ontology#'",
+   "hg": "http://rdf.histograph.io/",
    "juso": "http://http://rdfs.co/juso/",
    "lemon": "http://lemon-model.net/lemon#",
    "midi": "http://purl.org/midi-ld/midi#",
    "np": "http://www.nanopub.org/nschema#",
    "owl": "http://www.w3.org/2002/07/owl#",
    "periodo": "http://n2t.net/ark:/99152/p0v#",
-   "pnv": "https://www.lodewijkpetram.nl/vocab/pnv/doc/",
+   "pnv": "https://w3id.org/pnv#",
    "prov": "http://www.w3.org/ns/prov#",
    "qb": "http://purl.org/linked-data/cube#",
    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -38,6 +40,7 @@
    "sdr": "https://iisg.amsterdam/",
    "sdv": "https://iisg.amsterdam/vocab/",
    "sem": "http://semanticweb.cs.vu.nl/2009/11/sem/",
+   "sh": "http://www.w3.org/ns/shacl#",
    "skos": "http://www.w3.org/2004/02/skos/core#",
    "time": "http://www.w3.org/2006/time#",
    "ulan": "http://vocab.getty.edu/ulan/",
@@ -52,7 +55,7 @@
   "encoding": "utf-8",
   "quoteChar": "\""
  },
- "dc:title": "ANDB",
+ "dc:title": "ANDB leerlingkaarten",
  "dcat:keyword": [],
  "dc:publisher": {
   "schema:name": "CLARIAH Structured Data Hub - Datalegend",
@@ -73,8 +76,10 @@
     "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_id",
     "name": "adm_id",
     "titles": [
-     "adm_id"
+     "Kaartidentifier"
     ],
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Card",
     "dc:description": "adm_id",
     "datatype": "string"
    },
@@ -82,8 +87,10 @@
     "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/person_uuid",
     "name": "person_uuid",
     "titles": [
-     "person_uuid"
+     "Persoonsidentifier"
     ],
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person",
     "dc:description": "person_uuid",
     "datatype": "string"
    },
@@ -93,88 +100,8 @@
     "titles": [
      "adm_image_no"
     ],
+    "propertyUrl": "",
     "dc:description": "adm_image_no",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_record_count",
-    "name": "adm_record_count",
-    "titles": [
-     "adm_record_count"
-    ],
-    "dc:description": "adm_record_count",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/total_records",
-    "name": "total_records",
-    "titles": [
-     "total_records"
-    ],
-    "dc:description": "total_records",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_scan_id",
-    "name": "adm_scan_id",
-    "titles": [
-     "adm_scan_id"
-    ],
-    "dc:description": "adm_scan_id",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_image_id",
-    "name": "adm_image_id",
-    "titles": [
-     "adm_image_id"
-    ],
-    "dc:description": "adm_image_id",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_date_creation",
-    "name": "adm_date_creation",
-    "titles": [
-     "adm_date_creation"
-    ],
-    "dc:description": "adm_date_creation",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_user_id",
-    "name": "adm_user_id",
-    "titles": [
-     "adm_user_id"
-    ],
-    "dc:description": "adm_user_id",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_date_entry",
-    "name": "adm_date_entry",
-    "titles": [
-     "adm_date_entry"
-    ],
-    "dc:description": "adm_date_entry",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_uuid",
-    "name": "adm_uuid",
-    "titles": [
-     "adm_uuid"
-    ],
-    "dc:description": "adm_uuid",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/id_of_something",
-    "name": "id_of_something",
-    "titles": [
-     "id_of_something"
-    ],
-    "dc:description": "id_of_something",
     "datatype": "string"
    },
    {
@@ -183,6 +110,7 @@
     "titles": [
      "card_id1"
     ],
+    "propertyUrl": "",
     "dc:description": "card_id1",
     "datatype": "string"
    },
@@ -192,16 +120,8 @@
     "titles": [
      "card_id2"
     ],
+    "propertyUrl": "",
     "dc:description": "card_id2",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/OK_id",
-    "name": "OK_id",
-    "titles": [
-     "OK_id"
-    ],
-    "dc:description": "OK_id",
     "datatype": "string"
    },
    {
@@ -210,6 +130,7 @@
     "titles": [
      "sdn_occupation"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_occupation",
     "datatype": "string"
    },
@@ -219,6 +140,7 @@
     "titles": [
      "sdn_first_name_orig"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_first_name_orig",
     "datatype": "string"
    },
@@ -228,6 +150,7 @@
     "titles": [
      "sdn_first_name"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_first_name",
     "datatype": "string"
    },
@@ -237,6 +160,7 @@
     "titles": [
      "sdn_middle_name_orig"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_middle_name_orig",
     "datatype": "string"
    },
@@ -246,6 +170,7 @@
     "titles": [
      "sdn_middle_name"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_middle_name",
     "datatype": "string"
    },
@@ -255,6 +180,7 @@
     "titles": [
      "sdn_last_name_orig"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_last_name_orig",
     "datatype": "string"
    },
@@ -264,6 +190,7 @@
     "titles": [
      "sdn_last_name"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_last_name",
     "datatype": "string"
    },
@@ -273,6 +200,7 @@
     "titles": [
      "sdn_maiden_name_orig"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_maiden_name_orig",
     "datatype": "string"
    },
@@ -282,6 +210,7 @@
     "titles": [
      "sdn_maiden_name"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_maiden_name",
     "datatype": "string"
    },
@@ -291,6 +220,7 @@
     "titles": [
      "sdn_birth_day_orig"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_birth_day_orig",
     "datatype": "string"
    },
@@ -300,6 +230,7 @@
     "titles": [
      "sdn_birth_date"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_birth_date",
     "datatype": "string"
    },
@@ -309,6 +240,7 @@
     "titles": [
      "sdn_birth_month_orig"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_birth_month_orig",
     "datatype": "string"
    },
@@ -318,6 +250,7 @@
     "titles": [
      "sdn_birth_month"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_birth_month",
     "datatype": "string"
    },
@@ -327,6 +260,7 @@
     "titles": [
      "sdn_birth_year_orig"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_birth_year_orig",
     "datatype": "string"
    },
@@ -336,6 +270,7 @@
     "titles": [
      "sdn_birth_year"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_birth_year",
     "datatype": "string"
    },
@@ -345,6 +280,7 @@
     "titles": [
      "sdn_birth_place"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_birth_place",
     "datatype": "string"
    },
@@ -354,6 +290,7 @@
     "titles": [
      "sdn_addr_day-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_day-01",
     "datatype": "string"
    },
@@ -363,6 +300,7 @@
     "titles": [
      "sdn_addr_month-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_month-01",
     "datatype": "string"
    },
@@ -372,6 +310,7 @@
     "titles": [
      "sdn_addr_year-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_year-01",
     "datatype": "string"
    },
@@ -381,6 +320,7 @@
     "titles": [
      "sdn_addr_day-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_day-02",
     "datatype": "string"
    },
@@ -390,6 +330,7 @@
     "titles": [
      "sdn_addr_month-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_month-02",
     "datatype": "string"
    },
@@ -399,6 +340,7 @@
     "titles": [
      "sdn_addr_year-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_year-02",
     "datatype": "string"
    },
@@ -408,6 +350,7 @@
     "titles": [
      "sdn_addr_day-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_day-03",
     "datatype": "string"
    },
@@ -417,6 +360,7 @@
     "titles": [
      "sdn_addr_month-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_month-03",
     "datatype": "string"
    },
@@ -426,16 +370,8 @@
     "titles": [
      "sdn_addr_year-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_year-03",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/sdn_job_cat",
-    "name": "sdn_job_cat",
-    "titles": [
-     "sdn_job_cat"
-    ],
-    "dc:description": "sdn_job_cat",
     "datatype": "string"
    },
    {
@@ -444,6 +380,7 @@
     "titles": [
      "admission_day-01"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-01",
     "datatype": "string"
    },
@@ -453,6 +390,7 @@
     "titles": [
      "admission_month-01"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-01",
     "datatype": "string"
    },
@@ -462,6 +400,7 @@
     "titles": [
      "admission_year-01"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-01",
     "datatype": "string"
    },
@@ -471,6 +410,7 @@
     "titles": [
      "wsp_day-01"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-01",
     "datatype": "string"
    },
@@ -480,6 +420,7 @@
     "titles": [
      "wsp_month-01"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-01",
     "datatype": "string"
    },
@@ -489,6 +430,7 @@
     "titles": [
      "wsp_year-01"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-01",
     "datatype": "string"
    },
@@ -498,6 +440,7 @@
     "titles": [
      "admission_day-02"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-02",
     "datatype": "string"
    },
@@ -507,6 +450,7 @@
     "titles": [
      "admission_month-02"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-02",
     "datatype": "string"
    },
@@ -516,6 +460,7 @@
     "titles": [
      "admission_year-02"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-02",
     "datatype": "string"
    },
@@ -525,6 +470,7 @@
     "titles": [
      "wsp_day-02"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-02",
     "datatype": "string"
    },
@@ -534,6 +480,7 @@
     "titles": [
      "wsp_month-02"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-02",
     "datatype": "string"
    },
@@ -543,6 +490,7 @@
     "titles": [
      "wsp_year-02"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-02",
     "datatype": "string"
    },
@@ -552,6 +500,7 @@
     "titles": [
      "admission_day-03"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-03",
     "datatype": "string"
    },
@@ -561,6 +510,7 @@
     "titles": [
      "admission_month-03"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-03",
     "datatype": "string"
    },
@@ -570,6 +520,7 @@
     "titles": [
      "admission_year-03"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-03",
     "datatype": "string"
    },
@@ -579,6 +530,7 @@
     "titles": [
      "wsp_day-03"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-03",
     "datatype": "string"
    },
@@ -588,6 +540,7 @@
     "titles": [
      "wsp_month-03"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-03",
     "datatype": "string"
    },
@@ -597,6 +550,7 @@
     "titles": [
      "wsp_year-03"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-03",
     "datatype": "string"
    },
@@ -606,6 +560,7 @@
     "titles": [
      "admission_day-04"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-04",
     "datatype": "string"
    },
@@ -615,6 +570,7 @@
     "titles": [
      "admission_month-04"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-04",
     "datatype": "string"
    },
@@ -624,6 +580,7 @@
     "titles": [
      "admission_year-04"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-04",
     "datatype": "string"
    },
@@ -633,6 +590,7 @@
     "titles": [
      "wsp_day-04"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-04",
     "datatype": "string"
    },
@@ -642,6 +600,7 @@
     "titles": [
      "wsp_month-04"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-04",
     "datatype": "string"
    },
@@ -651,6 +610,7 @@
     "titles": [
      "wsp_year-04"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-04",
     "datatype": "string"
    },
@@ -660,6 +620,7 @@
     "titles": [
      "admission_day-05"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-05",
     "datatype": "string"
    },
@@ -669,6 +630,7 @@
     "titles": [
      "admission_month-05"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-05",
     "datatype": "string"
    },
@@ -678,6 +640,7 @@
     "titles": [
      "admission_year-05"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-05",
     "datatype": "string"
    },
@@ -687,6 +650,7 @@
     "titles": [
      "wsp_day-05"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-05",
     "datatype": "string"
    },
@@ -696,6 +660,7 @@
     "titles": [
      "wsp_month-05"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-05",
     "datatype": "string"
    },
@@ -705,6 +670,7 @@
     "titles": [
      "wsp_year-05"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-05",
     "datatype": "string"
    },
@@ -714,6 +680,7 @@
     "titles": [
      "admission_day-06"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-06",
     "datatype": "string"
    },
@@ -723,6 +690,7 @@
     "titles": [
      "admission_month-06"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-06",
     "datatype": "string"
    },
@@ -732,6 +700,7 @@
     "titles": [
      "admission_year-06"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-06",
     "datatype": "string"
    },
@@ -741,6 +710,7 @@
     "titles": [
      "wsp_day-06"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-06",
     "datatype": "string"
    },
@@ -750,6 +720,7 @@
     "titles": [
      "wsp_month-06"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-06",
     "datatype": "string"
    },
@@ -759,6 +730,7 @@
     "titles": [
      "wsp_year-06"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-06",
     "datatype": "string"
    },
@@ -768,6 +740,7 @@
     "titles": [
      "edu_end_day-01"
     ],
+    "propertyUrl": "",
     "dc:description": "edu_end_day-01",
     "datatype": "string"
    },
@@ -777,6 +750,7 @@
     "titles": [
      "edu_end_month-01"
     ],
+    "propertyUrl": "",
     "dc:description": "edu_end_month-01",
     "datatype": "string"
    },
@@ -786,6 +760,7 @@
     "titles": [
      "edu_end_year-01"
     ],
+    "propertyUrl": "",
     "dc:description": "edu_end_year-01",
     "datatype": "string"
    },
@@ -795,6 +770,7 @@
     "titles": [
      "edu_examinator"
     ],
+    "propertyUrl": "",
     "dc:description": "edu_examinator",
     "datatype": "string"
    },
@@ -804,6 +780,7 @@
     "titles": [
      "mmb_day"
     ],
+    "propertyUrl": "",
     "dc:description": "mmb_day",
     "datatype": "string"
    },
@@ -813,6 +790,7 @@
     "titles": [
      "mmb_month"
     ],
+    "propertyUrl": "",
     "dc:description": "mmb_month",
     "datatype": "string"
    },
@@ -822,6 +800,7 @@
     "titles": [
      "mmb_year"
     ],
+    "propertyUrl": "",
     "dc:description": "mmb_year",
     "datatype": "string"
    },
@@ -831,6 +810,7 @@
     "titles": [
      "un_name"
     ],
+    "propertyUrl": "",
     "dc:description": "un_name",
     "datatype": "string"
    },
@@ -840,6 +820,7 @@
     "titles": [
      "un_section"
     ],
+    "propertyUrl": "",
     "dc:description": "un_section",
     "datatype": "string"
    },
@@ -849,6 +830,7 @@
     "titles": [
      "un_section_no"
     ],
+    "propertyUrl": "",
     "dc:description": "un_section_no",
     "datatype": "string"
    },
@@ -858,6 +840,7 @@
     "titles": [
      "un_number_brother"
     ],
+    "propertyUrl": "",
     "dc:description": "un_number_brother",
     "datatype": "string"
    },
@@ -867,6 +850,7 @@
     "titles": [
      "un_number_brother-2"
     ],
+    "propertyUrl": "",
     "dc:description": "un_number_brother-2",
     "datatype": "string"
    },
@@ -876,6 +860,7 @@
     "titles": [
      "un_number_sister"
     ],
+    "propertyUrl": "",
     "dc:description": "un_number_sister",
     "datatype": "string"
    },
@@ -885,6 +870,7 @@
     "titles": [
      "un_number_sister-2"
     ],
+    "propertyUrl": "",
     "dc:description": "un_number_sister-2",
     "datatype": "string"
    },
@@ -894,6 +880,7 @@
     "titles": [
      "son_daughter"
     ],
+    "propertyUrl": "",
     "dc:description": "son_daughter",
     "datatype": "string"
    },
@@ -903,6 +890,7 @@
     "titles": [
      "father_or_mother"
     ],
+    "propertyUrl": "",
     "dc:description": "father_or_mother",
     "datatype": "string"
    },
@@ -912,6 +900,7 @@
     "titles": [
      "par_first_name"
     ],
+    "propertyUrl": "",
     "dc:description": "par_first_name",
     "datatype": "string"
    },
@@ -921,6 +910,7 @@
     "titles": [
      "par_middle_name"
     ],
+    "propertyUrl": "",
     "dc:description": "par_middle_name",
     "datatype": "string"
    },
@@ -930,6 +920,7 @@
     "titles": [
      "par_last_name"
     ],
+    "propertyUrl": "",
     "dc:description": "par_last_name",
     "datatype": "string"
    },
@@ -939,6 +930,7 @@
     "titles": [
      "par_maiden_name"
     ],
+    "propertyUrl": "",
     "dc:description": "par_maiden_name",
     "datatype": "string"
    },
@@ -948,6 +940,7 @@
     "titles": [
      "par_birth_day"
     ],
+    "propertyUrl": "",
     "dc:description": "par_birth_day",
     "datatype": "string"
    },
@@ -957,6 +950,7 @@
     "titles": [
      "par_birth_month"
     ],
+    "propertyUrl": "",
     "dc:description": "par_birth_month",
     "datatype": "string"
    },
@@ -966,6 +960,7 @@
     "titles": [
      "par_birth_year"
     ],
+    "propertyUrl": "",
     "dc:description": "par_birth_year",
     "datatype": "string"
    },
@@ -975,6 +970,7 @@
     "titles": [
      "par_birth_place"
     ],
+    "propertyUrl": "",
     "dc:description": "par_birth_place",
     "datatype": "string"
    },
@@ -984,6 +980,7 @@
     "titles": [
      "par_un_name"
     ],
+    "propertyUrl": "",
     "dc:description": "par_un_name",
     "datatype": "string"
    },
@@ -993,6 +990,7 @@
     "titles": [
      "par_un_section"
     ],
+    "propertyUrl": "",
     "dc:description": "par_un_section",
     "datatype": "string"
    },
@@ -1002,6 +1000,7 @@
     "titles": [
      "par_un_section_no"
     ],
+    "propertyUrl": "",
     "dc:description": "par_un_section_no",
     "datatype": "string"
    },
@@ -1011,43 +1010,8 @@
     "titles": [
      "par_un_er_no"
     ],
+    "propertyUrl": "",
     "dc:description": "par_un_er_no",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks",
-    "name": "adm_remarks",
-    "titles": [
-     "adm_remarks"
-    ],
-    "dc:description": "adm_remarks",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_data_id",
-    "name": "adm_data_id",
-    "titles": [
-     "adm_data_id"
-    ],
-    "dc:description": "adm_data_id",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/amd_workunit_name",
-    "name": "amd_workunit_name",
-    "titles": [
-     "amd_workunit_name"
-    ],
-    "dc:description": "amd_workunit_name",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_workunit_id",
-    "name": "adm_workunit_id",
-    "titles": [
-     "adm_workunit_id"
-    ],
-    "dc:description": "adm_workunit_id",
     "datatype": "string"
    },
    {
@@ -1056,151 +1020,8 @@
     "titles": [
      "adm_image_uuid"
     ],
+    "propertyUrl": "",
     "dc:description": "adm_image_uuid",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_card_series_id",
-    "name": "adm_card_series_id",
-    "titles": [
-     "adm_card_series_id"
-    ],
-    "dc:description": "adm_card_series_id",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_card_serie_name",
-    "name": "adm_card_serie_name",
-    "titles": [
-     "adm_card_serie_name"
-    ],
-    "dc:description": "adm_card_serie_name",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_card_serie_title",
-    "name": "adm_card_serie_title",
-    "titles": [
-     "adm_card_serie_title"
-    ],
-    "dc:description": "adm_card_serie_title",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks-01",
-    "name": "adm_remarks-01",
-    "titles": [
-     "adm_remarks-01"
-    ],
-    "dc:description": "adm_remarks-01",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks_date-01",
-    "name": "adm_remarks_date-01",
-    "titles": [
-     "adm_remarks_date-01"
-    ],
-    "dc:description": "adm_remarks_date-01",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_answer-01",
-    "name": "adm_answer-01",
-    "titles": [
-     "adm_answer-01"
-    ],
-    "dc:description": "adm_answer-01",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks-02",
-    "name": "adm_remarks-02",
-    "titles": [
-     "adm_remarks-02"
-    ],
-    "dc:description": "adm_remarks-02",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks_date-02",
-    "name": "adm_remarks_date-02",
-    "titles": [
-     "adm_remarks_date-02"
-    ],
-    "dc:description": "adm_remarks_date-02",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_answer-02",
-    "name": "adm_answer-02",
-    "titles": [
-     "adm_answer-02"
-    ],
-    "dc:description": "adm_answer-02",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks-03",
-    "name": "adm_remarks-03",
-    "titles": [
-     "adm_remarks-03"
-    ],
-    "dc:description": "adm_remarks-03",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks_date-03",
-    "name": "adm_remarks_date-03",
-    "titles": [
-     "adm_remarks_date-03"
-    ],
-    "dc:description": "adm_remarks_date-03",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_answer-03",
-    "name": "adm_answer-03",
-    "titles": [
-     "adm_answer-03"
-    ],
-    "dc:description": "adm_answer-03",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks-04",
-    "name": "adm_remarks-04",
-    "titles": [
-     "adm_remarks-04"
-    ],
-    "dc:description": "adm_remarks-04",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks_date-04",
-    "name": "adm_remarks_date-04",
-    "titles": [
-     "adm_remarks_date-04"
-    ],
-    "dc:description": "adm_remarks_date-04",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_answer-04",
-    "name": "adm_answer-04",
-    "titles": [
-     "adm_answer-04"
-    ],
-    "dc:description": "adm_answer-04",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/series",
-    "name": "series",
-    "titles": [
-     "series"
-    ],
-    "dc:description": "series",
     "datatype": "string"
    },
    {
@@ -1209,6 +1030,7 @@
     "titles": [
      "admission_day-07"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-07",
     "datatype": "string"
    },
@@ -1218,6 +1040,7 @@
     "titles": [
      "admission_month-07"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-07",
     "datatype": "string"
    },
@@ -1227,6 +1050,7 @@
     "titles": [
      "admission_year-07"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-07",
     "datatype": "string"
    },
@@ -1236,6 +1060,7 @@
     "titles": [
      "wsp_day-07"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-07",
     "datatype": "string"
    },
@@ -1245,6 +1070,7 @@
     "titles": [
      "wsp_month-07"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-07",
     "datatype": "string"
    },
@@ -1254,34 +1080,8 @@
     "titles": [
      "wsp_year-07"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-07",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks-05",
-    "name": "adm_remarks-05",
-    "titles": [
-     "adm_remarks-05"
-    ],
-    "dc:description": "adm_remarks-05",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks_date-05",
-    "name": "adm_remarks_date-05",
-    "titles": [
-     "adm_remarks_date-05"
-    ],
-    "dc:description": "adm_remarks_date-05",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_answer-05",
-    "name": "adm_answer-05",
-    "titles": [
-     "adm_answer-05"
-    ],
-    "dc:description": "adm_answer-05",
     "datatype": "string"
    },
    {
@@ -1290,6 +1090,7 @@
     "titles": [
      "admission_day-08"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-08",
     "datatype": "string"
    },
@@ -1299,6 +1100,7 @@
     "titles": [
      "admission_month-08"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-08",
     "datatype": "string"
    },
@@ -1308,6 +1110,7 @@
     "titles": [
      "admission_year-08"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-08",
     "datatype": "string"
    },
@@ -1317,6 +1120,7 @@
     "titles": [
      "wsp_day-08"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-08",
     "datatype": "string"
    },
@@ -1326,6 +1130,7 @@
     "titles": [
      "wsp_month-08"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-08",
     "datatype": "string"
    },
@@ -1335,6 +1140,7 @@
     "titles": [
      "wsp_year-08"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-08",
     "datatype": "string"
    },
@@ -1344,6 +1150,7 @@
     "titles": [
      "admission_day-09"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-09",
     "datatype": "string"
    },
@@ -1353,6 +1160,7 @@
     "titles": [
      "admission_month-09"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-09",
     "datatype": "string"
    },
@@ -1362,6 +1170,7 @@
     "titles": [
      "admission_year-09"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-09",
     "datatype": "string"
    },
@@ -1371,6 +1180,7 @@
     "titles": [
      "wsp_day-09"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-09",
     "datatype": "string"
    },
@@ -1380,6 +1190,7 @@
     "titles": [
      "wsp_month-09"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-09",
     "datatype": "string"
    },
@@ -1389,16 +1200,8 @@
     "titles": [
      "wsp_year-09"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-09",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/card_idd_add",
-    "name": "card_idd_add",
-    "titles": [
-     "card_idd_add"
-    ],
-    "dc:description": "card_idd_add",
     "datatype": "string"
    },
    {
@@ -1407,6 +1210,7 @@
     "titles": [
      "sdn_addr_day-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_day-04",
     "datatype": "string"
    },
@@ -1416,6 +1220,7 @@
     "titles": [
      "sdn_addr_month-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_month-04",
     "datatype": "string"
    },
@@ -1425,6 +1230,7 @@
     "titles": [
      "sdn_addr_year-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_year-04",
     "datatype": "string"
    },
@@ -1434,6 +1240,7 @@
     "titles": [
      "un_number_brother-3"
     ],
+    "propertyUrl": "",
     "dc:description": "un_number_brother-3",
     "datatype": "string"
    },
@@ -1443,6 +1250,7 @@
     "titles": [
      "sdn_addr_day-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_day-05",
     "datatype": "string"
    },
@@ -1452,6 +1260,7 @@
     "titles": [
      "sdn_addr_month-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_month-05",
     "datatype": "string"
    },
@@ -1461,70 +1270,8 @@
     "titles": [
      "sdn_addr_year-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_addr_year-05",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks-06",
-    "name": "adm_remarks-06",
-    "titles": [
-     "adm_remarks-06"
-    ],
-    "dc:description": "adm_remarks-06",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks_date-06",
-    "name": "adm_remarks_date-06",
-    "titles": [
-     "adm_remarks_date-06"
-    ],
-    "dc:description": "adm_remarks_date-06",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_answer-06",
-    "name": "adm_answer-06",
-    "titles": [
-     "adm_answer-06"
-    ],
-    "dc:description": "adm_answer-06",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_dummy",
-    "name": "adm_dummy",
-    "titles": [
-     "adm_dummy"
-    ],
-    "dc:description": "adm_dummy",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks-07",
-    "name": "adm_remarks-07",
-    "titles": [
-     "adm_remarks-07"
-    ],
-    "dc:description": "adm_remarks-07",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_remarks_date-07",
-    "name": "adm_remarks_date-07",
-    "titles": [
-     "adm_remarks_date-07"
-    ],
-    "dc:description": "adm_remarks_date-07",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/adm_answer-07",
-    "name": "adm_answer-07",
-    "titles": [
-     "adm_answer-07"
-    ],
-    "dc:description": "adm_answer-07",
     "datatype": "string"
    },
    {
@@ -1533,6 +1280,7 @@
     "titles": [
      "admission_day-10"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_day-10",
     "datatype": "string"
    },
@@ -1542,6 +1290,7 @@
     "titles": [
      "admission_month-10"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_month-10",
     "datatype": "string"
    },
@@ -1551,6 +1300,7 @@
     "titles": [
      "admission_year-10"
     ],
+    "propertyUrl": "",
     "dc:description": "admission_year-10",
     "datatype": "string"
    },
@@ -1560,6 +1310,7 @@
     "titles": [
      "wsp_day-10"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_day-10",
     "datatype": "string"
    },
@@ -1569,6 +1320,7 @@
     "titles": [
      "wsp_month-10"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_month-10",
     "datatype": "string"
    },
@@ -1578,34 +1330,8 @@
     "titles": [
      "wsp_year-10"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_year-10",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/edu_end_day-02",
-    "name": "edu_end_day-02",
-    "titles": [
-     "edu_end_day-02"
-    ],
-    "dc:description": "edu_end_day-02",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/edu_end_month-02",
-    "name": "edu_end_month-02",
-    "titles": [
-     "edu_end_month-02"
-    ],
-    "dc:description": "edu_end_month-02",
-    "datatype": "string"
-   },
-   {
-    "@id": "https://iisg.amsterdam/andb_apprentice_all_series-2020_12_09.csv/column/edu_end_year-02",
-    "name": "edu_end_year-02",
-    "titles": [
-     "edu_end_year-02"
-    ],
-    "dc:description": "edu_end_year-02",
     "datatype": "string"
    },
    {
@@ -1614,6 +1340,7 @@
     "titles": [
      "un_number_sister-3"
     ],
+    "propertyUrl": "",
     "dc:description": "un_number_sister-3",
     "datatype": "string"
    },
@@ -1623,6 +1350,7 @@
     "titles": [
      "par_death_day"
     ],
+    "propertyUrl": "",
     "dc:description": "par_death_day",
     "datatype": "string"
    },
@@ -1632,6 +1360,7 @@
     "titles": [
      "par_death_month"
     ],
+    "propertyUrl": "",
     "dc:description": "par_death_month",
     "datatype": "string"
    },
@@ -1641,6 +1370,7 @@
     "titles": [
      "part_death_year"
     ],
+    "propertyUrl": "",
     "dc:description": "part_death_year",
     "datatype": "string"
    },
@@ -1650,6 +1380,7 @@
     "titles": [
      "un_number_brother-4"
     ],
+    "propertyUrl": "",
     "dc:description": "un_number_brother-4",
     "datatype": "string"
    },
@@ -1659,6 +1390,7 @@
     "titles": [
      "un_number_brother-5"
     ],
+    "propertyUrl": "",
     "dc:description": "un_number_brother-5",
     "datatype": "string"
    },
@@ -1668,6 +1400,7 @@
     "titles": [
      "mst_name-01"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-01",
     "datatype": "string"
    },
@@ -1677,6 +1410,7 @@
     "titles": [
      "mst_name_leermeester-01"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-01",
     "datatype": "string"
    },
@@ -1686,6 +1420,7 @@
     "titles": [
      "mst_name_mbc-01"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-01",
     "datatype": "string"
    },
@@ -1695,6 +1430,7 @@
     "titles": [
      "mst_name-02"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-02",
     "datatype": "string"
    },
@@ -1704,6 +1440,7 @@
     "titles": [
      "mst_name_leermeester-02"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-02",
     "datatype": "string"
    },
@@ -1713,6 +1450,7 @@
     "titles": [
      "mst_name_mbc-02"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-02",
     "datatype": "string"
    },
@@ -1722,6 +1460,7 @@
     "titles": [
      "mst_name-03"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-03",
     "datatype": "string"
    },
@@ -1731,6 +1470,7 @@
     "titles": [
      "mst_name_leermeester-03"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-03",
     "datatype": "string"
    },
@@ -1740,6 +1480,7 @@
     "titles": [
      "mst_name_mbc-03"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-03",
     "datatype": "string"
    },
@@ -1749,6 +1490,7 @@
     "titles": [
      "mst_name-04"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-04",
     "datatype": "string"
    },
@@ -1758,6 +1500,7 @@
     "titles": [
      "mst_name_leermeester-04"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-04",
     "datatype": "string"
    },
@@ -1767,6 +1510,7 @@
     "titles": [
      "mst_name_mbc-04"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-04",
     "datatype": "string"
    },
@@ -1776,6 +1520,7 @@
     "titles": [
      "mst_name-05"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-05",
     "datatype": "string"
    },
@@ -1785,6 +1530,7 @@
     "titles": [
      "mst_name_leermeester-05"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-05",
     "datatype": "string"
    },
@@ -1794,6 +1540,7 @@
     "titles": [
      "mst_name_mbc-05"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-05",
     "datatype": "string"
    },
@@ -1803,6 +1550,7 @@
     "titles": [
      "mst_name-06"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-06",
     "datatype": "string"
    },
@@ -1812,6 +1560,7 @@
     "titles": [
      "mst_name_leermeester-06"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-06",
     "datatype": "string"
    },
@@ -1821,6 +1570,7 @@
     "titles": [
      "mst_name_mbc-06"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-06",
     "datatype": "string"
    },
@@ -1830,6 +1580,7 @@
     "titles": [
      "mst_name-07"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-07",
     "datatype": "string"
    },
@@ -1839,6 +1590,7 @@
     "titles": [
      "mst_name_leermeester-07"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-07",
     "datatype": "string"
    },
@@ -1848,6 +1600,7 @@
     "titles": [
      "mst_name_mbc-07"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-07",
     "datatype": "string"
    },
@@ -1857,6 +1610,7 @@
     "titles": [
      "mst_name-08"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-08",
     "datatype": "string"
    },
@@ -1866,6 +1620,7 @@
     "titles": [
      "mst_name_leermeester-08"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-08",
     "datatype": "string"
    },
@@ -1875,6 +1630,7 @@
     "titles": [
      "mst_name_mbc-08"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-08",
     "datatype": "string"
    },
@@ -1884,6 +1640,7 @@
     "titles": [
      "mst_name-09"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-09",
     "datatype": "string"
    },
@@ -1893,6 +1650,7 @@
     "titles": [
      "mst_name_leermeester-09"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-09",
     "datatype": "string"
    },
@@ -1902,6 +1660,7 @@
     "titles": [
      "mst_name_mbc-09"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-09",
     "datatype": "string"
    },
@@ -1911,6 +1670,7 @@
     "titles": [
      "mst_name-10"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name-10",
     "datatype": "string"
    },
@@ -1920,6 +1680,7 @@
     "titles": [
      "mst_name_leermeester-10"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_leermeester-10",
     "datatype": "string"
    },
@@ -1929,6 +1690,7 @@
     "titles": [
      "mst_name_mbc-10"
     ],
+    "propertyUrl": "",
     "dc:description": "mst_name_mbc-10",
     "datatype": "string"
    },
@@ -1938,6 +1700,7 @@
     "titles": [
      "wsp_name-01"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-01",
     "datatype": "string"
    },
@@ -1947,6 +1710,7 @@
     "titles": [
      "wsp_name-02"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-02",
     "datatype": "string"
    },
@@ -1956,6 +1720,7 @@
     "titles": [
      "wsp_name-03"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-03",
     "datatype": "string"
    },
@@ -1965,6 +1730,7 @@
     "titles": [
      "wsp_name-04"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-04",
     "datatype": "string"
    },
@@ -1974,6 +1740,7 @@
     "titles": [
      "wsp_name-05"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-05",
     "datatype": "string"
    },
@@ -1983,6 +1750,7 @@
     "titles": [
      "wsp_name-06"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-06",
     "datatype": "string"
    },
@@ -1992,6 +1760,7 @@
     "titles": [
      "wsp_name-07"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-07",
     "datatype": "string"
    },
@@ -2001,6 +1770,7 @@
     "titles": [
      "wsp_name-08"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-08",
     "datatype": "string"
    },
@@ -2010,6 +1780,7 @@
     "titles": [
      "wsp_name-09"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-09",
     "datatype": "string"
    },
@@ -2019,6 +1790,7 @@
     "titles": [
      "wsp_name-10"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_name-10",
     "datatype": "string"
    },
@@ -2028,6 +1800,7 @@
     "titles": [
      "wsp_street-01"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-01",
     "datatype": "string"
    },
@@ -2037,6 +1810,7 @@
     "titles": [
      "wsp_street-02"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-02",
     "datatype": "string"
    },
@@ -2046,6 +1820,7 @@
     "titles": [
      "wsp_street-03"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-03",
     "datatype": "string"
    },
@@ -2055,6 +1830,7 @@
     "titles": [
      "wsp_street-04"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-04",
     "datatype": "string"
    },
@@ -2064,6 +1840,7 @@
     "titles": [
      "wsp_street-05"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-05",
     "datatype": "string"
    },
@@ -2073,6 +1850,7 @@
     "titles": [
      "wsp_street-06"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-06",
     "datatype": "string"
    },
@@ -2082,6 +1860,7 @@
     "titles": [
      "wsp_street-07"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-07",
     "datatype": "string"
    },
@@ -2091,6 +1870,7 @@
     "titles": [
      "wsp_street-08"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-08",
     "datatype": "string"
    },
@@ -2100,6 +1880,7 @@
     "titles": [
      "wsp_street-09"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-09",
     "datatype": "string"
    },
@@ -2109,6 +1890,7 @@
     "titles": [
      "wsp_street-10"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street-10",
     "datatype": "string"
    },
@@ -2118,6 +1900,7 @@
     "titles": [
      "wsp_street_no-01"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-01",
     "datatype": "string"
    },
@@ -2127,6 +1910,7 @@
     "titles": [
      "wsp_street_no-02"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-02",
     "datatype": "string"
    },
@@ -2136,6 +1920,7 @@
     "titles": [
      "wsp_street_no-03"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-03",
     "datatype": "string"
    },
@@ -2145,6 +1930,7 @@
     "titles": [
      "wsp_street_no-04"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-04",
     "datatype": "string"
    },
@@ -2154,6 +1940,7 @@
     "titles": [
      "wsp_street_no-05"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-05",
     "datatype": "string"
    },
@@ -2163,6 +1950,7 @@
     "titles": [
      "wsp_street_no-06"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-06",
     "datatype": "string"
    },
@@ -2172,6 +1960,7 @@
     "titles": [
      "wsp_street_no-07"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-07",
     "datatype": "string"
    },
@@ -2181,6 +1970,7 @@
     "titles": [
      "wsp_street_no-08"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-08",
     "datatype": "string"
    },
@@ -2190,6 +1980,7 @@
     "titles": [
      "wsp_street_no-09"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-09",
     "datatype": "string"
    },
@@ -2199,6 +1990,7 @@
     "titles": [
      "wsp_street_no-10"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no-10",
     "datatype": "string"
    },
@@ -2208,6 +2000,7 @@
     "titles": [
      "wsp_street_no_ad-01"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-01",
     "datatype": "string"
    },
@@ -2217,6 +2010,7 @@
     "titles": [
      "wsp_street_no_ad-02"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-02",
     "datatype": "string"
    },
@@ -2226,6 +2020,7 @@
     "titles": [
      "wsp_street_no_ad-03"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-03",
     "datatype": "string"
    },
@@ -2235,6 +2030,7 @@
     "titles": [
      "wsp_street_no_ad-04"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-04",
     "datatype": "string"
    },
@@ -2244,6 +2040,7 @@
     "titles": [
      "wsp_street_no_ad-05"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-05",
     "datatype": "string"
    },
@@ -2253,6 +2050,7 @@
     "titles": [
      "wsp_street_no_ad-06"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-06",
     "datatype": "string"
    },
@@ -2262,6 +2060,7 @@
     "titles": [
      "wsp_street_no_ad-07"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-07",
     "datatype": "string"
    },
@@ -2271,6 +2070,7 @@
     "titles": [
      "wsp_street_no_ad-08"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-08",
     "datatype": "string"
    },
@@ -2280,6 +2080,7 @@
     "titles": [
      "wsp_street_no_ad-09"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-09",
     "datatype": "string"
    },
@@ -2289,6 +2090,7 @@
     "titles": [
      "wsp_street_no_ad-10"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_street_no_ad-10",
     "datatype": "string"
    },
@@ -2298,6 +2100,7 @@
     "titles": [
      "wsp_city-01"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-01",
     "datatype": "string"
    },
@@ -2307,6 +2110,7 @@
     "titles": [
      "wsp_city-02"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-02",
     "datatype": "string"
    },
@@ -2316,6 +2120,7 @@
     "titles": [
      "wsp_city-03"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-03",
     "datatype": "string"
    },
@@ -2325,6 +2130,7 @@
     "titles": [
      "wsp_city-04"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-04",
     "datatype": "string"
    },
@@ -2334,6 +2140,7 @@
     "titles": [
      "wsp_city-05"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-05",
     "datatype": "string"
    },
@@ -2343,6 +2150,7 @@
     "titles": [
      "wsp_city-06"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-06",
     "datatype": "string"
    },
@@ -2352,6 +2160,7 @@
     "titles": [
      "wsp_city-07"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-07",
     "datatype": "string"
    },
@@ -2361,6 +2170,7 @@
     "titles": [
      "wsp_city-08"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-08",
     "datatype": "string"
    },
@@ -2370,6 +2180,7 @@
     "titles": [
      "wsp_city-09"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-09",
     "datatype": "string"
    },
@@ -2379,6 +2190,7 @@
     "titles": [
      "wsp_city-10"
     ],
+    "propertyUrl": "",
     "dc:description": "wsp_city-10",
     "datatype": "string"
    },
@@ -2388,6 +2200,7 @@
     "titles": [
      "sdn_street-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street-01",
     "datatype": "string"
    },
@@ -2397,6 +2210,7 @@
     "titles": [
      "sdn_street_no-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no-01",
     "datatype": "string"
    },
@@ -2406,6 +2220,7 @@
     "titles": [
      "sdn_street_no_add-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no_add-01",
     "datatype": "string"
    },
@@ -2415,6 +2230,7 @@
     "titles": [
      "sdn_city-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_city-01",
     "datatype": "string"
    },
@@ -2424,6 +2240,7 @@
     "titles": [
      "sdn_street_adamlink_uri-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_adamlink_uri-01",
     "datatype": "string"
    },
@@ -2433,6 +2250,7 @@
     "titles": [
      "sdn_address_locationPoint-01"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_address_locationPoint-01",
     "datatype": "string"
    },
@@ -2442,6 +2260,7 @@
     "titles": [
      "sdn_street-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street-02",
     "datatype": "string"
    },
@@ -2451,6 +2270,7 @@
     "titles": [
      "sdn_street_no-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no-02",
     "datatype": "string"
    },
@@ -2460,6 +2280,7 @@
     "titles": [
      "sdn_street_no_add-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no_add-02",
     "datatype": "string"
    },
@@ -2469,6 +2290,7 @@
     "titles": [
      "sdn_city-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_city-02",
     "datatype": "string"
    },
@@ -2478,6 +2300,7 @@
     "titles": [
      "sdn_street_adamlink_uri-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_adamlink_uri-02",
     "datatype": "string"
    },
@@ -2487,6 +2310,7 @@
     "titles": [
      "sdn_address_locationPoint-02"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_address_locationPoint-02",
     "datatype": "string"
    },
@@ -2496,6 +2320,7 @@
     "titles": [
      "sdn_street-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street-03",
     "datatype": "string"
    },
@@ -2505,6 +2330,7 @@
     "titles": [
      "sdn_street_no-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no-03",
     "datatype": "string"
    },
@@ -2514,6 +2340,7 @@
     "titles": [
      "sdn_street_no_add-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no_add-03",
     "datatype": "string"
    },
@@ -2523,6 +2350,7 @@
     "titles": [
      "sdn_city-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_city-03",
     "datatype": "string"
    },
@@ -2532,6 +2360,7 @@
     "titles": [
      "sdn_street_adamlink_uri-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_adamlink_uri-03",
     "datatype": "string"
    },
@@ -2541,6 +2370,7 @@
     "titles": [
      "sdn_address_locationPoint-03"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_address_locationPoint-03",
     "datatype": "string"
    },
@@ -2550,6 +2380,7 @@
     "titles": [
      "sdn_street-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street-04",
     "datatype": "string"
    },
@@ -2559,6 +2390,7 @@
     "titles": [
      "sdn_street_no-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no-04",
     "datatype": "string"
    },
@@ -2568,6 +2400,7 @@
     "titles": [
      "sdn_street_no_add-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no_add-04",
     "datatype": "string"
    },
@@ -2577,6 +2410,7 @@
     "titles": [
      "sdn_city-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_city-04",
     "datatype": "string"
    },
@@ -2586,6 +2420,7 @@
     "titles": [
      "sdn_street_adamlink_uri-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_adamlink_uri-04",
     "datatype": "string"
    },
@@ -2595,6 +2430,7 @@
     "titles": [
      "sdn_address_locationPoint-04"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_address_locationPoint-04",
     "datatype": "string"
    },
@@ -2604,6 +2440,7 @@
     "titles": [
      "sdn_street-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street-05",
     "datatype": "string"
    },
@@ -2613,6 +2450,7 @@
     "titles": [
      "sdn_street_no-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no-05",
     "datatype": "string"
    },
@@ -2622,6 +2460,7 @@
     "titles": [
      "sdn_street_no_add-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_no_add-05",
     "datatype": "string"
    },
@@ -2631,6 +2470,7 @@
     "titles": [
      "sdn_city-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_city-05",
     "datatype": "string"
    },
@@ -2640,6 +2480,7 @@
     "titles": [
      "sdn_street_adamlink_uri-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_street_adamlink_uri-05",
     "datatype": "string"
    },
@@ -2649,6 +2490,7 @@
     "titles": [
      "sdn_address_locationPoint-05"
     ],
+    "propertyUrl": "",
     "dc:description": "sdn_address_locationPoint-05",
     "datatype": "string"
    }
