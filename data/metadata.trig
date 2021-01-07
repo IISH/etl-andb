@@ -1,9 +1,7 @@
-prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
 prefix dcat: <http://www.w3.org/ns/dcat#>
 prefix dct: <http://purl.org/dc/terms/>
 prefix entailment: <http://www.w3.org/ns/entailment/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
-prefix graph: <https://iisg.amsterdam/resource/adb-andb/id/graph/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -14,6 +12,9 @@ prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
+prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
 
 <https://iisg.amsterdam/andb/andb> {
   <https://druid.datalegend.net> dcat:dataset <https://iisg.amsterdam/andb/andb>.
@@ -47,8 +48,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     void:sparqlEndpoint <https://iisg.amsterdam/andb/andb/sparql/andb>;
     void:subSet
       andb:,
-      graph:instances,
-      graph:shapes;
+      id:instantiesGraaf;
     void:vocabulary
       dcat:,
       dct:,
@@ -70,7 +70,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     vann:preferredNamespacePrefix "andb";
     vann:preferredNamespaceUri "https://iisg.amsterdam/vocab/adb-andb/".
 
-  graph:instanties sh:shapesGraph graph:shapes.
+  id:instantiesGraaf sh:shapesGraph andb:.
 
   <https://iisg.amsterdam/andb/andb/sparql/andb>
     dct:title "andb";

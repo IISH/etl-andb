@@ -28,8 +28,8 @@ const validate = async (dataFiles : string[], shapesFiles : string[]) => {
   }
 }
 const run = async () => {
-  return validate(['data/patterns.trig'], ['shsh.ttl'])
-    .then(() => validate(['data/instances.trig'],
-                         ['data/patterns.trig','data/patterns-enrichment.trig']))
+  return validate(['../data/patronen.trig'], ['shsh.ttl'])
+  //.then(() => validate(['data.trig'], ['shapes.trig']))
+    .then(() => validate(['../data/voorbeeld.trig'], ['../data/patronen.trig']))
 }
 run().catch(console.error)

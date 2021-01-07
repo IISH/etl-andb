@@ -1,0 +1,351 @@
+prefix dbr: <http://dbpedia.org/resource/>
+prefix dct: <http://purl.org/dc/terms/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix gemeente: <http://www.gemeentegeschiedenis.nl/gemeentenaam/>
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix hg: <http://rdf.histograph.io/>
+prefix org: <http://www.w3.org/ns/org#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix schema: <https://schema.org/>
+prefix time: <http://www.w3.org/2006/time#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
+prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+
+id:instanties {
+  id:ARCH00210-9421-0055-master
+    a schema:ImageObject;
+    andb:md5 "40b50b034a56361dafccb7faaea14580";
+    andb:screenVersion id:ARCH00210-9421-0055-level2;
+    rdfs:label
+      "Original image of card № 26456."@en,
+      "Originele afbeelding van kaart № 26456."@nl;
+    schema:contentSize "23917832"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/1177040C-5EF2-4A6E-A384-63E993B5A80C?locatt=view:master"^^xsd:anyURI;
+    schema:encodingFormat "image/tiff";
+    schema:thumbnail id:ARCH00210-9421-0055-level3.
+
+  id:ARCH00210-9421-0055-level2
+    a schema:ImageObject;
+    andb:md5 "a9f09562be7ca5b0ac7cbef8b2446caf";
+    rdfs:label
+      "Screen version of image of card № 26456."@en,
+      "Schermvriendelijke versie van kaart № 26456."@nl;
+    schema:contentSize "116664"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/1177040C-5EF2-4A6E-A384-63E993B5A80C?locatt=view:level2"^^xsd:anyURI;
+    schema:encodingFormat "image/jpeg".
+
+  id:ARCH00210-9421-0055-level3
+    a schema:ImageObject;
+    andb:md5 "b347378db5481e65a1f86afda0194e11";
+    rdfs:label
+      "Thumbnail image of card № 26456."@en,
+      "Miniatuurafbeelding van kaart № 26456."@nl;
+    schema:contentSize "9496"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/1177040C-5EF2-4A6E-A384-63E993B5A80C?locatt=view:level3"^^xsd:anyURI;
+    schema:encodingFormat "image/jpeg".
+
+  id:ARCH00210_9570.1_0160-master
+    a schema:ImageObject;
+    andb:md5 "978691975dbd0c10cd4757fee97439f7";
+    andb:screenVersion id:ARCH00210_9570.1_0160-level2;
+    rdfs:label
+      "Original image of card № 26266"@en,
+      "Originele afbeelding van kaart № 26266"@nl;
+    schema:contentSize "24137520"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/BF40E154-8675-474E-A545-A6EDC628C094?locatt=view:master"^^xsd:anyURI;
+    schema:encodingFormat "image/tiff";
+    schema:thumbnail id:ARCH00210_9570.1_0160-level3.
+
+  id:ARCH00210_9570.1_0160-level2
+    a schema:ImageObject;
+    andb:md5 "c51deda44b21dacc57f3645aff7fc4b5";
+    rdfs:label
+      "Screen version of image of card № 26266."@en,
+      "Schermvriendelijke versie van kaart № 26266."@nl;
+    schema:contentSize "136487"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/BF40E154-8675-474E-A545-A6EDC628C094?locatt=view:level2"^^xsd:anyURI;
+    schema:encodingFormat "image/jpeg".
+
+  id:ARCH00210_9570.1_0160-level3
+    a schema:ImageObject;
+    andb:md5 "25ad09bcc0685598535d8f04ee034fc5";
+    rdfs:label
+      "Thumbnail image of card № 26266."@en,
+      "Miniatuurafbeelding van kaart № 26266."@nl;
+    schema:contentSize "11694"^^xsd:positiveInteger;
+    schema:contentUrl "https://hdl.handle.net/10622/BF40E154-8675-474E-A545-A6EDC628C094?locatt=view:level3"^^xsd:anyURI;
+    schema:encodingFormat "image/jpeg".
+
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1
+    a org:Membership;
+    org:member id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
+    org:memberDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval;
+    org:organization id:2-732;
+    rdfs:label
+      "Membership of Adriaan Helsloot"@en,
+      "Lidmaatschap van Adriaan Helsloot"@nl.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval
+    a time:ProperInterval;
+    time:hasBeginning id:1923-07-09.
+
+  id:1923-07-09
+    a time:Instant;
+    time:inXSDDate "1923-07-09"^^xsd:date.
+
+
+  id:andb
+    a andb:Union;
+    org:hasUnit id:2;
+    owl:sameAs dbr:General_Diamond_Workers\'_Union_of_the_Netherlands;#'
+    schema:name
+      "General Diamond Workers' Union of the Netherlands"@en,
+      "Algemene Nederlandse Diamantbewerkersbond (ANDB)"@nl.
+
+  id:2
+    a org:OrganizationalUnit;
+    dct:identifier "2";
+    org:hasUnit id:2-732;
+    org:unitOf id:andb;
+    rdfs:label
+      "Section 2"@en,
+      "Sectie 2"@nl.
+
+  id:2-732
+    a org:OrganizationalUnit;
+    dct:identifier "732";
+    org:unitOf id:2;
+    rdfs:label
+      "Section 2, Subsection 732"@en,
+      "Sectie 2, Subsectie 732"@nl.
+
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1
+    a andb:Residency;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval;
+    rdfs:label
+      "Residency of Adriaan Helsloot at Hazenstraat 8-II"@en,
+      "Bewoning van Hazenstraat 8-II door Adriaan Helsloot"@nl;
+    schema:address id:Hazenstraat_8_II_Amsterdam;
+    andb:inhabitant id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2
+    a andb:Residency;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
+    rdfs:label
+      "Residency of Adriaan Helsloot at Nieuwe Karselaan 493"@en,
+      "Bewoning van Nieuwe Karselaan 493 door Adriaan Helsloot"@nl;
+    schema:address id:NieuweKarselaan_493_Amstelveen;
+    andb:inhabitant id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3
+    a andb:Residency;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
+    rdfs:label
+      "Residency of Adriaan Helsloot at Nieuwe Karselaan 21"@en,
+      "Bewoning van Nieuwe Karselaan 21 door Adriaan Helsloot"@nl;
+    schema:address id:NieuweKarselaan_21_Amstelveen;
+    andb:inhabitant id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4
+    a andb:Residency;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval;
+    rdfs:label
+      "Residency of Adriaan Helsloot at Derde Oosterparkstraat 121-II"@en,
+      "Bewoning van Derde Oosterparkstraat 121-II door Adriaan Helsloot"@nl;
+    schema:address id:DerdeOosterparkstraat_121_II_Amsterdam;
+    andb:inhabitant id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval
+    a time:ProperInterval;
+    rdfs:label "(?, 1924-10-13]";
+    time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
+    time:hasEnd id:1924-10-13.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval
+    a time:ProperInterval;
+    rdfs:label "[1924-10-13, 1925-03-15]";
+    time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval;
+    time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
+    time:hasBeginning id:1924-10-13;
+    time:hasEnd id:1925-03-15.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval
+    a time:ProperInterval;
+    rdfs:label "[1925-03-15, 1926-12-28]";
+    time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
+    time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval;
+    time:hasBeginning id:1925-03-15;
+    time:hasEnd id:1926-12-28.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval
+    a time:ProperInterval;
+    rdfs:label "[1926-12-28, ?)";
+    time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
+    time:hasBeginning id:1926-12-28.
+
+  id:1924-10-13
+    a time:Instant;
+    rdfs:label "1924-10-13";
+    time:inXSDDate "1924-10-13"^^xsd:date.
+
+  id:1925-03-15
+    a time:Instant;
+    rdfs:label "1925-03-15";
+    time:inXSDDate "1925-03-15"^^xsd:date.
+
+  id:1926-12-28
+    a time:Instant;
+    rdfs:label "1926-12-28";
+    time:inXSDDate "1926-12-28"^^xsd:date.
+
+
+  id:Hazenstraat_8_II_Amsterdam
+    a schema:PostalAddress;
+    rdfs:label "Hazenstraat 8-II, Amsterdam"@nl;
+    andb:houseNumber "8"^^xsd:positiveInteger;
+    andb:houseNumberAddition "II";
+    andb:street id:Hazenstraat_Amsterdam.
+
+  id:NieuweKarselaan_493_Amstelveen
+    a schema:PostalAddress;
+    andb:houseNumber "493"^^xsd:positiveInteger;
+    andb:street id:NieuweKarselaan_Amstelveen;
+    rdfs:label "Nieuwe Karselaan 493, Amstelveen"@nl.
+
+  id:NieuweKarselaan_21_Amstelveen
+    a schema:PostalAddress;
+    andb:houseNumber "21"^^xsd:positiveInteger;
+    andb:street id:NieuweKarselaan_Amstelveen;
+    rdfs:label "Nieuwe Karselaan 21, Amstelveen"@nl.
+
+  id:DerdeOosterparkstraat_121_II_Amsterdam
+    a schema:PostalAddress;
+    andb:houseNumber "121"^^xsd:positiveInteger;
+    andb:houseNumberAddition "II";
+    andb:street id:DerdeOosterparkstraat_Amsterdam;
+    rdfs:label "Derde Oosterparkstraat 121-II, Amsterdam"@nl.
+
+  id:Hazenstraat_Amsterdam
+    a hg:Street;
+    dct:identifier "1014313";
+    geo:sfWithin gemeente:Amsterdam;
+    owl:sameAs <https://adamlink.nl/geo/street/hazenstraat/1693>;
+    rdfs:label "Hazenstraat"@nl;
+    schema:name "Hazenstraat"@nl.
+
+  id:NieuweKarselaan_Amstelveen
+    a hg:Street;
+    geo:sfWithin gemeente:Amstelveen;
+    rdfs:label "Nieuwe Karselaan"@nl;
+    schema:name "Nieuwe Karselaan"@nl.
+
+  id:DerdeOosterparkstraat_Amsterdam
+    a hg:Street;
+    dct:identifier "1040460";
+    geo:sfWithin gemeente:Amsterdam;
+    owl:sameAs <https://adamlink.nl/geo/street/derde-oosterparkstraat/972>;
+    rdfs:label "Derde Oosterparkstraat"@nl;
+    schema:name "Derde Oosterparkstraat"@nl.
+
+
+  #id:AMSAB_0558_3464
+  #  a andb:MembershipCard;
+  #  dct:identifier "AMSAB_0558_3464";
+  #  foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
+  #  rdfs:label
+  #    "ADB member card for Adriaan Helsloot"@en,
+  #    "ADB ledenkaart van Adriaan Helsloot"@nl.
+
+  #id:2284
+  #  a andb:StudentCard;
+  #  dct:identifier "2284";
+  #  foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
+  #  rdfs:label
+  #    "ANDB student card for Adriaan Helsloot"@en,
+  #    "ANDB studentenkaart van Adriaan Helsloot"@nl.
+
+  id:26266
+    a andb:MembershipCard;
+    dct:identifier "26266";
+    foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
+    rdfs:label
+      "ANDB member card for Adriaan Helsloot"@en,
+      "ANDB ledenkaart van Adriaan Helsloot"@nl;
+    schema:image id:ARCH00210_9570.1_0160-master.
+
+  id:26456
+    a andb:MembershipCard;
+    dct:identifier "26456";
+    foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
+    rdfs:label
+      "ANDB membership card of Adriaan Helsloot"@en,
+      "ANDB ledenkaart van Adriaan Helsloot"@nl;
+    schema:image id:ARCH00210-9421-0055-master.
+
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3
+    a schema:Person;
+    foaf:isPrimaryTopicOf
+      #id:2284,
+      id:26266,
+      id:26456;
+      #id:AMSAB_0558_3464;
+    org:hasMembership id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1;
+    rdfs:label "Adriaan Helsloot";
+    schema:birthDate "1902-08-28"^^xsd:date;
+    schema:birthPlace "Amsterdam";
+    schema:gender schema:Male;
+    schema:familyName "Helsloot";
+    schema:givenName "Adriaan";
+    schema:name "Adriaan Helsloot".
+
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1
+    a org:Membership;
+    org:member id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
+    org:memberDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval;
+    org:organization id:2-732;
+    rdfs:label
+      "Membership of Adriaan Helsloot"@en,
+      "Lidmaatschap van Adriaan Helsloot"@nl.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval
+    a time:ProperInterval;
+    rdfs:label "[1923-07-09, ?)";
+    time:hasBeginning id:1923-07-09.
+
+  id:1923-07-09
+    a time:Instant;
+    rdfs:label "1923-07-09";
+    time:inXSDDate "1923-07-09"^^xsd:date.
+
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1
+    a andb:Migration;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1-interval;
+    rdfs:label
+      "Migration of Adriaan Helsloot"@en,
+      "Migratie van Adriaan Helsloot"@nl;
+    schema:location "Versailles m/c".
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1-interval
+    a time:ProperInterval;
+    rdfs:label "[1925-04-10, 1926-12-28]";
+    time:hasBeginning id:1925-04-10;
+    time:hasEnd id:1926-12-28.
+
+  id:1925-04-10
+    a time:Instant;
+    rdfs:label "1925-04-10";
+    time:inXSDDate "1925-04-10"^^xsd:date.
+
+  id:1926-12-28
+    a time:Instant;
+    rdfs:label "1926-12-28";
+    time:inXSDDate "1926-12-28"^^xsd:date.
+}

@@ -1,0 +1,444 @@
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix hg: <http://rdf.histograph.io/>
+prefix org: <http://www.w3.org/ns/org#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix schema: <https://schema.org/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix time: <http://www.w3.org/2006/time#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
+prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+
+andb: {
+  andb:brother
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "brother"@en,
+      "heeft broer"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:relative.
+
+  andb:child
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    owl:inverseOf andb:parent;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has child"@en,
+      "heeft kind"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:relative.
+
+  andb:daughter
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has daughter"@en,
+      "heeft dochter"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:child.
+
+  andb:duration
+    a owl:ObjectProperty;
+    rdfs:domain schema:Event;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has duration"@en,
+      "heeft duur"@nl;
+    rdfs:range time:ProperInterval.
+
+  andb:event
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has event"@en,
+      "heeft evenement"@nl;
+    rdfs:range schema:Event.
+
+  andb:examination
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has examination"@en,
+      "heeft tentaminering"@nl;
+    rdfs:range andb:Examination;
+    rdfs:subPropertyOf andb:event.
+
+  andb:examinator
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Examination;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has examinator"@en,
+      "heeft examinator"@nl;
+    rdfs:range xsd:string.
+
+  andb:examinee
+    a owl:ObjectProperty;
+    rdfs:domain andb:Examination;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has examinee"@en,
+      "heeft geëxamineerde"@nl;
+    rdfs:range schema:Person.
+
+  andb:father
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has father"@en,
+      "heeft vader"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:parent.
+
+  andb:fosterChild
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    owl:inverseOf andb:fosterParent;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has foster child"@en,
+      "heeft pleegkind"@nl;
+    rdfs:range schema:Person.
+
+  andb:fosterDaughter
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has foster daughter"@en,
+      "heeft pleegdochter"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:fosterChild.
+
+  andb:fosterFather
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has foster father"@en,
+      "heeft pleegvader"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:fosterParent.
+
+  andb:fosterParent
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has foster parent"@en,
+      "heeft pleegouder"@nl;
+    rdfs:range schema:Person.
+
+  andb:fosterSon
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has foster son"@en,
+      "heeft pleegzoon"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:fosterChild.
+
+  andb:houseNumber
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The house number of the address."@en,
+      "Het huisnummer van het adres."@nl;
+    rdfs:domain schema:PostalAddress;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has house number"@en,
+      "heeft huisnummer"@nl;
+    rdfs:range xsd:positiveInteger.
+
+  andb:houseNumberAddition
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The house number addition of the address."@en,
+      "De huisnummertoevoeging van het adres."@nl;
+    rdfs:domain schema:PostalAddress;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has house number addition"@en,
+      "heeft huisnummertoevoeging"@nl;
+    rdfs:range xsd:string.
+
+  andb:inhabitant
+    a owl:ObjectProperty;
+    rdfs:domain andb:Residency;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has inhabitant"@en,
+      "heeft bewoner"@nl;
+    rdfs:range schema:Person.
+
+  andb:jobCategory
+    a owl:ObjectProperty;
+    rdfs:domain foaf:Document;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "profession"@en,
+      "beroep"@nl;
+    rdfs:range andb:Occupation.
+
+  andb:maidenName
+    a owl:DatatypeProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "maiden name"@en,
+      "meisjesnaam"@nl;
+    rdfs:range xsd:string.
+
+  andb:marriage
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has marriage"@en,
+      "heeft huwelijk"@nl;
+    rdfs:range schema:MarryAction;
+    rdfs:subPropertyOf andb:event.
+
+  andb:master
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Examination;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has master"@en,
+      "heeft meester"@nl;
+    rdfs:range xsd:string.
+
+  andb:md5
+    a owl:DatatypeProperty;
+    rdfs:domain schema:ImageObject;
+    rdfs:label "has MD5 hash";
+    rdfs:isDefinedBy andb:;
+    rdfs:range xsd:string;
+    skos:definition "The MD5 hash of the binary image contensts."@en;
+    skos:scopeNote "The MD5 hash can be used in order to verify that the binary image indeed belongs to the metadata record."@en.
+
+  andb:middleName
+    a owl:DatatypeProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label "middle name"@en;
+    rdfs:range xsd:string.
+
+  andb:mother
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has mother"@en,
+      "heeft moeder"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:parent.
+
+  andb:occupation
+    a owl:ObjectProperty;
+    rdfs:domain foaf:Document;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has occupation"@en,
+      "heeft beroep"@nl;
+    rdfs:range andb:Occupation.
+
+  andb:organization
+    a owl:ObjectProperty;
+    rdfs:domain org:Membership;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has organization"@en,
+      "heeft organizatie"@nl;
+    rdfs:range schema:Organization.
+
+  andb:parent
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has parent"@en,
+      "heeft ouder"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:relative.
+
+  andb:relative
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has relative"@en,
+      "heeft familielid"@nl;
+    rdfs:range schema:Person.
+
+  andb:remark
+    a owl:ObjectProperty;
+    rdfs:domain foaf:Document;
+    rdfs:isDefinedBy andb:;
+    rdfs:label "remark"@en;
+    rdfs:range andb:Remark.
+
+  andb:residency
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "residency"@en,
+      "bewoning"@nl;
+    rdfs:range andb:Residency;
+    rdfs:subPropertyOf andb:event.
+
+  andb:screenVersion
+    a owl:ObjectProperty;
+    rdfs:domain schema:ImageObject;
+    rdfs:isDefinedBy andb:;
+    rdfs:label "screen version"@en;
+    rdfs:range schema:ImageObject.
+
+  andb:sister
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "sister"@en,
+      "heeft zus"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:relative.
+
+  andb:son
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has son"@en,
+      "heeft zoon"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:child.
+
+  andb:spouse
+    a owl:ObjectProperty;
+    rdfs:domain schema:MarryAction;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has spouse"@en,
+      "heeft echtgenoot"@nl;
+    rdfs:range schema:Person.
+
+  andb:stepChild
+    a owl:ObjectProperty;
+    owl:inverseOf andb:stepParent;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has stepchild"@en,
+      "heeft stiefkind"@nl;
+    rdfs:range schema:Person.
+
+  andb:stepDaughter
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has stepdaughter"@en,
+      "heeft stiefdochter"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:stepChild.
+
+  andb:stepFather
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has stepfather"@en,
+      "heeft stiefvader"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:stepParent.
+
+  andb:stepMother
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has stepmother"@en,
+      "heeft stiefmoeder"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:stepParent.
+
+  andb:stepParent
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has stepparent"@en,
+      "heeft stiefouder"@nl;
+    rdfs:range schema:Person.
+
+  andb:stepSon
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has stepson"@en,
+      "heeft stiefzoon"@nl;
+    rdfs:range schema:Person;
+    rdfs:subPropertyOf andb:stepChild.
+
+  andb:street
+    a owl:ObjectProperty;
+    rdfs:comment "Relates a postal address to its corresponding street."@en;
+    rdfs:domain schema:PostalAddress;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has street"@en,
+      "heeft straat"@nl;
+    rdfs:range hg:Street.
+
+  andb:union
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has union"@en,
+      "heeft bond"@nl;
+    rdfs:range schema:Organization.
+
+  andb:worker
+    a owl:ObjectProperty;
+    rdfs:domain andb:WorkEvent;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has worker"@en,
+      "heeft arbeider"@nl;
+    rdfs:range schema:Person.
+
+  andb:workEvent
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has work event"@en,
+      "heeft werk evenement"@nl;
+    rdfs:range andb:WorkEvent;
+    rdfs:subPropertyOf andb:event.
+
+  andb:workshop
+    a owl:ObjectProperty;
+    rdfs:domain andb:WorkEvent;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "has workshop"@en,
+      "heeft werkplaats"@nl;
+    rdfs:range andb:Workshop.
+}
