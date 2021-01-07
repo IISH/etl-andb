@@ -1,21 +1,33 @@
-#+title: Documentatie
+#+title: Data transformatie
 
-Deze directory bevat CoW scripts voor de transformatie van de ANDB dataset naar linked data en het script van Thomas dat ik gebruik voor het runnen hiervan (om problemen met Python2/3 te voorkomen).
+Deze directory bevat [[https://github.com/CLARIAH/COW][CoW]] scripts voor de transformatie van de ANDB dataset naar linked data en het script van [[https://triplydb.com/ThomasdeGroot][Thomas de Groot]] dat ik gebruik voor het runnen hiervan (om problemen met Python2/3 te voorkomen).
 
-Het script andb_adb_all_unique-2020_10_21.csv-metadata.json is gebruikt om de personen dataset op https://druid.datalegend.net/MiconSchorsij/andbuniekepersonen te creëren. De brondata staat daar ook als asset. To do: controleren, aanpassen, valideren en integreren met de rest van de data (de kaarten datasets).
+Dit zijn de met CoW gegenereerde scripts in hun basale vorm:
 
-Het script diamantslijperijen-amsterdam_2021_01_06.csv-metadata.json is gebruikt om de slijperijen dataset op https://druid.datalegend.net/MiconSchorsij/ANDBslijperijen te creëren. De brondata staat daar ook als asset. To do: controleren, aanpassen, valideren. Hier moeten we ook gebruik gaan maken van de W3C Time Ontology. Het is een op zichzelf staande dataset.
+  - ~andb_apprentice_all_series-2020_12_09.csv-metadata.json~
+  - ~andb_members_all_series-2020_12_09.csv-metadata.json~
+  - ~ADB-2020_12_09.csv-metadata.json~
 
-Het script ADB-2021_01_06.csv-metadata.json is gebruikt om de transformatie van de ADB kaarten dataset te testen met een beperkt aantal velden, gericht op het cluster Residency. Hoe zet je deze data vanuit de csv met CoW om naar de gewenste linked datastructuur. Het work in progress staat op https://druid.datalegend.net/MiconSchorsij/ADB/ De brondata staat daar ook als asset.
-
-andb_apprentice_all_series-2020_12_09.csv-metadata.json
-andb_members_all_series-2020_12_09.csv-metadata.json
-ADB-2020_12_09.csv-metadata.json
-zijn de met CoW gegenereerde scripts in hun basale vorm.
-
-Doelstelling: creëren van 5 CoW scripts, die de brondata transformeren naar linked data die valideert aan de hiervoor opgestelde SHACLE shapes. Zie ook de voorbeeld data op https://druid.datalegend.net/andb/andb2/
+Doelstelling: creëren van 5 CoW scripts, die de brondata transformeren naar linked data die valideert aan de hiervoor opgestelde SHACL shapes.  Zie ook de voorbeeld data op [[https://druid.datalegend.net/andb/andb2]].
 
 Verdere commentaar op het werk aan deze files en de issues die zich daarbij voordoen vindt plaats in Issue #4
 
+* Uitvoeren
 
+De CoW transformatie kan op de volgende manier worden uitgevoerd:
 
+#+begin_src sh
+cow_tool convert FILE
+#+end_src
+
+* Personen dataset
+
+Het script ~andb_adb_all_unique-2020_10_21.csv-metadata.json~ is gebruikt om de personen dataset op [[https://druid.datalegend.net/MiconSchorsij/andbuniekepersonen]] te creëren.  De brondata is daar ook als asset geupload.  To do: controleren, aanpassen, valideren en integreren met de rest van de data (de kaarten datasets).
+
+* diamantslijperijen dataset
+
+Het script ~diamantslijperijen-amsterdam_2021_01_06.csv-metadata.json~ is gebruikt om de slijperijen dataset op [[https://druid.datalegend.net/MiconSchorsij/ANDBslijperijen]] te creëren.  De brondata staat daar ook als asset. To do: controleren, aanpassen, valideren. Hier moeten we ook gebruik gaan maken van de W3C Time Ontology. Het is een op zichzelf staande dataset.
+
+* ADB dataset
+
+Het script ~ADB-2021_01_06.csv-metadata.json~ is gebruikt om de transformatie van de ADB kaarten dataset te testen met een beperkt aantal velden, gericht op het cluster ~Residency~.  Hoe zet je deze data vanuit de CSV met CoW om naar de gewenste linked datastructuur?  De huidige tussenversie staat op [[https://druid.datalegend.net/MiconSchorsij/ADB]].  De brongegevens zijn daar eveneens bijgevoegd als asset.
