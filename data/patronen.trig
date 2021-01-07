@@ -351,6 +351,7 @@ andb: {
     a sh:PropertyShape;
     sh:class time:ProperInterval;
     sh:description "Another event that occurred directly before this one."@en;
+    sh:maxCount 1;
     sh:name "gaat vooraf aan"@nl;
     sh:path time:before;
     skos:usageNote "Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum."@nl.

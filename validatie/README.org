@@ -4,7 +4,7 @@ Deze directorie bevat code waarmee de ANDB linked data automatisch gevalideerd k
 
 ** Installatie
 
-Installeer [[Node.js][https://nodejs.org]] en [[Yarn][https://yarnpkg.com]].
+Installeer [[https://nodejs.org][Node.js]] en [[https://yarnpkg.com][Yarn]].
 
 Voer de volgende commando's uit om met Yarn de benodigde afhankelijkheden te installeren:
 
