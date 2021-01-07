@@ -119,32 +119,33 @@
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_street_01",
     "name": "mbr_street_01",
     "propertyUrl": "vocab:residence",
-    "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true",
     "name": "mbr_street_01",
-    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "datatype": "xsd:string"
+    "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}"
   },
    {
     "virtual": "true",
-    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:postalAddress"
    }, 
    {
     "virtual": "true",
     "name": "mbr_street_01",
-    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "hg:street",
     "valueUrl": "{{mbr_street_01}}",
     "datatype": "string"
   },
   {
     "virtual": "true",
-    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumber",
     "valueUrl": "{{mbr_street_no_01}}",
     "datatype": "string"
@@ -152,7 +153,7 @@
   {
     "virtual": "true",
     "name": "mbr_street_no_add_01",
-    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumberAddition",
     "valueUrl": "{{mbr_street_no_add_01}}",
     "datatype": "string"
@@ -160,7 +161,7 @@
    {
     "virtual": "true",
     "name": "mbr_city_01",
-    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_01}}"
   },
