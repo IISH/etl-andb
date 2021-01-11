@@ -26,5 +26,5 @@ Dit repository bevat de volgende directories:
 - [[doc][/doc]] :: Documentatie bestanden voor de ANDB dataset.
 - [[img][/img]] :: Afbeeldingen die aspecten van de ANDB dataset toelichten.
 - [[jsf][/jsf]] :: CoW scripts voor de transformatie van de ANDB dataset naar linked data.
-- [[rdf][/rdf]] :: Statische RDF bestanden die deel uitmaken van de ANDB
-  dataset.
+- [[data][/data]] :: Statische linked data bestanden die deel uitmaken van de ANDB dataset.
+- [[validatie][/validatie]] :: Valideer linked data gegevens o.b.v. het data model.

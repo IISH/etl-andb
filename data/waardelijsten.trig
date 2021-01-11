@@ -1,0 +1,62 @@
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix hg: <http://rdf.histograph.io/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix schema: <https://schema.org/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
+prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+
+andb: {
+  [ a owl:AllDifferentFrom;
+    owl:distinctMembers
+      ( id:brillantslijpen
+        id:brillantsnijden
+        id:brillantverstellen
+        id:kapbewerken
+        id:klooven
+        id:roosjesslijpen
+        id:roosjessnijden
+        id:roosjesverstellen
+        id:zagen ) ].
+
+  id:brillantslijpen
+    a andb:Occupation;
+    rdfs:label "brillantslijpen"@nl.
+
+  id:brillantsnijden
+    a andb:Occupation;
+    rdfs:label "brillantsnijden"@nl.
+
+  id:brillantverstellen
+    a andb:Occupation;
+    rdfs:label "brillantverstellen"@nl.
+
+  id:kapbewerken
+    a andb:Occupation;
+    rdfs:label "kapbewerken"@nl.
+
+  id:klooven
+    a andb:Occupation;
+    rdfs:label "klooven"@nl.
+
+  id:roosjesslijpen
+    a andb:Occupation;
+    rdfs:label "roosjesslijpen"@nl.
+
+  id:roosjessnijden
+    a andb:Occupation;
+    rdfs:label "roosjessnijden"@nl.
+
+  id:roosjesverstellen
+    a andb:Occupation;
+    rdfs:label "roosjesverstellen"@nl.
+
+  id:zagen
+    a andb:Occupation;
+    rdfs:label "zagen"@nl.
+}

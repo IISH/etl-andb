@@ -1,0 +1,22 @@
+{
+  "author": "Wouter Beek and Micon Schorsij",
+  "bugs": {
+    "url": "https://github.com/wouterbeek/etl-andb/issues"
+  },
+  "dependencies": {
+    "@triply/triplydb": "^2.1.1",
+    "@zazuko/rdf-vocabularies": "^2020.12.16",
+    "rdf-validate-shacl": "^0.2.5",
+    "typescript": "^4.1.3"
+  },
+  "description": "Werk repository voor de ANDB dataset in linked data.",
+  "homepage": "https://github.com/wouterbeek/etl-andb",
+  "license": "UNLICENSED",
+  "main": "script.js",
+  "name": "etl-andb",
+  "repository": "git+https://github.com/wouterbeek/etl-andb.git",
+  "scripts": {
+    "go": "tsc && node script.js"
+  },
+  "version": "1.0.0"
+}
