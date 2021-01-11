@@ -56,17 +56,18 @@
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/person_uuid",
     "name": "person_uuid",
     "propertyUrl": "vocab:hasOwner",
-    "valueUrl": "{{person_uuid}}"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
+    "datatype": "xsd:anyUri"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{person_uuid}}",
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:person"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{person_uuid}}",
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:hasResidency",
     "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}"
    },
@@ -165,8 +166,8 @@
     "virtual": "true",
     "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ', ', mbr_city_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "geo:sfWithin",
-    "csvw:value": "{{mbr_city_01}}",
-    "datatype": "string"
+    "valueUrl": "{{mbr_city_01}}",
+    "datatype": "xsd:anyUri"
   },
   {
     "virtual": "true",
