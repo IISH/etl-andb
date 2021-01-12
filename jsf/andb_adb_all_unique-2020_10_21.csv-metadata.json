@@ -92,7 +92,7 @@
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id2",
     "name": "sdn_adm_id2",
     "propertyUrl": "foaf:isPrimayTopicOf",
-    "dc:description": "Identifier leerlingkaart van deze persoon",
+    "dc:description": "Identifier leerlingkaart",
     "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id2}}",
     "datatype": "xsd:anyURI"
    },
@@ -149,12 +149,12 @@
     "name": "adm_id1",
     "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ANDB kaart",
-    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id1}}",
     "datatype": "xsd:anyURI"
    },
    {
     "virtual": "true",
-    "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id1}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "ANDB ledenkaart van {{name}}"
    },
