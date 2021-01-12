@@ -8,6 +8,7 @@
   },
   { 
    "csvw": "http://www.w3.org/ns/csvw#",
+   "foaf": "http://xmlns.com/foaf/0.1/",
    "juso": "http://rdfs.co/juso/",
    "owl": "http://www.w3.org/2002/07/owl#",
    "pnv": "https://w3id.org/pnv#",
@@ -62,51 +63,100 @@
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adb_identifier",
     "name": "adb_identifier",
-    "propertyUrl": "vocab:adm_image_no",
+    "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ADB kaart",
-    "datatype": "string"
+    "valueUrl": "https://iisg.amsterdam/id/adb/{{adb_identifier}}",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/adb/{{adb_identifier}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "ADB ledenkaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id3",
     "name": "sdn_adm_id3",
-    "propertyUrl": "vocab:sdn_adm_id",
+    "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier leerlingkaart",
-    "datatype": "string"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id3}}",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id3}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Leerlingkaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id2",
     "name": "sdn_adm_id2",
-    "propertyUrl": "vocab:sdn_adm_id",
+    "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier leerlingkaart van deze persoon",
-    "datatype": "string"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id2}}",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id2}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Leerlingkaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id1",
     "name": "sdn_adm_id1",
-    "propertyUrl": "vocab:sdn_adm_id",
+    "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier leerlingkaart",
-    "datatype": "string"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Leerlingkaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id3",
     "name": "adm_id3",
-    "propertyUrl": "vocab:adm_id",
+    "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ANDB kaart",
-    "datatype": "string"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id3}}",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id3}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "ANDB ledenkaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id2",
     "name": "adm_id2",
-    "propertyUrl": "vocab:adm_id",
+    "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ANDB kaart",
-    "datatype": "string"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id2}}",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id2}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "ANDB ledenkaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id1",
     "name": "adm_id1",
-    "propertyUrl": "vocab:adm_id",
+    "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ANDB kaart",
-    "datatype": "string"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "ANDB ledenkaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/first_name",
