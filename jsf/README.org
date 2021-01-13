@@ -20,7 +20,9 @@ De CoW transformatie kan op de volgende manier worden uitgevoerd:
 
   2. Download de CSV bronbestanden die op [[https://druid.datalegend.net/andb/andb2/assets][deze locatie]] gepubliceerd zijn.
 
-  3. Voer het volgende commando uit: ~cow_tool convert FILE.csv~  Het is belangrijk dat het bronbestand ~FILE.csv~ correspondeert met een configuratie bestand ~FILE.csv-metadata.json~.
+  3. Voer het volgende commando uit: ~python3 convert.py~
+
+Het script ~build.py~ wordt alleen incidenteel gebruikt om de metadata bestanden voor de eerste keer aan te maken.
 
 * Personen dataset
 
