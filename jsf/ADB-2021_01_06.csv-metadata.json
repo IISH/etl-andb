@@ -10,6 +10,7 @@
    "csvw": "http://www.w3.org/ns/csvw#",
    "foaf": "http://xmlns.com/foaf/0.1/",
    "juso": "http://rdfs.co/juso/",
+   "org":  "http://www.w3.org/ns/org#",
    "owl": "http://www.w3.org/2002/07/owl#",
    "pnv": "https://w3id.org/pnv#",
    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -104,9 +105,33 @@
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
+    "propertyUrl": "schema:parent",
+    "valueUrl": "{{([par_first_name_01, ' ', par_last_name_01]|join)|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
+    "propertyUrl": "schema:parent",
+    "valueUrl": "{{([par_first_name_02, ' ', par_last_name_02]|join)|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:residency",
     "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01]|join)|replace(' ', '_')}}"
    },
+   {
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
+    "propertyUrl": "org:hasMembership",
+    "valueUrl": "{{([un_section, ' ', un_section_no]|join)|replace(' ', '_')}}"
+   },
+  {
+    "virtual": "true",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "time:before",
+    "valueUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02]|join)|replace(' ', '_')}}"
+  },
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
@@ -115,10 +140,34 @@
    },
    {
     "virtual": "true",
+    "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "time:before",
+    "valueUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03]|join)|replace(' ', '_')}}"
+  },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "time:after",
+    "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01]|join)|replace(' ', '_')}}"
+  },
+   {
+    "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:residency",
     "valueUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03]|join)|replace(' ', '_')}}"
    },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03]|join)|replace(' ', '_')}}",
+    "propertyUrl": "time:before",
+    "valueUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04]|join)|replace(' ', '_')}}"
+  },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03]|join)|replace(' ', '_')}}",
+    "propertyUrl": "time:after",
+    "valueUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02]|join)|replace(' ', '_')}}"
+  },
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
@@ -127,10 +176,28 @@
    },
    {
     "virtual": "true",
+    "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04]|join)|replace(' ', '_')}}",
+    "propertyUrl": "time:before",
+    "valueUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05]|join)|replace(' ', '_')}}"
+  },
+  {
+    "virtual": "true",
+    "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04]|join)|replace(' ', '_')}}",
+    "propertyUrl": "time:after",
+    "valueUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03]|join)|replace(' ', '_')}}"
+  },
+   {
+    "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:residency",
     "valueUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05]|join)|replace(' ', '_')}}"
    },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05]|join)|replace(' ', '_')}}",
+    "propertyUrl": "time:after",
+    "valueUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04]|join)|replace(' ', '_')}}"
+  },
    {
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_image_uuid",
     "name": "adm_image_uuid",
@@ -546,6 +613,142 @@
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
     "csvw:value": "{{['%04d'| format(chi_birth_year_05|int),'-','%02d' | format(chi_birth_month_05|int),'-','%02d'|format(chi_birth_day_05|int)]|join}}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_01, ' ', par_last_name_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   }, 
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_01, ' ', par_last_name_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([par_first_name_01, ' ', par_last_name_01]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_01, ' ', par_last_name_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:givenName",
+    "csvw:value": "{{par_first_name_01}}",
+    "datatype": "string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_01, ' ', par_last_name_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:familyName",
+    "csvw:value": "{{par_last_name_01}}",
+    "datatype": "string"
+   }, 
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_01, ' ', par_last_name_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:remark",
+    "csvw:value": "{{par_remarks_01}}",
+    "datatype": "string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_01, ' ', par_last_name_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:father_mother",
+    "csvw:value": "{{father_or_mother_01}}",
+    "datatype": "string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_02, ' ', par_last_name_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   }, 
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_02, ' ', par_last_name_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([par_first_name_02, ' ', par_last_name_02]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_02, ' ', par_last_name_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:givenName",
+    "csvw:value": "{{par_first_name_02}}",
+    "datatype": "string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_02, ' ', par_last_name_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:familyName",
+    "csvw:value": "{{par_last_name_02}}",
+    "datatype": "string"
+   }, 
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_02, ' ', par_last_name_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:remark",
+    "csvw:value": "{{par_remarks_02}}",
+    "datatype": "string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([par_first_name_02, ' ', par_last_name_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:father_mother",
+    "csvw:value": "{{father_or_mother_02}}",
+    "datatype": "string"
+   },  
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "org:Membership"
+   }, 
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['lidmaatschap van ',mbr_first_name, ' ', mbr_last_name]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:union",
+    "csvw:value": "{{un_name}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{un_name}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Union"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
+    "propertyUrl": "org:organization",
+    "csvw:value": "{{un_section}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:membershipNumber",
+    "csvw:value": "{{un_section_no}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:cardNumber",
+    "csvw:value": "{{card_id1}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:remarks",
+    "csvw:value": "{{adm_remarks}}",
+    "datatype": "xsd:string"
    }
   ],
   "primaryKey": "adm_image_no",
