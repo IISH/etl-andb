@@ -217,7 +217,7 @@
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "schema:parent",
-    "valueUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}"
+    "valueUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}"
    },
    {
     "virtual": "true",
@@ -734,48 +734,48 @@
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
     "propertyUrl": "vocab:father_mother",
     "csvw:value": "{{father_or_mother_01}}",
     "datatype": "string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([par_first_name_02, ' ', par_last_name_02]|join)}}",
     "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
     "propertyUrl": "vocab:givenName",
     "csvw:value": "{{par_first_name_02}}",
     "datatype": "string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
     "propertyUrl": "vocab:familyName",
     "csvw:value": "{{par_last_name_02}}",
     "datatype": "string"
    }, 
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
     "propertyUrl": "vocab:remark",
     "csvw:value": "{{par_remarks_02}}",
     "datatype": "string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
     "propertyUrl": "vocab:father_mother",
     "csvw:value": "{{father_or_mother_02}}",
     "datatype": "string"
@@ -825,13 +825,6 @@
     "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
     "propertyUrl": "vocab:cardNumber",
     "csvw:value": "{{card_id1}}",
-    "datatype": "xsd:string"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
-    "propertyUrl": "vocab:remarks",
-    "csvw:value": "{{adm_remarks}}",
     "datatype": "xsd:string"
    }
   ],

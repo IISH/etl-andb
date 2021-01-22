@@ -72,7 +72,7 @@
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb/{{adb_identifier}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ADB ledenkaart van {{name}}"
+    "csvw:value": "ADB lidmaatschapskaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id3",
@@ -128,7 +128,7 @@
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id3}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB ledenkaart van {{name}}"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id2",
@@ -142,7 +142,7 @@
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id2}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB ledenkaart van {{name}}"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id1",
@@ -156,7 +156,7 @@
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id1}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB ledenkaart van {{name}}"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/first_name",
@@ -198,7 +198,8 @@
     "name": "gender",
     "propertyUrl": "schema:gender",
     "dc:description": "Geslacht",
-    "datatype": "string"
+    "valueUrl": "https://schema.org/{{gender}}",
+    "datatype": "xsd:anyUri"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/birth_date",

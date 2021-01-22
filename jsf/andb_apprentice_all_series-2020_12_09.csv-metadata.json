@@ -2146,7 +2146,7 @@
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_id, ' ', un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
-    "propertyUrl": "vocab:union",
+    "propertyUrl": "org:organization",
     "valueUrl": "{{un_name}}",
     "datatype": "xsd:string"
    }, 
@@ -2154,14 +2154,7 @@
     "virtual": "true",
     "aboutUrl": "{{un_name}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "org:organization"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_id, ' ', un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
-    "propertyUrl": "org:member",
-    "valueUrl": "{{person_uuid}}",
-    "datatype": "xsd:string"
+    "valueUrl": "vocab:Union"
    },
    {
     "virtual": "true",
@@ -2173,9 +2166,22 @@
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_id, ' ', un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
-    "propertyUrl": "org:hasUnit",
-    "csvw:value": "{{un_section}}",
+    "propertyUrl": "org:unitOf",
+    "valueUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "datatype": "xsd:anyUri"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([un_name, ' sectie ', un_section]|join)}}",
     "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "org:OrganizationalUnit"
    },
    {
     "virtual": "true",
