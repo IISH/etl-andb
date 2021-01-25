@@ -312,6 +312,9 @@ andb: {
     a sh:NodeShape;
     sh:closed true;
     sh:ignoredProperties ( rdf:type );
+    sh:name
+      "Instant"@en,
+      "Moment"@nl;
     sh:property
       andb:inXSDDate,
       andb:labelShape;
@@ -322,6 +325,9 @@ andb: {
     sh:datatype xsd:date;
     sh:maxCount 1;
     sh:minCount 1;
+    sh:name
+      "has XSD date"@en,
+      "heeft XSD datum"@nl;
     sh:nodeKind sh:Literal;
     sh:path time:inXSDDate;
     sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}$".
@@ -331,6 +337,9 @@ andb: {
     a sh:NodeShape;
     sh:closed true;
     sh:ignoredProperties ( rdf:type );
+    sh:name
+      "Interval"@en,
+      "Interval"@nl;
     sh:property
       andb:afterShape,
       andb:beforeShape,
@@ -342,17 +351,25 @@ andb: {
   andb:afterShape
     a sh:PropertyShape;
     sh:class time:ProperInterval;
-    sh:description "Another event that occurred directly after this one."@en;
-    sh:name "komt na"@nl;
+    sh:description
+      "Another interval that occurred directly after this one."@en,
+      "Een ander interval dat direct na dit interval komt."@nl;
+    sh:name
+      "occurs after"@en,
+      "komt na"@nl;
     sh:path time:after;
     skos:usageNote "Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum."@nl.
 
   andb:beforeShape
     a sh:PropertyShape;
     sh:class time:ProperInterval;
-    sh:description "Another event that occurred directly before this one."@en;
+    sh:description
+      "Another interval that occurred directly before this one."@en,
+      "Een ander interval dat direct voor dit interval komt."@nl;
     sh:maxCount 1;
-    sh:name "gaat vooraf aan"@nl;
+    sh:name
+      "occurs before"@en,
+      "gaat vooraf aan"@nl;
     sh:path time:before;
     skos:usageNote "Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum."@nl.
 
