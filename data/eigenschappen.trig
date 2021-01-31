@@ -183,6 +183,16 @@ andb: {
       "heeft bewoner"@nl;
     rdfs:range schema:Person.
 
+  andb:inhabits
+    a owl:ObjectProperty;
+    owl:inverseOf andb:inhabits;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;
+    rdfs:label
+      "is inhabitant of"@en,
+      "is bewoner van"@nl;
+    rdfs:range andb:Residency.
+
   andb:jobCategory
     a owl:ObjectProperty;
     rdfs:domain foaf:Document;
