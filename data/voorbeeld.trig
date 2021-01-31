@@ -11,8 +11,8 @@ prefix schema: <https://schema.org/>
 prefix time: <http://www.w3.org/2006/time#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
-prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix id: <https://iisg.amsterdam/id/andb/>
 
 id:instanties {
   id:ARCH00210-9421-0055-master
