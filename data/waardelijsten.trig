@@ -8,8 +8,8 @@ prefix schema: <https://schema.org/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
-prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix id: <https://iisg.amsterdam/id/adb-andb/>
 
 andb: {
   [ a owl:AllDifferentFrom;

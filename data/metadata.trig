@@ -14,8 +14,8 @@ prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
-prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix id: <https://iisg.amsterdam/id/adb-andb/>
 
 <https://iisg.amsterdam/andb/andb> {
   <https://druid.datalegend.net> dcat:dataset <https://iisg.amsterdam/andb/andb>.
