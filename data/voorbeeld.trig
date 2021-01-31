@@ -278,9 +278,13 @@ id:instanties {
       "ANDB ledenkaart van Adriaan Helsloot"@nl;
     schema:image id:ARCH00210-9421-0055-master.
 
-
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3
     a schema:Person;
+    andb:inhabits
+      id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1,
+      id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2,
+      id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3,
+      id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4;
     foaf:isPrimaryTopicOf
       #id:2284,
       id:26266,
