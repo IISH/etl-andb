@@ -176,6 +176,7 @@ andb: {
 
   andb:inhabitant
     a owl:ObjectProperty;
+    owl:inverseOf andb:inhabits;
     rdfs:domain andb:Residency;
     rdfs:isDefinedBy andb:;
     rdfs:label

@@ -82,6 +82,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1
     a org:Membership;
+    dct:identifier "732";#
     org:member id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     org:memberDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval;
     org:organization id:2-732;
@@ -109,20 +110,10 @@ id:instanties {
   id:2
     a org:OrganizationalUnit;
     dct:identifier "2";
-    org:hasUnit id:2-732;
     org:unitOf id:andb;
     rdfs:label
       "Section 2"@en,
       "Sectie 2"@nl.
-
-  id:2-732
-    a org:OrganizationalUnit;
-    dct:identifier "732";
-    org:unitOf id:2;
-    rdfs:label
-      "Section 2, Subsection 732"@en,
-      "Sectie 2, Subsectie 732"@nl.
-
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1
     a andb:Residency;

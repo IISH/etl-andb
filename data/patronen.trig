@@ -169,7 +169,7 @@ andb: {
       andb:CardShape_primaryTopic,
       andb:imageShape,
       andb:labelShape_en_nl;
-    sh:targetClass andb:MembershipCard.
+    sh:targetClass andb:MembershipCard.#adb-andb:Card
 
   andb:CardShape_identifier
     a sh:PropertyShape;
@@ -441,7 +441,8 @@ andb: {
   andb:organizationShape
     a sh:PropertyShape;
     sh:or
-      ( [ sh:class org:Organization]
+      ( [ sh:class andb:Union ]
+        [ sh:class org:Organization]
         [ sh:class org:OrganizationalUnit ] );
     sh:description
       "The union to which the membership applies (apprentices only)."@en,
