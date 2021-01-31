@@ -504,10 +504,7 @@ andb: {
   andb:organizationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:or
-      ( [ sh:class andb:Union ]
-        [ sh:class org:Organization]
-        [ sh:class org:OrganizationalUnit ] );
+    sh:class org:OrganizationalUnit;
     sh:description
       "The union to which the membership applies (apprentices only)."@en,
       "De vakbond waarvoor het lidmaatschap geldt."@nl;
@@ -625,6 +622,7 @@ andb: {
       andb:firstNameShape,
       andb:genderShape,
       andb:hasMembershipShape,
+      andb:inhabitsShape,
       andb:maidenNamePrefixShape,
       andb:maidenNameShape,
       andb:oorlogslevensShape;
@@ -803,6 +801,13 @@ andb: {
       "heeft lidmaatschap"@nl;
     sh:nodeKind sh:IRI;#
     sh:path org:hasMembership.
+
+  andb:inhabitsShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Residency;#
+    sh:nodeKind sh:IRI;#
+    sh:path andb:inhabits.
 
   andb:maidenNamePrefixShape
     a sh:PropertyShape;#

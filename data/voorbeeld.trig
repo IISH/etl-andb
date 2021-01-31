@@ -85,7 +85,7 @@ id:instanties {
     dct:identifier "732";#
     org:member id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     org:memberDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval;
-    org:organization id:2-732;
+    org:organization id:2;
     rdfs:label
       "Membership of Adriaan Helsloot"@en,
       "Lidmaatschap van Adriaan Helsloot"@nl.
@@ -304,7 +304,7 @@ id:instanties {
     a org:Membership;
     org:member id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     org:memberDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval;
-    org:organization id:2-732;
+    org:organization id:2;
     rdfs:label
       "Membership of Adriaan Helsloot"@en,
       "Lidmaatschap van Adriaan Helsloot"@nl.
