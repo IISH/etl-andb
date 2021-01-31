@@ -9,6 +9,7 @@ prefix sd: <http://www.w3.org/ns/sparql-service-description#>
 prefix schema: <https://schema.org/>
 prefix sh: <http://www.w3.org/ns/shacl#>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix time: <http://www.w3.org/2006/time#>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -57,6 +58,7 @@ prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
       rdfs:,
       schema:,
       skos:,
+      time:,
       vann:.
 
   andb:
@@ -66,7 +68,8 @@ prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
       rdf:,
       rdfs:,
       schema:,
-      skos:;
+      skos:,
+      time:;
     vann:preferredNamespacePrefix "andb";
     vann:preferredNamespaceUri "https://iisg.amsterdam/vocab/adb-andb/".
 
