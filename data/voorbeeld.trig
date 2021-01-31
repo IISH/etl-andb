@@ -153,13 +153,13 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval
     a time:ProperInterval;
-    rdfs:label "(?, 1924-10-13]";
+    rdfs:label "../1924-10-13";
     time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
     time:hasEnd id:1924-10-13.
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval
     a time:ProperInterval;
-    rdfs:label "[1924-10-13, 1925-03-15]";
+    rdfs:label "1924-10-13/1925-03-15";
     time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval;
     time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
     time:hasBeginning id:1924-10-13;
@@ -167,7 +167,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval
     a time:ProperInterval;
-    rdfs:label "[1925-03-15, 1926-12-28]";
+    rdfs:label "1925-03-15/1926-12-28";
     time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
     time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval;
     time:hasBeginning id:1925-03-15;
@@ -175,7 +175,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval
     a time:ProperInterval;
-    rdfs:label "[1926-12-28, ?)";
+    rdfs:label "1926-12-28/..";
     time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
     time:hasBeginning id:1926-12-28.
 
@@ -307,7 +307,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval
     a time:ProperInterval;
-    rdfs:label "[1923-07-09, ?)";
+    rdfs:label "1923-07-09/..";
     time:hasBeginning id:1923-07-09.
 
   id:1923-07-09
@@ -326,7 +326,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1-interval
     a time:ProperInterval;
-    rdfs:label "[1925-04-10, 1926-12-28]";
+    rdfs:label "1925-04-10/1926-12-28]";
     time:hasBeginning id:1925-04-10;
     time:hasEnd id:1926-12-28.
 
