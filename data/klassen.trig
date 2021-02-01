@@ -14,86 +14,89 @@ prefix id: <https://iisg.amsterdam/id/adb-andb/>
 
 andb: {
   andb:Card
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Card"@en,
       "Kaart"@nl;
     rdfs:subClassOf foaf:Document.
 
+  andb:Education
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "Education"@en,
+      "Onderwijs"@nl;
+    rdfs:subClassOf schema:Event.
+
   andb:Examination
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Examination"@en,
       "Examen"@nl;
     rdfs:subClassOf schema:Event.
 
   andb:Internship
+    a owl:Class;#
+    rdfs:comment "Internship at diamond factory as part of the formal education."@en;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Internship"@en,
       "Stage"@nl;
     rdfs:subClassOf schema:Event.
 
   andb:MembershipCard
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Membership card"@en,
       "Lidmaatschapskaart"@nl;
     rdfs:subClassOf andb:Card.
 
   andb:Migration
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Migration"@en,
       "Migratie"@nl;
     rdfs:subClassOf schema:Event.
 
-  andb:Occupation
-    owl:oneOf
-      ( id:brillantslijpen
-        id:brillantsnijden
-        id:brillantverstellen
-        id:kapbewerken
-        id:klooven
-        id:roosjesslijpen
-        id:roosjessnijden
-        id:roosjesverstellen
-        id:zagen );
-    rdfs:label
-      "Occupation"@en,
-      "Beroep"@nl;
-    rdfs:subClassOf schema:Occupation;
-    skos:member
-      id:brillantslijpen,
-      id:brillantsnijden,
-      id:brillantverstellen,
-      id:kapbewerken,
-      id:klooven,
-      id:roosjesslijpen,
-      id:roosjessnijden,
-      id:roosjesverstellen,
-      id:zagen.
-
   andb:Residency
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Residency"@en,
       "Bewoning"@nl;
     rdfs:subClassOf schema:Event.
 
   andb:StudentCard
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Student card"@en,
       "Leerlingkaart"@nl;
     rdfs:subClassOf andb:Card.
 
   andb:Union
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Labor union"@en,
       "Vakbond"@nl;
     rdfs:subClassOf org:FormalOrganization.
 
   andb:WorkEvent
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "work event"@en,
       "werk evenement"@nl;
     rdfs:subClassOf schema:Event.
 
   andb:Workshop
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "Workshop"@en,
       "Werkplaats"@nl;

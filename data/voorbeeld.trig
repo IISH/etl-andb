@@ -280,6 +280,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3
     a schema:Person;
+    andb:education id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education;
     andb:inhabits
       id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1,
       id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2,
@@ -299,6 +300,47 @@ id:instanties {
     schema:givenName "Adriaan";
     schema:name "Adriaan Helsloot".
 
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education
+    a andb:Education;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval;
+    andb:internship id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship;
+    andb:master "S. Kloots";
+    andb:student id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
+    rdfs:label
+      "Education of Adriaan Helsloot"@en,
+      "Onderwijstraject van Adriaan Helsloot"@nl.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship
+    a andb:Internship;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration;
+    org:organization id:de-weichsel;
+    rdfs:label
+      "Internship of Adriaan Helsloot at workshop De Weichsel"@en,
+      "Stage van Adriaan Helsloot bij werkplaats De Weichsel"@nl.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration
+    a time:ProperInterval;
+    rdfs:label
+     #"Duration of internship of Adriaan Helsloot at workshop De Weichsel",#
+      "Duur van stage van Adriaan Helsloot bij werkplaats De Weichsel";#
+    time:intervalDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval.
+
+  id:de-weichsel
+    a andb:Workshop;
+    rdfs:label "De Weichsel"@nl;
+    schema:name "De Weichsel"@nl.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval
+    a time:ProperInterval;
+    rdfs:label "1919-05-27/..";
+    time:hasBeginning id:1919-05-27;
+    time:intervalContains id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration.
+
+  id:1919-05-27
+    a time:Instant;
+    rdfs:label "1919-05-27";
+    time:inXSDDate "1919-05-27"^^xsd:date.
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1
     a org:Membership;

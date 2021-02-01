@@ -16,7 +16,7 @@ andb: {
   andb:brother
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "brother"@en,
       "heeft broer"@nl;
@@ -27,7 +27,7 @@ andb: {
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
     owl:inverseOf andb:parent;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has child"@en,
       "heeft kind"@nl;
@@ -37,7 +37,7 @@ andb: {
   andb:daughter
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has daughter"@en,
       "heeft dochter"@nl;
@@ -47,7 +47,7 @@ andb: {
   andb:duration
     a owl:ObjectProperty;
     rdfs:domain schema:Event;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has duration"@en,
       "heeft duur"@nl;
@@ -56,16 +56,25 @@ andb: {
   andb:event
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has event"@en,
       "heeft evenement"@nl;
     rdfs:range schema:Event.
 
+  andb:education
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has education"@en,
+      "volgt onderwijs"@nl;
+    rdfs:range andb:Education.
+
   andb:examination
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has examination"@en,
       "heeft tentaminering"@nl;
@@ -75,7 +84,7 @@ andb: {
   andb:examinator
     a owl:DatatypeProperty;
     rdfs:domain andb:Examination;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has examinator"@en,
       "heeft examinator"@nl;
@@ -84,7 +93,7 @@ andb: {
   andb:examinee
     a owl:ObjectProperty;
     rdfs:domain andb:Examination;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has examinee"@en,
       "heeft geëxamineerde"@nl;
@@ -93,7 +102,7 @@ andb: {
   andb:father
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has father"@en,
       "heeft vader"@nl;
@@ -104,7 +113,7 @@ andb: {
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
     owl:inverseOf andb:fosterParent;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has foster child"@en,
       "heeft pleegkind"@nl;
@@ -113,7 +122,7 @@ andb: {
   andb:fosterDaughter
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has foster daughter"@en,
       "heeft pleegdochter"@nl;
@@ -123,7 +132,7 @@ andb: {
   andb:fosterFather
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has foster father"@en,
       "heeft pleegvader"@nl;
@@ -133,7 +142,7 @@ andb: {
   andb:fosterParent
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has foster parent"@en,
       "heeft pleegouder"@nl;
@@ -142,7 +151,7 @@ andb: {
   andb:fosterSon
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has foster son"@en,
       "heeft pleegzoon"@nl;
@@ -155,7 +164,7 @@ andb: {
       "The house number of the address."@en,
       "Het huisnummer van het adres."@nl;
     rdfs:domain schema:PostalAddress;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has house number"@en,
       "heeft huisnummer"@nl;
@@ -167,7 +176,7 @@ andb: {
       "The house number addition of the address."@en,
       "De huisnummertoevoeging van het adres."@nl;
     rdfs:domain schema:PostalAddress;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has house number addition"@en,
       "heeft huisnummertoevoeging"@nl;
@@ -177,7 +186,7 @@ andb: {
     a owl:ObjectProperty;
     owl:inverseOf andb:inhabits;
     rdfs:domain andb:Residency;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has inhabitant"@en,
       "heeft bewoner"@nl;
@@ -187,16 +196,26 @@ andb: {
     a owl:ObjectProperty;
     owl:inverseOf andb:inhabits;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "is inhabitant of"@en,
       "is bewoner van"@nl;
     rdfs:range andb:Residency.
 
+  andb:internship
+    a owl:ObjectProperty;
+    rdfs:comment "Internship at diamond factory as part of the formal education"@en;
+    rdfs:domain andb:Education;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has internship"@en,
+      "volgt stage"@nl;
+    rdfs:range andb:Internship.
+
   andb:jobCategory
     a owl:ObjectProperty;
     rdfs:domain foaf:Document;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "profession"@en,
       "beroep"@nl;
@@ -205,7 +224,7 @@ andb: {
   andb:maidenName
     a owl:DatatypeProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "maiden name"@en,
       "meisjesnaam"@nl;
@@ -214,7 +233,7 @@ andb: {
   andb:marriage
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has marriage"@en,
       "heeft huwelijk"@nl;
@@ -223,8 +242,8 @@ andb: {
 
   andb:master
     a owl:DatatypeProperty;
-    rdfs:domain andb:Examination;
-    rdfs:isDefinedBy andb:;
+    rdfs:domain andb:Internship;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has master"@en,
       "heeft meester"@nl;
@@ -234,7 +253,7 @@ andb: {
     a owl:DatatypeProperty;
     rdfs:domain schema:ImageObject;
     rdfs:label "has MD5 hash";
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:range xsd:string;
     skos:definition "The MD5 hash of the binary image contensts."@en;
     skos:scopeNote "The MD5 hash can be used in order to verify that the binary image indeed belongs to the metadata record."@en.
@@ -242,14 +261,14 @@ andb: {
   andb:middleName
     a owl:DatatypeProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label "middle name"@en;
     rdfs:range xsd:string.
 
   andb:mother
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has mother"@en,
       "heeft moeder"@nl;
@@ -259,7 +278,7 @@ andb: {
   andb:occupation
     a owl:ObjectProperty;
     rdfs:domain foaf:Document;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has occupation"@en,
       "heeft beroep"@nl;
@@ -268,7 +287,7 @@ andb: {
   andb:organization
     a owl:ObjectProperty;
     rdfs:domain org:Membership;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has organization"@en,
       "heeft organizatie"@nl;
@@ -277,7 +296,7 @@ andb: {
   andb:parent
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has parent"@en,
       "heeft ouder"@nl;
@@ -287,7 +306,7 @@ andb: {
   andb:relative
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has relative"@en,
       "heeft familielid"@nl;
@@ -296,14 +315,14 @@ andb: {
   andb:remark
     a owl:ObjectProperty;
     rdfs:domain foaf:Document;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label "remark"@en;
     rdfs:range andb:Remark.
 
   andb:residency
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "residency"@en,
       "bewoning"@nl;
@@ -313,14 +332,14 @@ andb: {
   andb:screenVersion
     a owl:ObjectProperty;
     rdfs:domain schema:ImageObject;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label "screen version"@en;
     rdfs:range schema:ImageObject.
 
   andb:sister
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "sister"@en,
       "heeft zus"@nl;
@@ -330,7 +349,7 @@ andb: {
   andb:son
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has son"@en,
       "heeft zoon"@nl;
@@ -340,7 +359,7 @@ andb: {
   andb:spouse
     a owl:ObjectProperty;
     rdfs:domain schema:MarryAction;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has spouse"@en,
       "heeft echtgenoot"@nl;
@@ -350,7 +369,7 @@ andb: {
     a owl:ObjectProperty;
     owl:inverseOf andb:stepParent;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has stepchild"@en,
       "heeft stiefkind"@nl;
@@ -359,7 +378,7 @@ andb: {
   andb:stepDaughter
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has stepdaughter"@en,
       "heeft stiefdochter"@nl;
@@ -369,7 +388,7 @@ andb: {
   andb:stepFather
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has stepfather"@en,
       "heeft stiefvader"@nl;
@@ -379,7 +398,7 @@ andb: {
   andb:stepMother
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has stepmother"@en,
       "heeft stiefmoeder"@nl;
@@ -389,7 +408,7 @@ andb: {
   andb:stepParent
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has stepparent"@en,
       "heeft stiefouder"@nl;
@@ -398,7 +417,7 @@ andb: {
   andb:stepSon
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has stepson"@en,
       "heeft stiefzoon"@nl;
@@ -409,7 +428,7 @@ andb: {
     a owl:ObjectProperty;
     rdfs:comment "Relates a postal address to its corresponding street."@en;
     rdfs:domain schema:PostalAddress;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has street"@en,
       "heeft straat"@nl;
@@ -418,7 +437,7 @@ andb: {
   andb:union
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has union"@en,
       "heeft bond"@nl;
@@ -427,7 +446,7 @@ andb: {
   andb:worker
     a owl:ObjectProperty;
     rdfs:domain andb:WorkEvent;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has worker"@en,
       "heeft arbeider"@nl;
@@ -436,19 +455,10 @@ andb: {
   andb:workEvent
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;
+    rdfs:isDefinedBy andb:;#
     rdfs:label
       "has work event"@en,
       "heeft werk evenement"@nl;
     rdfs:range andb:WorkEvent;
     rdfs:subPropertyOf andb:event.
-
-  andb:workshop
-    a owl:ObjectProperty;
-    rdfs:domain andb:WorkEvent;
-    rdfs:isDefinedBy andb:;
-    rdfs:label
-      "has workshop"@en,
-      "heeft werkplaats"@nl;
-    rdfs:range andb:Workshop.
 }
