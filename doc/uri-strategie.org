@@ -17,7 +17,7 @@ ingevuld:
 - {schema} :: ~https~
 - {domein} :: ~iisg.amsterdam~
 - {type} :: ~id~ voor instanties; ~vocab~ voor definities
-- {subtype} :: ~adb~, ~andb~, ~diamantbewerkers~ [todo]
+- {subtype} :: ~adb~ (uitsluitend ADB), ~andb~ (uitsluitend ANDB), ~adb-andb~ (gedeelde kennis tussen ADB en ANDB)
 - {referentie} :: ~EenKlasse~ of ~eenEigenschap~ of een arbitraire
   string (bijv. een binnen de dataset unieke code) voor instanties.
 

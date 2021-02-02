@@ -15,89 +15,95 @@ prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix time: <http://www.w3.org/2006/time#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
-prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix id: <https://iisg.amsterdam/id/andb/>
 
 andb: {
   andb:durationShape
-    a sh:PropertyShape;
-    sh:class time:ProperInterval;
-    sh:nodeKind sh:IRI;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class time:ProperInterval;#
+    sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
     sh:path andb:duration.
 
   andb:labelShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description
       "Nodes that have human-readable labels, but not in a specific language."@en,
       "Nodes die een menselijk leesbaar label hebben, maar niet in een specifieke taal."@nl;
     sh:maxCount 1;
     sh:minCount 1;
-    sh:minLength 1;
+    sh:minLength 1;#
     sh:name
       "has human-readable label"@en,
       "heeft menselijk leesbaar label"@nl;
-    sh:nodeKind sh:Literal;
+    sh:nodeKind sh:Literal;#
     sh:path rdfs:label.
 
   andb:labelShape_en_nl
-    a sh:PropertyShape;
-    sh:datatype rdf:langString;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype rdf:langString;#
     sh:description
       "Nodes that have human-readable labels in Engels and Dutch."@en,
       "Nodes die een menselijk leesbaar label in het Engels en het Nederlands bevatten."@nl;
     sh:languageIn ( "en" "nl" );
     sh:maxCount 2;
     sh:minCount 2;
-    sh:minLength 1;
+    sh:minLength 1;#
     sh:name
       "has human-readable label"@en,
       "heeft menselijk leesbaar label"@nl;
-    sh:nodeKind sh:Literal;
+    sh:nodeKind sh:Literal;#
     sh:path rdfs:label;
-    sh:uniqueLang true.
+    sh:uniqueLang true.#
 
   andb:labelShape_nl
-    a sh:PropertyShape;
-    sh:datatype rdf:langString;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype rdf:langString;#
     sh:description
       "Nodes that have a human-readable label in Dutch."@en,
       "Nodes die een menselijk leesbaar label in het Nederlands bevatten."@nl;
     sh:languageIn ( "nl" );
     sh:maxCount 1;
     sh:minCount 1;
-    sh:minLength 1;
+    sh:minLength 1;#
     sh:name
       "has human-readable label"@en,
       "heeft menselijk leesbaar label"@nl;
-    sh:nodeKind sh:Literal;
+    sh:nodeKind sh:Literal;#
     sh:path rdfs:label;
-    sh:uniqueLang true.
+    sh:uniqueLang true.#
 
   andb:nameShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/mbr_city_01 t/m 5",
       "andb/mbr_city-01 t/m 26",
       "apprentice/sdn_city-01 t/m 5",
       "apprentice/wsp_city-01 t/m 10",
       "wsp_name-01 t/m 10";
-    sh:datatype rdf:langString;
+    rdfs:isDefinedBy andb:;#
+    sh:datatype rdf:langString;#
     sh:languageIn ( "nl" );
     sh:maxCount 1;
     sh:minCount 1;
-    sh:minLength 1;
+    sh:minLength 1;#
     sh:name
       "has name"@en,
       "heeft naam"@nl;
     sh:path schema:name;
-    sh:uniqueLang true.
+    sh:uniqueLang true.#
 
 
   andb:AddressShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:Address_identifier,
       andb:houseNumberAdditionShape,
@@ -107,14 +113,17 @@ andb: {
     sh:targetClass schema:PostalAddress.
 
   andb:Address_identifier
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
-      "apprentice/sdn_address_locationPoint-01 t/m 5",
-      "andb/mbr_address_locationPoint-01 t/m 26";
+      "andb/mbr_address_locationPoint-01 t/m 26",
+      "apprentice/sdn_address_locationPoint-01 t/m 5";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The HISGIS identifier of the (Amsterdam) address."@en;
+    sh:minLength 1;#
     sh:name "has hisgis identifier"@en;
-    sh:path schema:identifier.
+    sh:nodeKind sh:Literal;#
+    sh:path dct:identifier.
 
   andb:houseNumberAdditionShape
     a sh:PropertyShape;
@@ -123,70 +132,76 @@ andb: {
       "andb/mbr_street_no_add-01 t/m 26",
       "apprentice/sdn_street_no_add-01 t/m 5",
       "apprentice/wsp_street_no_ad-01 t/m 10";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
-    #sh:group id:addressGroup;
     sh:maxCount 1;
-    #sh:order 2;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
     sh:path andb:houseNumberAddition.
 
   andb:houseNumberShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/mbr_street_no_01 t/m 5",
       "andb/mbr_street_no-01 t/m 26",
       "apprentice/sdn_street_no-01 t/m 5",
       "apprentice/wsp_street_no-01 t/m 10";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:positiveInteger;
-    #sh:group id:addressGroup;
     sh:maxCount 1;
-    #sh:order 1;
+    sh:nodeKind sh:Literal;#
     sh:path andb:houseNumber;
     sh:pattern "^[0-9]+$".
 
   andb:streetShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/mbr_street_01 t/m 5",
       "andb/mbr_street-01 t/m 26",
       "apprentice/sdn_street-01 t/m 5",
       "apprentice/wsp_street-01 t/m 10";
-    sh:class hg:Street;
-    sh:description "The street part of the address."@en;
-    #sh:group id:addressGroup;
-    sh:name "has street"@en;
+    rdfs:isDefinedBy andb:;#
+    sh:class hg:Street;#
+    sh:description "The street part of the address."@en;#
+    sh:name "has street"@en;#
     sh:maxCount 1;
     sh:minCount 1;
-    #sh:order 0;
+    sh:nodeKind sh:IRI;#
     sh:path andb:street.
 
 
   andb:CardShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:CardShape_identifier,
       andb:CardShape_primaryTopic,
       andb:imageShape,
       andb:labelShape_en_nl;
-    sh:targetClass andb:MembershipCard.
+    sh:targetClass andb:MembershipCard.#adb-andb:Card
 
   andb:CardShape_identifier
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/card_id1",
       "andb/card_id1 t/m 4",
       "apprentice/card_id1 t/m 2";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "Het administratieve nummer van de kaart."@nl;
+    sh:minLength 1;#
     sh:name
       "has card identifier"@en,
       "heeft kaartnummer"@nl;
     sh:path dct:identifier;
+    sh:nodeKind sh:Literal;#
     sh:pattern "^[0-9]+$".
 
   andb:CardShape_primaryTopic
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:class schema:Person;
     sh:description
       "Cards describe persons."@en,
@@ -196,13 +211,16 @@ andb: {
     sh:name
       "is about"@en,
       "gaat over"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path foaf:primaryTopic.
 
   andb:imageShape
+    a sh:PropertyShape;#
     dct:source
       "adb/adm_image_uuid",
       "andb/adm_image_uuid",
       "apprentice/adm_image_uuid";
+    rdfs:isDefinedBy andb:;#
     sh:class schema:ImageObject;
     sh:description
       "Cards have one scanned image."@en,
@@ -212,43 +230,108 @@ andb: {
     sh:name
       "has image"@en,
       "heeft afbeelding"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path schema:image.
 
 
-  andb:MigrationShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
-    sh:name
-      "Migration"@en,
-      "Vertrek"@nl;
+  andb:EducationShape
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
+      andb:EducationShape_contains,
       andb:durationShape,
-      andb:locationShape,
-      andb:labelShape_en_nl;
-    sh:targetClass andb:Migration.
+      andb:examinatorShape,
+      andb:internshipShape,
+      andb:labelShape_en_nl,
+      andb:masterShape,
+      andb:occupationShape,
+      andb:studentShape;
+    sh:targetClass andb:Education.
 
-  andb:locationShape
-    a sh:PropertyShape;
-    dct:source "andb/departure_place-01 t/m 08";
-    sh:datatype xsd:string;
+  andb:EducationShape_contains
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Internship;
+    sh:minCount 1;
+    sh:nodeKind sh:IRI;
+    sh:path
+      ( andb:duration
+        time:intervalContains
+        [ sh:inversePath andb:duration ] ).
+
+  andb:examinatorShape
+    a sh:PropertyShape;#
+    dct:source "apprentice/edu_examinator";
+    rdfs:isDefinedBy andb:;#
+    sh:class xsd:string;#
     sh:description
-      "The location where the person migrated to."@en,
-      "De plaats waarnaar de persoon gemigreerd is."@nl;
+      "The full name of the examinator."@en,
+      "De volledige naam van de examinator."@nl;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:examinator.
+
+  andb:internshipShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Internship;#
+    sh:minCount 1;
+    sh:name
+      "has internship"@en,
+      "volgt stage"@nl;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:internship.
+
+  andb:masterShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:master.
+
+  andb:occupationShape
+    a sh:PropertyShape;#
+    dct:source: "apprentice/sdn_occupation";
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Occupation;
+    sh:description "Occupation the education is preparing for"@en;
+    sh:in
+      ( id:brillantslijpen
+        id:brillantsnijden
+        id:brillantverstellen
+        id:kapbewerken
+        id:klooven
+        id:roosjesslijpen
+        id:roosjessnijden
+        id:roosjesverstellen
+        id:zagen );
+    sh:name
+      "has occupation"@en,
+      "heeft beroep"@nl;
+    sh:nodeKind sh:IRI;#
+    sh:path schema:occupation.
+
+  andb:studentShape
+    a sh:PropertyNode;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;
+    sh:description "The student's education"@en;
     sh:maxCount 1;
     sh:minCount 1;
-    sh:minLength 1;
-    sh:name
-      "has migration destination"@en,
-      "heeft migratiebestemming"@nl;
-    sh:nodeKind sh:Literal;
-    sh:path schema:location.
+    sh:name "has student"@en;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:student.
 
 
   andb:ImageShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:contentSizeShape,
       andb:contentUrlShape,
@@ -260,78 +343,142 @@ andb: {
     sh:targetClass schema:ImageObject.
 
   andb:contentSizeShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:positiveInteger;
     sh:description "The size of the binary image in bytes."@en;
     sh:maxCount 1;
     sh:minCount 1;
+    sh:nodeKind sh:Literal;#
     sh:path schema:contentSize.
 
   andb:contentUrlShape
-    a sh:PropertyShape;
-    sh:datatype xsd:anyURI;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:anyURI;#
     sh:description "Every image has exactly one URL where it can be downloaded."@en;
     sh:maxCount 1;
     sh:minCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
     sh:path schema:contentUrl;
     sh:pattern "^https://hdl.handle.net/[0-9]{5}/[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}\\?locatt=view:(level2|level3|master)$".
 
   andb:md5Shape
-    a sh:PropertyShape;
-    sh:datatype xsd:string;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
     sh:maxCount 1;
     sh:minCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
     sh:path andb:md5;
     sh:pattern "^[0-9a-f]{32}$".
 
   andb:mediaTypeShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The Media Type that is used to encoding the image (JPEG or TIFF)."@en;
     sh:maxCount 1;
     sh:minCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
     sh:path schema:encodingFormat;
     sh:pattern "^image/(jpeg|tiff)$".
 
   andb:screenVersionShape
-    a sh:PropertyShape;
-    sh:class schema:ImageObject;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:ImageObject;#
     sh:description "Some images have a screen friendly version."@en;
     sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
     sh:path andb:screenVersion.
 
   andb:thumbnailShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:class schema:ImageObject;
     sh:description "Some images have a thumbnail version."@en;
     sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
     sh:path schema:thumbnail.
 
 
   andb:Instant
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
+    sh:name
+      "Instant"@en,
+      "Moment"@nl;
     sh:property
       andb:inXSDDate,
       andb:labelShape;
     sh:targetClass time:Instant.
 
   andb:inXSDDate
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:date;
     sh:maxCount 1;
     sh:minCount 1;
-    sh:nodeKind sh:Literal;
+    sh:name
+      "has XSD date"@en,
+      "heeft XSD datum"@nl;
+    sh:nodeKind sh:Literal;#
     sh:path time:inXSDDate;
     sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}$".
 
 
-  andb:IntervalShape
+  andb:InternshipShape
     a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
+      andb:durationShape,
+      andb:duringShape,
+      andb:labelShape_en_nl,
+      andb:workshopShape;
+    sh:targetClass andb:Internship.
+
+  andb:duringShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Education;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
+    sh:path
+      ( andb:duration
+        time:intervalDuring
+        [ sh:inversePath andb:duration ] ).
+
+  andb:workshopShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Workshop;
+    sh:maxCount 1;
+    sh:name
+      "has workshop"@en,
+      "heeft werkplaats"@nl;
+    sh:nodeKind sh:IRI;#
+    sh:path org:organization.
+
+
+  andb:IntervalShape
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
+    sh:name
+      "Interval"@en,
+      "Interval"@nl;
+    sh:property
+      andb:IntervalShape_contains,
+      andb:IntervalShape_during,
       andb:afterShape,
       andb:beforeShape,
       andb:beginShape,
@@ -339,64 +486,110 @@ andb: {
       andb:labelShape;
     sh:targetClass time:ProperInterval.
 
-  andb:afterShape
-    a sh:PropertyShape;
+  andb:IntervalShape_contains
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:class time:ProperInterval;
-    sh:description "Another event that occurred directly after this one."@en;
-    sh:name "komt na"@nl;
+    sh:nodeKind sh:IRI;#
+    sh:path time:intervalContains.
+
+  andb:IntervalShape_during
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class time:ProperInterval;
+    sh:nodeKind sh:IRI;#
+    sh:path time:intervalDuring.
+
+  andb:afterShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class time:ProperInterval;
+    sh:description
+      "Another interval that occurred directly after this one."@en,
+      "Een ander interval dat direct na dit interval komt."@nl;
+    sh:name
+      "occurs after"@en,
+      "komt na"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path time:after;
     skos:usageNote "Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum."@nl.
 
   andb:beforeShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:class time:ProperInterval;
-    sh:description "Another event that occurred directly before this one."@en;
+    sh:description
+      "Another interval that occurred directly before this one."@en,
+      "Een ander interval dat direct voor dit interval komt."@nl;
     sh:maxCount 1;
-    sh:name "gaat vooraf aan"@nl;
+    sh:name
+      "occurs before"@en,
+      "gaat vooraf aan"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path time:before;
     skos:usageNote "Hier moet gebruik worden gemaakt van de volgnummers, niet van de datum."@nl.
 
   andb:beginShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
-      "adb/mmb_day/month/year-01", # datum moet nog worden samengevoegd
-      "andb/departure_day/month/year_01 t/m 08", # datum moet nog worden samengevoegd
+      "apprentice/admission_day/month/year-01",
+      "adb/mmb_day/month/year-01",
+      "andb/departure_day/month/year_01 t/m 08",
       "andb/mbr_addr_day/month/year 1 t/m 26",
-      "andb/mmb_day/month/year-01 t/m 07", # datum moet nog worden samengevoegd
-      "apprentice/mmb_day/month/year", # datum moet nog worden samengevoegd
+      "andb/mmb_day/month/year-01 t/m 07",
+      "apprentice/mmb_day/month/year",
       "apprentice/sdn_addr_day/month/year 1 t/m 25",
       "apprentice/wsp_day/month/year-01 t/m 10";
+    rdfs:isDefinedBy andb:;#
     sh:class time:Instant;
     sh:name
       "has start date"@en,
       "heeft begindatum"@nl;
     sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
     sh:path time:hasBeginning.
 
   andb:endShape
-    a sh:PropertyShape;
-    dct:source "andb/return_day/month/year_01 t/m 08"; # datum moet nog worden samengevoegd
+    a sh:PropertyShape;#
+    dct:source
+      "andb/return_day/month/year_01 t/m 08",
+      "apprentice/edu_end_day/month/year-01";
+    rdfs:isDefinedBy andb:;#
     sh:class time:Instant;
     sh:maxCount 1;
     sh:name
       "has end date"@en,
       "heeft einddatum"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path time:hasEnd.
 
 
   andb:MembershipShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
+      andb:Membership_identifier,
       andb:labelShape_en_nl,
       andb:memberShape,
       andb:memberDuringShape,
       andb:organizationShape;
     sh:targetClass org:Membership.
 
+  andb:Membership_identifier
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path dct:identifier.
+
   andb:memberShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:class schema:Person;
     sh:description
       "todo"@en,
@@ -406,10 +599,12 @@ andb: {
     sh:name
       "has member"@en,
       "heeft lid"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path org:member.
 
   andb:memberDuringShape
     a sh:PropertyShape;
+    rdfs:isDefinedBy andb:;#
     sh:class time:ProperInterval;
     sh:description
       "The time interval during which the membership is valid."@en,
@@ -419,26 +614,60 @@ andb: {
     sh:name
       "has time interval"@en,
       "heeft interval"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path org:memberDuring.
 
   andb:organizationShape
-    a sh:PropertyShape;
-    sh:or
-      ( [ sh:class org:Organization]
-        [ sh:class org:OrganizationalUnit ] );
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class org:OrganizationalUnit;
     sh:description
       "The union to which the membership applies (apprentices only)."@en,
       "De vakbond waarvoor het lidmaatschap geldt."@nl;
     sh:name
       "has organization"@en,
       "heeft orgnisatie"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path org:organization.
 
 
+  andb:MigrationShape
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
+    sh:name
+      "Migration"@en,
+      "Vertrek"@nl;
+    sh:property
+      andb:durationShape,
+      andb:locationShape,
+      andb:labelShape_en_nl;
+    sh:targetClass andb:Migration.
+
+  andb:locationShape
+    a sh:PropertyShape;#
+    dct:source "andb/departure_place-01 t/m 08";
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:description
+      "The location where the person migrated to."@en,
+      "De plaats waarnaar de persoon gemigreerd is."@nl;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:minLength 1;#
+    sh:name
+      "has migration destination"@en,
+      "heeft migratiebestemming"@nl;
+    sh:nodeKind sh:Literal;#
+    sh:path schema:location.
+
+
   andb:OrganizationShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:OrganizationShape_name,
       andb:hasUnitShape,
@@ -446,12 +675,13 @@ andb: {
     sh:targetClass org:Organization.
 
   andb:OrganizationShape_name
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/un_name",
       "apprentice/un_name",
       "apprentice/par_un_name";
-    sh:datatype rdf:langString;
+    rdfs:isDefinedBy andb:;#
+    sh:datatype rdf:langString;#
     sh:description
       "The name of the labor union."@en,
       "De naam van de vakbond."@nl;
@@ -459,29 +689,34 @@ andb: {
     sh:name
       "has name"@en,
       "heeft naam"@nl;
-    sh:nodeKind sh:Literal;
+    sh:nodeKind sh:Literal;#
     sh:path schema:name;
-    sh:uniqueLanguage true.
+    sh:uniqueLanguage true.#
 
   andb:hasUnitShape
     a sh:PropertyShape;
+    rdfs:isDefinedBy andb:;#
     sh:class org:OrganizationalUnit;
     sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
     sh:path org:hasUnit.
 
   andb:unitOfShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:or
       ( [ sh:class andb:Union ]
         [ sh:class org:OrganizationalUnit ] );
     sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
     sh:path org:unitOf.
 
 
   andb:OrganizationalUnitShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:OrganizationalUnitShape_identifier,
       andb:hasUnitShape,
@@ -490,7 +725,7 @@ andb: {
     sh:targetClass org:OrganizationalUnit.
 
   andb:OrganizationalUnitShape_identifier
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/un_section",
       "adb/un_section_no",
@@ -500,17 +735,18 @@ andb: {
       "apprentice/par_un_section_no",
       "apprentice/un_section",
       "apprentice/un_section_no";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description
       "The section number of the labor union section."@en,
       "Het sectie nummer van een vakbondsafdeling van een vakbond."@nl;
     sh:maxCount 1;
     sh:minCount 1;
-    sh:minLength 1;
+    sh:minLength 1;#
     sh:name
       "has section number"@en,
       "heeft sectie nummer"@nl;
-    sh:nodeKind sh:Literal;
+    sh:nodeKind sh:Literal;#
     sh:path dct:identifier;
     sh:pattern "^[0-9]+$".
 
@@ -518,9 +754,10 @@ andb: {
   # TODO: Kunnen we vastleggen dat de IRI voor individuele persoon
   #       wordt opgebouwd a.d.h.v. veld "person_uuid"?
   andb:PersonShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:Person_labelShape,
       andb:Person_nameShape,
@@ -529,88 +766,96 @@ andb: {
       andb:birthPlaceShape,
       andb:cardShape,
       andb:deathDateShape,
+      andb:education,
       andb:familyNameShape,
       andb:firstNameShape,
       andb:genderShape,
       andb:hasMembershipShape,
+      andb:inhabitsShape,
       andb:maidenNamePrefixShape,
       andb:maidenNameShape,
       andb:oorlogslevensShape;
     sh:targetClass schema:Person.
 
   andb:Person_labelShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:maxCount 1;
     sh:minCount 1;
-    sh:minLength 1;
+    sh:minLength 1;#
     sh:name
       "has human-readable label"@en,
       "heeft menselijke leesbaar label"@n;;
-    sh:nodeKind sh:Literal;
+    sh:nodeKind sh:Literal;#
     sh:path rdfs:label.
 
   andb:Person_nameShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:maxCount 1;
     sh:minCount 1;
+    sh:minLength 1;#
     sh:name
       "has name"@en,
       "heeft naam"@nl;
-    sh:nodeKind sh:Literal;
+    sh:nodeKind sh:Literal;#
     sh:path schema:name.
 
   andb:additionalNameShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "andb/mbr_middle_name",
       "apprentice/par_middle_name",
       "apprentice/sdn_middle_name",
       "unique/middle_name";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description
       "The person's middle name."@en,
       "todo"@nl;
-    #sh:group id:personNameGroup;
     sh:name
       "has middle name"@en,
       "todo"@nl;
     sh:maxCount 1;
-    sh:minLength 1;
-    sh:nodeKind sh:Literal;
-    #sh:order 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
     sh:path schema:additionalName.
 
   andb:birthDateShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/chi_birth_day/month/year_01 t/m 05",
       "apprentice/par_birth_day/month/year",
       "unique/birth_date";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:date;
     sh:description "The person's birth date."@en;
     sh:maxCount 1;
     sh:minCount 1;
     sh:name "has birth date"@en;
+    sh:nodeKind sh:Literal;#
     sh:path schema:birthDate.
 
   andb:birthPlaceShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "apprentice/par_birth_place",
       "unique/mbr_birth_place";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The person's place of birth."@en;
-    #sh:group id:personGroup;
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:name
       "has birth place"@en,
       "heeft geboorteplaats"@nl;
+    sh:nodeKind sh:Literal;#
     sh:path schema:birthPlace.
 
   andb:cardShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "unique/adb_identifier",
       "unique/sdn_adm_id1",
@@ -619,67 +864,80 @@ andb: {
       "unique/mbr_adm_id1",
       "unique/mbr_adm_id2",
       "unique/mbr_adm_id3";
+    rdfs:isDefinedBy andb:;#
     sh:or
       ( [ sh:class andb:MembershipCard ]
         [ sh:class andb:StudentCard ] );
     sh:description "A person can have one or more cards."@en;
-    #sh:group id:personGroup;
     sh:minCount 1;
     sh:name
       "has card"@en,
       "heeft kaart"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path foaf:isPrimaryTopicOf.
 
   andb:deathDateShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
-      "apprentice/par_death_day/month/year", # datum moet nog worden samengevoegd
+      "apprentice/par_death_day/month/year",
       "unique/death_date";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:date;
     sh:description "The person's death date."@en;
-    #sh:group id:personGroup;
+    sh:minLength 1;#
     sh:name
       "has death date"@en,
       "heeft overleidensdatum"@nl;
+    sh:nodeKind sh:Literal;#
     sh:path schema:deathDate.
 
+  andb:education
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Education;#
+    sh:description "Cards can contain information about the card holder's formal education."@en;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:education.
+
   andb:familyNameShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/par_last_name_01 t/m 02",
       "apprentice/par_last_name",
       "unique/last_name";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The person's family name."@en;
-    #sh:group id:personNameGroup;
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:name "has family name"@en;
-    #sh:order 2;
+    sh:nodeKind sh:Literal;#
     sh:path schema:familyName.
 
   andb:firstNameShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "adb/chi_first_name_01 t/m 05",
       "adb/par_first_name_01 t/m 02",
       "apprentice/par_first_name",
       "unique/first_name";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The person's first name(s)."@en;
-    #sh:group id:personNameGroup;
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:name "has first name"@en;
-    #sh:order 0;
+    sh:nodeKind sh:Literal;#
     sh:path schema:givenName.
 
   andb:genderShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source "unique/gender";
+    rdfs:isDefinedBy andb:;#
     #sh:class schema:GenderType;
     sh:description
       "The person's gender; historically registered as either male or female."@en,
       "Het geslacht van de persoon; historisch vastgesteld als man of vrouw."@nl;
-    #sh:group id:personGroup;
     sh:in
       ( schema:Female
         schema:Male );
@@ -687,58 +945,73 @@ andb: {
     sh:name
       "has gender"@en,
       "heeft geslacht"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path schema:gender.
 
   andb:hasMembershipShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:class org:Membership;
     sh:minCount 1;
     sh:name
       "has membership"@en,
       "heeft lidmaatschap"@nl;
+    sh:nodeKind sh:IRI;#
     sh:path org:hasMembership.
 
+  andb:inhabitsShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Residency;#
+    sh:nodeKind sh:IRI;#
+    sh:path andb:inhabits.
+
   andb:maidenNamePrefixShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source "unique/maiden_name_prefix";
-    sh:datatype xsd:string;
-    sh:description "The person's maiden name's middle name."@en;
-    #sh:group id:personNameGroup;
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:description "The person's maiden name's middle name."@en;#
     sh:maxCount 1;
-    sh:name "has maiden middle name"@en;
-    #sh:order 3;
+    sh:minLength 1;#
+    sh:name "has maiden middle name"@en;#
+    sh:nodeKind sh:Literal;#
     sh:path andb:maidenNamePrefix.
 
   andb:maidenNameShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
       "apprentice/par_maiden_name",
       "unique/maiden_name";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The person's maiden name."@en;
-    #sh:group id:personNameGroup;
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:name "has maiden name"@en;
-    #sh:order 4;
+    sh:nodeKind sh:Literal;#
     sh:path pnv:patronym.
 
   andb:oorlogslevensShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source "unique/oorlogslevens_uri";
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:anyURI;
     sh:description """
 <section lang="en">
   <p>The person's biography on <a href="https://oorlogslevens.nl">Oorlogslevens</a>.</p>
 </section>"""^^rdf:HTML;
-    #sh:group id:personGroup;
+    sh:minLength 1;#
     sh:name "has biography on Oorlogslevens"@en;
+    sh:nodeKind sh:Literal;#
     sh:path rdfs:seeAlso.
 
 
   andb:ResidencyShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:ResidencyShape_address,
       andb:durationShape,
@@ -748,60 +1021,82 @@ andb: {
     sh:targetClass andb:Residency.
 
   andb:ResidencyShape_address
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:class schema:PostalAddress;
     sh:description "The address of the residency event."@en;
     sh:name "has address"@en;
+    sh:nodeKind sh:IRI;#
     sh:path schema:address.
 
   andb:inhabitantShape
-    a sh:PropertyShape;
-    sh:class schema:Person;
-    sh:description "The residency's inhabitant."@en;
-    sh:name "has inhabitant"@en;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;#
+    sh:description "The residency's inhabitant."@en;#
+    sh:name "has inhabitant"@en;#
+    sh:nodeKind sh:IRI;#
     sh:path andb:inhabitant.
 
   andb:placeShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:class schema:Place;
+    sh:nodeKind sh:IRI;#
     sh:path schema:location.
 
 
   andb:StreetShape
-    a sh:NodeShape;
-    sh:closed true;
-    sh:ignoredProperties ( rdf:type );
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:SteetShape_identifier,
       andb:adamlinkShape,
       andb:labelShape_nl,
       andb:nameShape,
       andb:withinShape;
-      sh:targetClass hg:Street.
+    sh:targetClass hg:Street.
 
   andb:SteetShape_identifier
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:description "HISGIS identificatie van een straat."@nl;
     sh:maxCount 1;
     sh:name "heeft HISGIS identificatie"@nl;
+    sh:nodeKind sh:Literal;#
     sh:path dct:identifier;
     sh:pattern "^[0-9]+$".
 
   andb:adamlinkShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
     dct:source
-      "apprentice/sdn_street_adamlink_uri-01",
-      "andb/mbr_street_adamlink_uri-01";
+      "andb/mbr_street_adamlink_uri-01",
+      "apprentice/sdn_street_adamlink_uri-01";
+    rdfs:isDefinedBy andb:;#
     sh:description "The Adamlink identifier of the street"@en;
     sh:maxCount 1;
     sh:name "adamlink identifier"@en;
-    sh:nodeKind sh:IRI;
+    sh:nodeKind sh:IRI;#
     sh:path owl:sameAs.
 
   andb:withinShape
-    a sh:PropertyShape;
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:maxCount 1;
     sh:minCount 1;
-    sh:nodeKind sh:IRI;
+    sh:nodeKind sh:IRI;#
     sh:path geo:sfWithin.
+
+
+  andb:WorkshopShape
+    a sh:NodeShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:closed true;#
+    sh:ignoredProperties ( rdf:type );#
+    sh:property
+      andb:labelShape_nl,
+      andb:nameShape;
+    sh:targetClass andb:Workshop.
 }

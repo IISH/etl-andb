@@ -11,8 +11,8 @@ prefix schema: <https://schema.org/>
 prefix time: <http://www.w3.org/2006/time#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
-prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix id: <https://iisg.amsterdam/id/andb/>
 
 id:instanties {
   id:ARCH00210-9421-0055-master
@@ -82,9 +82,10 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1
     a org:Membership;
+    dct:identifier "732";#
     org:member id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     org:memberDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval;
-    org:organization id:2-732;
+    org:organization id:2;
     rdfs:label
       "Membership of Adriaan Helsloot"@en,
       "Lidmaatschap van Adriaan Helsloot"@nl.
@@ -109,20 +110,10 @@ id:instanties {
   id:2
     a org:OrganizationalUnit;
     dct:identifier "2";
-    org:hasUnit id:2-732;
     org:unitOf id:andb;
     rdfs:label
       "Section 2"@en,
       "Sectie 2"@nl.
-
-  id:2-732
-    a org:OrganizationalUnit;
-    dct:identifier "732";
-    org:unitOf id:2;
-    rdfs:label
-      "Section 2, Subsection 732"@en,
-      "Sectie 2, Subsectie 732"@nl.
-
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1
     a andb:Residency;
@@ -162,13 +153,13 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval
     a time:ProperInterval;
-    rdfs:label "(?, 1924-10-13]";
+    rdfs:label "../1924-10-13";
     time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
     time:hasEnd id:1924-10-13.
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval
     a time:ProperInterval;
-    rdfs:label "[1924-10-13, 1925-03-15]";
+    rdfs:label "1924-10-13/1925-03-15";
     time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval;
     time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
     time:hasBeginning id:1924-10-13;
@@ -176,7 +167,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval
     a time:ProperInterval;
-    rdfs:label "[1925-03-15, 1926-12-28]";
+    rdfs:label "1925-03-15/1926-12-28";
     time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
     time:before id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval;
     time:hasBeginning id:1925-03-15;
@@ -184,7 +175,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval
     a time:ProperInterval;
-    rdfs:label "[1926-12-28, ?)";
+    rdfs:label "1926-12-28/..";
     time:after id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
     time:hasBeginning id:1926-12-28.
 
@@ -287,9 +278,14 @@ id:instanties {
       "ANDB ledenkaart van Adriaan Helsloot"@nl;
     schema:image id:ARCH00210-9421-0055-master.
 
-
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3
     a schema:Person;
+    andb:education id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education;
+    andb:inhabits
+      id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1,
+      id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2,
+      id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3,
+      id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4;
     foaf:isPrimaryTopicOf
       #id:2284,
       id:26266,
@@ -305,18 +301,59 @@ id:instanties {
     schema:name "Adriaan Helsloot".
 
 
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education
+    a andb:Education;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval;
+    andb:internship id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship;
+    andb:master "S. Kloots";
+    andb:student id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
+    rdfs:label
+      "Education of Adriaan Helsloot"@en,
+      "Onderwijstraject van Adriaan Helsloot"@nl.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship
+    a andb:Internship;
+    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration;
+    org:organization id:de-weichsel;
+    rdfs:label
+      "Internship of Adriaan Helsloot at workshop De Weichsel"@en,
+      "Stage van Adriaan Helsloot bij werkplaats De Weichsel"@nl.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration
+    a time:ProperInterval;
+    rdfs:label
+     #"Duration of internship of Adriaan Helsloot at workshop De Weichsel",#
+      "Duur van stage van Adriaan Helsloot bij werkplaats De Weichsel";#
+    time:intervalDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval.
+
+  id:de-weichsel
+    a andb:Workshop;
+    rdfs:label "De Weichsel"@nl;
+    schema:name "De Weichsel"@nl.
+
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval
+    a time:ProperInterval;
+    rdfs:label "1919-05-27/..";
+    time:hasBeginning id:1919-05-27;
+    time:intervalContains id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration.
+
+  id:1919-05-27
+    a time:Instant;
+    rdfs:label "1919-05-27";
+    time:inXSDDate "1919-05-27"^^xsd:date.
+
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1
     a org:Membership;
     org:member id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     org:memberDuring id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval;
-    org:organization id:2-732;
+    org:organization id:2;
     rdfs:label
       "Membership of Adriaan Helsloot"@en,
       "Lidmaatschap van Adriaan Helsloot"@nl.
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1-interval
     a time:ProperInterval;
-    rdfs:label "[1923-07-09, ?)";
+    rdfs:label "1923-07-09/..";
     time:hasBeginning id:1923-07-09.
 
   id:1923-07-09
@@ -335,7 +372,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1-interval
     a time:ProperInterval;
-    rdfs:label "[1925-04-10, 1926-12-28]";
+    rdfs:label "1925-04-10/1926-12-28]";
     time:hasBeginning id:1925-04-10;
     time:hasEnd id:1926-12-28.
 

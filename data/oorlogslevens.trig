@@ -3,8 +3,8 @@ prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix sh: <http://www.w3.org/ns/shacl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
-prefix vocab: <https://iisg.amsterdam/vocab/diamantbewerkers/>
+prefix id: <https://iisg.amsterdam/id/adb-andb/>
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
 
 id:shapesGraph {
   id:deathDate_oorlogslevens
@@ -15,7 +15,7 @@ id:shapesGraph {
   <p>The person's death date according to <a href="https://www.oorlogslevens.nl" target="_blank">Oorlogslevens</a>.</p>
 </section>"""^^rdf:HTML;
     sh:name "has death date according to oorlogslevens.nl"@en;
-    sh:path vocab:claimedDeathDate.
+    sh:path andb:claimedDeathDate.
 
   id:deathPlace_oorlogslevens
     dct:source "unique/oorlogslevens_deathPlace";
@@ -25,5 +25,5 @@ id:shapesGraph {
   <p>The person's place of death according to <a href="https://www.oorlogslevens.nl" target="_blank">Oorlogslevens</a>.</p>
 </section>"""^^rdf:HTML;
     sh:name "has death place"@en;
-    sh:path vocab:claimedDeathPlace.
+    sh:path andb:claimedDeathPlace.
 }
