@@ -9,6 +9,7 @@
   {
    "csvw": "http://www.w3.org/ns/csvw#",
    "foaf": "http://xmlns.com/foaf/0.1/",
+   "geo": "http://www.opengis.net/ont/geosparql#",
    "hg": "http://rdf.histograph.io/",
    "juso": "http://rdfs.co/juso/",
    "org":  "http://www.w3.org/ns/org#",
@@ -16,7 +17,7 @@
    "pnv": "https://w3id.org/pnv#",
    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-   "schema": "http://schema.org/",
+   "schema": "https://schema.org/",
    "skos": "http://www.w3.org/2004/02/skos/core#",
    "time": "http://www.w3.org/2006/time#",
    "vocab": "https://iisg.amsterdam/vocab/adb-andb/",
@@ -51,7 +52,7 @@
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_image_no",
     "name": "adm_image_no",
     "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:MembershipCard",
+    "valueUrl": "vocab:Card",
     "dc:description": "Identifier van de kaart"
    },
    {
@@ -118,6 +119,7 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "mbr_birth_year", "null": ""}]},
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
     "dc:description": "Geboortedatum",
@@ -139,6 +141,7 @@
    },
     {
     "virtual": "true",
+    "null": {"@list": [{"name": "mbr_death_year", "null": ""}]},
     "datatype": "xsd:date",
     "propertyUrl": "vocab:deathDate",
     "dc:description": "Datum van overlijden",
@@ -320,8 +323,8 @@
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}",
-    "propertyUrl": "hg:street",
-    "csvw:value": "{{mbr_street_01}}",
+    "propertyUrl": "vocab:street",
+    "valueUrl": "{{mbr_street_01}}",
     "datatype": "string"
   },
   {
@@ -340,7 +343,7 @@
   },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}",
+    "aboutUrl": "{{mbr_street_no_01}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_01}}",
     "datatype": "xsd:anyUri"
@@ -368,8 +371,8 @@
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
-    "propertyUrl": "hg:street",
-    "csvw:value": "{{mbr_street_02}}",
+    "propertyUrl": "vocab:street",
+    "valueUrl": "{{mbr_street_02}}",
     "datatype": "string"
   },
   {
@@ -388,7 +391,7 @@
   },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
+    "aboutUrl": "{{mbr_street_no_02}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_02}}",
     "datatype": "xsd:anyUri"
@@ -416,8 +419,8 @@
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
-    "propertyUrl": "hg:street",
-    "csvw:value": "{{mbr_street_03}}",
+    "propertyUrl": "vocab:street",
+    "valueUrl": "{{mbr_street_03}}",
     "datatype": "string"
   },
   {
@@ -436,7 +439,7 @@
   },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
+    "aboutUrl": "{{mbr_street_no_03}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_03}}",
     "datatype": "xsd:anyUri"
@@ -464,8 +467,8 @@
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
-    "propertyUrl": "hg:street",
-    "csvw:value": "{{mbr_street_04}}",
+    "propertyUrl": "vocab:street",
+    "valueUrl": "{{mbr_street_04}}",
     "datatype": "string"
   },
   {
@@ -484,7 +487,7 @@
   },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
+    "aboutUrl": "{{mbr_street_no_04}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_04}}",
     "datatype": "xsd:anyUri"
@@ -512,8 +515,8 @@
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}",
-    "propertyUrl": "hg:street",
-    "csvw:value": "{{mbr_street_05}}",
+    "propertyUrl": "vocab:street",
+    "valueUrl": "{{mbr_street_05}}",
     "datatype": "string"
   },
   {
@@ -532,7 +535,7 @@
   },
   {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}",
+    "aboutUrl": "{{mbr_street_no_05}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_05}}",
     "datatype": "xsd:anyUri"
@@ -572,6 +575,7 @@
   },
   {
     "virtual": "true",
+    "null": {"@list": [{"name": "spo_birth_year", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
@@ -593,6 +597,7 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "mar_year", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:marriageDate",
@@ -613,6 +618,7 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_birth_year_01", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_01']|join)}}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
@@ -633,6 +639,7 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_birth_year_02", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_02']|join)}}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
@@ -653,6 +660,7 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_birth_year_03", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_03']|join)}}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
@@ -673,6 +681,7 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_birth_year_04", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_04']|join)}}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
@@ -693,6 +702,7 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_birth_year_05", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_05']|join)}}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
@@ -790,41 +800,81 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' lidmaatschap van ',mbr_first_name, ' ', mbr_last_name]|join)}}",
+    "csvw:value": "{{([un_name, ' lidmaatschap van ',name]|join)}}",
     "datatype": "xsd:string"
    },
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
-    "propertyUrl": "vocab:union",
-    "csvw:value": "{{un_name}}",
-    "datatype": "xsd:string"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{un_name}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:Union"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
-    "propertyUrl": "org:organization",
-    "csvw:value": "{{un_section}}",
-    "datatype": "xsd:string"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
-    "propertyUrl": "vocab:membershipNumber",
+    "propertyUrl": "dc:identifier",
     "csvw:value": "{{un_section_no}}",
     "datatype": "xsd:string"
    },
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
-    "propertyUrl": "vocab:cardNumber",
-    "csvw:value": "{{card_id1}}",
+    "propertyUrl": "org:member",
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
+    "datatype": "xsd:anyUri"
+   }, 
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_section", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
+    "propertyUrl": "org:organization",
+    "valueUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "datatype": "xsd:anyUri"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_section", "null": ""}]},
+    "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([un_name, ' sectie ', un_section]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "un_section", "null": ""}]},
+    "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "org:OrganizationalUnit"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_section", "null": ""}]},
+    "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "propertyUrl": "org:unitOf",
+    "valueUrl": "{{un_name}}",
+    "datatype": "xsd:anyUri"
+   }, 
+   {
+    "virtual": "true", 
+    "aboutUrl": "{{un_name}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Union"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_section", "null": ""}]},
+    "aboutUrl": "{{un_name}}",
+    "propertyUrl": "org:hasUnit",
+    "valueUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "datatype": "xsd:anyUri"
+   },
+    {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_section", "null": ""}]},
+    "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "propertyUrl": "dc:identifier",
+    "csvw:value": "{{un_section}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/card_id1",
+    "name": "card_id1",
+    "propertyUrl": "vocab:cardId",
+    "dc:description": "Kaartnummer",
     "datatype": "xsd:string"
    }
   ],
