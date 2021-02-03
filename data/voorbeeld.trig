@@ -198,25 +198,25 @@ id:instanties {
   id:Hazenstraat_8_II_Amsterdam
     a schema:PostalAddress;
     rdfs:label "Hazenstraat 8-II, Amsterdam"@nl;
-    andb:houseNumber "8"^^xsd:positiveInteger;
+    andb:houseNumber "8"; # TODO: xsd:positiveInteger
     andb:houseNumberAddition "II";
     andb:street id:Hazenstraat_Amsterdam.
 
   id:NieuweKarselaan_493_Amstelveen
     a schema:PostalAddress;
-    andb:houseNumber "493"^^xsd:positiveInteger;
+    andb:houseNumber "493"; # TODO: xsd:positiveInteger
     andb:street id:NieuweKarselaan_Amstelveen;
     rdfs:label "Nieuwe Karselaan 493, Amstelveen"@nl.
 
   id:NieuweKarselaan_21_Amstelveen
     a schema:PostalAddress;
-    andb:houseNumber "21"^^xsd:positiveInteger;
+    andb:houseNumber "21"; # TODO: xsd:positiveInteger
     andb:street id:NieuweKarselaan_Amstelveen;
     rdfs:label "Nieuwe Karselaan 21, Amstelveen"@nl.
 
   id:DerdeOosterparkstraat_121_II_Amsterdam
     a schema:PostalAddress;
-    andb:houseNumber "121"^^xsd:positiveInteger;
+    andb:houseNumber "121"; # TODO: xsd:positiveInteger
     andb:houseNumberAddition "II";
     andb:street id:DerdeOosterparkstraat_Amsterdam;
     rdfs:label "Derde Oosterparkstraat 121-II, Amsterdam"@nl.
