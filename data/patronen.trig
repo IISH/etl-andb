@@ -319,7 +319,6 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype rdf:langString;#
     sh:maxCount 1;
-    sh:minCount 1;
     sh:languagesIn ( "nl" );
     sh:nodeKind sh:Literal;#
     sh:path andb:remark.
