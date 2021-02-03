@@ -354,6 +354,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:anyURI;#
     sh:description "Every image has exactly one URL where it can be downloaded."@en;
+    sh:flags "i";
     sh:maxCount 1;
     sh:minCount 1;
     sh:minLength 1;#
