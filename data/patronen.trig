@@ -1082,9 +1082,9 @@ andb: {
       "andb/mbr_street_adamlink_uri-01",
       "apprentice/sdn_street_adamlink_uri-01";
     rdfs:isDefinedBy andb:;#
-    sh:description "The Adamlink identifier of the street"@en;
+    sh:description "The AdamLink identifier of the street."@en;
     sh:maxCount 1;
-    sh:name "adamlink identifier"@en;
+    sh:name "AdamLink identifier"@en;
     sh:nodeKind sh:IRI;#
     sh:path owl:sameAs.
 
