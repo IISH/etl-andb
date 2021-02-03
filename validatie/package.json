@@ -4,7 +4,7 @@
     "url": "https://github.com/wouterbeek/etl-andb/issues"
   },
   "dependencies": {
-    "@triply/triplydb": "^2.1.1",
+    "@triply/triplydb": "^2.1.8",
     "@zazuko/rdf-vocabularies": "^2020.12.16",
     "rdf-validate-shacl": "^0.2.5",
     "typescript": "^4.1.3"

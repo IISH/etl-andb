@@ -30,6 +30,6 @@ const validate = async (dataFiles : string[], shapesFiles : string[]) => {
 const run = async () => {
   return validate(['../data/patronen.trig'], ['shsh.ttl'])
     .then(() => validate(['../data/voorbeeld.trig'], ['../data/patronen.trig']))
-    .then(() => validate(['data.trig'], ['../data/patronen.trig']))
+    .then(() => validate(['data.trig'], ['../data/patronen.trig','../data/waardelijsten.trig']))
 }
 run().catch(console.error)

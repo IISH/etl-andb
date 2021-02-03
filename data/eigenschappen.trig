@@ -64,6 +64,7 @@ andb: {
 
   andb:education
     a owl:ObjectProperty;
+    owl:inverseOf andb:student;
     rdfs:domain schema:Person;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -168,7 +169,7 @@ andb: {
     rdfs:label
       "has house number"@en,
       "heeft huisnummer"@nl;
-    rdfs:range xsd:positiveInteger.
+    rdfs:range xsd:string.
 
   andb:houseNumberAddition
     a owl:DatatypeProperty;
@@ -265,6 +266,15 @@ andb: {
     rdfs:label "middle name"@en;
     rdfs:range xsd:string.
 
+  andb:migration
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "migrated"@en,
+      "is geëmigreerd"@nl;
+    rdfs:range andb:Migration.
+
   andb:mother
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
@@ -313,11 +323,13 @@ andb: {
     rdfs:range schema:Person.
 
   andb:remark
-    a owl:ObjectProperty;
+    a owl:DatatypeProperty;
     rdfs:domain foaf:Document;
     rdfs:isDefinedBy andb:;#
-    rdfs:label "remark"@en;
-    rdfs:range andb:Remark.
+    rdfs:label
+      "has remark"@en,
+      "heeft opmerking"@nl;
+    rdfs:range rdf:langString.
 
   andb:residency
     a owl:ObjectProperty;
@@ -433,6 +445,17 @@ andb: {
       "has street"@en,
       "heeft straat"@nl;
     rdfs:range hg:Street.
+
+  andb:student
+    a owl:ObjectProperty;
+    owl:inverseOf andb:education;
+    rdfs:domain andb:Education;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "student"@en,
+      "student"@nl;
+    rdfs:range schema:Person.
+
 
   andb:union
     a owl:ObjectProperty;

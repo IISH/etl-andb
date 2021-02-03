@@ -76,8 +76,7 @@ andb: {
       "has human-readable label"@en,
       "heeft menselijk leesbaar label"@nl;
     sh:nodeKind sh:Literal;#
-    sh:path rdfs:label;
-    sh:uniqueLang true.#
+    sh:path rdfs:label.
 
   andb:nameShape
     a sh:PropertyShape;#
@@ -96,8 +95,7 @@ andb: {
     sh:name
       "has name"@en,
       "heeft naam"@nl;
-    sh:path schema:name;
-    sh:uniqueLang true.#
+    sh:path schema:name.
 
 
   andb:AddressShape
@@ -105,25 +103,24 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:Address_identifier,
+      andb:hisgisShape,
       andb:houseNumberAdditionShape,
       andb:houseNumberShape,
       andb:labelShape_nl,
       andb:streetShape;
     sh:targetClass schema:PostalAddress.
 
-  andb:Address_identifier
+  andb:hisgisShape
     a sh:PropertyShape;#
     dct:source
       "andb/mbr_address_locationPoint-01 t/m 26",
       "apprentice/sdn_address_locationPoint-01 t/m 5";
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;
     sh:description "The HISGIS identifier of the (Amsterdam) address."@en;
-    sh:minLength 1;#
-    sh:name "has hisgis identifier"@en;
-    sh:nodeKind sh:Literal;#
-    sh:path dct:identifier.
+    sh:maxCount 1;
+    sh:name "has HISGIS identifier"@en;
+    sh:nodeKind sh:IRI;#
+    sh:path owl:sameAs.
 
   andb:houseNumberAdditionShape
     a sh:PropertyShape;
@@ -147,11 +144,11 @@ andb: {
       "apprentice/sdn_street_no-01 t/m 5",
       "apprentice/wsp_street_no-01 t/m 10";
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:positiveInteger;
+    sh:datatype xsd:string;
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
-    sh:path andb:houseNumber;
-    sh:pattern "^[0-9]+$".
+    sh:path andb:houseNumber.
 
   andb:streetShape
     a sh:PropertyShape;#
@@ -240,17 +237,18 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:EducationShape_contains,
+      andb:EducationShape_duration_invervalContains_durationInv,
       andb:durationShape,
       andb:examinatorShape,
       andb:internshipShape,
       andb:labelShape_en_nl,
       andb:masterShape,
       andb:occupationShape,
-      andb:studentShape;
+      andb:remarkShape;
+      #andb:studentShape;
     sh:targetClass andb:Education.
 
-  andb:EducationShape_contains
+  andb:EducationShape_duration_invervalContains_durationInv
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class andb:Internship;
@@ -265,7 +263,7 @@ andb: {
     a sh:PropertyShape;#
     dct:source "apprentice/edu_examinator";
     rdfs:isDefinedBy andb:;#
-    sh:class xsd:string;#
+    sh:datatype xsd:string;#
     sh:description
       "The full name of the examinator."@en,
       "De volledige naam van de examinator."@nl;
@@ -314,6 +312,15 @@ andb: {
       "heeft beroep"@nl;
     sh:nodeKind sh:IRI;#
     sh:path schema:occupation.
+
+  andb:remarkShape
+    a sh:PropertyNode;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype rdf:langString;#
+    sh:maxCount 1;
+    sh:languagesIn ( "nl" );
+    sh:nodeKind sh:Literal;#
+    sh:path andb:remark.
 
   andb:studentShape
     a sh:PropertyNode;#
@@ -570,14 +577,14 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:Membership_identifier,
+      andb:MembershipShape_identifier,
       andb:labelShape_en_nl,
       andb:memberShape,
       andb:memberDuringShape,
       andb:organizationShape;
     sh:targetClass org:Membership.
 
-  andb:Membership_identifier
+  andb:MembershipShape_identifier
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
@@ -690,8 +697,7 @@ andb: {
       "has name"@en,
       "heeft naam"@nl;
     sh:nodeKind sh:Literal;#
-    sh:path schema:name;
-    sh:uniqueLanguage true.#
+    sh:path schema:name.
 
   andb:hasUnitShape
     a sh:PropertyShape;
@@ -759,14 +765,14 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:Person_labelShape,
-      andb:Person_nameShape,
+     #andb:PersonShape_isPrimaryTopicOf,
+      andb:PersonShape_label,
+      andb:PersonShape_name,
       andb:additionalNameShape,
       andb:birthDateShape,
       andb:birthPlaceShape,
-      andb:cardShape,
       andb:deathDateShape,
-      andb:education,
+      andb:educationShape,
       andb:familyNameShape,
       andb:firstNameShape,
       andb:genderShape,
@@ -774,10 +780,25 @@ andb: {
       andb:inhabitsShape,
       andb:maidenNamePrefixShape,
       andb:maidenNameShape,
+      andb:migrationShape,
       andb:oorlogslevensShape;
     sh:targetClass schema:Person.
 
-  andb:Person_labelShape
+  andb:PersonShape_isPrimaryTopicOf
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:or
+      ( [ sh:class andb:MembershipCard ]
+        [ sh:class andb:StudentCard ] );
+    sh:description "A person can have one or more cards."@en;
+    sh:minCount 1;
+    sh:name
+      "has card"@en,
+      "heeft kaart"@nl;
+    sh:nodeKind sh:IRI;#
+    sh:path foaf:isPrimaryTopicOf.
+
+  andb:PersonShape_label
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
@@ -790,7 +811,7 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path rdfs:label.
 
-  andb:Person_nameShape
+  andb:PersonShape_name
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
@@ -833,7 +854,6 @@ andb: {
     sh:datatype xsd:date;
     sh:description "The person's birth date."@en;
     sh:maxCount 1;
-    sh:minCount 1;
     sh:name "has birth date"@en;
     sh:nodeKind sh:Literal;#
     sh:path schema:birthDate.
@@ -854,28 +874,6 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path schema:birthPlace.
 
-  andb:cardShape
-    a sh:PropertyShape;#
-    dct:source
-      "unique/adb_identifier",
-      "unique/sdn_adm_id1",
-      "unique/sdn_adm_id2",
-      "unique/sdn_adm_id3",
-      "unique/mbr_adm_id1",
-      "unique/mbr_adm_id2",
-      "unique/mbr_adm_id3";
-    rdfs:isDefinedBy andb:;#
-    sh:or
-      ( [ sh:class andb:MembershipCard ]
-        [ sh:class andb:StudentCard ] );
-    sh:description "A person can have one or more cards."@en;
-    sh:minCount 1;
-    sh:name
-      "has card"@en,
-      "heeft kaart"@nl;
-    sh:nodeKind sh:IRI;#
-    sh:path foaf:isPrimaryTopicOf.
-
   andb:deathDateShape
     a sh:PropertyShape;#
     dct:source
@@ -891,7 +889,7 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path schema:deathDate.
 
-  andb:education
+  andb:educationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class andb:Education;#
@@ -992,6 +990,13 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path pnv:patronym.
 
+  andb:migrationShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Migration;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:migration.
+
   andb:oorlogslevensShape
     a sh:PropertyShape;#
     dct:source "unique/oorlogslevens_uri";
@@ -1075,9 +1080,9 @@ andb: {
       "andb/mbr_street_adamlink_uri-01",
       "apprentice/sdn_street_adamlink_uri-01";
     rdfs:isDefinedBy andb:;#
-    sh:description "The Adamlink identifier of the street"@en;
+    sh:description "The AdamLink identifier of the street."@en;
     sh:maxCount 1;
-    sh:name "adamlink identifier"@en;
+    sh:name "AdamLink identifier"@en;
     sh:nodeKind sh:IRI;#
     sh:path owl:sameAs.
 
