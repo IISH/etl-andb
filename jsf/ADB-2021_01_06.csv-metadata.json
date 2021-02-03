@@ -8,6 +8,7 @@
   },
   {
    "csvw": "http://www.w3.org/ns/csvw#",
+   "dc": "http://purl.org/dc/terms/",
    "foaf": "http://xmlns.com/foaf/0.1/",
    "geo": "http://www.opengis.net/ont/geosparql#",
    "hg": "http://rdf.histograph.io/",
@@ -56,10 +57,12 @@
     "dc:description": "Identifier van de kaart"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{{adm_image_no}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' lidmaatschapskaart van ', name]|join)}}"
+    "csvw:value": "{{([un_name, ' lidmaatschapskaart van ', name]|join)}}",
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/adm_image_uuid",
@@ -76,6 +79,7 @@
     "valueUrl": "schema:ImageObject"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', adm_image_uuid]|join)}}",
     "propertyUrl": "rdfs:label",
@@ -86,21 +90,21 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', adm_image_uuid]|join)}}",
     "propertyUrl": "schema:contentUrl",
-    "valueUrl": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:master",
+    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:master",
     "datatype": "xsd:anyUri"
    },
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', adm_image_uuid]|join)}}",
     "propertyUrl": "schema:thumbnail",
-    "valueUrl": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level3",
+    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level3",
     "datatype": "xsd:anyUri"
    },
     {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', adm_image_uuid]|join)}}",
     "propertyUrl": "vocab:screenVersion",
-    "valueUrl": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level2",
+    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level2",
     "datatype": "xsd:anyUri"
    },
    {
@@ -108,14 +112,14 @@
     "name": "mbr_last_name",
     "propertyUrl": "vocab:familyName",
     "dc:description": "Achternaam",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_first_name",
     "name": "mbr_first_name",
     "propertyUrl": "vocab:givenName",
     "dc:description": "Voornaam",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
@@ -130,14 +134,14 @@
     "name": "mbr_birth_place",
     "propertyUrl": "vocab:birthPlace",
     "dc:description": "Geboorteplaats",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mbr_birth_country",
     "name": "mbr_birth_country",
     "propertyUrl": "vocab:birthCountry",
     "dc:description": "Geboorteland",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
     {
     "virtual": "true",
@@ -152,7 +156,7 @@
     "name": "mbr_death_place",
     "propertyUrl": "vocab:deathPlace",
     "dc:description": "Plaats van overlijden",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/person_uuid",
@@ -169,43 +173,50 @@
     "valueUrl": "schema:Person"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{name}}"
+    "csvw:value": "{{name}}",
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:spouse",
-    "valueUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}"
+    "valueUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_01", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:child",
     "valueUrl": "{{([adm_image_no, '-', 'chi_first_name_01']|join)}}"
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_02", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:child",
     "valueUrl": "{{([adm_image_no, '-', 'chi_first_name_02']|join)}}"
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_03", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:child",
     "valueUrl": "{{([adm_image_no, '-', 'chi_first_name_03']|join)}}"
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_04", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:child",
     "valueUrl": "{{([adm_image_no, '-', 'chi_first_name_04']|join)}}"
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_05", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:child",
     "valueUrl": "{{([adm_image_no, '-', 'chi_first_name_05']|join)}}"
@@ -214,13 +225,13 @@
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "schema:parent",
-    "valueUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}"
+    "valueUrl": "{% if ( (par_first_name_01 != '' ) or (par_last_name_01 != '') ) %}{{([adm_image_no, '-parent_01']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "schema:parent",
-    "valueUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}"
+    "valueUrl": "{% if ( (par_first_name_02 != '' ) or (par_last_name_02 != '') ) %}{{([adm_image_no, '-parent_02']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
@@ -228,389 +239,702 @@
     "propertyUrl": "org:hasMembership",
     "valueUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}"
    },
-   {
+    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "propertyUrl": "vocab:residency",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}"
+    "propertyUrl": "vocab:inhabits",
+    "valueUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_image_no, '-residency_01']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_image_no, '-residency_01']|join)}}{% endif %}",
     "propertyUrl": "time:before",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}"
+    "valueUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_image_no, '-residency_02']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "propertyUrl": "vocab:residency",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}"
+    "propertyUrl": "vocab:inhabits",
+    "valueUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_image_no, '-residency_02']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_image_no, '-residency_02']|join)}}{% endif %}",
+    "propertyUrl": "time:after",
+    "valueUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_image_no, '-residency_01']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_image_no, '-residency_02']|join)}}{% endif %}",
     "propertyUrl": "time:before",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
-    "propertyUrl": "time:after",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}"
+    "valueUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_image_no, '-residency_03']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "propertyUrl": "vocab:residency",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}"
+    "propertyUrl": "vocab:inhabits",
+    "valueUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_image_no, '-residency_03']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_image_no, '-residency_03']|join)}}{% endif %}",
+    "propertyUrl": "time:after",
+    "valueUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_image_no, '-residency_02']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_image_no, '-residency_03']|join)}}{% endif %}",
     "propertyUrl": "time:before",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
-    "propertyUrl": "time:after",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}"
-   },
+    "valueUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_image_no, '-residency_04']|join)}}{% endif %}"
+   },   
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "propertyUrl": "vocab:residency",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}"
+    "propertyUrl": "vocab:inhabits",
+    "valueUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_image_no, '-residency_04']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_image_no, '-residency_04']|join)}}{% endif %}",
+    "propertyUrl": "time:after",
+    "valueUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_image_no, '-residency_03']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_image_no, '-residency_04']|join)}}{% endif %}",
     "propertyUrl": "time:before",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
-    "propertyUrl": "time:after",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}"
+    "valueUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_image_no, '-residency_05']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "propertyUrl": "vocab:residency",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}"
+    "propertyUrl": "vocab:inhabits",
+    "valueUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_image_no, '-residency_05']|join)}}{% endif %}"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_image_no, '-residency_05']|join)}}{% endif %}",
     "propertyUrl": "time:after",
-    "valueUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}"
+    "valueUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_image_no, '-residency_04']|join)}}{% endif %}"
    },
-   {
+  {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_image_no, '-residency_01']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
-    "dc:description": "Woonadres",
     "valueUrl": "vocab:Residency"
    }, 
    {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}",
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_image_no, '-residency_01']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01]|join)}}",
+    "csvw:value": "{{(['Bewoning van ', mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01, ' door ', name]|join)}}",
     "datatype": "xsd:string"
-  },
+   },
    {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl":"{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_image_no, '-residency_01']|join)}}{% endif %}",
+    "propertyUrl": "schema:address",
+    "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:PostalAddress"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)}}",
+    "datatype": "xsd:string"
+   },
+    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_01", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{mbr_street_01}}",
-    "datatype": "string"
-  },
+    "valueUrl": "{{mbr_street_01}}"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_01", "null": ""}]},
+    "aboutUrl": "{{mbr_street_01}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_street_01}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_01", "null": ""}]},
+    "aboutUrl": "{{mbr_street_01}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "hg:Street"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_01", "null": ""}]},
+    "aboutUrl": "{{mbr_street_01}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mbr_street_01}}",
+    "datatype": "xsd:string"
+   },
   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_no_01", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumber",
     "csvw:value": "{{mbr_street_no_01}}",
-    "datatype": "string"
-  },
-  {
+    "datatype": "xsd:string"
+   },
+   {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_01','-',  'mbr_street_no_01','-',  'mbr_city_01']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_no_add_01", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumberAddition",
     "csvw:value": "{{mbr_street_no_add_01}}",
-    "datatype": "string"
-  },
+    "datatype": "xsd:string"
+   },
    {
-    "virtual": "true",
-    "aboutUrl": "{{mbr_street_no_01}}",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_01", "null": ""}]},
+    "aboutUrl": "{{mbr_street_01}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_01}}",
-    "datatype": "xsd:anyUri"
-  },
-  {
-    "virtual": "true",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_01", "null": ""}]},
+    "aboutUrl": "{{mbr_city_01}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_city_01}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_01", "null": ""}]},
     "aboutUrl": "{{mbr_city_01}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "schema:place"
+    "valueUrl": "schema:Place"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_image_no, '-residency_02']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
-    "dc:description": "Woonadres",
     "valueUrl": "vocab:Residency"
    }, 
    {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_image_no, '-residency_02']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02]|join)}}",
+    "csvw:value": "{{(['Bewoning van ', mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02, ' door ', name]|join)}}",
     "datatype": "xsd:string"
-  },
+   },
    {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl":"{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_image_no, '-residency_02']|join)}}{% endif %}",
+    "propertyUrl": "schema:address",
+    "valueUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:PostalAddress"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)}}",
+    "datatype": "xsd:string"
+   },
+    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_02", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{mbr_street_02}}",
-    "datatype": "string"
-  },
+    "valueUrl": "{{mbr_street_02}}"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_02", "null": ""}]},
+    "aboutUrl": "{{mbr_street_02}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_street_02}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_02", "null": ""}]},
+    "aboutUrl": "{{mbr_street_02}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "hg:Street"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_02", "null": ""}]},
+    "aboutUrl": "{{mbr_street_02}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mbr_street_02}}",
+    "datatype": "xsd:string"
+   },
   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_no_02", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumber",
     "csvw:value": "{{mbr_street_no_02}}",
-    "datatype": "string"
-  },
-  {
+    "datatype": "xsd:string"
+   },
+   {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_02','-',  'mbr_street_no_02','-',  'mbr_city_02']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_no_add_02", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumberAddition",
     "csvw:value": "{{mbr_street_no_add_02}}",
-    "datatype": "string"
-  },
+    "datatype": "xsd:string"
+   },
    {
-    "virtual": "true",
-    "aboutUrl": "{{mbr_street_no_02}}",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_02", "null": ""}]},
+    "aboutUrl": "{{mbr_street_02}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_02}}",
-    "datatype": "xsd:anyUri"
-  },
-  {
-    "virtual": "true",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_02", "null": ""}]},
+    "aboutUrl": "{{mbr_city_02}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_city_02}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_02", "null": ""}]},
     "aboutUrl": "{{mbr_city_02}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "schema:place"
+    "valueUrl": "schema:Place"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_image_no, '-residency_03']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
-    "dc:description": "Woonadres",
     "valueUrl": "vocab:Residency"
    }, 
    {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_image_no, '-residency_03']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03]|join)}}",
+    "csvw:value": "{{(['Bewoning van ', mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03, ' door ', name]|join)}}",
     "datatype": "xsd:string"
-  },
+   },
    {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl":"{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_image_no, '-residency_03']|join)}}{% endif %}",
+    "propertyUrl": "schema:address",
+    "valueUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:PostalAddress"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)}}",
+    "datatype": "xsd:string"
+   },
+    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_03", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{mbr_street_03}}",
-    "datatype": "string"
-  },
+    "valueUrl": "{{mbr_street_03}}"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_03", "null": ""}]},
+    "aboutUrl": "{{mbr_street_03}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_street_03}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_03", "null": ""}]},
+    "aboutUrl": "{{mbr_street_03}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "hg:Street"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_03", "null": ""}]},
+    "aboutUrl": "{{mbr_street_03}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mbr_street_03}}",
+    "datatype": "xsd:string"
+   },
   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_no_03", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumber",
     "csvw:value": "{{mbr_street_no_03}}",
-    "datatype": "string"
-  },
-  {
+    "datatype": "xsd:string"
+   },
+   {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_03','-',  'mbr_street_no_03','-',  'mbr_city_03']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_no_add_03", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumberAddition",
     "csvw:value": "{{mbr_street_no_add_03}}",
-    "datatype": "string"
-  },
+    "datatype": "xsd:string"
+   },
    {
-    "virtual": "true",
-    "aboutUrl": "{{mbr_street_no_03}}",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_03", "null": ""}]},
+    "aboutUrl": "{{mbr_street_03}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{mbr_city_03}}",
-    "datatype": "xsd:anyUri"
-  },
-  {
-    "virtual": "true",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_03", "null": ""}]},
+    "aboutUrl": "{{mbr_city_03}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_city_03}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_03", "null": ""}]},
     "aboutUrl": "{{mbr_city_03}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "schema:place"
+    "valueUrl": "schema:Place"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
+    "aboutUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_image_no, '-residency_04']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
-    "dc:description": "Woonadres",
     "valueUrl": "vocab:Residency"
    }, 
    {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_image_no, '-residency_04']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04]|join)}}",
+    "csvw:value": "{{(['Bewoning van ', mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04, ' door ', name]|join)}}",
     "datatype": "xsd:string"
-  },
+   },
    {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl":"{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_image_no, '-residency_04']|join)}}{% endif %}",
+    "propertyUrl": "schema:address",
+    "valueUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:PostalAddress"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)}}",
+    "datatype": "xsd:string"
+   },
+    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_04", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{mbr_street_04}}",
-    "datatype": "string"
-  },
+    "valueUrl": "{{mbr_street_04}}"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_04", "null": ""}]},
+    "aboutUrl": "{{mbr_street_04}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_street_04}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_04", "null": ""}]},
+    "aboutUrl": "{{mbr_street_04}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "hg:Street"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_04", "null": ""}]},
+    "aboutUrl": "{{mbr_street_04}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mbr_street_04}}",
+    "datatype": "xsd:string"
+   },
   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_no_04", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumber",
     "csvw:value": "{{mbr_street_no_04}}",
-    "datatype": "string"
-  },
-  {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_04','-',  'mbr_street_no_04','-',  'mbr_city_04']|join)}}",
-    "propertyUrl": "vocab:houseNumberAddition",
-    "csvw:value": "{{mbr_street_no_add_04}}",
-    "datatype": "string"
-  },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{mbr_street_no_04}}",
-    "propertyUrl": "geo:sfWithin",
-    "valueUrl": "{{mbr_city_04}}",
-    "datatype": "xsd:anyUri"
-  },
-  {
-    "virtual": "true",
-    "aboutUrl": "{{mbr_city_04}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "schema:place"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_no_add_04", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:houseNumberAddition",
+    "csvw:value": "{{mbr_street_no_add_04}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_04", "null": ""}]},
+    "aboutUrl": "{{mbr_street_04}}",
+    "propertyUrl": "geo:sfWithin",
+    "valueUrl": "{{mbr_city_04}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_04", "null": ""}]},
+    "aboutUrl": "{{mbr_city_04}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_city_04}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_04", "null": ""}]},
+    "aboutUrl": "{{mbr_city_04}}",
     "propertyUrl": "rdf:type",
-    "dc:description": "Woonadres",
+    "valueUrl": "schema:Place"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_image_no, '-residency_05']|join)}}{% endif %}",
+    "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Residency"
    }, 
    {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}",
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_image_no, '-residency_05']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05]|join)}}",
+    "csvw:value": "{{(['Bewoning van ', mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05, ' door ', name]|join)}}",
     "datatype": "xsd:string"
-  },
+   },
    {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl":"{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_image_no, '-residency_05']|join)}}{% endif %}",
+    "propertyUrl": "schema:address",
+    "valueUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}"
+   },
+   {
+    "virtual": "true", 
+    "null": "__",
+    "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:PostalAddress"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)}}",
+    "datatype": "xsd:string"
+   },
+    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_05", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{mbr_street_05}}",
-    "datatype": "string"
-  },
+    "valueUrl": "{{mbr_street_05}}"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_05", "null": ""}]},
+    "aboutUrl": "{{mbr_street_05}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_street_05}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_05", "null": ""}]},
+    "aboutUrl": "{{mbr_street_05}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "hg:Street"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_05", "null": ""}]},
+    "aboutUrl": "{{mbr_street_05}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mbr_street_05}}",
+    "datatype": "xsd:string"
+   },
   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_street_no_05", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:houseNumber",
     "csvw:value": "{{mbr_street_no_05}}",
-    "datatype": "string"
-  },
-  {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'mbr_street_05','-',  'mbr_street_no_05','-',  'mbr_city_05']|join)}}",
-    "propertyUrl": "vocab:houseNumberAddition",
-    "csvw:value": "{{mbr_street_no_add_05}}",
-    "datatype": "string"
-  },
-  {
-    "virtual": "true",
-    "aboutUrl": "{{mbr_street_no_05}}",
-    "propertyUrl": "geo:sfWithin",
-    "valueUrl": "{{mbr_city_05}}",
-    "datatype": "xsd:anyUri"
-  },
-  {
-    "virtual": "true",
-    "aboutUrl": "{{mbr_city_05}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "schema:place"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
+    "null": {"@list": [{"name": "mbr_street_no_add_05", "null": ""}]},
+    "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}",
+    "propertyUrl": "vocab:houseNumberAddition",
+    "csvw:value": "{{mbr_street_no_add_05}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_05", "null": ""}]},
+    "aboutUrl": "{{mbr_street_05}}",
+    "propertyUrl": "geo:sfWithin",
+    "valueUrl": "{{mbr_city_05}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_05", "null": ""}]},
+    "aboutUrl": "{{mbr_city_05}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mbr_city_05}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mbr_city_05", "null": ""}]},
+    "aboutUrl": "{{mbr_city_05}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Place"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
+    "aboutUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([spo_first_name, ' ', spo_last_name]|join)}}",
     "datatype": "xsd:string"
   },
   {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
+    "null": {"@list": [{"name": "spo_first_name", "null": ""}]},
+    "aboutUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}",
     "propertyUrl": "vocab:givenName",
     "csvw:value": "{{spo_first_name}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
   },
   {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
+    "null": {"@list": [{"name": "spo_last_name", "null": ""}]},
+    "aboutUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}",
     "propertyUrl": "vocab:familyName",
     "csvw:value": "{{spo_last_name}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
   },
   {
     "virtual": "true",
     "null": {"@list": [{"name": "spo_birth_year", "null": ""}]},
-    "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
+    "aboutUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:birthDate",
     "csvw:value": "{{['%04d'| format(spo_birth_year|int),'-','%02d' | format(spo_birth_month|int),'-','%02d'|format(spo_birth_day|int)]|join}}"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
+    "null": {"@list": [{"name": "spo_birth_place", "null": ""}]},
+    "aboutUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}",
     "propertyUrl": "vocab:birthPlace",
     "csvw:value": "{{spo_birth_place}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
+    "null": {"@list": [{"name": "spo_birth_country", "null": ""}]},
+    "aboutUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}",
     "propertyUrl": "vocab:birthCountry",
     "csvw:value": "{{spo_birth_country}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "mar_year", "null": ""}]},
-    "aboutUrl": "{{([adm_image_no, '-', 'spo_first_name','-',  'spo_last_name']|join)}}",
+    "aboutUrl": "{% if ( (spo_first_name != '' ) or (spo_last_name != '') ) %}{{([adm_image_no, '-spouse']|join)}}{% endif %}",
     "datatype": "xsd:date",
     "propertyUrl": "vocab:marriageDate",
     "csvw:value": "{{['%04d'| format(mar_year|int),'-','%02d' | format(mar_month|int),'-','%02d'|format(mar_date|int)]|join}}"
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_01", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_01']|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_01", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_01']|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{chi_first_name_01}}",
@@ -626,12 +950,15 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_02", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_02']|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_02", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_02']|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{chi_first_name_02}}",
@@ -647,12 +974,15 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_03", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_03']|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_03", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_03']|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{chi_first_name_03}}",
@@ -668,12 +998,15 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_04", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_04']|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_04", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_04']|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{chi_first_name_04}}",
@@ -689,12 +1022,15 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_05", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_05']|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
+    "null": {"@list": [{"name": "chi_first_name_05", "null": ""}]},
     "aboutUrl": "{{([adm_image_no, '-', 'chi_first_name_05']|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{chi_first_name_05}}",
@@ -710,85 +1046,97 @@
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{% if ( (par_first_name_01 != '' ) or (par_last_name_01 != '') ) %}{{([adm_image_no, '-parent_01']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "aboutUrl": "{% if ( (par_first_name_01 != '' ) or (par_last_name_01 != '') ) %}{{([adm_image_no, '-parent_01']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([par_first_name_01, ' ', par_last_name_01]|join)}}",
     "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+    "null": {"@list": [{"name": "par_first_name_01", "null": ""}]},
+    "aboutUrl": "{% if ( (par_first_name_01 != '' ) or (par_last_name_01 != '') ) %}{{([adm_image_no, '-parent_01']|join)}}{% endif %}",
     "propertyUrl": "vocab:givenName",
     "csvw:value": "{{par_first_name_01}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+     "null": {"@list": [{"name": "par_last_name_01", "null": ""}]},
+    "aboutUrl": "{% if ( (par_first_name_01 != '' ) or (par_last_name_01 != '') ) %}{{([adm_image_no, '-parent_01']|join)}}{% endif %}",
     "propertyUrl": "vocab:familyName",
     "csvw:value": "{{par_last_name_01}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_01','-',  'par_last_name_01']|join)}}",
+     "null": {"@list": [{"name": "par_remarks_01", "null": ""}]},
+    "aboutUrl": "{% if ( (par_first_name_01 != '' ) or (par_last_name_01 != '') ) %}{{([adm_image_no, '-parent_01']|join)}}{% endif %}",
     "propertyUrl": "vocab:remark",
     "csvw:value": "{{par_remarks_01}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
+     "null": {"@list": [{"name": "father_or_mother_01", "null": ""}]},
+    "aboutUrl": "{% if ( (par_first_name_01 != '' ) or (par_last_name_01 != '') ) %}{{([adm_image_no, '-parent_01']|join)}}{% endif %}",
     "propertyUrl": "vocab:father_mother",
     "csvw:value": "{{father_or_mother_01}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
+    "aboutUrl": "{% if ( (par_first_name_02 != '' ) or (par_last_name_02 != '') ) %}{{([adm_image_no, '-parent_02']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
+    "aboutUrl": "{% if ( (par_first_name_02 != '' ) or (par_last_name_02 != '') ) %}{{([adm_image_no, '-parent_02']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([par_first_name_02, ' ', par_last_name_02]|join)}}",
     "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
+    "null": {"@list": [{"name": "par_first_name_02", "null": ""}]},
+    "aboutUrl": "{% if ( (par_first_name_02 != '' ) or (par_last_name_02 != '') ) %}{{([adm_image_no, '-parent_02']|join)}}{% endif %}",
     "propertyUrl": "vocab:givenName",
     "csvw:value": "{{par_first_name_02}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
+    "null": {"@list": [{"name": "par_last_name_02", "null": ""}]},
+    "aboutUrl": "{% if ( (par_first_name_02 != '' ) or (par_last_name_02 != '') ) %}{{([adm_image_no, '-parent_02']|join)}}{% endif %}",
     "propertyUrl": "vocab:familyName",
     "csvw:value": "{{par_last_name_02}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
+    "null": {"@list": [{"name": "par_remarks_02", "null": ""}]},
+    "aboutUrl": "{% if ( (par_first_name_02 != '' ) or (par_last_name_02 != '') ) %}{{([adm_image_no, '-parent_02']|join)}}{% endif %}",
     "propertyUrl": "vocab:remark",
     "csvw:value": "{{par_remarks_02}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_image_no, '-', 'par_first_name_02','-',  'par_last_name_02']|join)}}",
+    "null": {"@list": [{"name": "father_or_mother_02", "null": ""}]},
+    "aboutUrl": "{% if ( (par_first_name_02 != '' ) or (par_last_name_02 != '') ) %}{{([adm_image_no, '-parent_02']|join)}}{% endif %}",
     "propertyUrl": "vocab:father_mother",
     "csvw:value": "{{father_or_mother_02}}",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },  
    {
     "virtual": "true",
@@ -797,6 +1145,7 @@
     "valueUrl": "org:Membership"
    }, 
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-', 'un_section','-',  'un_section_no']|join)}}",
     "propertyUrl": "rdfs:label",
@@ -826,6 +1175,7 @@
     "datatype": "xsd:anyUri"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "null": {"@list": [{"name": "un_section", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
@@ -876,6 +1226,326 @@
     "propertyUrl": "vocab:cardId",
     "dc:description": "Kaartnummer",
     "datatype": "xsd:string"
+   },
+      {
+    "null": {"@list": [{"name": "mmb_01", "null": ""}]},
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_01",
+    "name": "mmb_01",
+    "propertyUrl": "vocab:mutation",
+    "valueUrl": "{{([adm_image_no, '-mmb_01']|join)}}",
+    "dc:description": "Wijziging lidmaatschap"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_01", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_01']|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Mutation"
+   }, 
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_01", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_01']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Wijziging lidmaatschap ', un_name]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_01", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_01']|join)}}",
+    "propertyUrl": "schema:comment",
+    "csvw:value": "{{mmb_01}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "mmb_year_01", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_01']|join)}}",
+    "datatype": "xsd:date",
+    "propertyUrl": "time:hasBeginning",
+    "valueUrl": "{{['%04d'| format(mmb_year_01|int),'-','%02d' | format(mmb_month_01|int),'-','%02d'|format(mmb_day_01|int)]|join}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_01", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_01|int),'-','%02d' | format(mmb_month_01|int),'-','%02d'|format(mmb_day_01|int)]|join}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "time:Instant"  
+    },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_01", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_01|int),'-','%02d' | format(mmb_month_01|int),'-','%02d'|format(mmb_day_01|int)]|join}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{['%04d'| format(mmb_year_01|int),'-','%02d' | format(mmb_month_01|int),'-','%02d'|format(mmb_day_01|int)]|join}}",  
+    "datatype": "xsd:string" 
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_01", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_01|int),'-','%02d' | format(mmb_month_01|int),'-','%02d'|format(mmb_day_01|int)]|join}}",
+    "propertyUrl": "time:inXSDDate",
+    "csvw:value": "{{['%04d'| format(mmb_year_01|int),'-','%02d' | format(mmb_month_01|int),'-','%02d'|format(mmb_day_01|int)]|join}}",  
+    "datatype": "xsd:date"
+   },
+      {
+    "null": {"@list": [{"name": "mmb_02", "null": ""}]},
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_02",
+    "name": "mmb_02",
+    "propertyUrl": "vocab:mutation",
+    "valueUrl": "{{([adm_image_no, '-mmb_02']|join)}}",
+    "dc:description": "Wijziging lidmaatschap"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_02", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_02']|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Mutation"
+   }, 
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_02", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_02']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Wijziging lidmaatschap ', un_name]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_02", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_02']|join)}}",
+    "propertyUrl": "schema:comment",
+    "csvw:value": "{{mmb_02}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "mmb_year_02", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_02']|join)}}",
+    "datatype": "xsd:date",
+    "propertyUrl": "time:hasBeginning",
+    "valueUrl": "{{['%04d'| format(mmb_year_02|int),'-','%02d' | format(mmb_month_02|int),'-','%02d'|format(mmb_day_02|int)]|join}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_02", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_02|int),'-','%02d' | format(mmb_month_02|int),'-','%02d'|format(mmb_day_02|int)]|join}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "time:Instant"  
+    },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_02", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_02|int),'-','%02d' | format(mmb_month_02|int),'-','%02d'|format(mmb_day_02|int)]|join}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{['%04d'| format(mmb_year_02|int),'-','%02d' | format(mmb_month_02|int),'-','%02d'|format(mmb_day_02|int)]|join}}",  
+    "datatype": "xsd:string" 
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_02", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_02|int),'-','%02d' | format(mmb_month_02|int),'-','%02d'|format(mmb_day_02|int)]|join}}",
+    "propertyUrl": "time:inXSDDate",
+    "csvw:value": "{{['%04d'| format(mmb_year_02|int),'-','%02d' | format(mmb_month_02|int),'-','%02d'|format(mmb_day_02|int)]|join}}",  
+    "datatype": "xsd:date"
+   },
+      {
+    "null": {"@list": [{"name": "mmb_03", "null": ""}]},
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_03",
+    "name": "mmb_03",
+    "propertyUrl": "vocab:mutation",
+    "valueUrl": "{{([adm_image_no, '-mmb_03']|join)}}",
+    "dc:description": "Wijziging lidmaatschap"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_03", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_03']|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Mutation"
+   }, 
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_03", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_03']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Wijziging lidmaatschap ', un_name]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_03", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_03']|join)}}",
+    "propertyUrl": "schema:comment",
+    "csvw:value": "{{mmb_03}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "mmb_year_03", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_03']|join)}}",
+    "datatype": "xsd:date",
+    "propertyUrl": "time:hasBeginning",
+    "valueUrl": "{{['%04d'| format(mmb_year_03|int),'-','%02d' | format(mmb_month_03|int),'-','%02d'|format(mmb_day_03|int)]|join}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_03", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_03|int),'-','%02d' | format(mmb_month_03|int),'-','%02d'|format(mmb_day_03|int)]|join}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "time:Instant"  
+    },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_03", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_03|int),'-','%02d' | format(mmb_month_03|int),'-','%02d'|format(mmb_day_03|int)]|join}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{['%04d'| format(mmb_year_03|int),'-','%02d' | format(mmb_month_03|int),'-','%02d'|format(mmb_day_03|int)]|join}}",  
+    "datatype": "xsd:string" 
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_03", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_03|int),'-','%02d' | format(mmb_month_03|int),'-','%02d'|format(mmb_day_03|int)]|join}}",
+    "propertyUrl": "time:inXSDDate",
+    "csvw:value": "{{['%04d'| format(mmb_year_03|int),'-','%02d' | format(mmb_month_03|int),'-','%02d'|format(mmb_day_03|int)]|join}}",  
+    "datatype": "xsd:date"
+   },
+      {
+    "null": {"@list": [{"name": "mmb_04", "null": ""}]},
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_04",
+    "name": "mmb_04",
+    "propertyUrl": "vocab:mutation",
+    "valueUrl": "{{([adm_image_no, '-mmb_04']|join)}}",
+    "dc:description": "Wijziging lidmaatschap"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_04", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_04']|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Mutation"
+   }, 
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_04", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_04']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Wijziging lidmaatschap ', un_name]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_04", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_04']|join)}}",
+    "propertyUrl": "schema:comment",
+    "csvw:value": "{{mmb_04}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "mmb_year_04", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_04']|join)}}",
+    "datatype": "xsd:date",
+    "propertyUrl": "time:hasBeginning",
+    "valueUrl": "{{['%04d'| format(mmb_year_04|int),'-','%02d' | format(mmb_month_04|int),'-','%02d'|format(mmb_day_04|int)]|join}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_04", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_04|int),'-','%02d' | format(mmb_month_04|int),'-','%02d'|format(mmb_day_04|int)]|join}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "time:Instant"  
+    },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_04", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_04|int),'-','%02d' | format(mmb_month_04|int),'-','%02d'|format(mmb_day_04|int)]|join}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{['%04d'| format(mmb_year_04|int),'-','%02d' | format(mmb_month_04|int),'-','%02d'|format(mmb_day_04|int)]|join}}",  
+    "datatype": "xsd:string" 
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_04", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_04|int),'-','%02d' | format(mmb_month_04|int),'-','%02d'|format(mmb_day_04|int)]|join}}",
+    "propertyUrl": "time:inXSDDate",
+    "csvw:value": "{{['%04d'| format(mmb_year_04|int),'-','%02d' | format(mmb_month_04|int),'-','%02d'|format(mmb_day_04|int)]|join}}",  
+    "datatype": "xsd:date"
+   },
+      {
+    "null": {"@list": [{"name": "mmb_05", "null": ""}]},
+    "@id": "https://iisg.amsterdam/ADB-2020_12_09.csv/column/mmb_05",
+    "name": "mmb_05",
+    "propertyUrl": "vocab:mutation",
+    "valueUrl": "{{([adm_image_no, '-mmb_05']|join)}}",
+    "dc:description": "Wijziging lidmaatschap"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_05", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_05']|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:Mutation"
+   }, 
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_05", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_05']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Wijziging lidmaatschap ', un_name]|join)}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "mmb_05", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-mmb_05']|join)}}",
+    "propertyUrl": "schema:comment",
+    "csvw:value": "{{mmb_05}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "mmb_year_05", "null": ""}]},
+    "aboutUrl": "{{([adm_image_no, '-mmb_05']|join)}}",
+    "datatype": "xsd:date",
+    "propertyUrl": "time:hasBeginning",
+    "valueUrl": "{{['%04d'| format(mmb_year_05|int),'-','%02d' | format(mmb_month_05|int),'-','%02d'|format(mmb_day_05|int)]|join}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_05", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_05|int),'-','%02d' | format(mmb_month_05|int),'-','%02d'|format(mmb_day_05|int)]|join}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "time:Instant"  
+    },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_05", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_05|int),'-','%02d' | format(mmb_month_05|int),'-','%02d'|format(mmb_day_05|int)]|join}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{['%04d'| format(mmb_year_05|int),'-','%02d' | format(mmb_month_05|int),'-','%02d'|format(mmb_day_05|int)]|join}}",  
+    "datatype": "xsd:string" 
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mmb_year_05", "null": ""}]},
+    "aboutUrl": "{{['%04d'| format(mmb_year_05|int),'-','%02d' | format(mmb_month_05|int),'-','%02d'|format(mmb_day_05|int)]|join}}",
+    "propertyUrl": "time:inXSDDate",
+    "csvw:value": "{{['%04d'| format(mmb_year_05|int),'-','%02d' | format(mmb_month_05|int),'-','%02d'|format(mmb_day_05|int)]|join}}",  
+    "datatype": "xsd:date"
    }
   ],
   "primaryKey": "adm_image_no",
