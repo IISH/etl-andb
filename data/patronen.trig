@@ -103,25 +103,24 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:Address_identifier,
+      andb:hisgisShape,
       andb:houseNumberAdditionShape,
       andb:houseNumberShape,
       andb:labelShape_nl,
       andb:streetShape;
     sh:targetClass schema:PostalAddress.
 
-  andb:Address_identifier
+  andb:hisgisShape
     a sh:PropertyShape;#
     dct:source
       "andb/mbr_address_locationPoint-01 t/m 26",
       "apprentice/sdn_address_locationPoint-01 t/m 5";
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;
     sh:description "The HISGIS identifier of the (Amsterdam) address."@en;
-    sh:minLength 1;#
-    sh:name "has hisgis identifier"@en;
-    sh:nodeKind sh:Literal;#
-    sh:path dct:identifier.
+    sh:maxCount 1;
+    sh:name "has HISGIS identifier"@en;
+    sh:nodeKind sh:IRI;#
+    sh:path owl:sameAs.
 
   andb:houseNumberAdditionShape
     a sh:PropertyShape;
