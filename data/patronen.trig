@@ -76,8 +76,7 @@ andb: {
       "has human-readable label"@en,
       "heeft menselijk leesbaar label"@nl;
     sh:nodeKind sh:Literal;#
-    sh:path rdfs:label;
-    sh:uniqueLang true.#
+    sh:path rdfs:label.
 
   andb:nameShape
     a sh:PropertyShape;#
@@ -96,8 +95,7 @@ andb: {
     sh:name
       "has name"@en,
       "heeft naam"@nl;
-    sh:path schema:name;
-    sh:uniqueLang true.#
+    sh:path schema:name.
 
 
   andb:AddressShape
@@ -701,8 +699,7 @@ andb: {
       "has name"@en,
       "heeft naam"@nl;
     sh:nodeKind sh:Literal;#
-    sh:path schema:name;
-    sh:uniqueLanguage true.#
+    sh:path schema:name.
 
   andb:hasUnitShape
     a sh:PropertyShape;
