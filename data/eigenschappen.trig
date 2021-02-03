@@ -265,6 +265,15 @@ andb: {
     rdfs:label "middle name"@en;
     rdfs:range xsd:string.
 
+  andb:migration
+    a owl:ObjectProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "migrated"@en,
+      "is geëmigreerd"@nl;
+    rdfs:range andb:Migration.
+
   andb:mother
     a owl:ObjectProperty;
     rdfs:domain schema:Person;

@@ -785,6 +785,7 @@ andb: {
       andb:inhabitsShape,
       andb:maidenNamePrefixShape,
       andb:maidenNameShape,
+      andb:migrationShape,
       andb:oorlogslevensShape;
     sh:targetClass schema:Person.
 
@@ -1002,6 +1003,13 @@ andb: {
     sh:name "has maiden name"@en;
     sh:nodeKind sh:Literal;#
     sh:path pnv:patronym.
+
+  andb:migrationShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Migration;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:migration.
 
   andb:oorlogslevensShape
     a sh:PropertyShape;#
