@@ -242,7 +242,6 @@ andb: {
       andb:examinatorShape,
       andb:internshipShape,
       andb:labelShape_en_nl,
-      andb:masterShape,
       andb:occupationShape,
       andb:remarkShape;
       #andb:studentShape;
@@ -281,15 +280,6 @@ andb: {
       "volgt stage"@nl;
     sh:nodeKind sh:IRI;#
     sh:path andb:internship.
-
-  andb:masterShape
-    a sh:PropertyShape;#
-    rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;#
-    sh:maxCount 1;
-    sh:minLength 1;#
-    sh:nodeKind sh:Literal;#
-    sh:path andb:master.
 
   andb:occupationShape
     a sh:PropertyShape;#
@@ -448,6 +438,7 @@ andb: {
       andb:durationShape,
       andb:duringShape,
       andb:labelShape_en_nl,
+      andb:masterShape,
       andb:workshopShape;
     sh:targetClass andb:Internship.
 
@@ -462,6 +453,15 @@ andb: {
       ( andb:duration
         time:intervalDuring
         [ sh:inversePath andb:duration ] ).
+
+  andb:masterShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:master.
 
   andb:workshopShape
     a sh:PropertyShape;#
