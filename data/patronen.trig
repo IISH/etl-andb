@@ -237,18 +237,18 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:EducationShape_contains,
+      andb:EducationShape_duration_invervalContains_durationInv,
       andb:durationShape,
       andb:examinatorShape,
       andb:internshipShape,
       andb:labelShape_en_nl,
       andb:masterShape,
       andb:occupationShape,
-      andb:remarkShape,
+      andb:remarkShape;
       #andb:studentShape;
     sh:targetClass andb:Education.
 
-  andb:EducationShape_contains
+  andb:EducationShape_duration_invervalContains_durationInv
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class andb:Internship;
@@ -577,14 +577,14 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:Membership_identifier,
+      andb:MembershipShape_identifier,
       andb:labelShape_en_nl,
       andb:memberShape,
       andb:memberDuringShape,
       andb:organizationShape;
     sh:targetClass org:Membership.
 
-  andb:Membership_identifier
+  andb:MembershipShape_identifier
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
@@ -765,14 +765,14 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:Person_labelShape,
-      andb:Person_nameShape,
      #andb:PersonShape_isPrimaryTopicOf,
+      andb:PersonShape_label,
+      andb:PersonShape_name,
       andb:additionalNameShape,
       andb:birthDateShape,
       andb:birthPlaceShape,
       andb:deathDateShape,
-      andb:education,
+      andb:educationShape,
       andb:familyNameShape,
       andb:firstNameShape,
       andb:genderShape,
@@ -811,7 +811,7 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path rdfs:label.
 
-  andb:Person_nameShape
+  andb:PersonShape_name
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
@@ -889,7 +889,7 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path schema:deathDate.
 
-  andb:education
+  andb:educationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class andb:Education;#
