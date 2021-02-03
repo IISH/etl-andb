@@ -436,14 +436,14 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
+      andb:InternshipShape_during_intervalDuring_durationInv,
       andb:durationShape,
-      andb:duringShape,
       andb:labelShape_en_nl,
       andb:masterShape,
       andb:workshopShape;
     sh:targetClass andb:Internship.
 
-  andb:duringShape
+  andb:InternshipShape_during_intervalDuring_durationInv
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class andb:Education;
