@@ -266,7 +266,7 @@ andb: {
     a sh:PropertyShape;#
     dct:source "apprentice/edu_examinator";
     rdfs:isDefinedBy andb:;#
-    sh:class xsd:string;#
+    sh:datatype xsd:string;#
     sh:description
       "The full name of the examinator."@en,
       "De volledige naam van de examinator."@nl;
