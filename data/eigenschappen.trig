@@ -168,7 +168,7 @@ andb: {
     rdfs:label
       "has house number"@en,
       "heeft huisnummer"@nl;
-    rdfs:range xsd:positiveInteger.
+    rdfs:range xsd:string.
 
   andb:houseNumberAddition
     a owl:DatatypeProperty;
