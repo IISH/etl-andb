@@ -855,7 +855,6 @@ andb: {
     sh:datatype xsd:date;
     sh:description "The person's birth date."@en;
     sh:maxCount 1;
-    sh:minCount 1;
     sh:name "has birth date"@en;
     sh:nodeKind sh:Literal;#
     sh:path schema:birthDate.
