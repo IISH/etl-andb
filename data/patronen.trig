@@ -248,7 +248,7 @@ andb: {
       andb:masterShape,
       andb:occupationShape,
       andb:remarkShape,
-      andb:studentShape;
+      #andb:studentShape;
     sh:targetClass andb:Education.
 
   andb:EducationShape_contains
@@ -772,10 +772,10 @@ andb: {
     sh:property
       andb:Person_labelShape,
       andb:Person_nameShape,
+     #andb:PersonShape_isPrimaryTopicOf,
       andb:additionalNameShape,
       andb:birthDateShape,
       andb:birthPlaceShape,
-      andb:cardShape,
       andb:deathDateShape,
       andb:education,
       andb:familyNameShape,
@@ -789,7 +789,21 @@ andb: {
       andb:oorlogslevensShape;
     sh:targetClass schema:Person.
 
-  andb:Person_labelShape
+  andb:PersonShape_isPrimaryTopicOf
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:or
+      ( [ sh:class andb:MembershipCard ]
+        [ sh:class andb:StudentCard ] );
+    sh:description "A person can have one or more cards."@en;
+    sh:minCount 1;
+    sh:name
+      "has card"@en,
+      "heeft kaart"@nl;
+    sh:nodeKind sh:IRI;#
+    sh:path foaf:isPrimaryTopicOf.
+
+  andb:PersonShape_label
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
@@ -865,28 +879,6 @@ andb: {
       "heeft geboorteplaats"@nl;
     sh:nodeKind sh:Literal;#
     sh:path schema:birthPlace.
-
-  andb:cardShape
-    a sh:PropertyShape;#
-    dct:source
-      "unique/adb_identifier",
-      "unique/sdn_adm_id1",
-      "unique/sdn_adm_id2",
-      "unique/sdn_adm_id3",
-      "unique/mbr_adm_id1",
-      "unique/mbr_adm_id2",
-      "unique/mbr_adm_id3";
-    rdfs:isDefinedBy andb:;#
-    sh:or
-      ( [ sh:class andb:MembershipCard ]
-        [ sh:class andb:StudentCard ] );
-    sh:description "A person can have one or more cards."@en;
-    sh:minCount 1;
-    sh:name
-      "has card"@en,
-      "heeft kaart"@nl;
-    sh:nodeKind sh:IRI;#
-    sh:path foaf:isPrimaryTopicOf.
 
   andb:deathDateShape
     a sh:PropertyShape;#

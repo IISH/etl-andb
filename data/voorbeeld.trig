@@ -287,11 +287,6 @@ id:instanties {
       id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3,
       id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4;
     andb:migration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1;
-    foaf:isPrimaryTopicOf
-      #id:2284,
-      id:26266,
-      id:26456;
-      #id:AMSAB_0558_3464;
     org:hasMembership id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-membership1;
     rdfs:label "Adriaan Helsloot";
     schema:birthDate "1902-08-28"^^xsd:date;
@@ -307,7 +302,6 @@ id:instanties {
     andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval;
     andb:internship id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship;
     andb:master "S. Kloots";
-    andb:student id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     rdfs:label
       "Education of Adriaan Helsloot"@en,
       "Onderwijstraject van Adriaan Helsloot"@nl.
