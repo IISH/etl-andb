@@ -322,11 +322,13 @@ andb: {
     rdfs:range schema:Person.
 
   andb:remark
-    a owl:ObjectProperty;
+    a owl:DatatypeProperty;
     rdfs:domain foaf:Document;
     rdfs:isDefinedBy andb:;#
-    rdfs:label "remark"@en;
-    rdfs:range andb:Remark.
+    rdfs:label
+      "has remark"@en,
+      "heeft opmerking"@nl;
+    rdfs:range rdf:langString.
 
   andb:residency
     a owl:ObjectProperty;
