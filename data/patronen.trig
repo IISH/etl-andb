@@ -247,6 +247,7 @@ andb: {
       andb:labelShape_en_nl,
       andb:masterShape,
       andb:occupationShape,
+      andb:remarkShape,
       andb:studentShape;
     sh:targetClass andb:Education.
 
@@ -314,6 +315,16 @@ andb: {
       "heeft beroep"@nl;
     sh:nodeKind sh:IRI;#
     sh:path schema:occupation.
+
+  andb:remarkShape
+    a sh:PropertyNode;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype rdf:langString;#
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:languagesIn ( "nl" );
+    sh:nodeKind sh:Literal;#
+    sh:path andb:remark.
 
   andb:studentShape
     a sh:PropertyNode;#
