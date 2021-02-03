@@ -774,14 +774,18 @@ andb: {
       andb:deathDateShape,
       andb:educationShape,
       andb:familyNameShape,
-      andb:firstNameShape,
       andb:genderShape,
+      andb:givenNameShape,
       andb:hasMembershipShape,
       andb:inhabitsShape,
       andb:maidenNamePrefixShape,
       andb:maidenNameShape,
+      andb:membershipBrother,
+      andb:membershipSister,
       andb:migrationShape,
-      andb:oorlogslevensShape;
+      andb:oorlogslevensShape,
+      andb:parentShape,
+      andb:spouseShape;
     sh:targetClass schema:Person.
 
   andb:PersonShape_isPrimaryTopicOf
@@ -912,22 +916,6 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path schema:familyName.
 
-  andb:firstNameShape
-    a sh:PropertyShape;#
-    dct:source
-      "adb/chi_first_name_01 t/m 05",
-      "adb/par_first_name_01 t/m 02",
-      "apprentice/par_first_name",
-      "unique/first_name";
-    rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;
-    sh:description "The person's first name(s)."@en;
-    sh:maxCount 1;
-    sh:minLength 1;#
-    sh:name "has first name"@en;
-    sh:nodeKind sh:Literal;#
-    sh:path schema:givenName.
-
   andb:genderShape
     a sh:PropertyShape;#
     dct:source "unique/gender";
@@ -945,6 +933,22 @@ andb: {
       "heeft geslacht"@nl;
     sh:nodeKind sh:IRI;#
     sh:path schema:gender.
+
+  andb:givenNameShape
+    a sh:PropertyShape;#
+    dct:source
+      "adb/chi_first_name_01 t/m 05",
+      "adb/par_first_name_01 t/m 02",
+      "apprentice/par_first_name",
+      "unique/first_name";
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;
+    sh:description "The person's first name(s)."@en;
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:name "has first name"@en;
+    sh:nodeKind sh:Literal;#
+    sh:path schema:givenName.
 
   andb:hasMembershipShape
     a sh:PropertyShape;#
@@ -990,6 +994,18 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path pnv:patronym.
 
+  andb:membershipBrother
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;
+    sh:path andb:membershipBrother.
+
+  andb:membershipSister
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;
+    sh:path andb:membershipBrother.
+
   andb:migrationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
@@ -1010,6 +1026,21 @@ andb: {
     sh:name "has biography on Oorlogslevens"@en;
     sh:nodeKind sh:Literal;#
     sh:path rdfs:seeAlso.
+
+  andb:parentShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;
+    sh:maxCount 2;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:parent.
+
+  andb:spouseShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:spouse.
 
 
   andb:ResidencyShape
