@@ -52,14 +52,15 @@
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person",
     "dc:description": "Identifier persoon",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/name",
     "name": "name",
     "propertyUrl": "rdfs:label",
     "dc:description": "Volledige naam",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adb_identifier",
@@ -70,10 +71,12 @@
     "datatype": "xsd:anyURI"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb/{{adb_identifier}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ADB lidmaatschapskaart van {{name}}"
+    "csvw:value": "ADB lidmaatschapskaart van {{name}}",
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id3",
@@ -84,10 +87,12 @@
     "datatype": "xsd:anyURI"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id3}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "Leerlingkaart van {{name}}"
+    "csvw:value": "Leerlingkaart van {{name}}",
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id2",
@@ -98,10 +103,12 @@
     "datatype": "xsd:anyURI"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id2}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "Leerlingkaart van {{name}}"
+    "csvw:value": "Leerlingkaart van {{name}}",
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id1",
@@ -112,10 +119,12 @@
     "datatype": "xsd:anyURI"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "Leerlingkaart van {{name}}"
+    "csvw:value": "Leerlingkaart van {{name}}",
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id3",
@@ -126,10 +135,12 @@
     "datatype": "xsd:anyURI"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id3}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}",
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id2",
@@ -140,10 +151,12 @@
     "datatype": "xsd:anyURI"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id2}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}",
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id1",
@@ -154,45 +167,47 @@
     "datatype": "xsd:anyURI"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id1}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}",
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/first_name",
     "name": "first_name",
     "propertyUrl": "schema:givenName",
     "dc:description": "Voornaam",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/middle_name",
     "name": "middle_name",
     "propertyUrl": "schema:additionalName",
     "dc:description": "Tussenvoegsel achternaam",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/last_name",
     "name": "last_name",
     "propertyUrl": "schema:familyName",
     "dc:description": "Achternaam",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/maiden_name_prefix",
     "name": "maiden_name_prefix",
     "propertyUrl": "vocab:maiden_name_prefix",
     "dc:description": "Tussenvoegsel meisjesnaam",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/maiden_name",
     "name": "maiden_name",
     "propertyUrl": "pnv:patronym",
     "dc:description": "Meisjesnaam",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/gender",
@@ -214,7 +229,7 @@
     "name": "birth_place",
     "propertyUrl": "schema:birthPlace",
     "dc:description": "Geboorteplaats",
-    "datatype": "string"
+    "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/death_date",
