@@ -80,12 +80,17 @@ andb: {
 
   andb:nameShape
     a sh:PropertyShape;#
-    dct:source
-      "adb/mbr_city_01 t/m 5",
-      "andb/mbr_city-01 t/m 26",
-      "apprentice/sdn_city-01 t/m 5",
-      "apprentice/wsp_city-01 t/m 10",
-      "wsp_name-01 t/m 10";
+    rdfs:isDefinedBy andb:;#
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:minLength 1;#
+    sh:name
+      "has name"@en,
+      "heeft naam"@nl;
+    sh:path schema:name.
+
+  andb:nameShape_nl
+    a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype rdf:langString;#
     sh:languageIn ( "nl" );
@@ -112,9 +117,6 @@ andb: {
 
   andb:hisgisShape
     a sh:PropertyShape;#
-    dct:source
-      "andb/mbr_address_locationPoint-01 t/m 26",
-      "apprentice/sdn_address_locationPoint-01 t/m 5";
     rdfs:isDefinedBy andb:;#
     sh:description "The HISGIS identifier of the (Amsterdam) address."@en;
     sh:maxCount 1;
@@ -124,11 +126,6 @@ andb: {
 
   andb:houseNumberAdditionShape
     a sh:PropertyShape;
-    dct:source
-      "adb/mbr_street_no_add-01 t/m 5",
-      "andb/mbr_street_no_add-01 t/m 26",
-      "apprentice/sdn_street_no_add-01 t/m 5",
-      "apprentice/wsp_street_no_ad-01 t/m 10";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:maxCount 1;
@@ -138,11 +135,6 @@ andb: {
 
   andb:houseNumberShape
     a sh:PropertyShape;#
-    dct:source
-      "adb/mbr_street_no_01 t/m 5",
-      "andb/mbr_street_no-01 t/m 26",
-      "apprentice/sdn_street_no-01 t/m 5",
-      "apprentice/wsp_street_no-01 t/m 10";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:maxCount 1;
@@ -152,11 +144,6 @@ andb: {
 
   andb:streetShape
     a sh:PropertyShape;#
-    dct:source
-      "adb/mbr_street_01 t/m 5",
-      "andb/mbr_street-01 t/m 26",
-      "apprentice/sdn_street-01 t/m 5",
-      "apprentice/wsp_street-01 t/m 10";
     rdfs:isDefinedBy andb:;#
     sh:class hg:Street;#
     sh:description "The street part of the address."@en;#
@@ -181,10 +168,6 @@ andb: {
 
   andb:CardShape_identifier
     a sh:PropertyShape;#
-    dct:source
-      "adb/card_id1",
-      "andb/card_id1 t/m 4",
-      "apprentice/card_id1 t/m 2";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "Het administratieve nummer van de kaart."@nl;
@@ -213,10 +196,6 @@ andb: {
 
   andb:imageShape
     a sh:PropertyShape;#
-    dct:source
-      "adb/adm_image_uuid",
-      "andb/adm_image_uuid",
-      "apprentice/adm_image_uuid";
     rdfs:isDefinedBy andb:;#
     sh:class schema:ImageObject;
     sh:description
@@ -260,7 +239,6 @@ andb: {
 
   andb:examinatorShape
     a sh:PropertyShape;#
-    dct:source "apprentice/edu_examinator";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
     sh:description
@@ -283,7 +261,6 @@ andb: {
 
   andb:occupationShape
     a sh:PropertyShape;#
-    dct:source: "apprentice/sdn_occupation";
     rdfs:isDefinedBy andb:;#
     sh:class schema:Occupation;
     sh:description "Occupation the education is preparing for"@en;
@@ -539,15 +516,6 @@ andb: {
 
   andb:beginShape
     a sh:PropertyShape;#
-    dct:source
-      "apprentice/admission_day/month/year-01",
-      "adb/mmb_day/month/year-01",
-      "andb/departure_day/month/year_01 t/m 08",
-      "andb/mbr_addr_day/month/year 1 t/m 26",
-      "andb/mmb_day/month/year-01 t/m 07",
-      "apprentice/mmb_day/month/year",
-      "apprentice/sdn_addr_day/month/year 1 t/m 25",
-      "apprentice/wsp_day/month/year-01 t/m 10";
     rdfs:isDefinedBy andb:;#
     sh:class time:Instant;
     sh:name
@@ -559,9 +527,6 @@ andb: {
 
   andb:endShape
     a sh:PropertyShape;#
-    dct:source
-      "andb/return_day/month/year_01 t/m 08",
-      "apprentice/edu_end_day/month/year-01";
     rdfs:isDefinedBy andb:;#
     sh:class time:Instant;
     sh:maxCount 1;
@@ -655,7 +620,6 @@ andb: {
 
   andb:locationShape
     a sh:PropertyShape;#
-    dct:source "andb/departure_place-01 t/m 08";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
     sh:description
@@ -684,10 +648,6 @@ andb: {
 
   andb:OrganizationShape_name
     a sh:PropertyShape;#
-    dct:source
-      "adb/un_name",
-      "apprentice/un_name",
-      "apprentice/par_un_name";
     rdfs:isDefinedBy andb:;#
     sh:datatype rdf:langString;#
     sh:description
@@ -733,15 +693,6 @@ andb: {
 
   andb:OrganizationalUnitShape_identifier
     a sh:PropertyShape;#
-    dct:source
-      "adb/un_section",
-      "adb/un_section_no",
-      "andb/un_section-01 t/m 07",
-      "andb/un_section_no-01 t/m 07",
-      "apprentice/par_un_section",
-      "apprentice/par_un_section_no",
-      "apprentice/un_section",
-      "apprentice/un_section_no";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description
@@ -831,11 +782,6 @@ andb: {
 
   andb:additionalNameShape
     a sh:PropertyShape;#
-    dct:source
-      "andb/mbr_middle_name",
-      "apprentice/par_middle_name",
-      "apprentice/sdn_middle_name",
-      "unique/middle_name";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description
@@ -851,10 +797,6 @@ andb: {
 
   andb:birthDateShape
     a sh:PropertyShape;#
-    dct:source
-      "adb/chi_birth_day/month/year_01 t/m 05",
-      "apprentice/par_birth_day/month/year",
-      "unique/birth_date";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:date;
     sh:description "The person's birth date."@en;
@@ -865,9 +807,6 @@ andb: {
 
   andb:birthPlaceShape
     a sh:PropertyShape;#
-    dct:source
-      "apprentice/par_birth_place",
-      "unique/mbr_birth_place";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The person's place of birth."@en;
@@ -881,9 +820,6 @@ andb: {
 
   andb:deathDateShape
     a sh:PropertyShape;#
-    dct:source
-      "apprentice/par_death_day/month/year",
-      "unique/death_date";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:date;
     sh:description "The person's death date."@en;
@@ -904,10 +840,6 @@ andb: {
 
   andb:familyNameShape
     a sh:PropertyShape;#
-    dct:source
-      "adb/par_last_name_01 t/m 02",
-      "apprentice/par_last_name",
-      "unique/last_name";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The person's family name."@en;
@@ -919,7 +851,6 @@ andb: {
 
   andb:genderShape
     a sh:PropertyShape;#
-    dct:source "unique/gender";
     rdfs:isDefinedBy andb:;#
     #sh:class schema:GenderType;
     sh:description
@@ -937,11 +868,6 @@ andb: {
 
   andb:givenNameShape
     a sh:PropertyShape;#
-    dct:source
-      "adb/chi_first_name_01 t/m 05",
-      "adb/par_first_name_01 t/m 02",
-      "apprentice/par_first_name",
-      "unique/first_name";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The person's first name(s)."@en;
@@ -971,7 +897,6 @@ andb: {
 
   andb:maidenNamePrefixShape
     a sh:PropertyShape;#
-    dct:source "unique/maiden_name_prefix";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
     sh:description "The person's maiden name's middle name."@en;#
@@ -983,9 +908,6 @@ andb: {
 
   andb:maidenNameShape
     a sh:PropertyShape;#
-    dct:source
-      "apprentice/par_maiden_name",
-      "unique/maiden_name";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;
     sh:description "The person's maiden name."@en;
@@ -1016,7 +938,6 @@ andb: {
 
   andb:oorlogslevensShape
     a sh:PropertyShape;#
-    dct:source "unique/oorlogslevens_uri";
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:anyURI;
     sh:description """
@@ -1050,14 +971,14 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:ResidencyShape_address,
+      andb:addressShape,
       andb:durationShape,
       andb:inhabitantShape,
       andb:labelShape_en_nl,
       andb:placeShape;
     sh:targetClass andb:Residency.
 
-  andb:ResidencyShape_address
+  andb:addressShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class schema:PostalAddress;
@@ -1091,7 +1012,7 @@ andb: {
     sh:property
       andb:SteetShape_identifier,
       andb:adamlinkShape,
-      andb:labelShape_nl,
+      andb:labelShape,
       andb:nameShape,
       andb:withinShape;
     sh:targetClass hg:Street.
@@ -1108,9 +1029,6 @@ andb: {
 
   andb:adamlinkShape
     a sh:PropertyShape;#
-    dct:source
-      "andb/mbr_street_adamlink_uri-01",
-      "apprentice/sdn_street_adamlink_uri-01";
     rdfs:isDefinedBy andb:;#
     sh:description "The AdamLink identifier of the street."@en;
     sh:maxCount 1;
@@ -1133,7 +1051,17 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
+      andb:addressShape,
       andb:labelShape_nl,
-      andb:nameShape;
+      andb:nameShape_nl,
+      andb:typeShape;
     sh:targetClass andb:Workshop.
+
+  andb:typeShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:nodeKind sh:Literal;#
+    sh:path andb:type.
 }
