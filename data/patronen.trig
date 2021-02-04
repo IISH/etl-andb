@@ -102,6 +102,15 @@ andb: {
       "heeft naam"@nl;
     sh:path schema:name.
 
+  andb:remarkShape
+    a sh:PropertyNode;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype rdf:langString;#
+    sh:maxCount 1;
+    sh:languagesIn ( "nl" );
+    sh:nodeKind sh:Literal;#
+    sh:path andb:remark.
+
 
   andb:AddressShape
     a sh:NodeShape;#
@@ -279,15 +288,6 @@ andb: {
       "heeft beroep"@nl;
     sh:nodeKind sh:IRI;#
     sh:path schema:occupation.
-
-  andb:remarkShape
-    a sh:PropertyNode;#
-    rdfs:isDefinedBy andb:;#
-    sh:datatype rdf:langString;#
-    sh:maxCount 1;
-    sh:languagesIn ( "nl" );
-    sh:nodeKind sh:Literal;#
-    sh:path andb:remark.
 
   andb:studentShape
     a sh:PropertyNode;#
@@ -1052,16 +1052,73 @@ andb: {
     sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:addressShape,
+      andb:closedShape,
+      andb:expandedShape,
+      andb:expansionDateShape,
+      andb:foundedShape,
       andb:labelShape_nl,
       andb:nameShape_nl,
+      andb:ownerShape,
+      andb:remarkShape,
       andb:typeShape;
     sh:targetClass andb:Workshop.
+
+  andb:closedShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:closed.
+
+  andb:expansionDateShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:gYear;#
+    sh:maxCount 1;
+    sh:nodeKind sh:Literal;#
+    sh:path andb:expansionDate.
+
+  andb:expandedShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:expanded.
+
+  andb:foundedShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:founded.
+
+  andb:ownerShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:path andb:owner.
+
+  andb:transmissionShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:path andb:transmission.
 
   andb:typeShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
     sh:maxCount 1;
-    sh:minCount 1;
     sh:nodeKind sh:Literal;#
     sh:path andb:type.
 }
