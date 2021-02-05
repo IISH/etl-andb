@@ -1,5 +1,5 @@
 {
- "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv",
+ "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv",
  "@context": [
   "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
   {
@@ -26,7 +26,7 @@
    "xsd": "http://www.w3.org/2001/XMLSchema#"
   }
  ],
- "url": "andb_members_all_series-2020_12_09.csv",
+ "url": "andb_members_all_series.csv",
  "dialect": {
   "delimiter": ",",
   "encoding": "utf-8",
@@ -44,92 +44,150 @@
   "@id": "http://opendefinition.org/licenses/cc-by/"
  },
  "dc:modified": {
-  "@value": "2021-01-21",
+  "@value": "2021-02-04",
   "@type": "xsd:date"
  },
  "tableSchema": {
   "columns": [
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_id",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/adm_id",
     "name": "adm_id",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Card",
     "dc:description": "Identifier van de kaart"
    },
    {
+    "null": {"@list": [{"name": "name", "null": ""}]},
     "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{{adm_id}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' lidmaatschapskaart van ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' lidmaatschapskaart van ', name]|join)}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_image_no",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/adm_image_no",
     "name": "adm_image_no",
     "propertyUrl": "vocab:inventoryNumber",
     "dc:description": "Inventarisnummer IISG",
     "datatype": "xsd:string"
    },
     {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/adm_image_uuid",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/adm_image_uuid",
     "name": "adm_image_uuid",
     "propertyUrl": "schema:image",
-    "valueUrl": "{{([adm_id, '-', adm_image_no]|join)}}",
-    "dc:description": "Afbeelding van de kaart",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([adm_image_no, '-master']|join)}}",
+    "dc:description": "Afbeelding van de kaart"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_id, '-', adm_image_no]|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:ImageObject"
    },
    {
     "lang": "nl",
     "virtual": "true",
-    "aboutUrl": "{{([adm_id, '-', adm_image_no]|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Afbeelding van kaart ', adm_id]|join)}}",
+    "csvw:value": "{{(['Originele afbeelding van kaart ', adm_id]|join)}}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
+    "propertyUrl": "schema:contentUrl",
+    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:master",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
+    "propertyUrl": "schema:encodingFormat",
+    "csvw:value": "image/tiff",
     "datatype": "xsd:string"
    },
    {
     "virtual": "true",
-    "aboutUrl": "{{([adm_id, '-', adm_image_no]|join)}}",
-    "propertyUrl": "schema:contentUrl",
-    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:master",
-    "datatype": "xsd:anyUri"
-   },
-   {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_id, '-', adm_image_no]|join)}}",
-    "propertyUrl": "schema:thumbnail",
-    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level3",
-    "datatype": "xsd:anyUri"
-   },
-    {
-    "virtual": "true",
-    "aboutUrl": "{{([adm_id, '-', adm_image_no]|join)}}",
+    "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
     "propertyUrl": "vocab:screenVersion",
-    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level2",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([adm_image_no, '-level2']|join)}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/person_uuid",
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level2']|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:ImageObject"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level2']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Schermvriendelijke versie van kaart ', adm_id]|join)}}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level2']|join)}}",
+    "propertyUrl": "schema:contentUrl",
+    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level2",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level2']|join)}}",
+    "propertyUrl": "schema:encodingFormat",
+    "csvw:value": "image/jpeg",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
+    "propertyUrl": "schema:thumbnail",
+    "valueUrl": "{{([adm_image_no, '-level3']|join)}}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level3']|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:ImageObject"
+   },
+   {
+    "lang": "nl",
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level3']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Miniatuurafbeelding van kaart ', adm_id]|join)}}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level3']|join)}}",
+    "propertyUrl": "schema:contentUrl",
+    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level3",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level3']|join)}}",
+    "propertyUrl": "schema:encodingFormat",
+    "csvw:value": "image/jpeg",
+    "datatype": "xsd:string"
+   },
+   {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/person_uuid",
     "name": "person_uuid",
     "propertyUrl": "foaf:primaryTopic",
     "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "dc:description": "Eigenaar van de kaart",
-    "datatype": "xsd:anyUri"
+    "dc:description": "Eigenaar van de kaart"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person"
    },
    {
-    "lang": "nl",
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "rdfs:label",
@@ -137,28 +195,36 @@
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_first_name_orig",
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{name}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/mbr_first_name_orig",
     "name": "mbr_first_name_orig",
     "propertyUrl": "vocab:givenName",
     "dc:description": "Voornaam",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_middle_name_orig",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/mbr_middle_name_orig",
     "name": "mbr_middle_name_orig",
     "propertyUrl": "vocab:middleName",
     "dc:description": "Tussenvoegsel",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_last_name_orig",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/mbr_last_name_orig",
     "name": "mbr_last_name_orig",
     "propertyUrl": "vocab:familyName",
     "dc:description": "Achternaam",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_maiden_name_orig",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/mbr_maiden_name_orig",
     "name": "mbr_maiden_name_orig",
     "propertyUrl": "vocab:maidenName",
     "dc:description": "Meisjesnaam",
@@ -181,166 +247,348 @@
     "csvw:value": "{{['%04d'| format(mbr_death_year|int),'-','%02d' | format(mbr_death_month|int),'-','%02d'|format(mbr_death_day|int)]|join}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/mbr_birth_place",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/mbr_birth_place",
     "name": "mbr_birth_place",
     "propertyUrl": "vocab:birthPlace",
     "dc:description": "Geboorteplaats",
     "datatype": "xsd:string"
    },
     {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_id, '-residency_01']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_id, '-residency_02']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_id, '-residency_03']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_id, '-residency_04']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_id, '-residency_05']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_06 != '' ) or (mbr_street_no_06 != '') or (mbr_city_06 != '') ) %}{{([adm_id, '-residency_06']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_07 != '' ) or (mbr_street_no_07 != '') or (mbr_city_07 != '') ) %}{{([adm_id, '-residency_07']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_08 != '' ) or (mbr_street_no_08 != '') or (mbr_city_08 != '') ) %}{{([adm_id, '-residency_08']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_09 != '' ) or (mbr_street_no_09 != '') or (mbr_city_09 != '') ) %}{{([adm_id, '-residency_09']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_10 != '' ) or (mbr_street_no_10 != '') or (mbr_city_10 != '') ) %}{{([adm_id, '-residency_10']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_11 != '' ) or (mbr_street_no_11 != '') or (mbr_city_11 != '') ) %}{{([adm_id, '-residency_11']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_12 != '' ) or (mbr_street_no_12 != '') or (mbr_city_12 != '') ) %}{{([adm_id, '-residency_12']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_13 != '' ) or (mbr_street_no_13 != '') or (mbr_city_13 != '') ) %}{{([adm_id, '-residency_13']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_14 != '' ) or (mbr_street_no_14 != '') or (mbr_city_14 != '') ) %}{{([adm_id, '-residency_14']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_15 != '' ) or (mbr_street_no_15 != '') or (mbr_city_15 != '') ) %}{{([adm_id, '-residency_15']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_16 != '' ) or (mbr_street_no_16 != '') or (mbr_city_16 != '') ) %}{{([adm_id, '-residency_16']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_17 != '' ) or (mbr_street_no_17 != '') or (mbr_city_17 != '') ) %}{{([adm_id, '-residency_17']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_18 != '' ) or (mbr_street_no_18 != '') or (mbr_city_18 != '') ) %}{{([adm_id, '-residency_18']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_19 != '' ) or (mbr_street_no_19 != '') or (mbr_city_19 != '') ) %}{{([adm_id, '-residency_19']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_20 != '' ) or (mbr_street_no_20 != '') or (mbr_city_20 != '') ) %}{{([adm_id, '-residency_20']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_21 != '' ) or (mbr_street_no_21 != '') or (mbr_city_21 != '') ) %}{{([adm_id, '-residency_21']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_22 != '' ) or (mbr_street_no_22 != '') or (mbr_city_22 != '') ) %}{{([adm_id, '-residency_22']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_23 != '' ) or (mbr_street_no_23 != '') or (mbr_city_23 != '') ) %}{{([adm_id, '-residency_23']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_24 != '' ) or (mbr_street_no_24 != '') or (mbr_city_24 != '') ) %}{{([adm_id, '-residency_24']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
     "valueUrl": "{% if ( (mbr_street_25 != '' ) or (mbr_street_no_25 != '') or (mbr_city_25 != '') ) %}{{([adm_id, '-residency_25']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:inhabits",
+    "valueUrl": "{% if ( (mbr_street_26 != '' ) or (mbr_street_no_26 != '') or (mbr_city_26 != '') ) %}{{([adm_id, '-residency_26']|join)}}{% endif %}"
+   },
+       {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_id, '-residency_01']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_id, '-residency_02']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_id, '-residency_03']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_id, '-residency_04']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_id, '-residency_05']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_06 != '' ) or (mbr_street_no_06 != '') or (mbr_city_06 != '') ) %}{{([adm_id, '-residency_06']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_07 != '' ) or (mbr_street_no_07 != '') or (mbr_city_07 != '') ) %}{{([adm_id, '-residency_07']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_08 != '' ) or (mbr_street_no_08 != '') or (mbr_city_08 != '') ) %}{{([adm_id, '-residency_08']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_09 != '' ) or (mbr_street_no_09 != '') or (mbr_city_09 != '') ) %}{{([adm_id, '-residency_09']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_10 != '' ) or (mbr_street_no_10 != '') or (mbr_city_10 != '') ) %}{{([adm_id, '-residency_10']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_11 != '' ) or (mbr_street_no_11 != '') or (mbr_city_11 != '') ) %}{{([adm_id, '-residency_11']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_12 != '' ) or (mbr_street_no_12 != '') or (mbr_city_12 != '') ) %}{{([adm_id, '-residency_12']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_13 != '' ) or (mbr_street_no_13 != '') or (mbr_city_13 != '') ) %}{{([adm_id, '-residency_13']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_14 != '' ) or (mbr_street_no_14 != '') or (mbr_city_14 != '') ) %}{{([adm_id, '-residency_14']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_15 != '' ) or (mbr_street_no_15 != '') or (mbr_city_15 != '') ) %}{{([adm_id, '-residency_15']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_16 != '' ) or (mbr_street_no_16 != '') or (mbr_city_16 != '') ) %}{{([adm_id, '-residency_16']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_17 != '' ) or (mbr_street_no_17 != '') or (mbr_city_17 != '') ) %}{{([adm_id, '-residency_17']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_18 != '' ) or (mbr_street_no_18 != '') or (mbr_city_18 != '') ) %}{{([adm_id, '-residency_18']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_19 != '' ) or (mbr_street_no_19 != '') or (mbr_city_19 != '') ) %}{{([adm_id, '-residency_19']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_20 != '' ) or (mbr_street_no_20 != '') or (mbr_city_20 != '') ) %}{{([adm_id, '-residency_20']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_21 != '' ) or (mbr_street_no_21 != '') or (mbr_city_21 != '') ) %}{{([adm_id, '-residency_21']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_22 != '' ) or (mbr_street_no_22 != '') or (mbr_city_22 != '') ) %}{{([adm_id, '-residency_22']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_23 != '' ) or (mbr_street_no_23 != '') or (mbr_city_23 != '') ) %}{{([adm_id, '-residency_23']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_24 != '' ) or (mbr_street_no_24 != '') or (mbr_city_24 != '') ) %}{{([adm_id, '-residency_24']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
+    "valueUrl": "{% if ( (mbr_street_25 != '' ) or (mbr_street_no_25 != '') or (mbr_city_25 != '') ) %}{{([adm_id, '-residency_25']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutResidency",
     "valueUrl": "{% if ( (mbr_street_26 != '' ) or (mbr_street_no_26 != '') or (mbr_city_26 != '') ) %}{{([adm_id, '-residency_26']|join)}}{% endif %}"
    },
    {
@@ -355,8 +603,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_id, '-residency_01']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -366,16 +613,14 @@
     "valueUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)}}",
@@ -389,7 +634,6 @@
     "valueUrl": "{{mbr_street_01}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_01", "null": ""}]},
     "aboutUrl": "{{mbr_street_01}}",
@@ -437,7 +681,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_01", "null": ""}]},
     "aboutUrl": "{{mbr_city_01}}",
@@ -458,7 +701,7 @@
     "name": "mbr_street_adamlink_uri_01",
     "aboutUrl": "{{mbr_street_01}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_01}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_01}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -467,7 +710,8 @@
     "name": "mbr_address_locationPoint_01",
     "aboutUrl": "{{([mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_street_no_add_01]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_01}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_01}}",
+    "datatype": "xsd:anyURI"
    }, 
    {
     "virtual": "true",
@@ -476,11 +720,11 @@
     "valueUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_id, '-residency_01-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_id, '-residency_01-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_01, ' ', mbr_street_no_01, ' ', mbr_city_01, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -536,8 +780,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_id, '-residency_02']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -547,16 +790,14 @@
     "valueUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)}}",
@@ -570,7 +811,6 @@
     "valueUrl": "{{mbr_street_02}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_02", "null": ""}]},
     "aboutUrl": "{{mbr_street_02}}",
@@ -618,7 +858,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_02", "null": ""}]},
     "aboutUrl": "{{mbr_city_02}}",
@@ -639,7 +878,7 @@
     "name": "mbr_street_adamlink_uri_02",
     "aboutUrl": "{{mbr_street_02}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_02}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_02}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -648,7 +887,8 @@
     "name": "mbr_address_locationPoint_02",
     "aboutUrl": "{{([mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_street_no_add_02]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_02}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_02}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -657,11 +897,11 @@
     "valueUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_id, '-residency_02-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_id, '-residency_02-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_02, ' ', mbr_street_no_02, ' ', mbr_city_02, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -723,8 +963,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_id, '-residency_03']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -734,16 +973,14 @@
     "valueUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)}}",
@@ -757,7 +994,6 @@
     "valueUrl": "{{mbr_street_03}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_03", "null": ""}]},
     "aboutUrl": "{{mbr_street_03}}",
@@ -805,7 +1041,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_03", "null": ""}]},
     "aboutUrl": "{{mbr_city_03}}",
@@ -826,7 +1061,7 @@
     "name": "mbr_street_adamlink_uri_03",
     "aboutUrl": "{{mbr_street_03}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_03}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_03}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -835,7 +1070,8 @@
     "name": "mbr_address_locationPoint_03",
     "aboutUrl": "{{([mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_street_no_add_03]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_03}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_03}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -844,11 +1080,11 @@
     "valueUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_id, '-residency_03-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_id, '-residency_03-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_03, ' ', mbr_street_no_03, ' ', mbr_city_03, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -910,8 +1146,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_id, '-residency_04']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -921,16 +1156,14 @@
     "valueUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)}}",
@@ -944,7 +1177,6 @@
     "valueUrl": "{{mbr_street_04}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_04", "null": ""}]},
     "aboutUrl": "{{mbr_street_04}}",
@@ -992,7 +1224,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_04", "null": ""}]},
     "aboutUrl": "{{mbr_city_04}}",
@@ -1013,7 +1244,7 @@
     "name": "mbr_street_adamlink_uri_04",
     "aboutUrl": "{{mbr_street_04}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_04}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_04}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -1022,7 +1253,8 @@
     "name": "mbr_address_locationPoint_04",
     "aboutUrl": "{{([mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_street_no_add_04]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_04}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_04}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -1031,11 +1263,11 @@
     "valueUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_id, '-residency_04-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_id, '-residency_04-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_04, ' ', mbr_street_no_04, ' ', mbr_city_04, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -1097,8 +1329,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_id, '-residency_05']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1108,16 +1339,14 @@
     "valueUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)}}",
@@ -1131,7 +1360,6 @@
     "valueUrl": "{{mbr_street_05}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_05", "null": ""}]},
     "aboutUrl": "{{mbr_street_05}}",
@@ -1179,7 +1407,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_05", "null": ""}]},
     "aboutUrl": "{{mbr_city_05}}",
@@ -1200,7 +1427,7 @@
     "name": "mbr_street_adamlink_uri_05",
     "aboutUrl": "{{mbr_street_05}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_05}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_05}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -1209,7 +1436,8 @@
     "name": "mbr_address_locationPoint_05",
     "aboutUrl": "{{([mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_street_no_add_05]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_05}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_05}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -1218,11 +1446,11 @@
     "valueUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_id, '-residency_05-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_id, '-residency_05-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_05, ' ', mbr_street_no_05, ' ', mbr_city_05, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -1284,8 +1512,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_06 != '' ) or (mbr_street_no_06 != '') or (mbr_city_06 != '') ) %}{{([adm_id, '-residency_06']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_city_06, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_city_06, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1295,16 +1522,14 @@
     "valueUrl": "{{([mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_street_no_add_06]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_street_no_add_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_street_no_add_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_street_no_add_06]|join)}}",
@@ -1318,7 +1543,6 @@
     "valueUrl": "{{mbr_street_06}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_06", "null": ""}]},
     "aboutUrl": "{{mbr_street_06}}",
@@ -1366,7 +1590,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_06", "null": ""}]},
     "aboutUrl": "{{mbr_city_06}}",
@@ -1387,7 +1610,7 @@
     "name": "mbr_street_adamlink_uri_06",
     "aboutUrl": "{{mbr_street_06}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_06}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_06}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -1396,7 +1619,8 @@
     "name": "mbr_address_locationPoint_06",
     "aboutUrl": "{{([mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_street_no_add_06]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_06}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_06}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -1405,11 +1629,11 @@
     "valueUrl": "{% if ( (mbr_street_06 != '' ) or (mbr_street_no_06 != '') or (mbr_city_06 != '') ) %}{{([adm_id, '-residency_06-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_06 != '' ) or (mbr_street_no_06 != '') or (mbr_city_06 != '') ) %}{{([adm_id, '-residency_06-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_city_06, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_06, ' ', mbr_street_no_06, ' ', mbr_city_06, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -1471,8 +1695,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_07 != '' ) or (mbr_street_no_07 != '') or (mbr_city_07 != '') ) %}{{([adm_id, '-residency_07']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_city_07, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_city_07, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1482,16 +1705,14 @@
     "valueUrl": "{{([mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_street_no_add_07]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_street_no_add_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_street_no_add_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_street_no_add_07]|join)}}",
@@ -1505,7 +1726,6 @@
     "valueUrl": "{{mbr_street_07}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_07", "null": ""}]},
     "aboutUrl": "{{mbr_street_07}}",
@@ -1553,7 +1773,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_07", "null": ""}]},
     "aboutUrl": "{{mbr_city_07}}",
@@ -1574,7 +1793,7 @@
     "name": "mbr_street_adamlink_uri_07",
     "aboutUrl": "{{mbr_street_07}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_07}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_07}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -1583,7 +1802,8 @@
     "name": "mbr_address_locationPoint_07",
     "aboutUrl": "{{([mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_street_no_add_07]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_07}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_07}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -1592,11 +1812,11 @@
     "valueUrl": "{% if ( (mbr_street_07 != '' ) or (mbr_street_no_07 != '') or (mbr_city_07 != '') ) %}{{([adm_id, '-residency_07-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_07 != '' ) or (mbr_street_no_07 != '') or (mbr_city_07 != '') ) %}{{([adm_id, '-residency_07-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_city_07, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_07, ' ', mbr_street_no_07, ' ', mbr_city_07, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -1658,8 +1878,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_08 != '' ) or (mbr_street_no_08 != '') or (mbr_city_08 != '') ) %}{{([adm_id, '-residency_08']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_city_08, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_city_08, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1669,16 +1888,14 @@
     "valueUrl": "{{([mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_street_no_add_08]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_street_no_add_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_street_no_add_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_street_no_add_08]|join)}}",
@@ -1692,7 +1909,6 @@
     "valueUrl": "{{mbr_street_08}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_08", "null": ""}]},
     "aboutUrl": "{{mbr_street_08}}",
@@ -1740,7 +1956,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_08", "null": ""}]},
     "aboutUrl": "{{mbr_city_08}}",
@@ -1761,7 +1976,7 @@
     "name": "mbr_street_adamlink_uri_08",
     "aboutUrl": "{{mbr_street_08}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_08}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_08}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -1770,7 +1985,8 @@
     "name": "mbr_address_locationPoint_08",
     "aboutUrl": "{{([mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_street_no_add_08]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_08}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_08}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -1779,11 +1995,11 @@
     "valueUrl": "{% if ( (mbr_street_08 != '' ) or (mbr_street_no_08 != '') or (mbr_city_08 != '') ) %}{{([adm_id, '-residency_08-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_08 != '' ) or (mbr_street_no_08 != '') or (mbr_city_08 != '') ) %}{{([adm_id, '-residency_08-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_city_08, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_08, ' ', mbr_street_no_08, ' ', mbr_city_08, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -1845,8 +2061,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_09 != '' ) or (mbr_street_no_09 != '') or (mbr_city_09 != '') ) %}{{([adm_id, '-residency_09']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_city_09, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_city_09, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1856,16 +2071,14 @@
     "valueUrl": "{{([mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_street_no_add_09]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_street_no_add_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_street_no_add_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_street_no_add_09]|join)}}",
@@ -1879,7 +2092,6 @@
     "valueUrl": "{{mbr_street_09}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_09", "null": ""}]},
     "aboutUrl": "{{mbr_street_09}}",
@@ -1927,7 +2139,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_09", "null": ""}]},
     "aboutUrl": "{{mbr_city_09}}",
@@ -1948,7 +2159,7 @@
     "name": "mbr_street_adamlink_uri_09",
     "aboutUrl": "{{mbr_street_09}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_09}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_09}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -1957,7 +2168,8 @@
     "name": "mbr_address_locationPoint_09",
     "aboutUrl": "{{([mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_street_no_add_09]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_09}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_09}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -1966,11 +2178,11 @@
     "valueUrl": "{% if ( (mbr_street_09 != '' ) or (mbr_street_no_09 != '') or (mbr_city_09 != '') ) %}{{([adm_id, '-residency_09-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_09 != '' ) or (mbr_street_no_09 != '') or (mbr_city_09 != '') ) %}{{([adm_id, '-residency_09-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_city_09, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_09, ' ', mbr_street_no_09, ' ', mbr_city_09, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -2032,8 +2244,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_10 != '' ) or (mbr_street_no_10 != '') or (mbr_city_10 != '') ) %}{{([adm_id, '-residency_10']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_city_10, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_city_10, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2043,16 +2254,14 @@
     "valueUrl": "{{([mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_street_no_add_10]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_street_no_add_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_street_no_add_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_street_no_add_10]|join)}}",
@@ -2066,7 +2275,6 @@
     "valueUrl": "{{mbr_street_10}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_10", "null": ""}]},
     "aboutUrl": "{{mbr_street_10}}",
@@ -2114,7 +2322,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_10", "null": ""}]},
     "aboutUrl": "{{mbr_city_10}}",
@@ -2135,7 +2342,7 @@
     "name": "mbr_street_adamlink_uri_10",
     "aboutUrl": "{{mbr_street_10}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_10}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_10}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -2144,7 +2351,8 @@
     "name": "mbr_address_locationPoint_10",
     "aboutUrl": "{{([mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_street_no_add_10]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_10}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_10}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -2153,11 +2361,11 @@
     "valueUrl": "{% if ( (mbr_street_10 != '' ) or (mbr_street_no_10 != '') or (mbr_city_10 != '') ) %}{{([adm_id, '-residency_10-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_10 != '' ) or (mbr_street_no_10 != '') or (mbr_city_10 != '') ) %}{{([adm_id, '-residency_10-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_city_10, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_10, ' ', mbr_street_no_10, ' ', mbr_city_10, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -2219,8 +2427,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_11 != '' ) or (mbr_street_no_11 != '') or (mbr_city_11 != '') ) %}{{([adm_id, '-residency_11']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_city_11, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_city_11, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2230,16 +2437,14 @@
     "valueUrl": "{{([mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_street_no_add_11]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_street_no_add_11]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_street_no_add_11]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_street_no_add_11]|join)}}",
@@ -2253,7 +2458,6 @@
     "valueUrl": "{{mbr_street_11}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_11", "null": ""}]},
     "aboutUrl": "{{mbr_street_11}}",
@@ -2301,7 +2505,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_11", "null": ""}]},
     "aboutUrl": "{{mbr_city_11}}",
@@ -2322,7 +2525,7 @@
     "name": "mbr_street_adamlink_uri_11",
     "aboutUrl": "{{mbr_street_11}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_11}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_11}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -2331,7 +2534,8 @@
     "name": "mbr_address_locationPoint_11",
     "aboutUrl": "{{([mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_street_no_add_11]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_11}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_11}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -2340,11 +2544,11 @@
     "valueUrl": "{% if ( (mbr_street_11 != '' ) or (mbr_street_no_11 != '') or (mbr_city_11 != '') ) %}{{([adm_id, '-residency_11-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_11 != '' ) or (mbr_street_no_11 != '') or (mbr_city_11 != '') ) %}{{([adm_id, '-residency_11-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_city_11, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_11, ' ', mbr_street_no_11, ' ', mbr_city_11, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -2406,8 +2610,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_12 != '' ) or (mbr_street_no_12 != '') or (mbr_city_12 != '') ) %}{{([adm_id, '-residency_12']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_city_12, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_city_12, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2417,16 +2620,14 @@
     "valueUrl": "{{([mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_street_no_add_12]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_street_no_add_12]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_street_no_add_12]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_street_no_add_12]|join)}}",
@@ -2440,7 +2641,6 @@
     "valueUrl": "{{mbr_street_12}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_12", "null": ""}]},
     "aboutUrl": "{{mbr_street_12}}",
@@ -2488,7 +2688,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_12", "null": ""}]},
     "aboutUrl": "{{mbr_city_12}}",
@@ -2509,7 +2708,7 @@
     "name": "mbr_street_adamlink_uri_12",
     "aboutUrl": "{{mbr_street_12}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_12}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_12}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -2518,7 +2717,8 @@
     "name": "mbr_address_locationPoint_12",
     "aboutUrl": "{{([mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_street_no_add_12]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_12}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_12}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -2527,11 +2727,11 @@
     "valueUrl": "{% if ( (mbr_street_12 != '' ) or (mbr_street_no_12 != '') or (mbr_city_12 != '') ) %}{{([adm_id, '-residency_12-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_12 != '' ) or (mbr_street_no_12 != '') or (mbr_city_12 != '') ) %}{{([adm_id, '-residency_12-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_city_12, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_12, ' ', mbr_street_no_12, ' ', mbr_city_12, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -2593,8 +2793,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_13 != '' ) or (mbr_street_no_13 != '') or (mbr_city_13 != '') ) %}{{([adm_id, '-residency_13']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_city_13, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_city_13, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2604,16 +2803,14 @@
     "valueUrl": "{{([mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_street_no_add_13]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_street_no_add_13]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_street_no_add_13]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_street_no_add_13]|join)}}",
@@ -2627,7 +2824,6 @@
     "valueUrl": "{{mbr_street_13}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_13", "null": ""}]},
     "aboutUrl": "{{mbr_street_13}}",
@@ -2675,7 +2871,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_13", "null": ""}]},
     "aboutUrl": "{{mbr_city_13}}",
@@ -2696,7 +2891,7 @@
     "name": "mbr_street_adamlink_uri_13",
     "aboutUrl": "{{mbr_street_13}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_13}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_13}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -2705,7 +2900,8 @@
     "name": "mbr_address_locationPoint_13",
     "aboutUrl": "{{([mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_street_no_add_13]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_13}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_13}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -2714,11 +2910,11 @@
     "valueUrl": "{% if ( (mbr_street_13 != '' ) or (mbr_street_no_13 != '') or (mbr_city_13 != '') ) %}{{([adm_id, '-residency_13-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_13 != '' ) or (mbr_street_no_13 != '') or (mbr_city_13 != '') ) %}{{([adm_id, '-residency_13-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_city_13, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_13, ' ', mbr_street_no_13, ' ', mbr_city_13, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -2780,8 +2976,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_14 != '' ) or (mbr_street_no_14 != '') or (mbr_city_14 != '') ) %}{{([adm_id, '-residency_14']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_city_14, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_city_14, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2791,16 +2986,14 @@
     "valueUrl": "{{([mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_street_no_add_14]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_street_no_add_14]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_street_no_add_14]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_street_no_add_14]|join)}}",
@@ -2814,7 +3007,6 @@
     "valueUrl": "{{mbr_street_14}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_14", "null": ""}]},
     "aboutUrl": "{{mbr_street_14}}",
@@ -2862,7 +3054,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_14", "null": ""}]},
     "aboutUrl": "{{mbr_city_14}}",
@@ -2883,7 +3074,7 @@
     "name": "mbr_street_adamlink_uri_14",
     "aboutUrl": "{{mbr_street_14}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_14}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_14}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -2892,7 +3083,8 @@
     "name": "mbr_address_locationPoint_14",
     "aboutUrl": "{{([mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_street_no_add_14]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_14}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_14}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -2901,11 +3093,11 @@
     "valueUrl": "{% if ( (mbr_street_14 != '' ) or (mbr_street_no_14 != '') or (mbr_city_14 != '') ) %}{{([adm_id, '-residency_14-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_14 != '' ) or (mbr_street_no_14 != '') or (mbr_city_14 != '') ) %}{{([adm_id, '-residency_14-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_city_14, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_14, ' ', mbr_street_no_14, ' ', mbr_city_14, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -2967,8 +3159,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_15 != '' ) or (mbr_street_no_15 != '') or (mbr_city_15 != '') ) %}{{([adm_id, '-residency_15']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_city_15, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_city_15, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2978,16 +3169,14 @@
     "valueUrl": "{{([mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_street_no_add_15]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_street_no_add_15]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_street_no_add_15]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_street_no_add_15]|join)}}",
@@ -3001,7 +3190,6 @@
     "valueUrl": "{{mbr_street_15}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_15", "null": ""}]},
     "aboutUrl": "{{mbr_street_15}}",
@@ -3049,7 +3237,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_15", "null": ""}]},
     "aboutUrl": "{{mbr_city_15}}",
@@ -3070,7 +3257,7 @@
     "name": "mbr_street_adamlink_uri_15",
     "aboutUrl": "{{mbr_street_15}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_15}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_15}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -3079,7 +3266,8 @@
     "name": "mbr_address_locationPoint_15",
     "aboutUrl": "{{([mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_street_no_add_15]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_15}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_15}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -3088,11 +3276,11 @@
     "valueUrl": "{% if ( (mbr_street_15 != '' ) or (mbr_street_no_15 != '') or (mbr_city_15 != '') ) %}{{([adm_id, '-residency_15-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_15 != '' ) or (mbr_street_no_15 != '') or (mbr_city_15 != '') ) %}{{([adm_id, '-residency_15-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_city_15, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_15, ' ', mbr_street_no_15, ' ', mbr_city_15, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -3154,8 +3342,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_16 != '' ) or (mbr_street_no_16 != '') or (mbr_city_16 != '') ) %}{{([adm_id, '-residency_16']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_city_16, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_city_16, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -3165,16 +3352,14 @@
     "valueUrl": "{{([mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_street_no_add_16]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_street_no_add_16]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_street_no_add_16]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_street_no_add_16]|join)}}",
@@ -3188,7 +3373,6 @@
     "valueUrl": "{{mbr_street_16}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_16", "null": ""}]},
     "aboutUrl": "{{mbr_street_16}}",
@@ -3236,7 +3420,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_16", "null": ""}]},
     "aboutUrl": "{{mbr_city_16}}",
@@ -3257,7 +3440,7 @@
     "name": "mbr_street_adamlink_uri_16",
     "aboutUrl": "{{mbr_street_16}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_16}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_16}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -3266,7 +3449,8 @@
     "name": "mbr_address_locationPoint_16",
     "aboutUrl": "{{([mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_street_no_add_16]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_16}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_16}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -3275,11 +3459,11 @@
     "valueUrl": "{% if ( (mbr_street_16 != '' ) or (mbr_street_no_16 != '') or (mbr_city_16 != '') ) %}{{([adm_id, '-residency_16-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_16 != '' ) or (mbr_street_no_16 != '') or (mbr_city_16 != '') ) %}{{([adm_id, '-residency_16-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_city_16, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_16, ' ', mbr_street_no_16, ' ', mbr_city_16, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -3341,8 +3525,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_17 != '' ) or (mbr_street_no_17 != '') or (mbr_city_17 != '') ) %}{{([adm_id, '-residency_17']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_city_17, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_city_17, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -3352,16 +3535,14 @@
     "valueUrl": "{{([mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_street_no_add_17]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_street_no_add_17]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_street_no_add_17]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_street_no_add_17]|join)}}",
@@ -3375,7 +3556,6 @@
     "valueUrl": "{{mbr_street_17}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_17", "null": ""}]},
     "aboutUrl": "{{mbr_street_17}}",
@@ -3423,7 +3603,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_17", "null": ""}]},
     "aboutUrl": "{{mbr_city_17}}",
@@ -3444,7 +3623,7 @@
     "name": "mbr_street_adamlink_uri_17",
     "aboutUrl": "{{mbr_street_17}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_17}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_17}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -3453,7 +3632,8 @@
     "name": "mbr_address_locationPoint_17",
     "aboutUrl": "{{([mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_street_no_add_17]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_17}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_17}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -3462,11 +3642,11 @@
     "valueUrl": "{% if ( (mbr_street_17 != '' ) or (mbr_street_no_17 != '') or (mbr_city_17 != '') ) %}{{([adm_id, '-residency_17-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_17 != '' ) or (mbr_street_no_17 != '') or (mbr_city_17 != '') ) %}{{([adm_id, '-residency_17-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_city_17, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_17, ' ', mbr_street_no_17, ' ', mbr_city_17, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -3528,8 +3708,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_18 != '' ) or (mbr_street_no_18 != '') or (mbr_city_18 != '') ) %}{{([adm_id, '-residency_18']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_city_18, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_city_18, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -3539,16 +3718,14 @@
     "valueUrl": "{{([mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_street_no_add_18]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_street_no_add_18]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_street_no_add_18]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_street_no_add_18]|join)}}",
@@ -3562,7 +3739,6 @@
     "valueUrl": "{{mbr_street_18}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_18", "null": ""}]},
     "aboutUrl": "{{mbr_street_18}}",
@@ -3610,7 +3786,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_18", "null": ""}]},
     "aboutUrl": "{{mbr_city_18}}",
@@ -3631,7 +3806,7 @@
     "name": "mbr_street_adamlink_uri_18",
     "aboutUrl": "{{mbr_street_18}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_18}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_18}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -3640,7 +3815,8 @@
     "name": "mbr_address_locationPoint_18",
     "aboutUrl": "{{([mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_street_no_add_18]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_18}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_18}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -3649,11 +3825,11 @@
     "valueUrl": "{% if ( (mbr_street_18 != '' ) or (mbr_street_no_18 != '') or (mbr_city_18 != '') ) %}{{([adm_id, '-residency_18-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_18 != '' ) or (mbr_street_no_18 != '') or (mbr_city_18 != '') ) %}{{([adm_id, '-residency_18-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_city_18, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_18, ' ', mbr_street_no_18, ' ', mbr_city_18, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -3715,8 +3891,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_19 != '' ) or (mbr_street_no_19 != '') or (mbr_city_19 != '') ) %}{{([adm_id, '-residency_19']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_city_19, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_city_19, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -3726,16 +3901,14 @@
     "valueUrl": "{{([mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_street_no_add_19]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_street_no_add_19]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_street_no_add_19]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_street_no_add_19]|join)}}",
@@ -3749,7 +3922,6 @@
     "valueUrl": "{{mbr_street_19}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_19", "null": ""}]},
     "aboutUrl": "{{mbr_street_19}}",
@@ -3797,7 +3969,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_19", "null": ""}]},
     "aboutUrl": "{{mbr_city_19}}",
@@ -3818,7 +3989,7 @@
     "name": "mbr_street_adamlink_uri_19",
     "aboutUrl": "{{mbr_street_19}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_19}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_19}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -3827,7 +3998,8 @@
     "name": "mbr_address_locationPoint_19",
     "aboutUrl": "{{([mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_street_no_add_19]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_19}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_19}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -3836,11 +4008,11 @@
     "valueUrl": "{% if ( (mbr_street_19 != '' ) or (mbr_street_no_19 != '') or (mbr_city_19 != '') ) %}{{([adm_id, '-residency_19-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_19 != '' ) or (mbr_street_no_19 != '') or (mbr_city_19 != '') ) %}{{([adm_id, '-residency_19-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_city_19, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_19, ' ', mbr_street_no_19, ' ', mbr_city_19, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -3902,8 +4074,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_20 != '' ) or (mbr_street_no_20 != '') or (mbr_city_20 != '') ) %}{{([adm_id, '-residency_20']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_city_20, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_city_20, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -3913,16 +4084,14 @@
     "valueUrl": "{{([mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_street_no_add_20]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_street_no_add_20]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_street_no_add_20]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_street_no_add_20]|join)}}",
@@ -3936,7 +4105,6 @@
     "valueUrl": "{{mbr_street_20}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_20", "null": ""}]},
     "aboutUrl": "{{mbr_street_20}}",
@@ -3984,7 +4152,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_20", "null": ""}]},
     "aboutUrl": "{{mbr_city_20}}",
@@ -4005,7 +4172,7 @@
     "name": "mbr_street_adamlink_uri_20",
     "aboutUrl": "{{mbr_street_20}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_20}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_20}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -4014,7 +4181,8 @@
     "name": "mbr_address_locationPoint_20",
     "aboutUrl": "{{([mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_street_no_add_20]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_20}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_20}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -4023,11 +4191,11 @@
     "valueUrl": "{% if ( (mbr_street_20 != '' ) or (mbr_street_no_20 != '') or (mbr_city_20 != '') ) %}{{([adm_id, '-residency_20-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_20 != '' ) or (mbr_street_no_20 != '') or (mbr_city_20 != '') ) %}{{([adm_id, '-residency_20-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_city_20, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_20, ' ', mbr_street_no_20, ' ', mbr_city_20, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -4089,8 +4257,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_21 != '' ) or (mbr_street_no_21 != '') or (mbr_city_21 != '') ) %}{{([adm_id, '-residency_21']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_city_21, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_city_21, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -4100,16 +4267,14 @@
     "valueUrl": "{{([mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_street_no_add_21]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_street_no_add_21]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_street_no_add_21]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_street_no_add_21]|join)}}",
@@ -4123,7 +4288,6 @@
     "valueUrl": "{{mbr_street_21}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_21", "null": ""}]},
     "aboutUrl": "{{mbr_street_21}}",
@@ -4171,7 +4335,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_21", "null": ""}]},
     "aboutUrl": "{{mbr_city_21}}",
@@ -4192,7 +4355,7 @@
     "name": "mbr_street_adamlink_uri_21",
     "aboutUrl": "{{mbr_street_21}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_21}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_21}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -4201,7 +4364,8 @@
     "name": "mbr_address_locationPoint_21",
     "aboutUrl": "{{([mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_street_no_add_21]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_21}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_21}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -4210,11 +4374,11 @@
     "valueUrl": "{% if ( (mbr_street_21 != '' ) or (mbr_street_no_21 != '') or (mbr_city_21 != '') ) %}{{([adm_id, '-residency_21-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_21 != '' ) or (mbr_street_no_21 != '') or (mbr_city_21 != '') ) %}{{([adm_id, '-residency_21-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_city_21, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_21, ' ', mbr_street_no_21, ' ', mbr_city_21, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -4276,8 +4440,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_22 != '' ) or (mbr_street_no_22 != '') or (mbr_city_22 != '') ) %}{{([adm_id, '-residency_22']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_city_22, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_city_22, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -4287,16 +4450,14 @@
     "valueUrl": "{{([mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_street_no_add_22]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_street_no_add_22]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_street_no_add_22]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_street_no_add_22]|join)}}",
@@ -4310,7 +4471,6 @@
     "valueUrl": "{{mbr_street_22}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_22", "null": ""}]},
     "aboutUrl": "{{mbr_street_22}}",
@@ -4358,7 +4518,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_22", "null": ""}]},
     "aboutUrl": "{{mbr_city_22}}",
@@ -4379,7 +4538,7 @@
     "name": "mbr_street_adamlink_uri_22",
     "aboutUrl": "{{mbr_street_22}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_22}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_22}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -4388,7 +4547,8 @@
     "name": "mbr_address_locationPoint_22",
     "aboutUrl": "{{([mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_street_no_add_22]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_22}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_22}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -4397,11 +4557,11 @@
     "valueUrl": "{% if ( (mbr_street_22 != '' ) or (mbr_street_no_22 != '') or (mbr_city_22 != '') ) %}{{([adm_id, '-residency_22-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_22 != '' ) or (mbr_street_no_22 != '') or (mbr_city_22 != '') ) %}{{([adm_id, '-residency_22-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_city_22, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_22, ' ', mbr_street_no_22, ' ', mbr_city_22, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -4463,8 +4623,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_23 != '' ) or (mbr_street_no_23 != '') or (mbr_city_23 != '') ) %}{{([adm_id, '-residency_23']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_city_23, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_city_23, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -4474,16 +4633,14 @@
     "valueUrl": "{{([mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_street_no_add_23]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_street_no_add_23]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_street_no_add_23]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_street_no_add_23]|join)}}",
@@ -4497,7 +4654,6 @@
     "valueUrl": "{{mbr_street_23}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_23", "null": ""}]},
     "aboutUrl": "{{mbr_street_23}}",
@@ -4545,7 +4701,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_23", "null": ""}]},
     "aboutUrl": "{{mbr_city_23}}",
@@ -4566,7 +4721,7 @@
     "name": "mbr_street_adamlink_uri_23",
     "aboutUrl": "{{mbr_street_23}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_23}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_23}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -4575,7 +4730,8 @@
     "name": "mbr_address_locationPoint_23",
     "aboutUrl": "{{([mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_street_no_add_23]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_23}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_23}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -4584,11 +4740,11 @@
     "valueUrl": "{% if ( (mbr_street_23 != '' ) or (mbr_street_no_23 != '') or (mbr_city_23 != '') ) %}{{([adm_id, '-residency_23-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_23 != '' ) or (mbr_street_no_23 != '') or (mbr_city_23 != '') ) %}{{([adm_id, '-residency_23-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_city_23, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_23, ' ', mbr_street_no_23, ' ', mbr_city_23, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -4650,8 +4806,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_24 != '' ) or (mbr_street_no_24 != '') or (mbr_city_24 != '') ) %}{{([adm_id, '-residency_24']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_city_24, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_city_24, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -4661,16 +4816,14 @@
     "valueUrl": "{{([mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_street_no_add_24]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_street_no_add_24]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_street_no_add_24]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_street_no_add_24]|join)}}",
@@ -4684,7 +4837,6 @@
     "valueUrl": "{{mbr_street_24}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_24", "null": ""}]},
     "aboutUrl": "{{mbr_street_24}}",
@@ -4732,7 +4884,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_24", "null": ""}]},
     "aboutUrl": "{{mbr_city_24}}",
@@ -4753,7 +4904,7 @@
     "name": "mbr_street_adamlink_uri_24",
     "aboutUrl": "{{mbr_street_24}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_24}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_24}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -4762,7 +4913,8 @@
     "name": "mbr_address_locationPoint_24",
     "aboutUrl": "{{([mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_street_no_add_24]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_24}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_24}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -4771,11 +4923,11 @@
     "valueUrl": "{% if ( (mbr_street_24 != '' ) or (mbr_street_no_24 != '') or (mbr_city_24 != '') ) %}{{([adm_id, '-residency_24-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_24 != '' ) or (mbr_street_no_24 != '') or (mbr_city_24 != '') ) %}{{([adm_id, '-residency_24-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_city_24, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_24, ' ', mbr_street_no_24, ' ', mbr_city_24, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -4837,8 +4989,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_25 != '' ) or (mbr_street_no_25 != '') or (mbr_city_25 != '') ) %}{{([adm_id, '-residency_25']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_city_25, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_city_25, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -4848,16 +4999,14 @@
     "valueUrl": "{{([mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_street_no_add_25]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_street_no_add_25]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_street_no_add_25]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_street_no_add_25]|join)}}",
@@ -4871,7 +5020,6 @@
     "valueUrl": "{{mbr_street_25}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_25", "null": ""}]},
     "aboutUrl": "{{mbr_street_25}}",
@@ -4919,7 +5067,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_25", "null": ""}]},
     "aboutUrl": "{{mbr_city_25}}",
@@ -4940,7 +5087,7 @@
     "name": "mbr_street_adamlink_uri_25",
     "aboutUrl": "{{mbr_street_25}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_25}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_25}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -4949,7 +5096,8 @@
     "name": "mbr_address_locationPoint_25",
     "aboutUrl": "{{([mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_street_no_add_25]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_25}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_25}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -4958,11 +5106,11 @@
     "valueUrl": "{% if ( (mbr_street_25 != '' ) or (mbr_street_no_25 != '') or (mbr_city_25 != '') ) %}{{([adm_id, '-residency_25-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_25 != '' ) or (mbr_street_no_25 != '') or (mbr_city_25 != '') ) %}{{([adm_id, '-residency_25-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_city_25, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_25, ' ', mbr_street_no_25, ' ', mbr_city_25, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -5024,8 +5172,7 @@
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_26 != '' ) or (mbr_street_no_26 != '') or (mbr_city_26 != '') ) %}{{([adm_id, '-residency_26']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Bewoning van ', mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_city_26, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Bewoning van ', mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_city_26, ' door ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -5035,16 +5182,14 @@
     "valueUrl": "{{([mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_street_no_add_26]|join)|replace(' ', '_')}}"
    },
    {
-    "virtual": "true", 
-    "null": "__",
+    "virtual": "true",
     "aboutUrl": "{{([mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_street_no_add_26]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:PostalAddress"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
-    "null": "",
+    "null": "  ",
     "aboutUrl": "{{([mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_street_no_add_26]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_street_no_add_26]|join)}}",
@@ -5058,7 +5203,6 @@
     "valueUrl": "{{mbr_street_26}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_street_26", "null": ""}]},
     "aboutUrl": "{{mbr_street_26}}",
@@ -5106,7 +5250,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "mbr_city_26", "null": ""}]},
     "aboutUrl": "{{mbr_city_26}}",
@@ -5127,7 +5270,7 @@
     "name": "mbr_street_adamlink_uri_26",
     "aboutUrl": "{{mbr_street_26}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{mbr_street_adamlink_uri_26}}",
+    "csvw:value": "{{mbr_street_adamlink_uri_26}}",
     "datatype": "xsd:anyURI"
    },
    {
@@ -5136,7 +5279,8 @@
     "name": "mbr_address_locationPoint_26",
     "aboutUrl": "{{([mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_street_no_add_26]|join)}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_26}}"
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{mbr_address_locationPoint_26}}",
+    "datatype": "xsd:anyURI"
    }, 
   {
     "virtual": "true",
@@ -5145,11 +5289,11 @@
     "valueUrl": "{% if ( (mbr_street_26 != '' ) or (mbr_street_no_26 != '') or (mbr_city_26 != '') ) %}{{([adm_id, '-residency_26-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_26 != '' ) or (mbr_street_no_26 != '') or (mbr_city_26 != '') ) %}{{([adm_id, '-residency_26-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_city_26, ' door ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de bewoning van ', mbr_street_26, ' ', mbr_street_no_26, ' ', mbr_city_26, ' door ', name]|join)}}"
    },
    {
     "virtual": "true",
@@ -5194,46 +5338,94 @@
     "datatype": "xsd:date"
     },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "org:hasMembership",
     "valueUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "org:hasMembership",
     "valueUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "org:hasMembership",
     "valueUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "org:hasMembership",
     "valueUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "org:hasMembership",
     "valueUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "org:hasMembership",
     "valueUrl": "{% if ( (un_section_06 != '' ) or (un_section_no_06 != '') ) %}{{([adm_id, '-membership_06']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "org:hasMembership",
-    "dc:description": "Lidmaatschapsgegevens op de kaart",
+    "valueUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07']|join)}}{% endif %}"
+   },
+      {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembership",
+    "valueUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembership",
+    "valueUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembership",
+    "valueUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembership",
+    "valueUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembership",
+    "valueUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembership",
+    "valueUrl": "{% if ( (un_section_06 != '' ) or (un_section_no_06 != '') ) %}{{([adm_id, '-membership_06']|join)}}{% endif %}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembership",
     "valueUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07']|join)}}{% endif %}"
    },
    {
@@ -5249,8 +5441,7 @@
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' lidmaatschap van ',name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' lidmaatschap van ',name]|join)}}"
    },
    {
     "virtual": "true",
@@ -5261,20 +5452,19 @@
     "datatype": "xsd:string"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01']|join)}}{% endif %}",
     "propertyUrl": "org:member",
-    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}"
    },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_01", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{([un_name, ' ', un_section_01]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_01]|join)|replace(' ', '_')}}"
    },
     {
     "lang": "nl",
@@ -5282,8 +5472,7 @@
     "null": {"@list": [{"name": "un_section_01", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' sectie ', un_section_01]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' sectie ', un_section_01]|join)}}"
    },
    {
     "virtual": "true", 
@@ -5297,8 +5486,7 @@
     "null": {"@list": [{"name": "un_section_01", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "org:unitOf",
-    "valueUrl": "{{un_name}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{un_name}}"
    }, 
    {
     "virtual": "true",
@@ -5312,8 +5500,7 @@
     "null": {"@list": [{"name": "un_section_01", "null": ""}]},
     "aboutUrl": "{{un_name}}",
     "propertyUrl": "org:hasUnit",
-    "valueUrl": "{{([un_name, ' ', un_section_01]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_01]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true",
@@ -5330,11 +5517,11 @@
     "valueUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van het lidmaatschap van ', un_name, ' van ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van het lidmaatschap van ', un_name, ' van ', name]|join)}}"
    },
     {
     "virtual": "true", 
@@ -5391,8 +5578,7 @@
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Tweede ', un_name, ' lidmaatschap van ',name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Tweede ', un_name, ' lidmaatschap van ',name]|join)}}"
    },
    {
     "virtual": "true",
@@ -5403,20 +5589,19 @@
     "datatype": "xsd:string"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02']|join)}}{% endif %}",
     "propertyUrl": "org:member",
-    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}"
    },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_02", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{([un_name, ' ', un_section_02]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_02]|join)|replace(' ', '_')}}"
    },
     {
     "lang": "nl",
@@ -5424,8 +5609,7 @@
     "null": {"@list": [{"name": "un_section_02", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' sectie ', un_section_02]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' sectie ', un_section_02]|join)}}"
    },
    {
     "virtual": "true", 
@@ -5439,8 +5623,7 @@
     "null": {"@list": [{"name": "un_section_02", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "org:unitOf",
-    "valueUrl": "{{un_name}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{un_name}}"
    }, 
    {
     "virtual": "true",
@@ -5454,8 +5637,7 @@
     "null": {"@list": [{"name": "un_section_02", "null": ""}]},
     "aboutUrl": "{{un_name}}",
     "propertyUrl": "org:hasUnit",
-    "valueUrl": "{{([un_name, ' ', un_section_02]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_02]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true",
@@ -5472,11 +5654,11 @@
     "valueUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van het tweede lidmaatschap van ', un_name, ' van ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van het tweede lidmaatschap van ', un_name, ' van ', name]|join)}}"
    },
     {
     "virtual": "true", 
@@ -5539,8 +5721,7 @@
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Derde ', un_name, ' lidmaatschap van ',name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Derde ', un_name, ' lidmaatschap van ',name]|join)}}"
    },
    {
     "virtual": "true",
@@ -5551,20 +5732,19 @@
     "datatype": "xsd:string"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03']|join)}}{% endif %}",
     "propertyUrl": "org:member",
-    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}"
    },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_03", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{([un_name, ' ', un_section_03]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_03]|join)|replace(' ', '_')}}"
    },
     {
     "lang": "nl",
@@ -5572,8 +5752,7 @@
     "null": {"@list": [{"name": "un_section_03", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' sectie ', un_section_03]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' sectie ', un_section_03]|join)}}"
    },
    {
     "virtual": "true", 
@@ -5587,8 +5766,7 @@
     "null": {"@list": [{"name": "un_section_03", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "org:unitOf",
-    "valueUrl": "{{un_name}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{un_name}}"
    }, 
    {
     "virtual": "true",
@@ -5602,8 +5780,7 @@
     "null": {"@list": [{"name": "un_section_03", "null": ""}]},
     "aboutUrl": "{{un_name}}",
     "propertyUrl": "org:hasUnit",
-    "valueUrl": "{{([un_name, ' ', un_section_03]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_03]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true",
@@ -5620,11 +5797,11 @@
     "valueUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van het derde lidmaatschap van ', un_name, ' van ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van het derde lidmaatschap van ', un_name, ' van ', name]|join)}}"
    },
     {
     "virtual": "true", 
@@ -5687,8 +5864,7 @@
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Vierde ', un_name, ' lidmaatschap van ',name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Vierde ', un_name, ' lidmaatschap van ',name]|join)}}"
    },
    {
     "virtual": "true",
@@ -5699,20 +5875,19 @@
     "datatype": "xsd:string"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04']|join)}}{% endif %}",
     "propertyUrl": "org:member",
-    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}"
    },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_04", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{([un_name, ' ', un_section_04]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_04]|join)|replace(' ', '_')}}"
    },
     {
     "lang": "nl",
@@ -5720,8 +5895,7 @@
     "null": {"@list": [{"name": "un_section_04", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' sectie ', un_section_04]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' sectie ', un_section_04]|join)}}"
    },
    {
     "virtual": "true", 
@@ -5735,8 +5909,7 @@
     "null": {"@list": [{"name": "un_section_04", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "org:unitOf",
-    "valueUrl": "{{un_name}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{un_name}}"
    }, 
    {
     "virtual": "true",
@@ -5750,8 +5923,7 @@
     "null": {"@list": [{"name": "un_section_04", "null": ""}]},
     "aboutUrl": "{{un_name}}",
     "propertyUrl": "org:hasUnit",
-    "valueUrl": "{{([un_name, ' ', un_section_04]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_04]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true",
@@ -5768,11 +5940,11 @@
     "valueUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van het vierde lidmaatschap van ', un_name, ' van ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van het vierde lidmaatschap van ', un_name, ' van ', name]|join)}}"
    },
     {
     "virtual": "true", 
@@ -5835,8 +6007,7 @@
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Vijfde ', un_name, ' lidmaatschap van ',name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Vijfde ', un_name, ' lidmaatschap van ',name]|join)}}"
    },
    {
     "virtual": "true",
@@ -5847,20 +6018,19 @@
     "datatype": "xsd:string"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05']|join)}}{% endif %}",
     "propertyUrl": "org:member",
-    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}"
    },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_05", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{([un_name, ' ', un_section_05]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_05]|join)|replace(' ', '_')}}"
    },
     {
     "lang": "nl",
@@ -5868,8 +6038,7 @@
     "null": {"@list": [{"name": "un_section_05", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' sectie ', un_section_05]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' sectie ', un_section_05]|join)}}"
    },
    {
     "virtual": "true", 
@@ -5883,8 +6052,7 @@
     "null": {"@list": [{"name": "un_section_05", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "org:unitOf",
-    "valueUrl": "{{un_name}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{un_name}}"
    }, 
    {
     "virtual": "true",
@@ -5898,8 +6066,7 @@
     "null": {"@list": [{"name": "un_section_05", "null": ""}]},
     "aboutUrl": "{{un_name}}",
     "propertyUrl": "org:hasUnit",
-    "valueUrl": "{{([un_name, ' ', un_section_05]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_05]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true",
@@ -5916,11 +6083,11 @@
     "valueUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van het vijfde lidmaatschap van ', un_name, ' van ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van het vijfde lidmaatschap van ', un_name, ' van ', name]|join)}}"
    },
     {
     "virtual": "true", 
@@ -5983,8 +6150,7 @@
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_06 != '' ) or (un_section_no_06 != '') ) %}{{([adm_id, '-membership_06']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Zesde ', un_name, ' lidmaatschap van ',name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Zesde ', un_name, ' lidmaatschap van ',name]|join)}}"
    },
    {
     "virtual": "true",
@@ -5995,20 +6161,19 @@
     "datatype": "xsd:string"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_06 != '' ) or (un_section_no_06 != '') ) %}{{([adm_id, '-membership_06']|join)}}{% endif %}",
     "propertyUrl": "org:member",
-    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}"
    },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_06", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_06 != '' ) or (un_section_no_06 != '') ) %}{{([adm_id, '-membership_06']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{([un_name, ' ', un_section_06]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_06]|join)|replace(' ', '_')}}"
    },
     {
     "lang": "nl",
@@ -6016,8 +6181,7 @@
     "null": {"@list": [{"name": "un_section_06", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' sectie ', un_section_06]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' sectie ', un_section_06]|join)}}"
    },
    {
     "virtual": "true", 
@@ -6031,8 +6195,7 @@
     "null": {"@list": [{"name": "un_section_06", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "org:unitOf",
-    "valueUrl": "{{un_name}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{un_name}}"
    }, 
    {
     "virtual": "true",
@@ -6046,8 +6209,7 @@
     "null": {"@list": [{"name": "un_section_06", "null": ""}]},
     "aboutUrl": "{{un_name}}",
     "propertyUrl": "org:hasUnit",
-    "valueUrl": "{{([un_name, ' ', un_section_06]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_06]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true",
@@ -6067,8 +6229,7 @@
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_06 != '' ) or (un_section_no_06 != '') ) %}{{([adm_id, '-membership_06-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van het zesde lidmaatschap van ', un_name, ' van ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van het zesde lidmaatschap van ', un_name, ' van ', name]|join)}}"
    },
     {
     "virtual": "true", 
@@ -6131,8 +6292,7 @@
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Zevende ', un_name, ' lidmaatschap van ',name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Zevende ', un_name, ' lidmaatschap van ',name]|join)}}"
    },
    {
     "virtual": "true",
@@ -6143,20 +6303,19 @@
     "datatype": "xsd:string"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07']|join)}}{% endif %}",
     "propertyUrl": "org:member",
-    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}"
    },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_07", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{([un_name, ' ', un_section_07]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_07]|join)|replace(' ', '_')}}"
    },
     {
     "lang": "nl",
@@ -6164,8 +6323,7 @@
     "null": {"@list": [{"name": "un_section_07", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([un_name, ' sectie ', un_section_07]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{([un_name, ' sectie ', un_section_07]|join)}}"
    },
    {
     "virtual": "true", 
@@ -6179,8 +6337,7 @@
     "null": {"@list": [{"name": "un_section_07", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "org:unitOf",
-    "valueUrl": "{{un_name}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{un_name}}"
    }, 
    {
     "virtual": "true",
@@ -6194,8 +6351,7 @@
     "null": {"@list": [{"name": "un_section_07", "null": ""}]},
     "aboutUrl": "{{un_name}}",
     "propertyUrl": "org:hasUnit",
-    "valueUrl": "{{([un_name, ' ', un_section_07]|join)|replace(' ', '_')}}",
-    "datatype": "xsd:anyUri"
+    "valueUrl": "{{([un_name, ' ', un_section_07]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true",
@@ -6212,11 +6368,11 @@
     "valueUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van het zevende lidmaatschap van ', un_name, ' van ', name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van het zevende lidmaatschap van ', un_name, ' van ', name]|join)}}"
    },
     {
     "virtual": "true", 
@@ -6261,49 +6417,49 @@
     "datatype": "xsd:date"
     },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/card_id1",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/card_id1",
     "name": "card_id1",
     "propertyUrl": "vocab:cardId",
     "dc:description": "Kaartnummer",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/card_id2",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/card_id2",
     "name": "card_id2",
     "propertyUrl": "vocab:cardId",
     "dc:description": "Kaartnummer",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/card_id3",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/card_id3",
     "name": "card_id3",
     "propertyUrl": "vocab:cardId",
     "dc:description": "Kaartnummer",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/card_id4",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/card_id4",
     "name": "card_id4",
     "propertyUrl": "vocab:cardId",
     "dc:description": "Kaartnummer",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/stamp_standard_01",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/stamp_standard_01",
     "name": "stamp_standard_01",
     "propertyUrl": "vocab:stamp",
     "dc:description": "Stempel, gestandaardiseerd",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/stamp_standard_02",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/stamp_standard_02",
     "name": "stamp_standard_02",
     "propertyUrl": "vocab:stamp",
     "dc:description": "Stempel, gestandaardiseerd",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/stamp_standard_03",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/stamp_standard_03",
     "name": "stamp_standard_03",
     "propertyUrl": "vocab:stamp",
     "dc:description": "Stempel, gestandaardiseerd",
@@ -6311,7 +6467,7 @@
    },  
      {
     "null": {"@list": [{"name": "withdrawal_reason_01", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason_01",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/withdrawal_reason_01",
     "name": "withdrawal_reason_01",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-withdrawal_01']|join)}}",
@@ -6330,8 +6486,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_01']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6339,8 +6494,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_01']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{withdrawal_reason_01}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{withdrawal_reason_01}}"
    },
    {
     "virtual": "true",
@@ -6375,7 +6529,7 @@
    },
    {
     "null": {"@list": [{"name": "withdrawal_reason_02", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason_02",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/withdrawal_reason_02",
     "name": "withdrawal_reason_02",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-withdrawal_02']|join)}}",
@@ -6394,8 +6548,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_02']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6403,8 +6556,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_02']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{withdrawal_reason_02}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{withdrawal_reason_02}}"
    },
    {
     "virtual": "true",
@@ -6439,7 +6591,7 @@
    },
    {
     "null": {"@list": [{"name": "withdrawal_reason_03", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason_03",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/withdrawal_reason_03",
     "name": "withdrawal_reason_03",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-withdrawal_03']|join)}}",
@@ -6458,8 +6610,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_03']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6467,8 +6618,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_03']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{withdrawal_reason_03}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{withdrawal_reason_03}}"
    },
    {
     "virtual": "true",
@@ -6503,7 +6653,7 @@
    },
    {
     "null": {"@list": [{"name": "withdrawal_reason_04", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason_04",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/withdrawal_reason_04",
     "name": "withdrawal_reason_04",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-withdrawal_04']|join)}}",
@@ -6522,8 +6672,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_04']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6531,8 +6680,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_04']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{withdrawal_reason_04}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{withdrawal_reason_04}}"
    },
    {
     "virtual": "true",
@@ -6567,7 +6715,7 @@
    },
    {
     "null": {"@list": [{"name": "withdrawal_reason_05", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/withdrawal_reason_05",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/withdrawal_reason_05",
     "name": "withdrawal_reason_05",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-withdrawal_05']|join)}}",
@@ -6586,8 +6734,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_05']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Opzegging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6595,8 +6742,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_05']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{withdrawal_reason_05}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{withdrawal_reason_05}}"
    },
    {
     "virtual": "true",
@@ -6631,7 +6777,7 @@
    },
    {
     "null": {"@list": [{"name": "dismission_reason_01", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason_01",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/dismission_reason_01",
     "name": "dismission_reason_01",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-dismission_01']|join)}}",
@@ -6650,8 +6796,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_01']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6659,8 +6804,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_01']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{dismission_reason_01}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{dismission_reason_01}}"
    },
    {
     "virtual": "true",
@@ -6695,7 +6839,7 @@
    },
    {
     "null": {"@list": [{"name": "dismission_reason_02", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason_02",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/dismission_reason_02",
     "name": "dismission_reason_02",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-dismission_02']|join)}}",
@@ -6714,8 +6858,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_02']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6723,8 +6866,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_02']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{dismission_reason_02}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{dismission_reason_02}}"
    },
    {
     "virtual": "true",
@@ -6759,7 +6901,7 @@
    },
    {
     "null": {"@list": [{"name": "dismission_reason_03", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason_03",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/dismission_reason_03",
     "name": "dismission_reason_03",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-dismission_03']|join)}}",
@@ -6778,8 +6920,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_03']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6787,8 +6928,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_03']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{dismission_reason_03}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{dismission_reason_03}}"
    },
    {
     "virtual": "true",
@@ -6823,7 +6963,7 @@
    },
    {
     "null": {"@list": [{"name": "dismission_reason_04", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason_04",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/dismission_reason_04",
     "name": "dismission_reason_04",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-dismission_04']|join)}}",
@@ -6842,8 +6982,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_04']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6851,8 +6990,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_04']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{dismission_reason_04}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{dismission_reason_04}}"
    },
    {
     "virtual": "true",
@@ -6887,7 +7025,7 @@
    },
    {
     "null": {"@list": [{"name": "dismission_reason_05", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/dismission_reason_05",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/dismission_reason_05",
     "name": "dismission_reason_05",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-dismission_05']|join)}}",
@@ -6906,8 +7044,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_05']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Beëindiging lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -6915,8 +7052,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_05']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{dismission_reason_05}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{dismission_reason_05}}"
    },
    {
     "virtual": "true",
@@ -6951,7 +7087,7 @@
    },
    {
     "null": {"@list": [{"name": "readmission_condition_01", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition_01",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/readmission_condition_01",
     "name": "readmission_condition_01",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-readmission_01']|join)}}",
@@ -6978,8 +7114,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_01']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{readmission_condition_01}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{readmission_condition_01}}"
    },
    {
     "virtual": "true",
@@ -7014,7 +7149,7 @@
    },
    {
     "null": {"@list": [{"name": "readmission_condition_02", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition_02",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/readmission_condition_02",
     "name": "readmission_condition_02",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-readmission_02']|join)}}",
@@ -7033,8 +7168,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_02']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -7042,8 +7176,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_02']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{readmission_condition_02}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{readmission_condition_02}}"
    },
    {
     "virtual": "true",
@@ -7078,7 +7211,7 @@
    },
    {
     "null": {"@list": [{"name": "readmission_condition_03", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition_03",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/readmission_condition_03",
     "name": "readmission_condition_03",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-readmission_03']|join)}}",
@@ -7097,8 +7230,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_03']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -7106,8 +7238,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_03']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{readmission_condition_03}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{readmission_condition_03}}"
    },
    {
     "virtual": "true",
@@ -7142,7 +7273,7 @@
    },
    {
     "null": {"@list": [{"name": "readmission_condition_04", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition_04",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/readmission_condition_04",
     "name": "readmission_condition_04",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-readmission_04']|join)}}",
@@ -7161,8 +7292,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_04']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -7170,8 +7300,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_04']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{readmission_condition_04}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{readmission_condition_04}}"
    },
    {
     "virtual": "true",
@@ -7206,7 +7335,7 @@
    },
    {
     "null": {"@list": [{"name": "readmission_condition_05", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition_05",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/readmission_condition_05",
     "name": "readmission_condition_05",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-readmission_05']|join)}}",
@@ -7225,8 +7354,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_05']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -7234,8 +7362,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_05']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{readmission_condition_05}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{readmission_condition_05}}"
    },
    {
     "virtual": "true",
@@ -7270,7 +7397,7 @@
    },
    {
     "null": {"@list": [{"name": "readmission_condition_06", "null": ""}]},
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/readmission_condition_06",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/readmission_condition_06",
     "name": "readmission_condition_06",
     "propertyUrl": "vocab:mutation",
     "valueUrl": "{{([adm_id, '-readmission_06']|join)}}",
@@ -7289,8 +7416,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_06']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Wedertoelating lidmaatschap ', un_name]|join)}}"
    },
    {
     "lang": "nl",
@@ -7298,8 +7424,7 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_06']|join)}}",
     "propertyUrl": "schema:comment",
-    "csvw:value": "{{readmission_condition_06}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{readmission_condition_06}}"
    },
    {
     "virtual": "true",
@@ -7333,48 +7458,56 @@
     "datatype": "xsd:date"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:migration",
     "valueUrl": "{% if (departure_place_01 != '') %}{{([adm_id, '-departure_01']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:migration",
     "valueUrl": "{% if (departure_place_02 != '') %}{{([adm_id, '-departure_02']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:migration",
     "valueUrl": "{% if (departure_place_03 != '') %}{{([adm_id, '-departure_03']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:migration",
     "valueUrl": "{% if (departure_place_04 != '') %}{{([adm_id, '-departure_04']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:migration",
     "valueUrl": "{% if (departure_place_05 != '') %}{{([adm_id, '-departure_05']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:migration",
     "valueUrl": "{% if (departure_place_06 != '') %}{{([adm_id, '-departure_06']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:migration",
     "valueUrl": "{% if (departure_place_07 != '') %}{{([adm_id, '-departure_07']|join)}}{% endif %}"
    },
    {
+    "null": {"@list": [{"name": "person_uuid", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:migration",
@@ -7393,8 +7526,7 @@
     "null": {"@list": [{"name": "departure_place_01", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_01 != '') %}{{([adm_id, '-departure_01']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Migratie naar ',departure_place_01]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Migratie naar ',departure_place_01]|join)}}"
    },
    {
     "virtual": "true",
@@ -7411,11 +7543,11 @@
     "valueUrl": "{% if (departure_place_01 != '') %}{{([adm_id, '-departure_01-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_01 != '') %}{{([adm_id, '-departure_01-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_01]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_01]|join)}}"
    },
    {
     "virtual": "true",
@@ -7502,8 +7634,7 @@
     "null": {"@list": [{"name": "departure_place_02", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_02 != '') %}{{([adm_id, '-departure_02']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Migratie naar ',departure_place_02]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Migratie naar ',departure_place_02]|join)}}"
    },
    {
     "virtual": "true",
@@ -7520,11 +7651,11 @@
     "valueUrl": "{% if (departure_place_02 != '') %}{{([adm_id, '-departure_02-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_02 != '') %}{{([adm_id, '-departure_02-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_02]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_02]|join)}}"
    },
    {
     "virtual": "true",
@@ -7617,8 +7748,7 @@
     "null": {"@list": [{"name": "departure_place_03", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_03 != '') %}{{([adm_id, '-departure_03']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Migratie naar ',departure_place_03]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Migratie naar ',departure_place_03]|join)}}"
    },
    {
     "virtual": "true",
@@ -7635,11 +7765,11 @@
     "valueUrl": "{% if (departure_place_03 != '') %}{{([adm_id, '-departure_03-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_03 != '') %}{{([adm_id, '-departure_03-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_03]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_03]|join)}}"
    },
    {
     "virtual": "true",
@@ -7732,8 +7862,7 @@
     "null": {"@list": [{"name": "departure_place_04", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_04 != '') %}{{([adm_id, '-departure_04']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Migratie naar ',departure_place_04]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Migratie naar ',departure_place_04]|join)}}"
    },
    {
     "virtual": "true",
@@ -7750,11 +7879,11 @@
     "valueUrl": "{% if (departure_place_04 != '') %}{{([adm_id, '-departure_04-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_04 != '') %}{{([adm_id, '-departure_04-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_04]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_04]|join)}}"
    },
    {
     "virtual": "true",
@@ -7847,8 +7976,7 @@
     "null": {"@list": [{"name": "departure_place_05", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_05 != '') %}{{([adm_id, '-departure_05']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Migratie naar ',departure_place_05]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Migratie naar ',departure_place_05]|join)}}"
    },
    {
     "virtual": "true",
@@ -7865,11 +7993,11 @@
     "valueUrl": "{% if (departure_place_05 != '') %}{{([adm_id, '-departure_05-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_05 != '') %}{{([adm_id, '-departure_05-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_05]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_05]|join)}}"
    },
    {
     "virtual": "true",
@@ -7962,8 +8090,7 @@
     "null": {"@list": [{"name": "departure_place_06", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_06 != '') %}{{([adm_id, '-departure_06']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Migratie naar ',departure_place_06]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Migratie naar ',departure_place_06]|join)}}"
    },
    {
     "virtual": "true",
@@ -7980,11 +8107,11 @@
     "valueUrl": "{% if (departure_place_06 != '') %}{{([adm_id, '-departure_06-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_06 != '') %}{{([adm_id, '-departure_06-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_06]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_06]|join)}}"
    },
    {
     "virtual": "true",
@@ -8077,8 +8204,7 @@
     "null": {"@list": [{"name": "departure_place_07", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_07 != '') %}{{([adm_id, '-departure_07']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Migratie naar ',departure_place_07]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Migratie naar ',departure_place_07]|join)}}"
    },
    {
     "virtual": "true",
@@ -8095,11 +8221,11 @@
     "valueUrl": "{% if (departure_place_07 != '') %}{{([adm_id, '-departure_07-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_07 != '') %}{{([adm_id, '-departure_07-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_07]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_07]|join)}}"
    },
    {
     "virtual": "true",
@@ -8192,8 +8318,7 @@
     "null": {"@list": [{"name": "departure_place_08", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_08 != '') %}{{([adm_id, '-departure_08']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Migratie naar ',departure_place_08]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Migratie naar ',departure_place_08]|join)}}"
    },
    {
     "virtual": "true",
@@ -8210,11 +8335,11 @@
     "valueUrl": "{% if (departure_place_08 != '') %}{{([adm_id, '-departure_08-interval']|join)}}{% endif %}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_08 != '') %}{{([adm_id, '-departure_08-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_01]|join)}}",
-    "datatype": "xsd:string"
+    "csvw:value": "{{(['Duur van de migratie van ', name, ' naar ', departure_place_01]|join)}}"
    },
    {
     "virtual": "true",
@@ -8290,35 +8415,31 @@
     },
    {
     "lang": "nl",
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/History_01",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/History_01",
     "name": "History_01",
     "propertyUrl": "vocab:remark",
-    "dc:description": "Opmerkingen op de kaart",
-    "datatype": "xsd:string"
+    "dc:description": "Opmerkingen op de kaart"
    },
    {
     "lang": "nl",
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/History_02",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/History_02",
     "name": "History_02",
     "propertyUrl": "vocab:remark",
-    "dc:description": "Opmerkingen op de kaart",
-    "datatype": "xsd:string"
+    "dc:description": "Opmerkingen op de kaart"
    },
    {
     "lang": "nl",
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/History_03",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/History_03",
     "name": "History_03",
     "propertyUrl": "vocab:remark",
-    "dc:description": "Opmerkingen op de kaart",
-    "datatype": "xsd:string"
+    "dc:description": "Opmerkingen op de kaart"
    },
    {
     "lang": "nl",
-    "@id": "https://iisg.amsterdam/andb_members_all_series-2020_12_09.csv/column/History_04",
+    "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/History_04",
     "name": "History_04",
     "propertyUrl": "vocab:remark",
-    "dc:description": "Opmerkingen op de kaart",
-    "datatype": "xsd:string"
+    "dc:description": "Opmerkingen op de kaart"
    }
   ],
   "primaryKey": "adm_id",
