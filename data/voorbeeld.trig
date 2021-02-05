@@ -301,7 +301,6 @@ id:instanties {
     a andb:Education;
     andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval;
     andb:internship id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship;
-    andb:master "S. Kloots";
     rdfs:label
       "Education of Adriaan Helsloot"@en,
       "Onderwijstraject van Adriaan Helsloot"@nl.
@@ -309,6 +308,7 @@ id:instanties {
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship
     a andb:Internship;
     andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration;
+    andb:master "S. Kloots";
     org:organization id:de-weichsel;
     rdfs:label
       "Internship of Adriaan Helsloot at workshop De Weichsel"@en,

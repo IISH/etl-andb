@@ -34,6 +34,16 @@ andb: {
     rdfs:range schema:Person;
     rdfs:subPropertyOf andb:relative.
 
+  andb:closed
+    a owl:DatatypeProperty;
+    rdfs:comment "Moment in de tijd waarop de werkplaats dicht is gegaan."@nl;
+    rdfs:domain andb:Workshop;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "closed in"@en,
+      "sloot op"@nl;
+    rdfs:range xsd:string.
+
   andb:daughter
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
@@ -100,6 +110,26 @@ andb: {
       "heeft geëxamineerde"@nl;
     rdfs:range schema:Person.
 
+  andb:expanded
+    a owl:DatatypeProperty;#
+    rdfs:comment "Moment in de tijd waarop een uitbreiding van de werkplaats plaatsvond."@nl;
+    rdfs:domain andb:Workshop;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "expanded on"@en,
+      "had uitbreiding"@nl;
+    rdfs:range xsd:string.
+
+  andb:expansionDate
+    a owl:DatatypeProperty;#
+    rdfs:comment "Een specifiek jaar waarin een uitbreiding van de wekplaats plaatsvond."@nl;
+    rdfs:domain andb:Workshop;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has expansion date"@en,
+      "heeft uitbreidingsdatum"@nl;
+    rdfs:range xsd:gYear.
+
   andb:father
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
@@ -158,6 +188,16 @@ andb: {
       "heeft pleegzoon"@nl;
     rdfs:range schema:Person;
     rdfs:subPropertyOf andb:fosterChild.
+
+  andb:founded
+    a owl:DatatypeProperty;
+    rdfs:comment "Moment in de tijd waarop de werkplaats is opgericht."@nl;
+    rdfs:domain andb:Workshop;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "was founded"@en,
+      "is opgericht"@nl;
+    rdfs:range xsd:string.
 
   andb:houseNumber
     a owl:DatatypeProperty;
@@ -303,6 +343,15 @@ andb: {
       "heeft organizatie"@nl;
     rdfs:range schema:Organization.
 
+  andb:owner
+    a owl:ObjectProperty;
+    rdfs:domain andb:Workshop;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has owner"@en,
+      "heeft eigenaar"@nl;
+    rdfs:range xsd:string.
+
   andb:parent
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
@@ -324,7 +373,7 @@ andb: {
 
   andb:remark
     a owl:DatatypeProperty;
-    rdfs:domain foaf:Document;
+    rdfs:domain rdf:Resource;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has remark"@en,
@@ -456,6 +505,23 @@ andb: {
       "student"@nl;
     rdfs:range schema:Person.
 
+  andb:transmission
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Workshop;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has transmission"@en,
+      "heeft aandrijving"@nl;
+    rdfs:range xsd:string.
+
+  andb:type
+    a owl:DatatypeProperty;#
+    rdfs:domain andb:Workshop;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has type"@en,
+      "heeft type"@nl;
+    rdfs:ragen xsd:string.
 
   andb:union
     a owl:ObjectProperty;

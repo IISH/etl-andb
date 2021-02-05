@@ -100,5 +100,5 @@ andb: {
     rdfs:label
       "Workshop"@en,
       "Werkplaats"@nl;
-    rdfs:subClassOf schema:FormalOrganization.
+    rdfs:subClassOf org:FormalOrganization.
 }
