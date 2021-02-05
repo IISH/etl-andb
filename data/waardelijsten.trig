@@ -8,8 +8,8 @@ prefix schema: <https://schema.org/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/diamantbewerkers/>
-prefix id: <https://iisg.amsterdam/id/diamantbewerkers/>
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix id: <https://iisg.amsterdam/id/adb-andb/>
 
 andb: {
   [ a owl:AllDifferentFrom;
@@ -25,38 +25,38 @@ andb: {
         id:zagen ) ].
 
   id:brillantslijpen
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "brillantslijpen"@nl.
 
   id:brillantsnijden
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "brillantsnijden"@nl.
 
   id:brillantverstellen
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "brillantverstellen"@nl.
 
   id:kapbewerken
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "kapbewerken"@nl.
 
   id:klooven
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "klooven"@nl.
 
   id:roosjesslijpen
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "roosjesslijpen"@nl.
 
   id:roosjessnijden
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "roosjessnijden"@nl.
 
   id:roosjesverstellen
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "roosjesverstellen"@nl.
 
   id:zagen
-    a andb:Occupation;
+    a schema:Occupation;
     rdfs:label "zagen"@nl.
 }
