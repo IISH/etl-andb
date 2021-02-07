@@ -1,16 +1,19 @@
 {
- "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv",
+ "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv",
  "@context": [
   "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
   {
    "@language": "nl",
    "@base": "https://iisg.amsterdam/id/adb-andb/"
   },
-  { 
+  {
    "csvw": "http://www.w3.org/ns/csvw#",
+   "dc": "http://purl.org/dc/terms/",
    "foaf": "http://xmlns.com/foaf/0.1/",
    "geo": "http://www.opengis.net/ont/geosparql#",
+   "hg": "http://rdf.histograph.io/",
    "juso": "http://rdfs.co/juso/",
+   "org":  "http://www.w3.org/ns/org#",
    "owl": "http://www.w3.org/2002/07/owl#",
    "pnv": "https://w3id.org/pnv#",
    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -23,7 +26,7 @@
    "xsd": "http://www.w3.org/2001/XMLSchema#"
   }
  ],
- "url": "andb_adb_all_unique-2020_12_09.csv",
+ "url": "andb_adb_all_unique.csv",
  "dialect": {
   "delimiter": ",",
   "encoding": "utf-8",
@@ -41,205 +44,196 @@
   "@id": "http://opendefinition.org/licenses/cc-by/"
  },
  "dc:modified": {
-  "@value": "2021-01-05",
+  "@value": "2021-02-04",
   "@type": "xsd:date"
  },
  "tableSchema": {
   "columns": [
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/person_uuid",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/person_uuid",
     "name": "person_uuid",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Person",
-    "dc:description": "Identifier persoon",
-    "datatype": "xsd:string"
+    "dc:description": "Identifier persoon"
    },
    {
-    "lang": "nl",
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/name",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/name",
     "name": "name",
     "propertyUrl": "rdfs:label",
     "dc:description": "Volledige naam",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adb_identifier",
+    "virtual": "true",
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{name}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/adb_identifier",
     "name": "adb_identifier",
     "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ADB kaart",
-    "valueUrl": "https://iisg.amsterdam/id/adb/{{adb_identifier}}",
-    "datatype": "xsd:anyURI"
+    "valueUrl": "https://iisg.amsterdam/id/adb/{{adb_identifier}}"
    },
    {
     "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb/{{adb_identifier}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ADB lidmaatschapskaart van {{name}}",
-    "datatype": "xsd:string"
+    "csvw:value": "ADB lidmaatschapskaart van {{name}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id3",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/sdn_adm_id3",
     "name": "sdn_adm_id3",
     "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier leerlingkaart",
-    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id3}}",
-    "datatype": "xsd:anyURI"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id3}}"
    },
    {
     "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id3}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "Leerlingkaart van {{name}}",
-    "datatype": "xsd:string"
+    "csvw:value": "Leerlingkaart van {{name}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id2",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/sdn_adm_id2",
     "name": "sdn_adm_id2",
     "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier leerlingkaart",
-    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id2}}",
-    "datatype": "xsd:anyURI"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id2}}"
    },
    {
     "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id2}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "Leerlingkaart van {{name}}",
-    "datatype": "xsd:string"
+    "csvw:value": "Leerlingkaart van {{name}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/sdn_adm_id1",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/sdn_adm_id1",
     "name": "sdn_adm_id1",
     "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier leerlingkaart",
-    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
-    "datatype": "xsd:anyURI"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}"
    },
    {
     "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "Leerlingkaart van {{name}}",
-    "datatype": "xsd:string"
+    "csvw:value": "Leerlingkaart van {{name}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id3",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/adm_id3",
     "name": "adm_id3",
     "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ANDB kaart",
-    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id3}}",
-    "datatype": "xsd:anyURI"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id3}}"
    },
    {
     "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id3}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB lidmaatschapskaart van {{name}}",
-    "datatype": "xsd:string"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id2",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/adm_id2",
     "name": "adm_id2",
     "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ANDB kaart",
-    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id2}}",
-    "datatype": "xsd:anyURI"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id2}}"
    },
    {
     "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id2}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB lidmaatschapskaart van {{name}}",
-    "datatype": "xsd:string"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/adm_id1",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/adm_id1",
     "name": "adm_id1",
     "propertyUrl": "foaf:isPrimayTopicOf",
     "dc:description": "Identifier ANDB kaart",
-    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id1}}",
-    "datatype": "xsd:anyURI"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{adm_id1}}"
    },
    {
     "lang": "nl",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id1}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "ANDB lidmaatschapskaart van {{name}}",
-    "datatype": "xsd:string"
+    "csvw:value": "ANDB lidmaatschapskaart van {{name}}"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/first_name",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/first_name",
     "name": "first_name",
     "propertyUrl": "schema:givenName",
     "dc:description": "Voornaam",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/middle_name",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/middle_name",
     "name": "middle_name",
     "propertyUrl": "schema:additionalName",
     "dc:description": "Tussenvoegsel achternaam",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/last_name",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/last_name",
     "name": "last_name",
     "propertyUrl": "schema:familyName",
     "dc:description": "Achternaam",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/maiden_name_prefix",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/maiden_name_prefix",
     "name": "maiden_name_prefix",
     "propertyUrl": "vocab:maiden_name_prefix",
     "dc:description": "Tussenvoegsel meisjesnaam",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/maiden_name",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/maiden_name",
     "name": "maiden_name",
     "propertyUrl": "pnv:patronym",
     "dc:description": "Meisjesnaam",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/gender",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/gender",
     "name": "gender",
     "propertyUrl": "schema:gender",
     "dc:description": "Geslacht",
     "valueUrl": "https://schema.org/{{gender}}",
-    "datatype": "xsd:anyUri"
+    "datatype": "xsd:anyURI"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/birth_date",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/birth_date",
     "name": "birth_date",
     "propertyUrl": "schema:birthDate",
     "dc:description": "Geboortedatum",
     "datatype": "xsd:date"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/birth_place",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/birth_place",
     "name": "birth_place",
     "propertyUrl": "schema:birthPlace",
     "dc:description": "Geboorteplaats",
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/death_date",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/death_date",
     "name": "death_date",
     "propertyUrl": "schema:deathDate",
     "dc:description": "Overlijdensdatum",
     "datatype": "xsd:date"
    },
    {
-    "@id": "https://iisg.amsterdam/andb_adb_all_unique-2020_12_09.csv/column/oorlogslevens_uri",
+    "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/oorlogslevens_uri",
     "name": "oorlogslevens_uri",
     "propertyUrl": "owl:sameAs",
     "dc:description": "URI op Oorlogslevens.nl",
