@@ -111,9 +111,7 @@ id:instanties {
     a org:OrganizationalUnit;
     dct:identifier "2";
     org:unitOf id:andb;
-    rdfs:label
-      "Section 2"@en,
-      "Sectie 2"@nl.
+    rdfs:label "Sectie 2".
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1
     a andb:Residency;
@@ -197,55 +195,55 @@ id:instanties {
 
   id:Hazenstraat_8_II_Amsterdam
     a schema:PostalAddress;
-    rdfs:label "Hazenstraat 8-II, Amsterdam"@nl;
-    andb:houseNumber "8"; # TODO: xsd:positiveInteger
+    rdfs:label "Hazenstraat 8-II, Amsterdam";
+    andb:houseNumber "8";
     andb:houseNumberAddition "II";
     andb:street id:Hazenstraat_Amsterdam.
 
   id:NieuweKarselaan_493_Amstelveen
     a schema:PostalAddress;
-    andb:houseNumber "493"; # TODO: xsd:positiveInteger
+    andb:houseNumber "493";
     andb:street id:NieuweKarselaan_Amstelveen;
-    rdfs:label "Nieuwe Karselaan 493, Amstelveen"@nl.
+    rdfs:label "Nieuwe Karselaan 493, Amstelveen".
 
   id:NieuweKarselaan_21_Amstelveen
     a schema:PostalAddress;
-    andb:houseNumber "21"; # TODO: xsd:positiveInteger
+    andb:houseNumber "21";
     andb:street id:NieuweKarselaan_Amstelveen;
-    rdfs:label "Nieuwe Karselaan 21, Amstelveen"@nl.
+    rdfs:label "Nieuwe Karselaan 21, Amstelveen".
 
   id:DerdeOosterparkstraat_121_II_Amsterdam
     a schema:PostalAddress;
-    andb:houseNumber "121"; # TODO: xsd:positiveInteger
+    andb:houseNumber "121";
     andb:houseNumberAddition "II";
     andb:street id:DerdeOosterparkstraat_Amsterdam;
-    rdfs:label "Derde Oosterparkstraat 121-II, Amsterdam"@nl.
+    rdfs:label "Derde Oosterparkstraat 121-II, Amsterdam".
 
   id:Hazenstraat_Amsterdam
     a hg:Street;
     dct:identifier "1014313";
     geo:sfWithin gemeente:Amsterdam;
     owl:sameAs <https://adamlink.nl/geo/street/hazenstraat/1693>;
-    rdfs:label "Hazenstraat"@nl;
-    schema:name "Hazenstraat"@nl.
+    rdfs:label "Hazenstraat";
+    schema:name "Hazenstraat".
 
   id:NieuweKarselaan_Amstelveen
     a hg:Street;
     geo:sfWithin gemeente:Amstelveen;
-    rdfs:label "Nieuwe Karselaan"@nl;
-    schema:name "Nieuwe Karselaan"@nl.
+    rdfs:label "Nieuwe Karselaan";
+    schema:name "Nieuwe Karselaan".
 
   id:DerdeOosterparkstraat_Amsterdam
     a hg:Street;
     dct:identifier "1040460";
     geo:sfWithin gemeente:Amsterdam;
     owl:sameAs <https://adamlink.nl/geo/street/derde-oosterparkstraat/972>;
-    rdfs:label "Derde Oosterparkstraat"@nl;
-    schema:name "Derde Oosterparkstraat"@nl.
+    rdfs:label "Derde Oosterparkstraat";
+    schema:name "Derde Oosterparkstraat".
 
 
   #id:AMSAB_0558_3464
-  #  a andb:MembershipCard;
+  #  a andb:Card;
   #  dct:identifier "AMSAB_0558_3464";
   #  foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
   #  rdfs:label
@@ -253,7 +251,7 @@ id:instanties {
   #    "ADB ledenkaart van Adriaan Helsloot"@nl.
 
   #id:2284
-  #  a andb:StudentCard;
+  #  a andb:Card;
   #  dct:identifier "2284";
   #  foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
   #  rdfs:label
@@ -261,7 +259,7 @@ id:instanties {
   #    "ANDB studentenkaart van Adriaan Helsloot"@nl.
 
   id:26266
-    a andb:MembershipCard;
+    a andb:Card;
     dct:identifier "26266";
     foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     rdfs:label
@@ -270,7 +268,7 @@ id:instanties {
     schema:image id:ARCH00210_9570.1_0160-master.
 
   id:26456
-    a andb:MembershipCard;
+    a andb:Card;
     dct:identifier "26456";
     foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     rdfs:label
@@ -323,8 +321,8 @@ id:instanties {
 
   id:de-weichsel
     a andb:Workshop;
-    rdfs:label "De Weichsel"@nl;
-    schema:name "De Weichsel"@nl.
+    rdfs:label "De Weichsel";
+    schema:name "De Weichsel".
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval
     a time:ProperInterval;

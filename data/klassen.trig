@@ -21,20 +21,20 @@ andb: {
       "Kaart"@nl;
     rdfs:subClassOf foaf:Document.
 
+  andb:Dismission
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "Dismission"@en,
+      "Ontslag"@nl;
+    rdfs:subClassOf andb:Mutation.
+
   andb:Education
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Education"@en,
       "Onderwijs"@nl;
-    rdfs:subClassOf schema:Event.
-
-  andb:Examination
-    a owl:Class;#
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "Examination"@en,
-      "Examen"@nl;
     rdfs:subClassOf schema:Event.
 
   andb:Internship
@@ -46,14 +46,6 @@ andb: {
       "Stage"@nl;
     rdfs:subClassOf schema:Event.
 
-  andb:MembershipCard
-    a owl:Class;#
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "Membership card"@en,
-      "Lidmaatschapskaart"@nl;
-    rdfs:subClassOf andb:Card.
-
   andb:Migration
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
@@ -61,6 +53,22 @@ andb: {
       "Migration"@en,
       "Migratie"@nl;
     rdfs:subClassOf schema:Event.
+
+  andb:Mutation
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "Membership mutation"@en,
+      "Lidmaatschapsverandering"@en;
+    rdfs:subClassOf schema:Event.
+
+  andb:Readmission
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "Readmission"@en,
+      "Toelating"@nl;
+    rdfs:subClassOf andb:Mutation.
 
   andb:Residency
     a owl:Class;#
@@ -70,14 +78,6 @@ andb: {
       "Bewoning"@nl;
     rdfs:subClassOf schema:Event.
 
-  andb:StudentCard
-    a owl:Class;#
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "Student card"@en,
-      "Leerlingkaart"@nl;
-    rdfs:subClassOf andb:Card.
-
   andb:Union
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
@@ -86,13 +86,13 @@ andb: {
       "Vakbond"@nl;
     rdfs:subClassOf org:FormalOrganization.
 
-  andb:WorkEvent
+  andb:Withdrawal
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "work event"@en,
-      "werk evenement"@nl;
-    rdfs:subClassOf schema:Event.
+      "Membership withdrawal"@en,
+      "Opzegging lidmaatschap"@nl;
+    rdfs:subClassOf andb:Mutation.
 
   andb:Workshop
     a owl:Class;#
