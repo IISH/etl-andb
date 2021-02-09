@@ -493,6 +493,18 @@ andb: {
       "heeft echtgenoot"@nl;
     rdfs:range schema:Person.
 
+  andb:stamp
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "Stamps that are applied on cards."@en,
+      "Stempels die op kaarten zijn aangebracht."@nl;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has stamp"@en,
+      "heeft stempel"@nl;
+    rdfs:range xsd:string.
+
   andb:stepChild
     a owl:ObjectProperty;
     owl:inverseOf andb:stepParent;

@@ -168,7 +168,8 @@ andb: {
       andb:inventoryNumberShape,
       andb:labelShape_lang,
       andb:mutationShape,
-      andb:remarkShape_lang;
+      andb:remarkShape_lang,
+      andb:stampShape;
     sh:targetClass
       andb:AdbCard,
       andb:AndbCard,
@@ -314,6 +315,14 @@ andb: {
     sh:class andb:Mutation;
     sh:nodeKind sh:IRI;#
     sh:path andb:mutation.
+
+  andb:stampShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatyp xsd:string;#
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:stamp.
 
 
   andb:MutationShape
