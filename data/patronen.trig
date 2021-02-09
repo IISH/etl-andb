@@ -158,12 +158,12 @@ andb: {
       andb:CardShape_deathPlace,
       andb:CardShape_familyName,
       andb:CardShape_givenName,
-      andb:CardShape_identifier,
       andb:CardShape_primaryTopic,
       andb:aboutEducationShape,
       andb:aboutMembershipShape,
       andb:aboutMigrationShape,
       andb:aboutResidencyShape,
+      andb:cardIdShape,
       andb:imageShape,
       andb:inventoryNumberShape,
       andb:labelShape_lang,
@@ -223,19 +223,6 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path andb:givenName.
 
-  andb:CardShape_identifier
-    a sh:PropertyShape;#
-    rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;
-    sh:description "Het administratieve nummer van de kaart."@nl;
-    sh:minLength 1;#
-    sh:name
-      "has card identifier"@en,
-      "heeft kaartnummer"@nl;
-    sh:path dct:identifier;
-    sh:nodeKind sh:Literal;#
-    sh:pattern "^[0-9]+$".
-
   andb:CardShape_primaryTopic
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
@@ -283,6 +270,19 @@ andb: {
     sh:minCount 1;
     sh:nodeKind sh:IRI;#
     sh:path andb:aboutResidency.
+
+  andb:cardIdShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;
+    sh:description "Het administratieve nummer van de kaart."@nl;
+    sh:minLength 1;#
+    sh:name
+      "has card identifier"@en,
+      "heeft kaartnummer"@nl;
+    sh:path andb:cardId;
+    sh:nodeKind sh:Literal;#
+    sh:pattern "^[0-9]+$".
 
   andb:imageShape
     a sh:PropertyShape;#

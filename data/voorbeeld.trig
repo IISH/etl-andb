@@ -242,25 +242,9 @@ id:instanties {
     schema:name "Derde Oosterparkstraat".
 
 
-  #id:AMSAB_0558_3464
-  #  a andb:Card;
-  #  dct:identifier "AMSAB_0558_3464";
-  #  foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
-  #  rdfs:label
-  #    "ADB member card for Adriaan Helsloot"@en,
-  #    "ADB ledenkaart van Adriaan Helsloot"@nl.
-
-  #id:2284
-  #  a andb:Card;
-  #  dct:identifier "2284";
-  #  foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
-  #  rdfs:label
-  #    "ANDB student card for Adriaan Helsloot"@en,
-  #    "ANDB studentenkaart van Adriaan Helsloot"@nl.
-
   id:26266
     a andb:Card;
-    dct:identifier "26266";
+    andb:cardId "26266";
     foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     rdfs:label
       "ANDB member card for Adriaan Helsloot"@en,
@@ -269,7 +253,7 @@ id:instanties {
 
   id:26456
     a andb:Card;
-    dct:identifier "26456";
+    andb:cardId "26456";
     foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     rdfs:label
       "ANDB membership card of Adriaan Helsloot"@en,

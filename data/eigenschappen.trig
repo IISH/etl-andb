@@ -98,6 +98,16 @@ andb: {
     rdfs:range schema:Person;
     rdfs:subPropertyOf andb:relative.
 
+  andb:cardId
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has identifier"@en,
+      "heeft identificatie"@nl;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf dct:identifier.
+
   andb:child
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
