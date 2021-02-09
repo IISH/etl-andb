@@ -13,6 +13,30 @@ prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
 prefix id: <https://iisg.amsterdam/id/adb-andb/>
 
 andb: {
+  andb:AdbCard
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "ADB member card"@en,
+      "ADB lidmaatschapskaart"@nl;
+    rdfs:subClassOf andb:Card.
+
+  andb:AndbCard
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "ANDB member card"@en,
+      "ANDB lidmaatschapskaart"@nl;
+    rdfs:subClassOf andb:Card.
+
+  andb:ApprenticeCard
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "Apprentice card"@en,
+      "Leerlingenkaart"@nl;
+    rdfs:subClassOf andb:Card.
+
   andb:Card
     a owl:Class;#
     rdfs:isDefinedBy andb:;#

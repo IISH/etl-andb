@@ -168,7 +168,10 @@ andb: {
       andb:labelShape_lang,
       andb:mutationShape,
       andb:remarkShape_lang;
-    sh:targetClass andb:Card.
+    sh:targetClass
+      andb:AdbCard,
+      andb:AndbCard,
+      andb:ApprenticeCard.
 
   andb:CardShape_birthDate
     a sh:PropertyShape;#
@@ -839,13 +842,16 @@ andb: {
   andb:PersonShape_isPrimaryTopicOf
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class andb:Card;
     sh:description "A person can have one or more cards."@en;
     sh:minCount 1;
     sh:name
       "has card"@en,
       "heeft kaart"@nl;
     sh:nodeKind sh:IRI;#
+    sh:or
+      ( [ sh:class andb:AdbCard ]
+        [ sh:class andb:AndbCard ]
+        [ sh:class andb:ApprenticeCard ] );
     sh:path foaf:isPrimaryTopicOf.
 
   andb:additionalNameShape
