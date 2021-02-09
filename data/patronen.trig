@@ -162,6 +162,7 @@ andb: {
       andb:CardShape_primaryTopic,
       andb:aboutEducationShape,
       andb:aboutMembershipShape,
+      andb:aboutMigrationShape,
       andb:aboutResidencyShape,
       andb:imageShape,
       andb:inventoryNumberShape,
@@ -265,6 +266,14 @@ andb: {
     sh:minCount 1;
     sh:nodeKind sh:IRI;#
     sh:path andb:aboutMembership.
+
+  andb:aboutMigrationShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Migration;
+    sh:minCount 1;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:aboutMigration.
 
   andb:aboutResidencyShape
     a sh:PropertyShape;#

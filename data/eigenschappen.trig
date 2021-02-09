@@ -33,6 +33,16 @@ andb: {
     rdfs:range andb:Membership;
     rdfs:subPropertyOf foaf:topic.
 
+  andb:aboutMigration
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions migration"@en,
+      "vermeldt migratie"@nl;
+    rdfs:range andb:Migration;
+    rdfs:subPropertyOf foaf:topic.
+
   andb:aboutResidency
     a owl:ObjectProperty;
     rdfs:domain andb:Card;
