@@ -425,8 +425,8 @@ andb: {
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "mentions dismisson"@en,
-      "vermeldt ontslag"@nl;
+      "mentions mutation"@en,
+      "vermeldt mutatie"@nl;
     rdfs:range andb:Mutation;
     rdfs:subPropertyOf foaf:topic.
 
