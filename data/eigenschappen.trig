@@ -372,7 +372,7 @@ andb: {
     rdfs:comment
       "The person's maiden name as presented on a card that describes the person."@en,
       "De meisjesnaam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
-    rdfs:domain schema:Person;
+    rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has maiden name"@en,

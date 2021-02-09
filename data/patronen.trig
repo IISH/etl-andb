@@ -167,6 +167,7 @@ andb: {
       andb:imageShape,
       andb:inventoryNumberShape,
       andb:labelShape_lang,
+      andb:maidenNameShape,
       andb:mutationShape,
       andb:remarkShape_lang,
       andb:stampShape;
@@ -308,6 +309,15 @@ andb: {
     sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:inventoryNumber.
+
+  andb:maidenNameShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:maidenName.
 
   andb:mutationShape
     a sh:PropertyShape;#
@@ -840,7 +850,6 @@ andb: {
       andb:inhabitsShape,
       andb:labelShape,
       andb:maidenNamePrefixShape,
-      andb:maidenNameShape,
       andb:marriageDateShape,
       andb:membershipBrotherShape,
       andb:membershipSisterShape,
@@ -850,6 +859,7 @@ andb: {
       andb:nameShape,
       andb:oorlogslevensShape,
       andb:parentShape,
+      andb:patronymShape,
       andb:sonShape,
       andb:spouseShape,
       andb:stepDaughterShape,
@@ -1041,17 +1051,6 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path andb:maidenNamePrefix.
 
-  andb:maidenNameShape
-    a sh:PropertyShape;#
-    rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;
-    sh:description "The person's maiden name."@en;
-    sh:maxCount 1;
-    sh:minLength 1;#
-    sh:name "has maiden name"@en;
-    sh:nodeKind sh:Literal;#
-    sh:path pnv:patronym.
-
   andb:marriageDateShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
@@ -1115,6 +1114,15 @@ andb: {
     sh:maxCount 2;
     sh:nodeKind sh:IRI;#
     sh:path schema:parent.
+
+  andb:patronymShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path pnv:patronym.
 
   andb:sonShape
     a sh:PropertyShape;#
