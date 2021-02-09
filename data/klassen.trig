@@ -47,6 +47,7 @@ andb: {
 
   andb:Dismission
     a owl:Class;#
+    rdfs:comment "The membership is ended by the union."@en;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Dismission"@en,
@@ -88,6 +89,7 @@ andb: {
 
   andb:Readmission
     a owl:Class;#
+    rdfs:comment "The member is readmitted by the union union."@en;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Readmission"@en,
@@ -112,6 +114,7 @@ andb: {
 
   andb:Withdrawal
     a owl:Class;#
+    rdfs:comment "The member ends his membership of the union."@en;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Membership withdrawal"@en,

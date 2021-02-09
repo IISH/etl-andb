@@ -25,6 +25,7 @@ andb: {
 
   andb:aboutMembership
     a owl:ObjectProperty;
+    rdfs:comment "Cards can contain information about the union membership of the card holder."@en;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -45,6 +46,7 @@ andb: {
 
   andb:aboutResidency
     a owl:ObjectProperty;
+    rdfs:comment "Cards can contain information about the addresses the card holder lived at."@en;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -64,6 +66,9 @@ andb: {
 
   andb:birthDate
     a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's birth date as presented on a card that describes the person."@en,
+      "De geboortedatum van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -73,6 +78,9 @@ andb: {
 
   andb:birthPlace
     a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's place of birth as presented on a card that describes the person."@en,
+      "De geboorteplaats van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
     rdfs:domain schema:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -123,6 +131,9 @@ andb: {
 
   andb:deathDate
     a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's death date as presented on a card that describes the person."@en,
+      "De overleidensdatum van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -132,6 +143,9 @@ andb: {
 
   andb:deathPlace
     a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's death place as presented on a card that describes the person."@en,
+      "De plaats van overleiden van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
     rdfs:domain schema:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -189,6 +203,9 @@ andb: {
 
   andb:familyName
     a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's family name as presented on a card that describes the person."@en,
+      "De familienaam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -267,6 +284,9 @@ andb: {
 
   andb:givenName
     a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's given name as presented on a card that describes the person."@en,
+      "De toegekende naam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -339,6 +359,9 @@ andb: {
 
   andb:maidenName
     a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's maiden name as presented on a card that describes the person."@en,
+      "De meisjesnaam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
     rdfs:domain schema:Person;
     rdfs:isDefinedBy andb:;#
     rdfs:label
