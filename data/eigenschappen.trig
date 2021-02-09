@@ -129,15 +129,6 @@ andb: {
       "vermeldt plaats plaats van overleiden"@nl;
     rdfs:range xsd:string.
 
-  andb:duration
-    a owl:ObjectProperty;
-    rdfs:domain schema:Event;
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "has duration"@en,
-      "heeft duur"@nl;
-    rdfs:range time:ProperInterval.
-
   andb:event
     a owl:ObjectProperty;
     rdfs:domain schema:Person;

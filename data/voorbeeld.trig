@@ -115,7 +115,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1
     a andb:Residency;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval;
     rdfs:label
       "Residency of Adriaan Helsloot at Hazenstraat 8-II"@en,
       "Bewoning van Hazenstraat 8-II door Adriaan Helsloot"@nl;
@@ -124,7 +124,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2
     a andb:Residency;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
     rdfs:label
       "Residency of Adriaan Helsloot at Nieuwe Karselaan 493"@en,
       "Bewoning van Nieuwe Karselaan 493 door Adriaan Helsloot"@nl;
@@ -133,7 +133,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3
     a andb:Residency;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
     rdfs:label
       "Residency of Adriaan Helsloot at Nieuwe Karselaan 21"@en,
       "Bewoning van Nieuwe Karselaan 21 door Adriaan Helsloot"@nl;
@@ -142,7 +142,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4
     a andb:Residency;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval;
     rdfs:label
       "Residency of Adriaan Helsloot at Derde Oosterparkstraat 121-II"@en,
       "Bewoning van Derde Oosterparkstraat 121-II door Adriaan Helsloot"@nl;
@@ -297,7 +297,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education
     a andb:Education;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval;
     andb:internship id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship;
     rdfs:label
       "Education of Adriaan Helsloot"@en,
@@ -305,14 +305,14 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship
     a andb:Internship;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-temporal;
     andb:master "S. Kloots";
     org:organization id:de-weichsel;
     rdfs:label
       "Internship of Adriaan Helsloot at workshop De Weichsel"@en,
       "Stage van Adriaan Helsloot bij werkplaats De Weichsel"@nl.
 
-  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-temporal
     a time:ProperInterval;
     rdfs:label
      #"Duration of internship of Adriaan Helsloot at workshop De Weichsel",#
@@ -328,7 +328,7 @@ id:instanties {
     a time:ProperInterval;
     rdfs:label "1919-05-27/..";
     time:hasBeginning id:1919-05-27;
-    time:intervalContains id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration.
+    time:intervalContains id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-temporal.
 
   id:1919-05-27
     a time:Instant;
@@ -357,7 +357,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1
     a andb:Migration;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1-interval;
     rdfs:label
       "Migration of Adriaan Helsloot"@en,
       "Migratie van Adriaan Helsloot"@nl;

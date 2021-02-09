@@ -28,14 +28,6 @@ andb: {
     sh:nodeKind sh:Literal;#
     sh:path schema:comment.
 
-  andb:durationShape
-    a sh:PropertyShape;#
-    rdfs:isDefinedBy andb:;#
-    sh:class time:ProperInterval;#
-    sh:maxCount 1;
-    sh:nodeKind sh:IRI;#
-    sh:path andb:duration.
-
   andb:labelShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
@@ -91,6 +83,16 @@ andb: {
     sh:languagesIn ( "nl" );
     sh:nodeKind sh:Literal;#
     sh:path andb:remark.
+
+  andb:temporalShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
+    sh:or
+      ( [ sh:class time:Instant ]
+        [ sh:class time:ProperInterval; ] );
+    sh:path dct:temporal.
 
 
   andb:AddressShape
@@ -309,8 +311,8 @@ andb: {
     sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:commentShape,
-      andb:durationShape,
-      andb:labelShape;
+      andb:labelShape,
+      andb:temporalShape;
     sh:targetClass andb:Mutation.
 
 
@@ -320,26 +322,26 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:EducationShape_duration_invervalContains_durationInv,
-      andb:durationShape,
+      andb:EducationShape_temporal_invervalContains_temporalInv,
       andb:examinatorShape,
       andb:internshipShape,
       andb:labelShape_lang,
       andb:occupationShape,
-      andb:remarkShape_lang;
-      #andb:studentShape;
+      andb:remarkShape_lang,
+      #andb:studentShape,
+      andb:temporalShape;
     sh:targetClass andb:Education.
 
-  andb:EducationShape_duration_invervalContains_durationInv
+  andb:EducationShape_temporal_invervalContains_temporalInv
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class andb:Internship;
     sh:minCount 1;
     sh:nodeKind sh:IRI;#
     sh:path
-      ( andb:duration
+      ( dct:temporal
         time:intervalContains
-        [ sh:inversePath andb:duration ] ).
+        [ sh:inversePath dct:temporal ] ).
 
   andb:examinatorShape
     a sh:PropertyShape;#
@@ -509,14 +511,14 @@ andb: {
     sh:closed true;#
     sh:ignoredProperties ( rdf:type );#
     sh:property
-      andb:InternshipShape_during_intervalDuring_durationInv,
-      andb:durationShape,
+      andb:InternshipShape_temporal_intervalDuring_temporalInv,
       andb:labelShape_lang,
       andb:masterShape,
+      andb:temporalShape,
       andb:workshopShape;
     sh:targetClass andb:Internship.
 
-  andb:InternshipShape_during_intervalDuring_durationInv
+  andb:InternshipShape_temporal_intervalDuring_temporalInv
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class andb:Education;
@@ -524,9 +526,9 @@ andb: {
     sh:maxCount 1;
     sh:nodeKind sh:IRI;#
     sh:path
-      ( andb:duration
+      ( dct:temporal
         time:intervalDuring
-        [ sh:inversePath andb:duration ] ).
+        [ sh:inversePath dct:temporal ] ).
 
   andb:masterShape
     a sh:PropertyShape;#
@@ -709,9 +711,9 @@ andb: {
       "Migration"@en,
       "Vertrek"@nl;
     sh:property
-      andb:durationShape,
       andb:locationShape,
-      andb:labelShape_lang;
+      andb:labelShape_lang,
+      andb:temporalShape;
     sh:targetClass andb:Migration.
 
   andb:locationShape
@@ -1133,10 +1135,10 @@ andb: {
     sh:ignoredProperties ( rdf:type );#
     sh:property
       andb:addressShape,
-      andb:durationShape,
      #andb:inhabitantShape,
       andb:labelShape_lang,
-      andb:placeShape;
+      andb:placeShape,
+      andb:temporalShape;
     sh:targetClass andb:Residency.
 
   andb:addressShape
