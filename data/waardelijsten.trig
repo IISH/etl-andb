@@ -8,8 +8,10 @@ prefix schema: <https://schema.org/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
+prefix adb: <https://iisg.amsterdam/id/adb/>
+prefix andb: <https://iisg.amsterdam/id/andb/>
 prefix id: <https://iisg.amsterdam/id/adb-andb/>
+prefix vocab: <https://iisg.amsterdam/vocab/adb-andb/>
 
 andb: {
   [ a owl:AllDifferentFrom;
@@ -59,4 +61,7 @@ andb: {
   id:zagen
     a schema:Occupation;
     rdfs:label "zagen"@nl.
+
+  # Voor Micon:
+  andb:ANDB_1 vocab:occupation id:zagen.
 }
