@@ -6,6 +6,6 @@ Deze directory bevat documentatie bestanden voor de ANDB dataset.
 
 1. We hebben dit gegeven in een cel gevonden: ~ARCH00210_9421_0002_0001~
 2. ~xxxx = 9421~, ~yyyy = 0002~, ~zzzz = 0001~
-3. Voeg ~xxxx~ toe aan de URL: [https://access.iisg.amsterdam/iiif/presentation/ARCH00210.9421/manifest]
+3. Voeg ~xxxx~ toe aan de URL: <https://access.iisg.amsterdam/iiif/presentation/ARCH00210.9421/manifest>
 4. Zoek in de geretourneerde JSON naar ~canvas/yyyy~ maar tel 1 op bij ~yyyy~ en verwijder de leidende nullen: ~canvas/3~
-5. Zoek binnen hetzelfde JSON object naar de key `thumbnail`, en vindt: [https://access.iisg.amsterdam/iiif/image/BF19C1AA-94E5-4D11-8A5E-9F92AB2725DB/full/200,/0/default.jpg]
+5. Zoek binnen hetzelfde JSON object naar de key `thumbnail`, en vindt: <https://access.iisg.amsterdam/iiif/image/BF19C1AA-94E5-4D11-8A5E-9F92AB2725DB/full/200,/0/default.jpg>
