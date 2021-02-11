@@ -50,34 +50,44 @@
  "tableSchema": {
   "columns": [
    {
-    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/ID",
-    "name": "ID",
+    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naam",
+    "name": "Naam",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop",
-    "dc:description": "Identifier van de slijperij",
-    "datatype": "xsd:string"
+    "dc:description": "Naam van de slijperij"
    },
    {
     "lang": "nl",
-    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naam",
-    "name": "Naam",
+    "null": {"@list": [{"name": "Naam", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Naam}}",
     "propertyUrl": "rdfs:label",
-    "dc:description": "Naam van de slijperij",
+    "csvw:value": "{{Naam}}",
     "datatype": "xsd:string"
    },
    {
+    "null": {"@list": [{"name": "Naam", "null": ""}]},
     "virtual": "true",
-    "aboutUrl": "https://iisg.amsterdam/id/andb/diamantslijperijen/{{ID}}",
+    "aboutUrl": "{{Naam}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{Naam}}",
     "datatype": "xsd:string"
    },
    {
     "lang": "nl",
+    "null": {"@list": [{"name": "Naamsvariatie_1", "null": ""}]},
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_1",
     "name": "Naamsvariatie_1",
     "propertyUrl": "schema:alternateName",
-    "dc:description": "Andere naam waaronder de slijperij bekend is geweest",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
+   },
+      {
+    "lang": "nl",
+    "null": {"@list": [{"name": "Naamsvariatie_1", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Naamsvariatie_1}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Naamsvariatie_1}}",
     "datatype": "xsd:string"
    },
    {
@@ -85,7 +95,15 @@
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_2",
     "name": "Naamsvariatie_2",
     "propertyUrl": "schema:alternateName",
-    "dc:description": "Andere naam waaronder de slijperij bekend is geweest",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
+   },
+      {
+    "lang": "nl",
+    "null": {"@list": [{"name": "Naamsvariatie_2", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Naamsvariatie_2}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Naamsvariatie_2}}",
     "datatype": "xsd:string"
    },
    {
@@ -93,48 +111,184 @@
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_3",
     "name": "Naamsvariatie_3",
     "propertyUrl": "schema:alternateName",
-    "dc:description": "Andere naam waaronder de slijperij bekend is geweest",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
+   },
+      {
+    "lang": "nl",
+    "null": {"@list": [{"name": "Naamsvariatie_3", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Naamsvariatie_3}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Naamsvariatie_3}}",
     "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Eigenaar_1",
     "name": "Eigenaar_1",
     "propertyUrl": "vocab:owner",
-    "dc:description": "Eigenaar van de slijperij",
+    "valueUrl": "{{Eigenaar_1}}",
+    "dc:description": "Eigenaar van de slijperij"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_1", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_1}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:person"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "Eigenaar_1", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Eigenaar_1}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Eigenaar_1}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_1", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_1}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{Eigenaar_1}}",
     "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Eigenaar_2",
     "name": "Eigenaar_2",
     "propertyUrl": "vocab:owner",
-    "dc:description": "Eigenaar van de slijperij",
+    "valueUrl": "{{Eigenaar_2}}",
+    "dc:description": "Eigenaar van de slijperij"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_2", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_2}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:person"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "Eigenaar_2", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Eigenaar_2}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Eigenaar_2}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_2", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_2}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{Eigenaar_2}}",
     "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Eigenaar_3",
     "name": "Eigenaar_3",
     "propertyUrl": "vocab:owner",
-    "dc:description": "Eigenaar van de slijperij",
+    "valueUrl": "{{Eigenaar_3}}",
+    "dc:description": "Eigenaar van de slijperij"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_3", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_3}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:person"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "Eigenaar_3", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Eigenaar_3}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Eigenaar_3}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_3", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_3}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{Eigenaar_3}}",
     "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Eigenaar_4",
     "name": "Eigenaar_4",
     "propertyUrl": "vocab:owner",
-    "dc:description": "Eigenaar van de slijperij",
+    "valueUrl": "{{Eigenaar_4}}",
+    "dc:description": "Eigenaar van de slijperij"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_4", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_4}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:person"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "Eigenaar_4", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Eigenaar_4}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Eigenaar_4}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_4", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_4}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{Eigenaar_4}}",
     "datatype": "xsd:string"
    },
    {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Eigenaar_5",
     "name": "Eigenaar_5",
     "propertyUrl": "vocab:owner",
-    "dc:description": "Eigenaar van de slijperij",
+    "valueUrl": "{{Eigenaar_5}}",
+    "dc:description": "Eigenaar van de slijperij"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_5", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_5}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:person"
+   },
+   {
+    "lang": "nl",
+    "null": {"@list": [{"name": "Eigenaar_5", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Eigenaar_5}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Eigenaar_5}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "Eigenaar_5", "null": ""}]},
+    "aboutUrl": "{{Eigenaar_5}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{Eigenaar_5}}",
     "datatype": "xsd:string"
    },
    {
     "lang": "nl",
-    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Bedrijf",
-    "name": "Bedrijf",
+    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Bedrijf_1",
+    "name": "Bedrijf_1",
+    "propertyUrl": "vocab:type",
+    "dc:description": "Soort bedrijf",
+    "datatype": "xsd:string"
+   },
+    {
+    "lang": "nl",
+    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Bedrijf_2",
+    "name": "Bedrijf_2",
     "propertyUrl": "vocab:type",
     "dc:description": "Soort bedrijf",
     "datatype": "xsd:string"
@@ -190,26 +344,93 @@
     "datatype": "xsd:string"
    },
    {
-    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Adres",
-    "name": "Adres",
-    "dc:description": "Adres",
+    "null": {"@list": [{"name": "Straat", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{Naam}}",
     "propertyUrl": "schema:address",
-    "valueUrl": "{{Adres|replace(' ', '_')}}"
+    "valueUrl": "{{([Naam, '-adres']|join)}}"
    },
    {
+    "null": {"@list": [{"name": "Straat", "null": ""}]},
     "virtual": "true",
-    "name": "adamlink_uri",
-    "aboutUrl": "{{Adres|replace(' ', '_')}}",
-    "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{adamlink_uri}}",
-    "datatype": "xsd:anyURI"
+    "aboutUrl": "{{([Naam, '-adres']|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:PostalAddress"
    }, 
    {
+    "null": {"@list": [{"name": "Straat", "null": ""}]},
+    "lang": "nl",
     "virtual": "true",
-    "name": "locationPoint",
-    "aboutUrl": "{{Adres|replace(' ', '_')}}",
+    "aboutUrl": "{{([Naam, '-adres']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([Straat, ' ', Huisnummer, ', ', Gemeente]|join)}}"
+   },
+   {
+    "null": {"@list": [{"name": "Straat", "null": ""}]},
+    "virtual": "true",
+    "aboutUrl": "{{([Naam, '-adres']|join)}}",
+    "propertyUrl": "vocab:street",
+    "valueUrl": "{{Straat}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "Straat", "null": ""}]},
+    "aboutUrl": "{{Straat}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{Straat}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "Straat", "null": ""}]},
+    "aboutUrl": "{{Straat}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "hg:Street"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "Straat", "null": ""}]},
+    "aboutUrl": "{{Straat}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{Straat}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "Straat", "null": ""}, {"name": "Huisnummer", "null": ""}]},
+    "aboutUrl": "{{([Naam, '-adres']|join)}}",
+    "propertyUrl": "vocab:houseNumber",
+    "csvw:value": "{{Huisnummer}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "Straat", "null": ""}, {"name": "Gemeente", "null": ""}]},
+    "aboutUrl": "{{Straat}}",
+    "propertyUrl": "geo:sfWithin",
+    "valueUrl": "{{Gemeente}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "Gemeente", "null": ""}]},
+    "aboutUrl": "{{Gemeente}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Place"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "adamlink_uri", "null": ""}]},
+    "aboutUrl": "{{Straat}}",
     "propertyUrl": "owl:sameAs",
-    "valueUrl": "{{locationPoint}}",
+    "csvw:value": "{{adamlink_uri}}",
+    "datatype": "xsd:anyURI"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "locationPoint", "null": ""}]},
+    "aboutUrl": "{{([Naam, '-adres']|join)}}",
+    "propertyUrl": "owl:sameAs",
+    "csvw:value": "https://hisgis.nl/resource/atm/lp-{{locationPoint}}",
     "datatype": "xsd:anyURI"
    }, 
    {
@@ -221,7 +442,7 @@
     "datatype": "xsd:string"
    }
   ],
-  "primaryKey": "ID",
-  "aboutUrl": "{ID}"
+  "primaryKey": "Naam",
+  "aboutUrl": "{Naam}"
  }
 }

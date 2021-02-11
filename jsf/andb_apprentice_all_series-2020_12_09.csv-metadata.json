@@ -53,7 +53,7 @@
     "@id": "https://iisg.amsterdam/id/andb/andb_apprentice_all_series.csv/column/adm_id",
     "name": "adm_id",
     "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:Card",
+    "valueUrl": "vocab:ApprenticeCard",
     "dc:description": "Identifier van de kaart"
    },
    {
@@ -66,7 +66,7 @@
    {
     "@id": "https://iisg.amsterdam/id/andb/andb_apprentice_all_series.csv/column/adm_image_no",
     "name": "adm_image_no",
-    "propertyUrl": "vocab:inventarisNummer",
+    "propertyUrl": "vocab:inventoryNumber",
     "dc:description": "Inventarisnummer IISG",
     "datatype": "xsd:string"
    },
@@ -364,12 +364,12 @@
     "null": {"@list": [{"name": "sdn_street_01", "null": ""}]},
     "aboutUrl": "{{([sdn_street_01, ' ', sdn_street_no_01, ' ', sdn_street_no_add_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{sdn_street_01}}"
+    "valueUrl": "{{([sdn_street_01, sdn_city_01]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_01", "null": ""}]},
-    "aboutUrl": "{{sdn_street_01}}",
+    "aboutUrl": "{{([sdn_street_01, sdn_city_01]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{sdn_street_01}}",
     "datatype": "xsd:string"
@@ -377,14 +377,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_01", "null": ""}]},
-    "aboutUrl": "{{sdn_street_01}}",
+    "aboutUrl": "{{([sdn_street_01, sdn_city_01]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_01", "null": ""}]},
-    "aboutUrl": "{{sdn_street_01}}",
+    "aboutUrl": "{{([sdn_street_01, sdn_city_01]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{sdn_street_01}}",
     "datatype": "xsd:string"
@@ -407,8 +407,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "sdn_city_01", "null": ""}]},
-    "aboutUrl": "{{sdn_street_01}}",
+    "null": {"@list": [{"name": "sdn_street_01", "null": ""}, {"name": "sdn_city_01", "null": ""}]},
+    "aboutUrl": "{{([sdn_street_01, sdn_city_01]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{sdn_city_01}}",
     "datatype": "xsd:string"
@@ -424,7 +424,7 @@
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_adamlink_uri_01", "null": ""}]},
     "name": "sdn_street_adamlink_uri_01",
-    "aboutUrl": "{{sdn_street_01}}",
+    "aboutUrl": "{{([sdn_street_01, sdn_city_01]|join)}}",
     "propertyUrl": "owl:sameAs",
     "csvw:value": "{{sdn_street_adamlink_uri_01}}",
     "datatype": "xsd:anyURI"
@@ -534,12 +534,12 @@
     "null": {"@list": [{"name": "sdn_street_02", "null": ""}]},
     "aboutUrl": "{{([sdn_street_02, ' ', sdn_street_no_02, ' ', sdn_street_no_add_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{sdn_street_02}}"
+    "valueUrl": "{{([sdn_street_02, sdn_city_02]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_02", "null": ""}]},
-    "aboutUrl": "{{sdn_street_02}}",
+    "aboutUrl": "{{([sdn_street_02, sdn_city_02]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{sdn_street_02}}",
     "datatype": "xsd:string"
@@ -547,14 +547,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_02", "null": ""}]},
-    "aboutUrl": "{{sdn_street_02}}",
+    "aboutUrl": "{{([sdn_street_02, sdn_city_02]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_02", "null": ""}]},
-    "aboutUrl": "{{sdn_street_02}}",
+    "aboutUrl": "{{([sdn_street_02, sdn_city_02]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{sdn_street_02}}",
     "datatype": "xsd:string"
@@ -577,8 +577,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "sdn_city_02", "null": ""}]},
-    "aboutUrl": "{{sdn_street_02}}",
+    "null": {"@list": [{"name": "sdn_street_02", "null": ""}, {"name": "sdn_city_02", "null": ""}]},
+    "aboutUrl": "{{([sdn_street_02, sdn_city_02]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{sdn_city_02}}",
     "datatype": "xsd:string"
@@ -594,7 +594,7 @@
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_adamlink_uri_02", "null": ""}]},
     "name": "sdn_street_adamlink_uri_02",
-    "aboutUrl": "{{sdn_street_02}}",
+    "aboutUrl": "{{([sdn_street_02, sdn_city_02]|join)}}",
     "propertyUrl": "owl:sameAs",
     "csvw:value": "{{sdn_street_adamlink_uri_02}}",
     "datatype": "xsd:anyURI"
@@ -710,12 +710,12 @@
     "null": {"@list": [{"name": "sdn_street_03", "null": ""}]},
     "aboutUrl": "{{([sdn_street_03, ' ', sdn_street_no_03, ' ', sdn_street_no_add_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{sdn_street_03}}"
+    "valueUrl": "{{([sdn_street_03, sdn_city_03]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_03", "null": ""}]},
-    "aboutUrl": "{{sdn_street_03}}",
+    "aboutUrl": "{{([sdn_street_03, sdn_city_03]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{sdn_street_03}}",
     "datatype": "xsd:string"
@@ -723,14 +723,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_03", "null": ""}]},
-    "aboutUrl": "{{sdn_street_03}}",
+    "aboutUrl": "{{([sdn_street_03, sdn_city_03]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_03", "null": ""}]},
-    "aboutUrl": "{{sdn_street_03}}",
+    "aboutUrl": "{{([sdn_street_03, sdn_city_03]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{sdn_street_03}}",
     "datatype": "xsd:string"
@@ -753,8 +753,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "sdn_city_03", "null": ""}]},
-    "aboutUrl": "{{sdn_street_03}}",
+    "null": {"@list": [{"name": "sdn_street_03", "null": ""}, {"name": "sdn_city_03", "null": ""}]},
+    "aboutUrl": "{{([sdn_street_03, sdn_city_03]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{sdn_city_03}}",
     "datatype": "xsd:string"
@@ -770,7 +770,7 @@
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_adamlink_uri_03", "null": ""}]},
     "name": "sdn_street_adamlink_uri_03",
-    "aboutUrl": "{{sdn_street_03}}",
+    "aboutUrl": "{{([sdn_street_03, sdn_city_03]|join)}}",
     "propertyUrl": "owl:sameAs",
     "csvw:value": "{{sdn_street_adamlink_uri_03}}",
     "datatype": "xsd:anyURI"
@@ -886,12 +886,12 @@
     "null": {"@list": [{"name": "sdn_street_04", "null": ""}]},
     "aboutUrl": "{{([sdn_street_04, ' ', sdn_street_no_04, ' ', sdn_street_no_add_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{sdn_street_04}}"
+    "valueUrl": "{{([sdn_street_04, sdn_city_04]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_04", "null": ""}]},
-    "aboutUrl": "{{sdn_street_04}}",
+    "aboutUrl": "{{([sdn_street_04, sdn_city_04]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{sdn_street_04}}",
     "datatype": "xsd:string"
@@ -899,14 +899,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_04", "null": ""}]},
-    "aboutUrl": "{{sdn_street_04}}",
+    "aboutUrl": "{{([sdn_street_04, sdn_city_04]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_04", "null": ""}]},
-    "aboutUrl": "{{sdn_street_04}}",
+    "aboutUrl": "{{([sdn_street_04, sdn_city_04]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{sdn_street_04}}",
     "datatype": "xsd:string"
@@ -929,8 +929,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "sdn_city_04", "null": ""}]},
-    "aboutUrl": "{{sdn_street_04}}",
+    "null": {"@list": [{"name": "sdn_street_04", "null": ""}, {"name": "sdn_city_04", "null": ""}]},
+    "aboutUrl": "{{([sdn_street_04, sdn_city_04]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{sdn_city_04}}",
     "datatype": "xsd:string"
@@ -946,7 +946,7 @@
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_adamlink_uri_04", "null": ""}]},
     "name": "sdn_street_adamlink_uri_04",
-    "aboutUrl": "{{sdn_street_04}}",
+    "aboutUrl": "{{([sdn_street_04, sdn_city_04]|join)}}",
     "propertyUrl": "owl:sameAs",
     "csvw:value": "{{sdn_street_adamlink_uri_04}}",
     "datatype": "xsd:anyURI"
@@ -1062,12 +1062,12 @@
     "null": {"@list": [{"name": "sdn_street_05", "null": ""}]},
     "aboutUrl": "{{([sdn_street_05, ' ', sdn_street_no_05, ' ', sdn_street_no_add_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{sdn_street_05}}"
+    "valueUrl": "{{([sdn_street_05, sdn_city_05]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_05", "null": ""}]},
-    "aboutUrl": "{{sdn_street_05}}",
+    "aboutUrl": "{{([sdn_street_05, sdn_city_05]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{sdn_street_05}}",
     "datatype": "xsd:string"
@@ -1075,14 +1075,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_05", "null": ""}]},
-    "aboutUrl": "{{sdn_street_05}}",
+    "aboutUrl": "{{([sdn_street_05, sdn_city_05]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_05", "null": ""}]},
-    "aboutUrl": "{{sdn_street_05}}",
+    "aboutUrl": "{{([sdn_street_05, sdn_city_05]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{sdn_street_05}}",
     "datatype": "xsd:string"
@@ -1105,8 +1105,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "sdn_city_05", "null": ""}]},
-    "aboutUrl": "{{sdn_street_05}}",
+    "null": {"@list": [{"name": "sdn_street_05", "null": ""}, {"name": "sdn_city_05", "null": ""}]},
+    "aboutUrl": "{{([sdn_street_05, sdn_city_05]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{sdn_city_05}}",
     "datatype": "xsd:string"
@@ -1122,7 +1122,7 @@
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_street_adamlink_uri_05", "null": ""}]},
     "name": "sdn_street_adamlink_uri_05",
-    "aboutUrl": "{{sdn_street_05}}",
+    "aboutUrl": "{{([sdn_street_05, sdn_city_05]|join)}}",
     "propertyUrl": "owl:sameAs",
     "csvw:value": "{{sdn_street_adamlink_uri_05}}",
     "datatype": "xsd:anyURI"
@@ -1222,9 +1222,20 @@
     "null": {"@list": [{"name": "sdn_occupation", "null": ""}]},
     "aboutUrl": "{{([adm_id, '-education']|join)}}",
     "propertyUrl": "schema:occupation",
-    "valueUrl": "{{sdn_occupation}}",
-    "dc:description": "Beroepsgroep",
-    "datatype": "xsd:string"
+    "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{sdn_occupation}}"
+   },
+    {
+    "virtual": "true", 
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{sdn_occupation}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Occupation"
+   }, 
+   {
+    "lang": "nl",
+    "virtual": "true", 
+    "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{sdn_occupation}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{sdn_occupation}}"
    },
     {
     "virtual": "true", 
@@ -1479,18 +1490,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_01}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_01}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_01", "null": ""}]},
-    "aboutUrl": "{{wsp_name_01}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_01}}",
     "datatype": "xsd:string"
@@ -1498,7 +1509,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_01", "null": ""}]},
-    "aboutUrl": "{{wsp_name_01}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_01}}",
     "datatype": "xsd:string"
@@ -1529,12 +1540,12 @@
     "null": {"@list": [{"name": "wsp_street_01", "null": ""}]},
     "aboutUrl": "{{([wsp_street_01, ' ', wsp_street_no_01, ' ', wsp_street_no_ad_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_01}}"
+    "valueUrl": "{{([wsp_street_01, wsp_city_01]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_01", "null": ""}]},
-    "aboutUrl": "{{wsp_street_01}}",
+    "aboutUrl": "{{([wsp_street_01, wsp_city_01]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_01}}",
     "datatype": "xsd:string"
@@ -1542,14 +1553,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_01", "null": ""}]},
-    "aboutUrl": "{{wsp_street_01}}",
+    "aboutUrl": "{{([wsp_street_01, wsp_city_01]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_01", "null": ""}]},
-    "aboutUrl": "{{wsp_street_01}}",
+    "aboutUrl": "{{([wsp_street_01, wsp_city_01]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_01}}",
     "datatype": "xsd:string"
@@ -1572,8 +1583,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_01", "null": ""}]},
-    "aboutUrl": "{{wsp_street_01}}",
+    "null": {"@list": [{"name": "wsp_street_01", "null": ""}, {"name": "wsp_city_01", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_01, wsp_city_01]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_01}}",
     "datatype": "xsd:string"
@@ -1645,37 +1656,77 @@
     "null": {"@list": [{"name": "mst_name_01", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_01}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_01]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_01", "null": ""}]},
-    "aboutUrl": "{{mst_name_01}}",
+    "aboutUrl": "{{(['master-', mst_name_01]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_01]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_01]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_01}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_01]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_01}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_01}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_leermeester_01]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_01}}",
+    "aboutUrl": "{{(['master-', mst_name_leermeester_01]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_01]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_01]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_leermeester_01}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_01]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_leermeester_01}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_01", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_01}}",
+    "csvw:value": "{{mst_name_mbc_01}}",
     "datatype": "xsd:string"
    },
     {
@@ -1695,18 +1746,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_02}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_02}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_02", "null": ""}]},
-    "aboutUrl": "{{wsp_name_02}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_02}}",
     "datatype": "xsd:string"
@@ -1714,7 +1765,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_02", "null": ""}]},
-    "aboutUrl": "{{wsp_name_02}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_02}}",
     "datatype": "xsd:string"
@@ -1745,12 +1796,12 @@
     "null": {"@list": [{"name": "wsp_street_02", "null": ""}]},
     "aboutUrl": "{{([wsp_street_02, ' ', wsp_street_no_02, ' ', wsp_street_no_ad_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_02}}"
+    "valueUrl": "{{([wsp_street_02, wsp_city_02]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_02", "null": ""}]},
-    "aboutUrl": "{{wsp_street_02}}",
+    "aboutUrl": "{{([wsp_street_02, wsp_city_02]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_02}}",
     "datatype": "xsd:string"
@@ -1758,14 +1809,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_02", "null": ""}]},
-    "aboutUrl": "{{wsp_street_02}}",
+    "aboutUrl": "{{([wsp_street_02, wsp_city_02]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_02", "null": ""}]},
-    "aboutUrl": "{{wsp_street_02}}",
+    "aboutUrl": "{{([wsp_street_02, wsp_city_02]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_02}}",
     "datatype": "xsd:string"
@@ -1788,8 +1839,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_02", "null": ""}]},
-    "aboutUrl": "{{wsp_street_02}}",
+    "null": {"@list": [{"name": "wsp_street_02", "null": ""}, {"name": "wsp_city_02", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_02, wsp_city_02]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_02}}",
     "datatype": "xsd:string"
@@ -1867,37 +1918,77 @@
     "null": {"@list": [{"name": "mst_name_02", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_02}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_02]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_02", "null": ""}]},
-    "aboutUrl": "{{mst_name_02}}",
+    "aboutUrl": "{{(['master-', mst_name_02]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_02", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_02]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_02", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_02]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_02}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_02", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_02]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_02}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_02", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_02}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_leermeester_02]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_02", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_02}}",
+    "aboutUrl": "{{(['master-', mst_name_leermeester_02]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_02", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_02]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_02", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_02]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_leermeester_02}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_02", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_02]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_leermeester_02}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_02", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_02}}",
+    "csvw:value": "{{mst_name_mbc_02}}",
     "datatype": "xsd:string"
    },
     {
@@ -1917,18 +2008,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_03}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_03}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_03", "null": ""}]},
-    "aboutUrl": "{{wsp_name_03}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_03}}",
     "datatype": "xsd:string"
@@ -1936,7 +2027,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_03", "null": ""}]},
-    "aboutUrl": "{{wsp_name_03}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_03}}",
     "datatype": "xsd:string"
@@ -1967,12 +2058,12 @@
     "null": {"@list": [{"name": "wsp_street_03", "null": ""}]},
     "aboutUrl": "{{([wsp_street_03, ' ', wsp_street_no_03, ' ', wsp_street_no_ad_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_03}}"
+    "valueUrl": "{{([wsp_street_03, wsp_city_03]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_03", "null": ""}]},
-    "aboutUrl": "{{wsp_street_03}}",
+    "aboutUrl": "{{([wsp_street_03, wsp_city_03]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_03}}",
     "datatype": "xsd:string"
@@ -1980,14 +2071,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_03", "null": ""}]},
-    "aboutUrl": "{{wsp_street_03}}",
+    "aboutUrl": "{{([wsp_street_03, wsp_city_03]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_03", "null": ""}]},
-    "aboutUrl": "{{wsp_street_03}}",
+    "aboutUrl": "{{([wsp_street_03, wsp_city_03]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_03}}",
     "datatype": "xsd:string"
@@ -2010,8 +2101,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_03", "null": ""}]},
-    "aboutUrl": "{{wsp_street_03}}",
+    "null": {"@list": [{"name": "wsp_street_03", "null": ""}, {"name": "wsp_city_03", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_03, wsp_city_03]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_03}}",
     "datatype": "xsd:string"
@@ -2089,37 +2180,77 @@
     "null": {"@list": [{"name": "mst_name_03", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_03}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_03]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_03", "null": ""}]},
-    "aboutUrl": "{{mst_name_03}}",
+    "aboutUrl": "{{(['master-', mst_name_03]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_03", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_03]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_03", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_03]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_03}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_03", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_03]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_03}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_03", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_03}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_leermeester_03]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_03", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_03}}",
+    "aboutUrl": "{{(['master-', mst_name_leermeester_03]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_03", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_03]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_03", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_03]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_leermeester_03}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_03", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_03]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_leermeester_03}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_03", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_03}}",
+    "csvw:value": "{{mst_name_mbc_03}}",
     "datatype": "xsd:string"
    },
     {
@@ -2139,18 +2270,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_04}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_04}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_04", "null": ""}]},
-    "aboutUrl": "{{wsp_name_04}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_04}}",
     "datatype": "xsd:string"
@@ -2158,7 +2289,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_04", "null": ""}]},
-    "aboutUrl": "{{wsp_name_04}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_04}}",
     "datatype": "xsd:string"
@@ -2189,12 +2320,12 @@
     "null": {"@list": [{"name": "wsp_street_04", "null": ""}]},
     "aboutUrl": "{{([wsp_street_04, ' ', wsp_street_no_04, ' ', wsp_street_no_ad_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_04}}"
+    "valueUrl": "{{([wsp_street_04, wsp_city_04]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_04", "null": ""}]},
-    "aboutUrl": "{{wsp_street_04}}",
+    "aboutUrl": "{{([wsp_street_04, wsp_city_04]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_04}}",
     "datatype": "xsd:string"
@@ -2202,14 +2333,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_04", "null": ""}]},
-    "aboutUrl": "{{wsp_street_04}}",
+    "aboutUrl": "{{([wsp_street_04, wsp_city_04]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_04", "null": ""}]},
-    "aboutUrl": "{{wsp_street_04}}",
+    "aboutUrl": "{{([wsp_street_04, wsp_city_04]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_04}}",
     "datatype": "xsd:string"
@@ -2232,8 +2363,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_04", "null": ""}]},
-    "aboutUrl": "{{wsp_street_04}}",
+    "null": {"@list": [{"name": "wsp_street_04", "null": ""}, {"name": "wsp_city_04", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_04, wsp_city_04]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_04}}",
     "datatype": "xsd:string"
@@ -2311,37 +2442,77 @@
     "null": {"@list": [{"name": "mst_name_04", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_04}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_04]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_04", "null": ""}]},
-    "aboutUrl": "{{mst_name_04}}",
+    "aboutUrl": "{{(['master-', mst_name_04]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_04", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_04]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_04", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_04]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_04}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_04", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_04]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_04}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_04", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_04}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_leermeester_04]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_04", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_04}}",
+    "aboutUrl": "{{(['master-', mst_name_leermeester_04]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_04", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_04]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_04", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_04]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_leermeester_04}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_04", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_04]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_leermeester_04}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_04", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_04}}",
+    "csvw:value": "{{mst_name_mbc_04}}",
     "datatype": "xsd:string"
    },
     {
@@ -2361,18 +2532,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_05}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_05}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_05", "null": ""}]},
-    "aboutUrl": "{{wsp_name_05}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_05}}",
     "datatype": "xsd:string"
@@ -2380,7 +2551,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_05", "null": ""}]},
-    "aboutUrl": "{{wsp_name_05}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_05}}",
     "datatype": "xsd:string"
@@ -2411,12 +2582,12 @@
     "null": {"@list": [{"name": "wsp_street_05", "null": ""}]},
     "aboutUrl": "{{([wsp_street_05, ' ', wsp_street_no_05, ' ', wsp_street_no_ad_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_05}}"
+    "valueUrl": "{{([wsp_street_05, wsp_city_05]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_05", "null": ""}]},
-    "aboutUrl": "{{wsp_street_05}}",
+    "aboutUrl": "{{([wsp_street_05, wsp_city_05]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_05}}",
     "datatype": "xsd:string"
@@ -2424,14 +2595,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_05", "null": ""}]},
-    "aboutUrl": "{{wsp_street_05}}",
+    "aboutUrl": "{{([wsp_street_05, wsp_city_05]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_05", "null": ""}]},
-    "aboutUrl": "{{wsp_street_05}}",
+    "aboutUrl": "{{([wsp_street_05, wsp_city_05]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_05}}",
     "datatype": "xsd:string"
@@ -2454,8 +2625,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_05", "null": ""}]},
-    "aboutUrl": "{{wsp_street_05}}",
+    "null": {"@list": [{"name": "wsp_street_05", "null": ""}, {"name": "wsp_city_05", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_05, wsp_city_05]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_05}}",
     "datatype": "xsd:string"
@@ -2533,37 +2704,77 @@
     "null": {"@list": [{"name": "mst_name_05", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_05}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_05]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_05", "null": ""}]},
-    "aboutUrl": "{{mst_name_05}}",
+    "aboutUrl": "{{(['master-', mst_name_05]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_05", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_05]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_05", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_05]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_05}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_05", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_05]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_05}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_05", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_05}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_leermeester_05]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_05", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_05}}",
+    "aboutUrl": "{{(['master-', mst_name_leermeester_05]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_05", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_05]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_05", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_05]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_leermeester_05}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_05", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_05]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_leermeester_05}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_05", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_05}}",
+    "csvw:value": "{{mst_name_mbc_05}}",
     "datatype": "xsd:string"
    },
     {
@@ -2583,18 +2794,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_06}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_06}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_06", "null": ""}]},
-    "aboutUrl": "{{wsp_name_06}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_06}}",
     "datatype": "xsd:string"
@@ -2602,7 +2813,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_06", "null": ""}]},
-    "aboutUrl": "{{wsp_name_06}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_06}}",
     "datatype": "xsd:string"
@@ -2633,12 +2844,12 @@
     "null": {"@list": [{"name": "wsp_street_06", "null": ""}]},
     "aboutUrl": "{{([wsp_street_06, ' ', wsp_street_no_06, ' ', wsp_street_no_ad_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_06}}"
+    "valueUrl": "{{([wsp_street_06, wsp_city_06]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_06", "null": ""}]},
-    "aboutUrl": "{{wsp_street_06}}",
+    "aboutUrl": "{{([wsp_street_06, wsp_city_06]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_06}}",
     "datatype": "xsd:string"
@@ -2646,14 +2857,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_06", "null": ""}]},
-    "aboutUrl": "{{wsp_street_06}}",
+    "aboutUrl": "{{([wsp_street_06, wsp_city_06]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_06", "null": ""}]},
-    "aboutUrl": "{{wsp_street_06}}",
+    "aboutUrl": "{{([wsp_street_06, wsp_city_06]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_06}}",
     "datatype": "xsd:string"
@@ -2676,8 +2887,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_06", "null": ""}]},
-    "aboutUrl": "{{wsp_street_06}}",
+    "null": {"@list": [{"name": "wsp_street_06", "null": ""}, {"name": "wsp_city_06", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_06, wsp_city_06]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_06}}",
     "datatype": "xsd:string"
@@ -2755,37 +2966,77 @@
     "null": {"@list": [{"name": "mst_name_06", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_06}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_06]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_06", "null": ""}]},
-    "aboutUrl": "{{mst_name_06}}",
+    "aboutUrl": "{{(['master-', mst_name_06]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_06", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_06]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_06", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_06]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_06}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_06", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_06]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_06}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_06", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_06}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_leermeester_01]|join)}}"
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "mst_name_leermeester_06", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_06}}",
+    "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_01]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_01]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_01]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_leermeester_01}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_leermeester_01", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_leermeester_01]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_leermeester_01}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_06", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_06}}",
+    "csvw:value": "{{mst_name_mbc_06}}",
     "datatype": "xsd:string"
    },
     {
@@ -2805,18 +3056,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_07}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_07}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_07", "null": ""}]},
-    "aboutUrl": "{{wsp_name_07}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_07}}",
     "datatype": "xsd:string"
@@ -2824,7 +3075,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_07", "null": ""}]},
-    "aboutUrl": "{{wsp_name_07}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_07}}",
     "datatype": "xsd:string"
@@ -2855,12 +3106,12 @@
     "null": {"@list": [{"name": "wsp_street_07", "null": ""}]},
     "aboutUrl": "{{([wsp_street_07, ' ', wsp_street_no_07, ' ', wsp_street_no_ad_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_07}}"
+    "valueUrl": "{{([wsp_street_07, wsp_city_07]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_07", "null": ""}]},
-    "aboutUrl": "{{wsp_street_07}}",
+    "aboutUrl": "{{([wsp_street_07, wsp_city_07]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_07}}",
     "datatype": "xsd:string"
@@ -2868,14 +3119,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_07", "null": ""}]},
-    "aboutUrl": "{{wsp_street_07}}",
+    "aboutUrl": "{{([wsp_street_07, wsp_city_07]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_07", "null": ""}]},
-    "aboutUrl": "{{wsp_street_07}}",
+    "aboutUrl": "{{([wsp_street_07, wsp_city_07]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_07}}",
     "datatype": "xsd:string"
@@ -2898,8 +3149,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_07", "null": ""}]},
-    "aboutUrl": "{{wsp_street_07}}",
+    "null": {"@list": [{"name": "wsp_street_07", "null": ""}, {"name": "wsp_city_07", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_07, wsp_city_07]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_07}}",
     "datatype": "xsd:string"
@@ -2977,37 +3228,77 @@
     "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_07}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_07]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
-    "aboutUrl": "{{mst_name_07}}",
+    "aboutUrl": "{{(['master-', mst_name_07]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_07]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_07]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_07}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_07]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_07}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_07", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_07}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_07]|join)}}"
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "mst_name_leermeester_07", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_07}}",
+    "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_07]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_07]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_07]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_07}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_07", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_07]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_07}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_07", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_07}}",
+    "csvw:value": "{{mst_name_mbc_07}}",
     "datatype": "xsd:string"
    },
     {
@@ -3027,18 +3318,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_08}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_08}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_08", "null": ""}]},
-    "aboutUrl": "{{wsp_name_08}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_08}}",
     "datatype": "xsd:string"
@@ -3046,7 +3337,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_08", "null": ""}]},
-    "aboutUrl": "{{wsp_name_08}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_08}}",
     "datatype": "xsd:string"
@@ -3077,12 +3368,12 @@
     "null": {"@list": [{"name": "wsp_street_08", "null": ""}]},
     "aboutUrl": "{{([wsp_street_08, ' ', wsp_street_no_08, ' ', wsp_street_no_ad_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_08}}"
+    "valueUrl": "{{([wsp_street_08, wsp_city_08]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_08", "null": ""}]},
-    "aboutUrl": "{{wsp_street_08}}",
+    "aboutUrl": "{{([wsp_street_08, wsp_city_08]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_08}}",
     "datatype": "xsd:string"
@@ -3090,14 +3381,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_08", "null": ""}]},
-    "aboutUrl": "{{wsp_street_08}}",
+    "aboutUrl": "{{([wsp_street_08, wsp_city_08]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_08", "null": ""}]},
-    "aboutUrl": "{{wsp_street_08}}",
+    "aboutUrl": "{{([wsp_street_08, wsp_city_08]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_08}}",
     "datatype": "xsd:string"
@@ -3120,8 +3411,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_08", "null": ""}]},
-    "aboutUrl": "{{wsp_street_08}}",
+    "null": {"@list": [{"name": "wsp_street_08", "null": ""}, {"name": "wsp_city_08", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_08, wsp_city_08]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_08}}",
     "datatype": "xsd:string"
@@ -3199,37 +3490,77 @@
     "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_08}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_08]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
-    "aboutUrl": "{{mst_name_08}}",
+    "aboutUrl": "{{(['master-', mst_name_08]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_08]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_08]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_08}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_08]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_08}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_08", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_08}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_08]|join)}}"
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "mst_name_leermeester_08", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_08}}",
+    "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_08]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_08]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_08]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_08}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_08", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_08]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_08}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_08", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_08}}",
+    "csvw:value": "{{mst_name_mbc_08}}",
     "datatype": "xsd:string"
    },
     {
@@ -3249,18 +3580,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_09}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_09}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_09", "null": ""}]},
-    "aboutUrl": "{{wsp_name_09}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_09}}",
     "datatype": "xsd:string"
@@ -3268,7 +3599,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_09", "null": ""}]},
-    "aboutUrl": "{{wsp_name_09}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_09}}",
     "datatype": "xsd:string"
@@ -3299,12 +3630,12 @@
     "null": {"@list": [{"name": "wsp_street_09", "null": ""}]},
     "aboutUrl": "{{([wsp_street_09, ' ', wsp_street_no_09, ' ', wsp_street_no_ad_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_09}}"
+    "valueUrl": "{{([wsp_street_09, wsp_city_09]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_09", "null": ""}]},
-    "aboutUrl": "{{wsp_street_09}}",
+    "aboutUrl": "{{([wsp_street_09, wsp_city_09]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_09}}",
     "datatype": "xsd:string"
@@ -3312,14 +3643,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_09", "null": ""}]},
-    "aboutUrl": "{{wsp_street_09}}",
+    "aboutUrl": "{{([wsp_street_09, wsp_city_09]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_09", "null": ""}]},
-    "aboutUrl": "{{wsp_street_09}}",
+    "aboutUrl": "{{([wsp_street_09, wsp_city_09]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_09}}",
     "datatype": "xsd:string"
@@ -3342,8 +3673,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_09", "null": ""}]},
-    "aboutUrl": "{{wsp_street_09}}",
+    "null": {"@list": [{"name": "wsp_street_09", "null": ""}, {"name": "wsp_city_09", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_09, wsp_city_09]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_09}}",
     "datatype": "xsd:string"
@@ -3421,37 +3752,77 @@
     "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_09}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_09]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
-    "aboutUrl": "{{mst_name_09}}",
+    "aboutUrl": "{{(['master-', mst_name_09]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_09]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_09]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_09}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_09]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_09}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_09", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_09}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_09]|join)}}"
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "mst_name_leermeester_09", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_09}}",
+    "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_09]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_09]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_09]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_09}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_09", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_09]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_09}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_09", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_09}}",
+    "csvw:value": "{{mst_name_mbc_09}}",
     "datatype": "xsd:string"
    },
     {
@@ -3471,18 +3842,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{wsp_name_10}}"
+    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{wsp_name_10}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_10", "null": ""}]},
-    "aboutUrl": "{{wsp_name_10}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_10}}",
     "datatype": "xsd:string"
@@ -3490,7 +3861,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_10", "null": ""}]},
-    "aboutUrl": "{{wsp_name_10}}",
+    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_10}}",
     "datatype": "xsd:string"
@@ -3521,12 +3892,12 @@
     "null": {"@list": [{"name": "wsp_street_10", "null": ""}]},
     "aboutUrl": "{{([wsp_street_10, ' ', wsp_street_no_10, ' ', wsp_street_no_ad_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{wsp_street_10}}"
+    "valueUrl": "{{([wsp_street_10, wsp_city_10]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_10", "null": ""}]},
-    "aboutUrl": "{{wsp_street_10}}",
+    "aboutUrl": "{{([wsp_street_10, wsp_city_10]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_street_10}}",
     "datatype": "xsd:string"
@@ -3534,14 +3905,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_10", "null": ""}]},
-    "aboutUrl": "{{wsp_street_10}}",
+    "aboutUrl": "{{([wsp_street_10, wsp_city_10]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_street_10", "null": ""}]},
-    "aboutUrl": "{{wsp_street_10}}",
+    "aboutUrl": "{{([wsp_street_10, wsp_city_10]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_street_10}}",
     "datatype": "xsd:string"
@@ -3564,8 +3935,8 @@
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "wsp_city_10", "null": ""}]},
-    "aboutUrl": "{{wsp_street_10}}",
+    "null": {"@list": [{"name": "wsp_street_10", "null": ""}, {"name": "wsp_city_10", "null": ""}]},
+    "aboutUrl": "{{([wsp_street_10, wsp_city_10]|join)}}",
     "propertyUrl": "geo:sfWithin",
     "valueUrl": "{{wsp_city_10}}",
     "datatype": "xsd:string"
@@ -3637,37 +4008,77 @@
     "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_10}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_10]|join)}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
-    "aboutUrl": "{{mst_name_10}}",
+    "aboutUrl": "{{(['master-', mst_name_10]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_10]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_10]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_10}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_10]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_10}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_leermeester_10", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10']|join)}}{% endif %}",
     "propertyUrl": "vocab:master",
-    "valueUrl": "{{mst_name_leermeester_10}}",
-    "datatype": "xsd:string"
+    "valueUrl": "{{(['master-', mst_name_10]|join)}}"
    },
    {
     "virtual": "true", 
-    "null": {"@list": [{"name": "mst_name_leermeester_10", "null": ""}]},
-    "aboutUrl": "{{mst_name_leermeester_10}}",
+    "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_10]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Master"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_10]|join)}}",
+    "propertyUrl": "rdf:type",
+    "valueUrl": "schema:Person"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_10]|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{mst_name_10}}"
+   },
+   {
+    "virtual": "true", 
+    "null": {"@list": [{"name": "mst_name_10", "null": ""}]},
+    "aboutUrl": "{{(['master-', mst_name_10]|join)}}",
+    "propertyUrl": "schema:name",
+    "csvw:value": "{{mst_name_10}}"
    },
     {
     "virtual": "true", 
     "null": {"@list": [{"name": "mst_name_mbc_10", "null": ""}]},
     "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10']|join)}}{% endif %}",
     "propertyUrl": "vocab:masterMembership",
-    "valueUrl": "{{mst_name_mbc_10}}",
+    "csvw:value": "{{mst_name_mbc_10}}",
     "datatype": "xsd:string"
    },
    {
@@ -3978,7 +4389,7 @@
    },
    {
     "virtual": "true",
-    "null": {"@list": [{"name": "par_last_name", "null": ""}]},
+    "null": {"@list": [{"name": "par_birth_place", "null": ""}]},
     "aboutUrl": "{{([adm_id, '-parent']|join)}}",
     "propertyUrl": "schema:birthPlace",
     "csvw:value": "{{par_birth_place}}",
@@ -4008,7 +4419,7 @@
    },
    {
     "virtual": "true",
-    "null": {"@list": [{"name": "par_un_name", "null": ""}]},
+    "null": {"@list": [{"name": "par_un_section_no", "null": ""}]},
     "aboutUrl": "{{([adm_id, '-par_membership']|join)}}",
     "propertyUrl": "dc:identifier",
     "csvw:value": "{{par_un_section_no}}",
