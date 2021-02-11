@@ -50,6 +50,12 @@
  "tableSchema": {
   "columns": [
    {
+    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/ID",
+    "name": "ID",
+    "propertyUrl": "dc:identifier",
+    "datatype": "xsd:string"
+   },
+   {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naam",
     "name": "Naam",
     "propertyUrl": "rdf:type",
@@ -134,7 +140,7 @@
     "null": {"@list": [{"name": "Eigenaar_1", "null": ""}]},
     "aboutUrl": "{{Eigenaar_1}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "schema:person"
+    "valueUrl": "schema:Person"
    },
    {
     "lang": "nl",
@@ -165,7 +171,7 @@
     "null": {"@list": [{"name": "Eigenaar_2", "null": ""}]},
     "aboutUrl": "{{Eigenaar_2}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "schema:person"
+    "valueUrl": "schema:Person"
    },
    {
     "lang": "nl",
@@ -196,7 +202,7 @@
     "null": {"@list": [{"name": "Eigenaar_3", "null": ""}]},
     "aboutUrl": "{{Eigenaar_3}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "schema:person"
+    "valueUrl": "schema:Person"
    },
    {
     "lang": "nl",
@@ -227,7 +233,7 @@
     "null": {"@list": [{"name": "Eigenaar_4", "null": ""}]},
     "aboutUrl": "{{Eigenaar_4}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "schema:person"
+    "valueUrl": "schema:Person"
    },
    {
     "lang": "nl",
@@ -258,7 +264,7 @@
     "null": {"@list": [{"name": "Eigenaar_5", "null": ""}]},
     "aboutUrl": "{{Eigenaar_5}}",
     "propertyUrl": "rdf:type",
-    "valueUrl": "schema:person"
+    "valueUrl": "schema:Person"
    },
    {
     "lang": "nl",

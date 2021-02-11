@@ -1490,18 +1490,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_01", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_01}}",
     "datatype": "xsd:string"
@@ -1509,7 +1509,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_01", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_01}}",
     "datatype": "xsd:string"
@@ -1746,18 +1746,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_02", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_02}}",
     "datatype": "xsd:string"
@@ -1765,7 +1765,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_02", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_02}}",
     "datatype": "xsd:string"
@@ -2008,18 +2008,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_03", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_03}}",
     "datatype": "xsd:string"
@@ -2027,7 +2027,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_03", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_03}}",
     "datatype": "xsd:string"
@@ -2270,18 +2270,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_04", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_04}}",
     "datatype": "xsd:string"
@@ -2289,7 +2289,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_04", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_04}}",
     "datatype": "xsd:string"
@@ -2532,18 +2532,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_05", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_05}}",
     "datatype": "xsd:string"
@@ -2551,7 +2551,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_05", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_05}}",
     "datatype": "xsd:string"
@@ -2794,18 +2794,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_06", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_06}}",
     "datatype": "xsd:string"
@@ -2813,7 +2813,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_06", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_06}}",
     "datatype": "xsd:string"
@@ -3056,18 +3056,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_07", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_07}}",
     "datatype": "xsd:string"
@@ -3075,7 +3075,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_07", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_07}}",
     "datatype": "xsd:string"
@@ -3318,18 +3318,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_08", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_08}}",
     "datatype": "xsd:string"
@@ -3337,7 +3337,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_08", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_08}}",
     "datatype": "xsd:string"
@@ -3580,18 +3580,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_09", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_09}}",
     "datatype": "xsd:string"
@@ -3599,7 +3599,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_09", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_09}}",
     "datatype": "xsd:string"
@@ -3842,18 +3842,18 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10']|join)}}{% endif %}",
     "propertyUrl": "org:organization",
-    "valueUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}"
+    "valueUrl": "{{(['diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}"
    },
    {
     "virtual": "true", 
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Workshop"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_10", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{wsp_name_10}}",
     "datatype": "xsd:string"
@@ -3861,7 +3861,7 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_10", "null": ""}]},
-    "aboutUrl": "{{(['https://iisg.amsterdam/id/andb/diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
+    "aboutUrl": "{{(['diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{wsp_name_10}}",
     "datatype": "xsd:string"
