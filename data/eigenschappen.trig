@@ -13,6 +13,81 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
 
 andb: {
+  andb:aboutEducation
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions education"@en,
+      "vermeldt opleiding"@nl;
+    rdfs:range andb:Education;
+    rdfs:subPropertyOf foaf:topic.
+
+  andb:aboutMembership
+    a owl:ObjectProperty;
+    rdfs:comment "Cards can contain information about the union membership of the card holder."@en;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions membership"@en,
+      "vermeldt lidmaatschap"@nl;
+    rdfs:range andb:Membership;
+    rdfs:subPropertyOf foaf:topic.
+
+  andb:aboutMigration
+    a owl:ObjectProperty;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions migration"@en,
+      "vermeldt migratie"@nl;
+    rdfs:range andb:Migration;
+    rdfs:subPropertyOf foaf:topic.
+
+  andb:aboutResidency
+    a owl:ObjectProperty;
+    rdfs:comment "Cards can contain information about the addresses the card holder lived at."@en;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions residency"@en,
+      "vermeldt woonachtig"@nl;
+    rdfs:range andb:Residency;
+    rdfs:subPropertyOf foaf:topic.
+
+  andb:birthCountry
+    a owl:DatatypeProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has country of birth"@en,
+      "heeft geboorteland"@nl;
+    rdfs:range xsd:string.
+
+  andb:birthDate
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's birth date as presented on a card that describes the person."@en,
+      "De geboortedatum van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions birth date"@en,
+      "vermeldt geboortedatum"@nl;
+    rdfs:range xsd:date.
+
+  andb:birthPlace
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's place of birth as presented on a card that describes the person."@en,
+      "De geboorteplaats van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+    rdfs:domain schema:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions place of birth"@en,
+      "vermeldt geboorteplaats"@nl;
+    rdfs:range xsd:string.
+
   andb:brother
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
@@ -23,10 +98,20 @@ andb: {
     rdfs:range schema:Person;
     rdfs:subPropertyOf andb:relative.
 
+  andb:cardId
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has identifier"@en,
+      "heeft identificatie"@nl;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf dct:identifier.
+
   andb:child
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
-    owl:inverseOf andb:parent;
+    owl:inverseOf schema:parent;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has child"@en,
@@ -54,14 +139,29 @@ andb: {
     rdfs:range schema:Person;
     rdfs:subPropertyOf andb:child.
 
-  andb:duration
-    a owl:ObjectProperty;
-    rdfs:domain schema:Event;
+  andb:deathDate
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's death date as presented on a card that describes the person."@en,
+      "De overleidensdatum van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+    rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "has duration"@en,
-      "heeft duur"@nl;
-    rdfs:range time:ProperInterval.
+      "mentions death date"@en,
+      "vermeldt datum van overleiden"@nl;
+    rdfs:range xsd:date.
+
+  andb:deathPlace
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's death place as presented on a card that describes the person."@en,
+      "De plaats van overleiden van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+    rdfs:domain schema:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions place of death"@en,
+      "vermeldt plaats plaats van overleiden"@nl;
+    rdfs:range xsd:string.
 
   andb:event
     a owl:ObjectProperty;
@@ -82,16 +182,6 @@ andb: {
       "volgt onderwijs"@nl;
     rdfs:range andb:Education.
 
-  andb:examination
-    a owl:ObjectProperty;
-    rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "has examination"@en,
-      "heeft tentaminering"@nl;
-    rdfs:range andb:Examination;
-    rdfs:subPropertyOf andb:event.
-
   andb:examinator
     a owl:DatatypeProperty;
     rdfs:domain andb:Examination;
@@ -100,15 +190,6 @@ andb: {
       "has examinator"@en,
       "heeft examinator"@nl;
     rdfs:range xsd:string.
-
-  andb:examinee
-    a owl:ObjectProperty;
-    rdfs:domain andb:Examination;
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "has examinee"@en,
-      "heeft geëxamineerde"@nl;
-    rdfs:range schema:Person.
 
   andb:expanded
     a owl:DatatypeProperty;#
@@ -130,6 +211,18 @@ andb: {
       "heeft uitbreidingsdatum"@nl;
     rdfs:range xsd:gYear.
 
+  andb:familyName
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's family name as presented on a card that describes the person."@en,
+      "De familienaam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions family name"@en,
+      "noemt familienaam"@nl;
+    rdfs:range xsd:string.
+
   andb:father
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
@@ -138,7 +231,7 @@ andb: {
       "has father"@en,
       "heeft vader"@nl;
     rdfs:range schema:Person;
-    rdfs:subPropertyOf andb:parent.
+    rdfs:subPropertyOf schema:parent.
 
   andb:fosterChild
     a owl:ObjectProperty;
@@ -199,6 +292,18 @@ andb: {
       "is opgericht"@nl;
     rdfs:range xsd:string.
 
+  andb:givenName
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's given name as presented on a card that describes the person."@en,
+      "De toegekende naam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "mentions given name"@en,
+      "noemt toegekende naam"@nl;
+    rdfs:range xsd:string.
+
   andb:houseNumber
     a owl:DatatypeProperty;
     rdfs:comment
@@ -253,33 +358,44 @@ andb: {
       "volgt stage"@nl;
     rdfs:range andb:Internship.
 
-  andb:jobCategory
-    a owl:ObjectProperty;
-    rdfs:domain foaf:Document;
+  andb:inventoryNumber
+    a owl:DatatypeProperty;
+    rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "profession"@en,
-      "beroep"@nl;
-    rdfs:range andb:Occupation.
+      "has inventory number"@en,
+      "heeft inventarisnummer"@nl;
+    rdfs:range xsd:string.
 
   andb:maidenName
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "The person's maiden name as presented on a card that describes the person."@en,
+      "De meisjesnaam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has maiden name"@en,
+      "heeft meisjesnaam"@nl;
+    rdfs:range xsd:string.
+
+  andb:maidenNamePrefix
     a owl:DatatypeProperty;
     rdfs:domain schema:Person;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "maiden name"@en,
-      "meisjesnaam"@nl;
+      "has maiden name prefix"@en,
+      "heeft meisjesnaam voorvoegsel"@nl;
     rdfs:range xsd:string.
 
-  andb:marriage
+  andb:marriageDate
     a owl:ObjectProperty;
     rdfs:domain schema:Person;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "has marriage"@en,
-      "heeft huwelijk"@nl;
-    rdfs:range schema:MarryAction;
-    rdfs:subPropertyOf andb:event.
+      "has marriage date"@en,
+      "heeft huwelijksdatum"@nl;
+    rdfs:range xsd:date.
 
   andb:master
     a owl:DatatypeProperty;
@@ -298,6 +414,18 @@ andb: {
     rdfs:range xsd:string;
     skos:definition "The MD5 hash of the binary image contensts."@en;
     skos:scopeNote "The MD5 hash can be used in order to verify that the binary image indeed belongs to the metadata record."@en.
+
+  andb:membershipBrother
+    a owl:DatatypeProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;#
+    rdfs:range xsd:string.
+
+  andb:membershipSister
+    a owl:DatatypeProperty;
+    rdfs:domain schema:Person;
+    rdfs:isDefinedBy andb:;#
+    rdfs:range xsd:string.
 
   andb:middleName
     a owl:DatatypeProperty;
@@ -323,25 +451,17 @@ andb: {
       "has mother"@en,
       "heeft moeder"@nl;
     rdfs:range schema:Person;
-    rdfs:subPropertyOf andb:parent.
+    rdfs:subPropertyOf schema:parent.
 
-  andb:occupation
+  andb:mutation
     a owl:ObjectProperty;
-    rdfs:domain foaf:Document;
+    rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "has occupation"@en,
-      "heeft beroep"@nl;
-    rdfs:range andb:Occupation.
-
-  andb:organization
-    a owl:ObjectProperty;
-    rdfs:domain org:Membership;
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "has organization"@en,
-      "heeft organizatie"@nl;
-    rdfs:range schema:Organization.
+      "mentions mutation"@en,
+      "vermeldt mutatie"@nl;
+    rdfs:range andb:Mutation;
+    rdfs:subPropertyOf foaf:topic.
 
   andb:owner
     a owl:ObjectProperty;
@@ -351,16 +471,6 @@ andb: {
       "has owner"@en,
       "heeft eigenaar"@nl;
     rdfs:range xsd:string.
-
-  andb:parent
-    a owl:ObjectProperty;
-    rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "has parent"@en,
-      "heeft ouder"@nl;
-    rdfs:range schema:Person;
-    rdfs:subPropertyOf andb:relative.
 
   andb:relative
     a owl:ObjectProperty;
@@ -379,16 +489,6 @@ andb: {
       "has remark"@en,
       "heeft opmerking"@nl;
     rdfs:range rdf:langString.
-
-  andb:residency
-    a owl:ObjectProperty;
-    rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "residency"@en,
-      "bewoning"@nl;
-    rdfs:range andb:Residency;
-    rdfs:subPropertyOf andb:event.
 
   andb:screenVersion
     a owl:ObjectProperty;
@@ -425,6 +525,18 @@ andb: {
       "has spouse"@en,
       "heeft echtgenoot"@nl;
     rdfs:range schema:Person.
+
+  andb:stamp
+    a owl:DatatypeProperty;
+    rdfs:comment
+      "Stamps that are applied on cards."@en,
+      "Stempels die op kaarten zijn aangebracht."@nl;
+    rdfs:domain andb:Card;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has stamp"@en,
+      "heeft stempel"@nl;
+    rdfs:range xsd:string.
 
   andb:stepChild
     a owl:ObjectProperty;
@@ -531,23 +643,4 @@ andb: {
       "has union"@en,
       "heeft bond"@nl;
     rdfs:range schema:Organization.
-
-  andb:worker
-    a owl:ObjectProperty;
-    rdfs:domain andb:WorkEvent;
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "has worker"@en,
-      "heeft arbeider"@nl;
-    rdfs:range schema:Person.
-
-  andb:workEvent
-    a owl:ObjectProperty;
-    rdfs:domain schema:Person;
-    rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "has work event"@en,
-      "heeft werk evenement"@nl;
-    rdfs:range andb:WorkEvent;
-    rdfs:subPropertyOf andb:event.
 }

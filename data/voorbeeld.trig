@@ -111,13 +111,11 @@ id:instanties {
     a org:OrganizationalUnit;
     dct:identifier "2";
     org:unitOf id:andb;
-    rdfs:label
-      "Section 2"@en,
-      "Sectie 2"@nl.
+    rdfs:label "Sectie 2".
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1
     a andb:Residency;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency1-interval;
     rdfs:label
       "Residency of Adriaan Helsloot at Hazenstraat 8-II"@en,
       "Bewoning van Hazenstraat 8-II door Adriaan Helsloot"@nl;
@@ -126,7 +124,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2
     a andb:Residency;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency2-interval;
     rdfs:label
       "Residency of Adriaan Helsloot at Nieuwe Karselaan 493"@en,
       "Bewoning van Nieuwe Karselaan 493 door Adriaan Helsloot"@nl;
@@ -135,7 +133,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3
     a andb:Residency;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency3-interval;
     rdfs:label
       "Residency of Adriaan Helsloot at Nieuwe Karselaan 21"@en,
       "Bewoning van Nieuwe Karselaan 21 door Adriaan Helsloot"@nl;
@@ -144,7 +142,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4
     a andb:Residency;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-residency4-interval;
     rdfs:label
       "Residency of Adriaan Helsloot at Derde Oosterparkstraat 121-II"@en,
       "Bewoning van Derde Oosterparkstraat 121-II door Adriaan Helsloot"@nl;
@@ -197,72 +195,56 @@ id:instanties {
 
   id:Hazenstraat_8_II_Amsterdam
     a schema:PostalAddress;
-    rdfs:label "Hazenstraat 8-II, Amsterdam"@nl;
-    andb:houseNumber "8"; # TODO: xsd:positiveInteger
+    rdfs:label "Hazenstraat 8-II, Amsterdam";
+    andb:houseNumber "8";
     andb:houseNumberAddition "II";
     andb:street id:Hazenstraat_Amsterdam.
 
   id:NieuweKarselaan_493_Amstelveen
     a schema:PostalAddress;
-    andb:houseNumber "493"; # TODO: xsd:positiveInteger
+    andb:houseNumber "493";
     andb:street id:NieuweKarselaan_Amstelveen;
-    rdfs:label "Nieuwe Karselaan 493, Amstelveen"@nl.
+    rdfs:label "Nieuwe Karselaan 493, Amstelveen".
 
   id:NieuweKarselaan_21_Amstelveen
     a schema:PostalAddress;
-    andb:houseNumber "21"; # TODO: xsd:positiveInteger
+    andb:houseNumber "21";
     andb:street id:NieuweKarselaan_Amstelveen;
-    rdfs:label "Nieuwe Karselaan 21, Amstelveen"@nl.
+    rdfs:label "Nieuwe Karselaan 21, Amstelveen".
 
   id:DerdeOosterparkstraat_121_II_Amsterdam
     a schema:PostalAddress;
-    andb:houseNumber "121"; # TODO: xsd:positiveInteger
+    andb:houseNumber "121";
     andb:houseNumberAddition "II";
     andb:street id:DerdeOosterparkstraat_Amsterdam;
-    rdfs:label "Derde Oosterparkstraat 121-II, Amsterdam"@nl.
+    rdfs:label "Derde Oosterparkstraat 121-II, Amsterdam".
 
   id:Hazenstraat_Amsterdam
     a hg:Street;
     dct:identifier "1014313";
     geo:sfWithin gemeente:Amsterdam;
     owl:sameAs <https://adamlink.nl/geo/street/hazenstraat/1693>;
-    rdfs:label "Hazenstraat"@nl;
-    schema:name "Hazenstraat"@nl.
+    rdfs:label "Hazenstraat";
+    schema:name "Hazenstraat".
 
   id:NieuweKarselaan_Amstelveen
     a hg:Street;
     geo:sfWithin gemeente:Amstelveen;
-    rdfs:label "Nieuwe Karselaan"@nl;
-    schema:name "Nieuwe Karselaan"@nl.
+    rdfs:label "Nieuwe Karselaan";
+    schema:name "Nieuwe Karselaan".
 
   id:DerdeOosterparkstraat_Amsterdam
     a hg:Street;
     dct:identifier "1040460";
     geo:sfWithin gemeente:Amsterdam;
     owl:sameAs <https://adamlink.nl/geo/street/derde-oosterparkstraat/972>;
-    rdfs:label "Derde Oosterparkstraat"@nl;
-    schema:name "Derde Oosterparkstraat"@nl.
+    rdfs:label "Derde Oosterparkstraat";
+    schema:name "Derde Oosterparkstraat".
 
-
-  #id:AMSAB_0558_3464
-  #  a andb:MembershipCard;
-  #  dct:identifier "AMSAB_0558_3464";
-  #  foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
-  #  rdfs:label
-  #    "ADB member card for Adriaan Helsloot"@en,
-  #    "ADB ledenkaart van Adriaan Helsloot"@nl.
-
-  #id:2284
-  #  a andb:StudentCard;
-  #  dct:identifier "2284";
-  #  foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
-  #  rdfs:label
-  #    "ANDB student card for Adriaan Helsloot"@en,
-  #    "ANDB studentenkaart van Adriaan Helsloot"@nl.
 
   id:26266
-    a andb:MembershipCard;
-    dct:identifier "26266";
+    a andb:Card;
+    andb:cardId "26266";
     foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     rdfs:label
       "ANDB member card for Adriaan Helsloot"@en,
@@ -270,8 +252,8 @@ id:instanties {
     schema:image id:ARCH00210_9570.1_0160-master.
 
   id:26456
-    a andb:MembershipCard;
-    dct:identifier "26456";
+    a andb:Card;
+    andb:cardId "26456";
     foaf:primaryTopic id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3;
     rdfs:label
       "ANDB membership card of Adriaan Helsloot"@en,
@@ -299,7 +281,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education
     a andb:Education;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval;
     andb:internship id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship;
     rdfs:label
       "Education of Adriaan Helsloot"@en,
@@ -307,14 +289,14 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship
     a andb:Internship;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-temporal;
     andb:master "S. Kloots";
     org:organization id:de-weichsel;
     rdfs:label
       "Internship of Adriaan Helsloot at workshop De Weichsel"@en,
       "Stage van Adriaan Helsloot bij werkplaats De Weichsel"@nl.
 
-  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration
+  id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-temporal
     a time:ProperInterval;
     rdfs:label
      #"Duration of internship of Adriaan Helsloot at workshop De Weichsel",#
@@ -323,14 +305,14 @@ id:instanties {
 
   id:de-weichsel
     a andb:Workshop;
-    rdfs:label "De Weichsel"@nl;
-    schema:name "De Weichsel"@nl.
+    rdfs:label "De Weichsel";
+    schema:name "De Weichsel".
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-education-interval
     a time:ProperInterval;
     rdfs:label "1919-05-27/..";
     time:hasBeginning id:1919-05-27;
-    time:intervalContains id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-duration.
+    time:intervalContains id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-internship-temporal.
 
   id:1919-05-27
     a time:Instant;
@@ -359,7 +341,7 @@ id:instanties {
 
   id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1
     a andb:Migration;
-    andb:duration id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1-interval;
+    dct:temporal id:7bd29f33-cfd6-4f3c-ac11-d786c255ebe3-migration1-interval;
     rdfs:label
       "Migration of Adriaan Helsloot"@en,
       "Migratie van Adriaan Helsloot"@nl;
