@@ -192,7 +192,7 @@
    {
     "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/maiden_name_prefix",
     "name": "maiden_name_prefix",
-    "propertyUrl": "vocab:maiden_name_prefix",
+    "propertyUrl": "vocab:maidenNamePrefix",
     "dc:description": "Tussenvoegsel meisjesnaam",
     "datatype": "xsd:string"
    },
@@ -208,8 +208,7 @@
     "name": "gender",
     "propertyUrl": "schema:gender",
     "dc:description": "Geslacht",
-    "valueUrl": "https://schema.org/{{gender}}",
-    "datatype": "xsd:anyURI"
+    "valueUrl": "https://schema.org/{{gender}}"
    },
    {
     "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/birth_date",
@@ -235,8 +234,8 @@
    {
     "@id": "https://iisg.amsterdam/id/adb-andb/andb_adb_all_unique.csv/column/oorlogslevens_uri",
     "name": "oorlogslevens_uri",
-    "propertyUrl": "owl:sameAs",
-    "dc:description": "URI op Oorlogslevens.nl",
+    "propertyUrl": "rdfs:seeAlso",
+    "dc:description": "URL op Oorlogslevens.nl",
     "datatype": "xsd:anyURI"
    }
   ],
