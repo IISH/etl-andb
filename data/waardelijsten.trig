@@ -1,6 +1,7 @@
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix geo: <http://www.opengis.net/ont/geosparql#>
 prefix hg: <http://rdf.histograph.io/>
+prefix hisco: <https://iisg.amsterdam/resource/hisco/code/hisco/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -28,6 +29,8 @@ andb: {
 
   id:brillantslijpen
     a schema:Occupation;
+    # Voor Micon:
+    schema:occupationalCategory hisco:88030;
     rdfs:label "brillantslijpen"@nl.
 
   id:brillantsnijden
@@ -36,6 +39,7 @@ andb: {
 
   id:brillantverstellen
     a schema:Occupation;
+    rdfs:comment "Verstellers stoppen de te slijpen diamant in soldeersel in een dop, zodat elke keer een andere facet geslepen kan worden."@nl;
     rdfs:label "brillantverstellen"@nl.
 
   id:kapbewerken
