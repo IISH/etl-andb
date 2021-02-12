@@ -9,7 +9,6 @@ prefix schema: <https://schema.org/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix adb: <https://iisg.amsterdam/id/adb/>
 prefix andb: <https://iisg.amsterdam/id/andb/>
 prefix id: <https://iisg.amsterdam/id/adb-andb/>
 prefix vocab: <https://iisg.amsterdam/vocab/adb-andb/>
@@ -31,52 +30,61 @@ andb: {
   id:brillantslijpen
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Een brillant is een slijpvorm waarbij zowel de boven- als de onderkant wordt gefacetteerd op een manier die optimale lichtreflectie en dus schittering geeft. Slijpen gebeurt op een snel draaiende, horizontale slijpschijf met diamantpoeder (boort) erop. De te slijpen diamant wordt in een houder (dop) geplaatst en tegen de slijpschijf gedrukt. Zo wordt facet voor facet geslepen."@nl;
     rdfs:label "brillantslijpen"@nl.
 
   id:brillantsnijden
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Een brillantsnijder snijdt de ruwe, gekloofde of gezaagde diamanten, die later tot brillanten geslepen worden.  Het snijden kan met de hand gebeuren, door twee diamanten die met cement op stokken zijn gezet tegen elkaar te wrijven, of machinaal."@nl;
     rdfs:label "brillantsnijden"@nl.
 
   id:brillantverstellen
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
-    rdfs:comment "Verstellers stoppen de te slijpen diamant in soldeersel in een dop, zodat elke keer een andere facet geslepen kan worden."@nl;
+    rdfs:comment "Een brilliantversteller stelt en verstelt de te slijpen diamant in de dop (houder) zodat de brillantslijper het juiste stukje diamant voor zich heeft dat tot facet geslepen moet worden op de slijpschijf."@nl;
     rdfs:label "brillantverstellen"@nl.
 
   id:kapbewerken
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Een kapje is een stuk diamant dat al de  kristalvorm heeft, van nature of door kloven, en dat doorgaans tot brillant geslepen wordt. Kapbewerkers kunnen zowel kapslijpers als kapverstellers zijn."@nl;
     rdfs:label "kapbewerken"@nl.
 
   id:klooven
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Een klover maakt eerst met een andere diamant een kerf in de ruwe steen en splijt deze vervolgens met hulp van een kloversmes en een klovershamer. Het kloven is de eerste behandeling die de diamant ondergaat om de steen een regelmatige (kristal) vorm te geven en om te ruwe steen te ontdoen van onzuiverheden."@nl;
     rdfs:label "klooven"@nl.
 
   id:roosjesslijpen
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Een roosje is een diamant waarvan alleen de bovenkant wordt gefacetteerd, de onderkant is plat.  Slijpen gebeurt op een snel draaiende, horizontale slijpschijf met diamantpoeder (boort) erop. De te slijpen diamant wordt in een houder (dop) geplaatst en tegen de slijpschijf gedrukt. Zo wordt facet voor facet geslepen."@nl;
     rdfs:label "roosjesslijpen"@nl.
 
   id:roosjessnijden
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Een roosje is een diamant waarvan alleen de bovenkant wordt gefacetteerd, de onderkant is plat.  Het snijden kan met de hand gebeuren, door twee diamanten die met cement op stokken zijn gezet tegen elkaar te wrijven, of machinaal."@nl;
     rdfs:label "roosjessnijden"@nl.
 
   id:roosjesverstellen
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Een roosjesversteller stelt en verstelt de te slijpen diamant in de dop (houder) zodat de roosjesslijper het juiste stukje diamant voor zich heeft dat tot facet geslepen moet worden op de slijpschijf."@nl;
     rdfs:label "roosjesverstellen"@nl.
 
   id:zagen
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Met zagen kan de diamant zijn regelmatige vorm krijgen en van onzuiverheden ontdaan worden. Dit gebeurt met een snel draaiende, vertikale bronzen schijf waar diamantpoeder (boort) op zit. Zagen is een alternatief voor kloven."@nl;
     rdfs:label "zagen"@nl.
     
   id:eigenwerkmaken
     a schema:Occupation;
     schema:occupationalCategory hisco:88030;
+    rdfs:comment "Een eigenwerkmaker is een diamantbewerker die ruwe diamant koopt en deze zelf of met knechten bewerkt en later weer verkoopt."@nl;
     rdfs:label "eigenwerkmaken"@nl.
 
   andb:ANDB_1 vocab:occupation id:zagen.
@@ -90,14 +98,4 @@ andb: {
   andb:ANDB_9 vocab:occupation id:klooven.
   andb:ANDB_10 vocab:occupation id:eigenwerkmaken.
   
-  adb:ADB_1 vocab:occupation id:zagen.
-  adb:ADB_2 vocab:occupation id:brillantslijpen.
-  adb:ADB_3 vocab:occupation id:brillantverstellen.
-  adb:ADB_4 vocab:occupation id:brillantsnijden.
-  adb:ADB_5 vocab:occupation id:roosjesslijpen.
-  adb:ADB_6 vocab:occupation id:roosjesverstellen.
-  adb:ADB_7 vocab:occupation id:roosjessnijden.
-  adb:ADB_8 vocab:occupation id:kapbewerken.
-  adb:ADB_9 vocab:occupation id:klooven.
-  adb:ADB_10 vocab:occupation id:eigenwerkmaken.
 }
