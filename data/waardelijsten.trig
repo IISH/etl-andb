@@ -25,47 +25,79 @@ andb: {
         id:roosjesslijpen
         id:roosjessnijden
         id:roosjesverstellen
-        id:zagen ) ].
+        id:zagen
+        id:eigenwerkmaken ) ].
 
   id:brillantslijpen
     a schema:Occupation;
-    # Voor Micon:
     schema:occupationalCategory hisco:88030;
     rdfs:label "brillantslijpen"@nl.
 
   id:brillantsnijden
     a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
     rdfs:label "brillantsnijden"@nl.
 
   id:brillantverstellen
     a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
     rdfs:comment "Verstellers stoppen de te slijpen diamant in soldeersel in een dop, zodat elke keer een andere facet geslepen kan worden."@nl;
     rdfs:label "brillantverstellen"@nl.
 
   id:kapbewerken
     a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
     rdfs:label "kapbewerken"@nl.
 
   id:klooven
     a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
     rdfs:label "klooven"@nl.
 
   id:roosjesslijpen
     a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
     rdfs:label "roosjesslijpen"@nl.
 
   id:roosjessnijden
     a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
     rdfs:label "roosjessnijden"@nl.
 
   id:roosjesverstellen
     a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
     rdfs:label "roosjesverstellen"@nl.
 
   id:zagen
     a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
     rdfs:label "zagen"@nl.
+    
+  id:eigenwerkmaken
+    a schema:Occupation;
+    schema:occupationalCategory hisco:88030;
+    rdfs:label "eigenwerkmaken"@nl.
 
-  # Voor Micon:
   andb:ANDB_1 vocab:occupation id:zagen.
+  andb:ANDB_2 vocab:occupation id:brillantslijpen.
+  andb:ANDB_3 vocab:occupation id:brillantverstellen.
+  andb:ANDB_4 vocab:occupation id:brillantsnijden.
+  andb:ANDB_5 vocab:occupation id:roosjesslijpen.
+  andb:ANDB_6 vocab:occupation id:roosjesverstellen.
+  andb:ANDB_7 vocab:occupation id:roosjessnijden.
+  andb:ANDB_8 vocab:occupation id:kapbewerken.
+  andb:ANDB_9 vocab:occupation id:klooven.
+  andb:ANDB_10 vocab:occupation id:eigenwerkmaken.
+  
+  adb:ADB_1 vocab:occupation id:zagen.
+  adb:ADB_2 vocab:occupation id:brillantslijpen.
+  adb:ADB_3 vocab:occupation id:brillantverstellen.
+  adb:ADB_4 vocab:occupation id:brillantsnijden.
+  adb:ADB_5 vocab:occupation id:roosjesslijpen.
+  adb:ADB_6 vocab:occupation id:roosjesverstellen.
+  adb:ADB_7 vocab:occupation id:roosjessnijden.
+  adb:ADB_8 vocab:occupation id:kapbewerken.
+  adb:ADB_9 vocab:occupation id:klooven.
+  adb:ADB_10 vocab:occupation id:eigenwerkmaken.
 }

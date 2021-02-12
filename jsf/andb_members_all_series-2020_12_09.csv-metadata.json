@@ -59,6 +59,7 @@
    {
     "null": {"@list": [{"name": "name", "null": ""}]},
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{{adm_id}}",
     "propertyUrl": "rdfs:label",
@@ -86,6 +87,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
     "propertyUrl": "rdfs:label",
@@ -119,6 +121,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-level2']|join)}}",
     "propertyUrl": "rdfs:label",
@@ -152,6 +155,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-level3']|join)}}",
     "propertyUrl": "rdfs:label",
@@ -599,6 +603,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_id, '-residency_01']|join)}}{% endif %}",
@@ -721,6 +726,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_01 != '' ) or (mbr_street_no_01 != '') or (mbr_city_01 != '') ) %}{{([adm_id, '-residency_01-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -776,6 +782,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_id, '-residency_02']|join)}}{% endif %}",
@@ -898,6 +905,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_02 != '' ) or (mbr_street_no_02 != '') or (mbr_city_02 != '') ) %}{{([adm_id, '-residency_02-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -959,6 +967,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_id, '-residency_03']|join)}}{% endif %}",
@@ -1081,6 +1090,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_03 != '' ) or (mbr_street_no_03 != '') or (mbr_city_03 != '') ) %}{{([adm_id, '-residency_03-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -1142,6 +1152,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_id, '-residency_04']|join)}}{% endif %}",
@@ -1264,6 +1275,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_04 != '' ) or (mbr_street_no_04 != '') or (mbr_city_04 != '') ) %}{{([adm_id, '-residency_04-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -1325,6 +1337,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_id, '-residency_05']|join)}}{% endif %}",
@@ -1447,6 +1460,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_05 != '' ) or (mbr_street_no_05 != '') or (mbr_city_05 != '') ) %}{{([adm_id, '-residency_05-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -1508,6 +1522,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_06 != '' ) or (mbr_street_no_06 != '') or (mbr_city_06 != '') ) %}{{([adm_id, '-residency_06']|join)}}{% endif %}",
@@ -1630,6 +1645,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_06 != '' ) or (mbr_street_no_06 != '') or (mbr_city_06 != '') ) %}{{([adm_id, '-residency_06-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -1691,6 +1707,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_07 != '' ) or (mbr_street_no_07 != '') or (mbr_city_07 != '') ) %}{{([adm_id, '-residency_07']|join)}}{% endif %}",
@@ -1813,6 +1830,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_07 != '' ) or (mbr_street_no_07 != '') or (mbr_city_07 != '') ) %}{{([adm_id, '-residency_07-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -1874,6 +1892,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_08 != '' ) or (mbr_street_no_08 != '') or (mbr_city_08 != '') ) %}{{([adm_id, '-residency_08']|join)}}{% endif %}",
@@ -1996,6 +2015,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_08 != '' ) or (mbr_street_no_08 != '') or (mbr_city_08 != '') ) %}{{([adm_id, '-residency_08-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -2057,6 +2077,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_09 != '' ) or (mbr_street_no_09 != '') or (mbr_city_09 != '') ) %}{{([adm_id, '-residency_09']|join)}}{% endif %}",
@@ -2179,6 +2200,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_09 != '' ) or (mbr_street_no_09 != '') or (mbr_city_09 != '') ) %}{{([adm_id, '-residency_09-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -2240,6 +2262,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_10 != '' ) or (mbr_street_no_10 != '') or (mbr_city_10 != '') ) %}{{([adm_id, '-residency_10']|join)}}{% endif %}",
@@ -2362,6 +2385,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_10 != '' ) or (mbr_street_no_10 != '') or (mbr_city_10 != '') ) %}{{([adm_id, '-residency_10-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -2423,6 +2447,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_11 != '' ) or (mbr_street_no_11 != '') or (mbr_city_11 != '') ) %}{{([adm_id, '-residency_11']|join)}}{% endif %}",
@@ -2545,6 +2570,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_11 != '' ) or (mbr_street_no_11 != '') or (mbr_city_11 != '') ) %}{{([adm_id, '-residency_11-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -2606,6 +2632,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_12 != '' ) or (mbr_street_no_12 != '') or (mbr_city_12 != '') ) %}{{([adm_id, '-residency_12']|join)}}{% endif %}",
@@ -2728,6 +2755,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_12 != '' ) or (mbr_street_no_12 != '') or (mbr_city_12 != '') ) %}{{([adm_id, '-residency_12-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -2789,6 +2817,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_13 != '' ) or (mbr_street_no_13 != '') or (mbr_city_13 != '') ) %}{{([adm_id, '-residency_13']|join)}}{% endif %}",
@@ -2911,6 +2940,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_13 != '' ) or (mbr_street_no_13 != '') or (mbr_city_13 != '') ) %}{{([adm_id, '-residency_13-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -2972,6 +3002,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_14 != '' ) or (mbr_street_no_14 != '') or (mbr_city_14 != '') ) %}{{([adm_id, '-residency_14']|join)}}{% endif %}",
@@ -3094,6 +3125,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_14 != '' ) or (mbr_street_no_14 != '') or (mbr_city_14 != '') ) %}{{([adm_id, '-residency_14-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -3155,6 +3187,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_15 != '' ) or (mbr_street_no_15 != '') or (mbr_city_15 != '') ) %}{{([adm_id, '-residency_15']|join)}}{% endif %}",
@@ -3277,6 +3310,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_15 != '' ) or (mbr_street_no_15 != '') or (mbr_city_15 != '') ) %}{{([adm_id, '-residency_15-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -3338,6 +3372,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_16 != '' ) or (mbr_street_no_16 != '') or (mbr_city_16 != '') ) %}{{([adm_id, '-residency_16']|join)}}{% endif %}",
@@ -3460,6 +3495,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_16 != '' ) or (mbr_street_no_16 != '') or (mbr_city_16 != '') ) %}{{([adm_id, '-residency_16-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -3521,6 +3557,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_17 != '' ) or (mbr_street_no_17 != '') or (mbr_city_17 != '') ) %}{{([adm_id, '-residency_17']|join)}}{% endif %}",
@@ -3643,6 +3680,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_17 != '' ) or (mbr_street_no_17 != '') or (mbr_city_17 != '') ) %}{{([adm_id, '-residency_17-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -3704,6 +3742,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_18 != '' ) or (mbr_street_no_18 != '') or (mbr_city_18 != '') ) %}{{([adm_id, '-residency_18']|join)}}{% endif %}",
@@ -3826,6 +3865,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_18 != '' ) or (mbr_street_no_18 != '') or (mbr_city_18 != '') ) %}{{([adm_id, '-residency_18-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -3887,6 +3927,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_19 != '' ) or (mbr_street_no_19 != '') or (mbr_city_19 != '') ) %}{{([adm_id, '-residency_19']|join)}}{% endif %}",
@@ -4009,6 +4050,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_19 != '' ) or (mbr_street_no_19 != '') or (mbr_city_19 != '') ) %}{{([adm_id, '-residency_19-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -4070,6 +4112,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_20 != '' ) or (mbr_street_no_20 != '') or (mbr_city_20 != '') ) %}{{([adm_id, '-residency_20']|join)}}{% endif %}",
@@ -4192,6 +4235,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_20 != '' ) or (mbr_street_no_20 != '') or (mbr_city_20 != '') ) %}{{([adm_id, '-residency_20-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -4253,6 +4297,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_21 != '' ) or (mbr_street_no_21 != '') or (mbr_city_21 != '') ) %}{{([adm_id, '-residency_21']|join)}}{% endif %}",
@@ -4375,6 +4420,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_21 != '' ) or (mbr_street_no_21 != '') or (mbr_city_21 != '') ) %}{{([adm_id, '-residency_21-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -4436,6 +4482,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_22 != '' ) or (mbr_street_no_22 != '') or (mbr_city_22 != '') ) %}{{([adm_id, '-residency_22']|join)}}{% endif %}",
@@ -4558,6 +4605,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_22 != '' ) or (mbr_street_no_22 != '') or (mbr_city_22 != '') ) %}{{([adm_id, '-residency_22-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -4619,6 +4667,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_23 != '' ) or (mbr_street_no_23 != '') or (mbr_city_23 != '') ) %}{{([adm_id, '-residency_23']|join)}}{% endif %}",
@@ -4741,6 +4790,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_23 != '' ) or (mbr_street_no_23 != '') or (mbr_city_23 != '') ) %}{{([adm_id, '-residency_23-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -4802,6 +4852,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_24 != '' ) or (mbr_street_no_24 != '') or (mbr_city_24 != '') ) %}{{([adm_id, '-residency_24']|join)}}{% endif %}",
@@ -4924,6 +4975,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_24 != '' ) or (mbr_street_no_24 != '') or (mbr_city_24 != '') ) %}{{([adm_id, '-residency_24-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -4985,6 +5037,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_25 != '' ) or (mbr_street_no_25 != '') or (mbr_city_25 != '') ) %}{{([adm_id, '-residency_25']|join)}}{% endif %}",
@@ -5107,6 +5160,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_25 != '' ) or (mbr_street_no_25 != '') or (mbr_city_25 != '') ) %}{{([adm_id, '-residency_25-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -5168,6 +5222,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "null": "",
     "aboutUrl": "{% if ( (mbr_street_26 != '' ) or (mbr_street_no_26 != '') or (mbr_city_26 != '') ) %}{{([adm_id, '-residency_26']|join)}}{% endif %}",
@@ -5290,6 +5345,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (mbr_street_26 != '' ) or (mbr_street_no_26 != '') or (mbr_city_26 != '') ) %}{{([adm_id, '-residency_26-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -5437,6 +5493,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01']|join)}}{% endif %}",
@@ -5468,6 +5525,7 @@
    },
     {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_01", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_01]|join)|replace(' ', '_')}}",
@@ -5518,6 +5576,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_01 != '' ) or (un_section_no_01 != '') ) %}{{([adm_id, '-membership_01-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -5574,6 +5633,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02']|join)}}{% endif %}",
@@ -5605,6 +5665,7 @@
    },
     {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_02", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_02]|join)|replace(' ', '_')}}",
@@ -5655,6 +5716,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_02 != '' ) or (un_section_no_02 != '') ) %}{{([adm_id, '-membership_02-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -5717,6 +5779,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03']|join)}}{% endif %}",
@@ -5748,6 +5811,7 @@
    },
     {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_03", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_03]|join)|replace(' ', '_')}}",
@@ -5798,6 +5862,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_03 != '' ) or (un_section_no_03 != '') ) %}{{([adm_id, '-membership_03-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -5860,6 +5925,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04']|join)}}{% endif %}",
@@ -5891,6 +5957,7 @@
    },
     {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_04", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_04]|join)|replace(' ', '_')}}",
@@ -5941,6 +6008,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_04 != '' ) or (un_section_no_04 != '') ) %}{{([adm_id, '-membership_04-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -6003,6 +6071,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05']|join)}}{% endif %}",
@@ -6034,6 +6103,7 @@
    },
     {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_05", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_05]|join)|replace(' ', '_')}}",
@@ -6084,6 +6154,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "{% if ( (un_section_05 != '' ) or (un_section_no_05 != '') ) %}{{([adm_id, '-membership_05-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -6146,6 +6217,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_06 != '' ) or (un_section_no_06 != '') ) %}{{([adm_id, '-membership_06']|join)}}{% endif %}",
@@ -6177,6 +6249,7 @@
    },
     {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_06", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_06]|join)|replace(' ', '_')}}",
@@ -6288,6 +6361,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_name", "null": ""}]},
     "aboutUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07']|join)}}{% endif %}",
@@ -6319,6 +6393,7 @@
    },
     {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_07", "null": ""}]},
     "aboutUrl": "{{([un_name, ' ', un_section_07]|join)|replace(' ', '_')}}",
@@ -6369,6 +6444,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if ( (un_section_07 != '' ) or (un_section_no_07 != '') ) %}{{([adm_id, '-membership_07-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -6482,6 +6558,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_01", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_01']|join)}}",
@@ -6490,6 +6567,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_01", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_01']|join)}}",
@@ -6535,6 +6613,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_02", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_02']|join)}}",
@@ -6543,6 +6622,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_02", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_02']|join)}}",
@@ -6588,6 +6668,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_03", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_03']|join)}}",
@@ -6596,6 +6677,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_03", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_03']|join)}}",
@@ -6641,6 +6723,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_04", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_04']|join)}}",
@@ -6649,6 +6732,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_04", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_04']|join)}}",
@@ -6694,6 +6778,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_05", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_05']|join)}}",
@@ -6702,6 +6787,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "withdrawal_reason_05", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-withdrawal_05']|join)}}",
@@ -6747,6 +6833,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_01", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_01']|join)}}",
@@ -6755,6 +6842,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_01", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_01']|join)}}",
@@ -6800,6 +6888,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_02", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_02']|join)}}",
@@ -6808,6 +6897,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_02", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_02']|join)}}",
@@ -6853,6 +6943,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_03", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_03']|join)}}",
@@ -6861,6 +6952,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_03", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_03']|join)}}",
@@ -6906,6 +6998,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_04", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_04']|join)}}",
@@ -6914,6 +7007,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_04", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_04']|join)}}",
@@ -6959,6 +7053,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_05", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_05']|join)}}",
@@ -6967,6 +7062,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "dismission_reason_05", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-dismission_05']|join)}}",
@@ -7012,6 +7108,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_01", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_01']|join)}}",
@@ -7020,6 +7117,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_01", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_01']|join)}}",
@@ -7065,6 +7163,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_02", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_02']|join)}}",
@@ -7073,6 +7172,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_02", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_02']|join)}}",
@@ -7118,6 +7218,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_03", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_03']|join)}}",
@@ -7126,6 +7227,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_03", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_03']|join)}}",
@@ -7171,6 +7273,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_04", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_04']|join)}}",
@@ -7179,6 +7282,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_04", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_04']|join)}}",
@@ -7224,6 +7328,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_05", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_05']|join)}}",
@@ -7232,6 +7337,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_05", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_05']|join)}}",
@@ -7277,6 +7383,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_06", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_06']|join)}}",
@@ -7285,6 +7392,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "null": {"@list": [{"name": "readmission_condition_06", "null": ""}]},
     "virtual": "true",
     "aboutUrl": "{{([adm_id, '-readmission_06']|join)}}",
@@ -7426,6 +7534,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "departure_place_01", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_01 != '') %}{{([adm_id, '-departure_01']|join)}}{% endif %}",
@@ -7448,6 +7557,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_01 != '') %}{{([adm_id, '-departure_01-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -7534,6 +7644,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "departure_place_02", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_02 != '') %}{{([adm_id, '-departure_02']|join)}}{% endif %}",
@@ -7556,6 +7667,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_02 != '') %}{{([adm_id, '-departure_02-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -7648,6 +7760,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "departure_place_03", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_03 != '') %}{{([adm_id, '-departure_03']|join)}}{% endif %}",
@@ -7670,6 +7783,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_03 != '') %}{{([adm_id, '-departure_03-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -7762,6 +7876,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "departure_place_04", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_04 != '') %}{{([adm_id, '-departure_04']|join)}}{% endif %}",
@@ -7784,6 +7899,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_04 != '') %}{{([adm_id, '-departure_04-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -7876,6 +7992,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "departure_place_05", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_05 != '') %}{{([adm_id, '-departure_05']|join)}}{% endif %}",
@@ -7898,6 +8015,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_05 != '') %}{{([adm_id, '-departure_05-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -7990,6 +8108,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "departure_place_06", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_06 != '') %}{{([adm_id, '-departure_06']|join)}}{% endif %}",
@@ -8012,6 +8131,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_06 != '') %}{{([adm_id, '-departure_06-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -8104,6 +8224,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "departure_place_07", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_07 != '') %}{{([adm_id, '-departure_07']|join)}}{% endif %}",
@@ -8126,6 +8247,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_07 != '') %}{{([adm_id, '-departure_07-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -8218,6 +8340,7 @@
    }, 
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "null": {"@list": [{"name": "departure_place_08", "null": ""}]}, 
     "aboutUrl": "{% if (departure_place_08 != '') %}{{([adm_id, '-departure_08']|join)}}{% endif %}",
@@ -8240,6 +8363,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true", 
     "aboutUrl": "{% if (departure_place_08 != '') %}{{([adm_id, '-departure_08-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
@@ -8319,6 +8443,7 @@
     },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/History_01",
     "name": "History_01",
     "propertyUrl": "vocab:remark",
@@ -8326,6 +8451,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/History_02",
     "name": "History_02",
     "propertyUrl": "vocab:remark",
@@ -8333,6 +8459,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/History_03",
     "name": "History_03",
     "propertyUrl": "vocab:remark",
@@ -8340,6 +8467,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "@id": "https://iisg.amsterdam/id/andb/andb_members_all_series.csv/column/History_04",
     "name": "History_04",
     "propertyUrl": "vocab:remark",

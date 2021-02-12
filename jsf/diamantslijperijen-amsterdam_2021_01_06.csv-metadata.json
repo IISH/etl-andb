@@ -50,12 +50,6 @@
  "tableSchema": {
   "columns": [
    {
-    "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/ID",
-    "name": "ID",
-    "propertyUrl": "dc:identifier",
-    "datatype": "xsd:string"
-   },
-   {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naam",
     "name": "Naam",
     "propertyUrl": "rdf:type",
@@ -80,7 +74,13 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
+    "virtual": "true",
+    "aboutUrl": "{{Naam}}",
+    "propertyUrl": "xsd:verified",
+    "csvw:value": "true",
+    "datatype": "xsd:boolean"
+   },
+   {
     "null": {"@list": [{"name": "Naamsvariatie_1", "null": ""}]},
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_1",
     "name": "Naamsvariatie_1",
@@ -97,7 +97,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_2",
     "name": "Naamsvariatie_2",
     "propertyUrl": "schema:alternateName",
@@ -113,7 +112,6 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_3",
     "name": "Naamsvariatie_3",
     "propertyUrl": "schema:alternateName",
@@ -284,20 +282,21 @@
     "datatype": "xsd:string"
    },
    {
-    "lang": "nl",
+    "null": {"@list": [{"name": "Bedrijf_1", "null": ""}]},
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Bedrijf_1",
     "name": "Bedrijf_1",
-    "propertyUrl": "vocab:type",
-    "dc:description": "Soort bedrijf",
-    "datatype": "xsd:string"
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:{{Bedrijf_1}}",
+    "dc:description": "Soort bedrijf"
    },
     {
-    "lang": "nl",
+    "null": {"@list": [{"name": "Bedrijf_1", "null": ""}]},
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Bedrijf_2",
     "name": "Bedrijf_2",
-    "propertyUrl": "vocab:type",
-    "dc:description": "Soort bedrijf",
-    "datatype": "xsd:string"
+    "propertyUrl": "rdf:type",
+    "valueUrl": "vocab:{{Bedrijf_2}}",
+    "dc:description": "Soort bedrijf"
+    
    },
    {
     "lang": "nl",
@@ -315,6 +314,7 @@
     "datatype": "xsd:gYear"
    },
    {
+    "lang": "nl",
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Opgericht_onzeker",
     "name": "Opgericht_onzeker",
     "propertyUrl": "vocab:founded",
@@ -329,6 +329,7 @@
     "datatype": "xsd:gYear"
    },
    {
+    "lang": "nl",
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Uitgebreid_onzeker",
     "name": "Uitgebreid_onzeker",
     "propertyUrl": "vocab:expanded",
@@ -343,6 +344,7 @@
     "datatype": "xsd:gYear"
    },
    {
+    "lang": "nl",
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Gesloten_onzeker",
     "name": "Gesloten_onzeker",
     "propertyUrl": "vocab:closed",
@@ -369,7 +371,8 @@
     "virtual": "true",
     "aboutUrl": "{{([Naam, '-adres']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{([Straat, ' ', Huisnummer, ', ', Gemeente]|join)}}"
+    "csvw:value": "{{([Straat, ' ', Huisnummer, ', ', Gemeente]|join)}}",
+    "datatype": "xsd:string"
    },
    {
     "null": {"@list": [{"name": "Straat", "null": ""}]},
@@ -379,6 +382,7 @@
     "valueUrl": "{{Straat}}"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "Straat", "null": ""}]},
     "aboutUrl": "{{Straat}}",
@@ -394,6 +398,7 @@
     "valueUrl": "hg:Street"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "Straat", "null": ""}]},
     "aboutUrl": "{{Straat}}",
