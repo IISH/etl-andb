@@ -464,6 +464,18 @@ andb: {
     rdfs:range andb:Mutation;
     rdfs:subPropertyOf foaf:topic.
 
+  andb:occupation
+    a owl:ObjectProperty;
+    rdfs:comment
+      "The occupation that is most commonly associated with the related resource."@en,
+      "Het beroep dat het meest gangbaar geassocieerd wordt met het gerelateerde object."@nl;
+    rdfs:domain rdfs:Resource;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "has main occupation"@en,
+      "heeft hoofdberoep"@nl;
+    rdfs:range schema:Occupation.
+
   andb:owner
     a owl:ObjectProperty;
     rdfs:domain andb:Workshop;
