@@ -411,7 +411,7 @@ andb: {
         id:roosjesverstellen
         id:zagen );
     sh:nodeKind sh:IRI;#
-    sh:path vocab:occupation.
+    sh:path andb:occupation.
 
   andb:studentShape
     a sh:PropertyNode;#
