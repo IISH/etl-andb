@@ -1236,7 +1236,7 @@
     "virtual": "true", 
     "null": {"@list": [{"name": "sdn_occupation", "null": ""}]},
     "aboutUrl": "{{([adm_id, '-education']|join)}}",
-    "propertyUrl": "schema:occupation",
+    "propertyUrl": "vocab:occupation",
     "valueUrl": "https://iisg.amsterdam/id/adb-andb/{{sdn_occupation}}"
    },
     {
@@ -1517,6 +1517,7 @@
     "valueUrl": "vocab:Workshop"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_01", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_01]|join)|replace(' ', '_')}}",
@@ -1783,6 +1784,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_02", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_02]|join)|replace(' ', '_')}}",
@@ -2047,6 +2049,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_03", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_03]|join)|replace(' ', '_')}}",
@@ -2311,6 +2314,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_04", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_04]|join)|replace(' ', '_')}}",
@@ -2575,6 +2579,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_05", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_05]|join)|replace(' ', '_')}}",
@@ -2839,6 +2844,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_06", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_06]|join)|replace(' ', '_')}}",
@@ -3103,6 +3109,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_07", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_07]|join)|replace(' ', '_')}}",
@@ -3367,6 +3374,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_08", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_08]|join)|replace(' ', '_')}}",
@@ -3631,6 +3639,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_09", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_09]|join)|replace(' ', '_')}}",
@@ -3895,6 +3904,7 @@
     "datatype": "xsd:string"
    },
    {
+    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "wsp_name_10", "null": ""}]},
     "aboutUrl": "{{(['diamantslijperijen/', wsp_name_10]|join)|replace(' ', '_')}}",
@@ -4279,11 +4289,27 @@
     "datatype": "xsd:string"
    },
    {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_number_brother", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembershipBrother",
+    "csvw:value": "{{un_number_brother}}",
+    "datatype": "xsd:string"
+   },
+   {
     "virtual": "true", 
     "null": {"@list": [{"name": "un_number_brother_2", "null": ""},
           {"name": "person_uuid", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:membershipBrother",
+    "csvw:value": "{{un_number_brother_2}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_number_brother_2", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembershipBrother",
     "csvw:value": "{{un_number_brother_2}}",
     "datatype": "xsd:string"
    },
@@ -4297,11 +4323,27 @@
     "datatype": "xsd:string"
    },
    {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_number_brother_3", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembershipBrother",
+    "csvw:value": "{{un_number_brother_3}}",
+    "datatype": "xsd:string"
+   },
+   {
     "virtual": "true", 
     "null": {"@list": [{"name": "un_number_brother_4", "null": ""},
           {"name": "person_uuid", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:membershipBrother",
+    "csvw:value": "{{un_number_brother_4}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_number_brother_4", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembershipBrother",
     "csvw:value": "{{un_number_brother_4}}",
     "datatype": "xsd:string"
    },
@@ -4315,6 +4357,14 @@
     "datatype": "xsd:string"
    },
    {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_number_brother_5", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembershipBrother",
+    "csvw:value": "{{un_number_brother_5}}",
+    "datatype": "xsd:string"
+   },
+   {
     "virtual": "true", 
    "null": {"@list": [{"name": "un_number_sister", "null": ""},
           {"name": "person_uuid", "null": ""}]},
@@ -4324,11 +4374,27 @@
     "datatype": "xsd:string"
    },
    {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_number_sister", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembershipSister",
+    "csvw:value": "{{un_number_sister}}",
+    "datatype": "xsd:string"
+   },
+   {
     "virtual": "true", 
     "null": {"@list": [{"name": "un_number_sister_2", "null": ""},
           {"name": "person_uuid", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:membershipSister",
+    "csvw:value": "{{un_number_sister_2}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_number_sister_2", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembershipSister",
     "csvw:value": "{{un_number_sister_2}}",
     "datatype": "xsd:string"
    },
@@ -4343,10 +4409,24 @@
    },
    {
     "virtual": "true",
+    "null": {"@list": [{"name": "un_number_sister_3", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutMembershipSister",
+    "csvw:value": "{{un_number_sister_3}}",
+    "datatype": "xsd:string"
+   },
+   {
+    "virtual": "true",
    "null": {"@list": [{"name": "par_last_name", "null": ""},
           {"name": "person_uuid", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "schema:parent",
+    "valueUrl": "{{([adm_id, '-parent']|join)}}"
+   },
+   {
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:aboutParent",
     "valueUrl": "{{([adm_id, '-parent']|join)}}"
    },
   {
@@ -4354,6 +4434,13 @@
     "null": {"@list": [{"name": "parent_relation", "null": ""}]},
     "aboutUrl": "https://iisg.amsterdam/id/adb-andb/{{person_uuid}}",
     "propertyUrl": "vocab:{{parent_relation}}",
+    "valueUrl": "{{([adm_id, '-parent']|join)}}"
+   },
+   {
+    "virtual": "true",
+    "null": {"@list": [{"name": "parent_relation", "null": ""}]},
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "vocab:about{{parent_relation}}",
     "valueUrl": "{{([adm_id, '-parent']|join)}}"
    },
    {

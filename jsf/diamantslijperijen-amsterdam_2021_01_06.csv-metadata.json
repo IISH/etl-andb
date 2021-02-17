@@ -85,6 +85,7 @@
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_1",
     "name": "Naamsvariatie_1",
     "propertyUrl": "schema:alternateName",
+    "valueUrl": "{{Naamsvariatie_1}}",
     "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
    },
       {
@@ -100,6 +101,7 @@
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_2",
     "name": "Naamsvariatie_2",
     "propertyUrl": "schema:alternateName",
+    "valueUrl": "{{Naamsvariatie_2}}",
     "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
    },
       {
@@ -115,6 +117,7 @@
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_3",
     "name": "Naamsvariatie_3",
     "propertyUrl": "schema:alternateName",
+    "valueUrl": "{{Naamsvariatie_3}}",
     "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
    },
       {
@@ -379,13 +382,12 @@
     "virtual": "true",
     "aboutUrl": "{{([Naam, '-adres']|join)}}",
     "propertyUrl": "vocab:street",
-    "valueUrl": "{{Straat}}"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{([Straat, Gemeente]|join)}}"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "Straat", "null": ""}]},
-    "aboutUrl": "{{Straat}}",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{([Straat, Gemeente]|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{Straat}}",
     "datatype": "xsd:string"
@@ -393,15 +395,14 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "Straat", "null": ""}]},
-    "aboutUrl": "{{Straat}}",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{([Straat, Gemeente]|join)}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "hg:Street"
    },
    {
-    "lang": "nl",
     "virtual": "true", 
     "null": {"@list": [{"name": "Straat", "null": ""}]},
-    "aboutUrl": "{{Straat}}",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{([Straat, Gemeente]|join)}}",
     "propertyUrl": "schema:name",
     "csvw:value": "{{Straat}}",
     "datatype": "xsd:string"
@@ -417,21 +418,21 @@
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "Straat", "null": ""}, {"name": "Gemeente", "null": ""}]},
-    "aboutUrl": "{{Straat}}",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{([Straat, Gemeente]|join)}}",
     "propertyUrl": "geo:sfWithin",
-    "valueUrl": "{{Gemeente}}"
+    "valueUrl": "https://iisg.amsterdam/id/andb/{{Gemeente}}"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "Gemeente", "null": ""}]},
-    "aboutUrl": "{{Gemeente}}",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{Gemeente}}",
     "propertyUrl": "rdf:type",
     "valueUrl": "schema:Place"
    },
    {
     "virtual": "true", 
     "null": {"@list": [{"name": "adamlink_uri", "null": ""}]},
-    "aboutUrl": "{{Straat}}",
+    "aboutUrl": "https://iisg.amsterdam/id/andb/{{([Straat, Gemeente]|join)}}",
     "propertyUrl": "owl:sameAs",
     "csvw:value": "{{adamlink_uri}}",
     "datatype": "xsd:anyURI"
