@@ -400,7 +400,6 @@ andb: {
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:class schema:Occupation;
-    sh:description "Occupation the education is preparing for"@en;
     sh:in
       ( id:brillantslijpen
         id:brillantsnijden
@@ -411,11 +410,8 @@ andb: {
         id:roosjessnijden
         id:roosjesverstellen
         id:zagen );
-    sh:name
-      "has occupation"@en,
-      "heeft beroep"@nl;
     sh:nodeKind sh:IRI;#
-    sh:path schema:occupation.
+    sh:path andb:occupation.
 
   andb:studentShape
     a sh:PropertyNode;#
@@ -793,6 +789,7 @@ andb: {
       andb:OrganizationalUnitShape_identifier,
       andb:hasUnitShape,
       andb:labelShape,
+      andb:occupationShape,
       andb:unitOfShape;
     sh:targetClass org:OrganizationalUnit.
 
