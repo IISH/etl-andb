@@ -10,6 +10,7 @@ prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 prefix andb: <https://iisg.amsterdam/id/andb/>
+prefix adb: <https://iisg.amsterdam/id/adb/>
 prefix id: <https://iisg.amsterdam/id/adb-andb/>
 prefix vocab: <https://iisg.amsterdam/vocab/adb-andb/>
 
@@ -97,5 +98,11 @@ andb: {
   andb:ANDB_8 vocab:occupation id:kapbewerken.
   andb:ANDB_9 vocab:occupation id:klooven.
   andb:ANDB_10 vocab:occupation id:eigenwerkmaken.
+  
+  andb:ANDB
+    schema:name "Algemene Nederlandse Diamantbewerkersbond"@nl.
+    
+  adb:ADB
+    schema:name "Antwerpse Diamantbewerkersbond"@nl.
   
 }

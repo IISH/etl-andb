@@ -17,24 +17,33 @@ andb: {
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "ADB member card"@en,
+      "ADB membership Card"@en,
       "ADB lidmaatschapskaart"@nl;
+    rdfs:comment
+      "Member of ADB"@en,
+      "Lid ADB"@nl;
     rdfs:subClassOf andb:Card.
 
   andb:AndbCard
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "ANDB member card"@en,
+      "ANDB membership Card"@en,
       "ANDB lidmaatschapskaart"@nl;
+    rdfs:comment
+      "Member of ANDB"@en,
+      "Lid ANDB"@nl;
     rdfs:subClassOf andb:Card.
 
   andb:ApprenticeCard
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "Apprentice card"@en,
-      "Leerlingenkaart"@nl;
+      "Apprentice Card"@en,
+      "Leerlingkaart"@nl;
+    rdfs:comment
+      "Apprentice"@en,
+      "Leerling"@nl;
     rdfs:subClassOf andb:Card.
 
   andb:Card
@@ -93,7 +102,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Readmission"@en,
-      "Toelating"@nl;
+      "Wedertoelating"@nl;
     rdfs:subClassOf andb:Mutation.
 
   andb:Residency
@@ -108,7 +117,7 @@ andb: {
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "Labor union"@en,
+      "Labor Union"@en,
       "Vakbond"@nl;
     rdfs:subClassOf org:FormalOrganization.
 

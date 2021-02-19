@@ -5553,6 +5553,15 @@
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Union"
    },
+   {
+    "lang": "nl",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_name", "null": ""}]},
+    "aboutUrl": "{{un_name}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{un_name}}"
+   },
     {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_01", "null": ""}]},
@@ -5686,13 +5695,6 @@
     "propertyUrl": "org:unitOf",
     "valueUrl": "{{un_name}}"
    }, 
-   {
-    "virtual": "true",
-    "null": {"@list": [{"name": "un_name", "null": ""}]},
-    "aboutUrl": "{{un_name}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:Union"
-   },
     {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_02", "null": ""}]},
@@ -5832,13 +5834,6 @@
     "propertyUrl": "org:unitOf",
     "valueUrl": "{{un_name}}"
    }, 
-   {
-    "virtual": "true",
-    "null": {"@list": [{"name": "un_name", "null": ""}]},
-    "aboutUrl": "{{un_name}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:Union"
-   },
     {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_03", "null": ""}]},
@@ -5978,13 +5973,6 @@
     "propertyUrl": "org:unitOf",
     "valueUrl": "{{un_name}}"
    }, 
-   {
-    "virtual": "true",
-    "null": {"@list": [{"name": "un_name", "null": ""}]},
-    "aboutUrl": "{{un_name}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:Union"
-   },
     {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_04", "null": ""}]},
@@ -6124,13 +6112,6 @@
     "propertyUrl": "org:unitOf",
     "valueUrl": "{{un_name}}"
    }, 
-   {
-    "virtual": "true",
-    "null": {"@list": [{"name": "un_name", "null": ""}]},
-    "aboutUrl": "{{un_name}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:Union"
-   },
     {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_05", "null": ""}]},
@@ -6270,13 +6251,6 @@
     "propertyUrl": "org:unitOf",
     "valueUrl": "{{un_name}}"
    }, 
-   {
-    "virtual": "true",
-    "null": {"@list": [{"name": "un_name", "null": ""}]},
-    "aboutUrl": "{{un_name}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:Union"
-   },
     {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_06", "null": ""}]},
@@ -6414,13 +6388,6 @@
     "propertyUrl": "org:unitOf",
     "valueUrl": "{{un_name}}"
    }, 
-   {
-    "virtual": "true",
-    "null": {"@list": [{"name": "un_name", "null": ""}]},
-    "aboutUrl": "{{un_name}}",
-    "propertyUrl": "rdf:type",
-    "valueUrl": "vocab:Union"
-   },
     {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_07", "null": ""}]},

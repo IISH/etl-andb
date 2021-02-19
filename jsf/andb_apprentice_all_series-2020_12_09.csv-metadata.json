@@ -4213,6 +4213,15 @@
     "valueUrl": "vocab:Union"
    },
    {
+    "lang": "nl",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_name", "null": ""}]},
+    "aboutUrl": "{{un_name}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{un_name}}"
+   },
+   {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section", "null": ""}]},
     "aboutUrl": "{{un_name}}",
@@ -4596,6 +4605,15 @@
     "propertyUrl": "rdf:type",
     "valueUrl": "vocab:Union"
    }, 
+   {
+    "lang": "nl",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "null": {"@list": [{"name": "par_un_name", "null": ""}]},
+    "aboutUrl": "{{par_un_name}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{par_un_name}}"
+   },
    {
     "virtual": "true",
     "null": {"@list": [{"name": "par_un_section", "null": ""}]},
