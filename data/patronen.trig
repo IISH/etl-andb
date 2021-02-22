@@ -1,5 +1,3 @@
-prefix bio: <http://purl.org/vocab/bio/0.1/>
-prefix cshapes: <https://iisg.amsterdam/vocab/>
 prefix hg: <http://rdf.histograph.io/>
 prefix dct: <http://purl.org/dc/terms/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
@@ -119,7 +117,7 @@ andb: {
   andb:houseNumberAdditionShape
     a sh:PropertyShape;
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;
+    sh:datatype xsd:string;#
     sh:maxCount 1;
     sh:minLength 1;#
     sh:nodeKind sh:Literal;#
@@ -128,7 +126,7 @@ andb: {
   andb:houseNumberShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;
+    sh:datatype xsd:string;#
     sh:maxCount 1;
     sh:minLength 1;#
     sh:nodeKind sh:Literal;#
@@ -160,9 +158,17 @@ andb: {
       andb:CardShape_givenName,
       andb:CardShape_primaryTopic,
       andb:aboutEducationShape,
+      andb:aboutFatherShape,
+      andb:aboutFosterFatherShape,
       andb:aboutMembershipShape,
+      andb:aboutMembershipBrotherShape,
+      andb:aboutMembershipSisterShape,
       andb:aboutMigrationShape,
+      andb:aboutMotherShape,
+      andb:aboutMutationShape,
+      andb:aboutParentShape,
       andb:aboutResidencyShape,
+      andb:aboutStepfatherShape,
       andb:cardIdShape,
       andb:imageShape,
       andb:inventoryNumberShape,
@@ -189,6 +195,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:birthPlace.
 
@@ -205,6 +212,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:deathPlace.
 
@@ -213,6 +221,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:familyName.
 
@@ -221,6 +230,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
     sh:maxCount 1;
+    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:givenName.
 
@@ -242,40 +252,99 @@ andb: {
   andb:aboutEducationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class andb:Education;
+    sh:class andb:Education;#
     sh:maxCount 1;
     sh:minCount 1;
     sh:nodeKind sh:IRI;#
     sh:path andb:aboutEducation.
 
+  andb:aboutFatherShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;#
+    sh:nodeKind sh:IRI;#
+    sh:path andb:aboutFather.
+
+  andb:aboutFosterFatherShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;#
+    sh:nodeKind sh:IRI;#
+    sh:path andb:aboutFather.
+
   andb:aboutMembershipShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class andb:Membership;
+    sh:class andb:Membership;#
     sh:minCount 1;
     sh:nodeKind sh:IRI;#
     sh:path andb:aboutMembership.
 
+  andb:aboutMembershipBrotherShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:aboutMembershipBrother.
+
+  andb:aboutMembershipSisterShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:datatype xsd:string;#
+    sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
+    sh:path andb:aboutMembershipSister.
+
   andb:aboutMigrationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class andb:Migration;
+    sh:class andb:Migration;#
     sh:minCount 1;
     sh:nodeKind sh:IRI;#
     sh:path andb:aboutMigration.
 
+  andb:aboutMotherShape
+    a sh:Property:shape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;#
+    sh:nodeKind sh:IRI;#
+    sh:path andb:aboutMother.
+
+  andb:aboutMutationShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class andb:Migration;#
+    sh:nodeKind sh:IRI;#
+    sh:path andb:aboutMigration.
+
+  andb:aboutParentShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;#
+    sh:minCount 1;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:aboutParent.
+
   andb:aboutResidencyShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class andb:Residency;
+    sh:class andb:Residency;#
     sh:minCount 1;
     sh:nodeKind sh:IRI;#
     sh:path andb:aboutResidency.
 
+  andb:aboutStepfatherShape
+    a sh:Property:shape;#
+    rdfs:isDefinedBy andb:;#
+    sh:class schema:Person;#
+    sh:nodeKind sh:IRI;#
+    sh:path andb:aboutStepfather.
+
   andb:cardIdShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;
+    sh:datatype xsd:string;#
     sh:description "Het administratieve nummer van de kaart."@nl;
     sh:minLength 1;#
     sh:name
@@ -322,14 +391,14 @@ andb: {
   andb:mutationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class andb:Mutation;
+    sh:class andb:Mutation;#
     sh:nodeKind sh:IRI;#
     sh:path andb:mutation.
 
   andb:stampShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:datatyp xsd:string;#
+    sh:datatype xsd:string;#
     sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:stamp.
@@ -399,24 +468,25 @@ andb: {
   andb:occupationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Occupation;
-    sh:in
-      ( id:brillantslijpen
-        id:brillantsnijden
-        id:brillantverstellen
-        id:kapbewerken
-        id:klooven
-        id:roosjesslijpen
-        id:roosjessnijden
-        id:roosjesverstellen
-        id:zagen );
+    sh:class schema:Occupation;#
+    sh:in#
+      ( id:brillantslijpen#
+        id:brillantsnijden#
+        id:brillantverstellen#
+        id:eigenwerkmaken#
+        id:kapbewerken#
+        id:klooven#
+        id:roosjesslijpen#
+        id:roosjessnijden#
+        id:roosjesverstellen#
+        id:zagen );#
     sh:nodeKind sh:IRI;#
     sh:path andb:occupation.
 
   andb:studentShape
     a sh:PropertyNode;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:description "The student's education"@en;
     sh:maxCount 1;
     sh:minCount 1;
@@ -459,7 +529,6 @@ andb: {
     sh:flags "i";
     sh:maxCount 1;
     sh:minCount 1;
-    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path schema:contentUrl;
     sh:pattern "^https://hdl.handle.net/[0-9]{5}/[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}\\?locatt=view:(level2|level3|master)$".
@@ -541,6 +610,7 @@ andb: {
       andb:InternshipShape_temporal_intervalDuring_temporalInv,
       andb:labelShape_lang,
       andb:masterShape,
+      andb:masterMembershipShape,
       andb:temporalShape,
       andb:workshopShape;
     sh:targetClass andb:Internship.
@@ -560,11 +630,19 @@ andb: {
   andb:masterShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
+    sh:class andb:Master;#
+    sh:maxCount 1;
+    sh:nodeKind sh:IRI;#
+    sh:path andb:master.
+
+  andb:masterMembershipShape
+    a sh:PropertyShape;#
+    rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
     sh:maxCount 1;
     sh:minLength 1;#
     sh:nodeKind sh:Literal;#
-    sh:path andb:master.
+    sh:path andb:masterMembership.
 
   andb:workshopShape
     a sh:PropertyShape;#
@@ -746,7 +824,7 @@ andb: {
   andb:locationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;#
+    sh:datatype xsd:string;
     sh:description
       "The location where the person migrated to."@en,
       "De plaats waarnaar de persoon gemigreerd is."@nl;
@@ -899,7 +977,6 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:date;#
     sh:maxCount 1;
-    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:birthCountry.
 
@@ -929,7 +1006,7 @@ andb: {
   andb:childShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:child.
 
@@ -938,7 +1015,6 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:date;
     sh:description "The person's death date."@en;
-    sh:minLength 1;#
     sh:name
       "has death date"@en,
       "heeft overleidensdatum"@nl;
@@ -967,7 +1043,7 @@ andb: {
   andb:fatherShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:maxCount 1;
     sh:nodeKind sh:IRI;#
     sh:path andb:father.
@@ -975,21 +1051,21 @@ andb: {
   andb:fosterDaughterShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:fosterDaughter.
 
   andb:fosterFatherShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:fosterFather.
 
   andb:fosterSonShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:fosterSon.
 
@@ -1051,7 +1127,7 @@ andb: {
   andb:marriageDateShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:date;
+    sh:datatype xsd:date;#
     sh:nodeKind sh:Literal;#
     sh:path andb:marriageDate.
 
@@ -1059,6 +1135,7 @@ andb: {
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
+    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:membershipBrother.
 
@@ -1066,6 +1143,7 @@ andb: {
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
+    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:membershipBrother.
 
@@ -1073,20 +1151,21 @@ andb: {
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:string;#
+    sh:minLength 1;#
     sh:nodeKind sh:Literal;#
     sh:path andb:middleName.
 
   andb:migrationShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class andb:Migration;
+    sh:class andb:Migration;#
     sh:nodeKind sh:IRI;#
     sh:path andb:migration.
 
   andb:motherShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:maxCount 1;
     sh:nodeKind sh:IRI;#
     sh:path andb:mother.
@@ -1099,7 +1178,6 @@ andb: {
 <section lang="en">
   <p>The person's biography on <a href="https://oorlogslevens.nl">Oorlogslevens</a>.</p>
 </section>"""^^rdf:HTML;
-    sh:minLength 1;#
     sh:name "has biography on Oorlogslevens"@en;
     sh:nodeKind sh:Literal;#
     sh:path rdfs:seeAlso.
@@ -1124,35 +1202,35 @@ andb: {
   andb:sonShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:son.
 
   andb:spouseShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:spouse.
 
   andb:stepDaughterShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:stepDaughter.
 
   andb:stepFatherShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:stepFather.
 
   andb:stepSonShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:class schema:Person;
+    sh:class schema:Person;#
     sh:nodeKind sh:IRI;#
     sh:path andb:stepSon.
 
@@ -1254,8 +1332,7 @@ andb: {
       andb:labelShape,
       andb:nameShape,
       andb:ownerShape,
-      andb:remarkShape_lang,
-      andb:typeShape;
+      andb:remarkShape_lang;
     sh:targetClass andb:Workshop.
 
   andb:alternateNameShape
@@ -1284,7 +1361,7 @@ andb: {
     sh:name
       "dissolution date"@en,
       "opheffingsdatum"@nl;
-    sh:nodeKind sh:IRI;#
+    sh:nodeKind sh:Literal;#
     sh:path schema:dissolutionDate.
 
   andb:expansionDateShape
@@ -1318,6 +1395,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     sh:datatype xsd:gYear;
     sh:maxCount 1;
+    sh:nodeKind sh:Literal;#
     sh:path schema:foundingDate.
 
   andb:ownerShape
@@ -1326,21 +1404,15 @@ andb: {
     sh:datatype xsd:string;#
     sh:maxCount 1;
     sh:minLength 1;#
+    sh:nodeKind sh:Literal;#
     sh:path andb:owner.
 
   andb:transmissionShape
     a sh:PropertyShape;#
     rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;#
+    sh:datatype rdf:langString;#
     sh:maxCount 1;
     sh:minLength 1;#
-    sh:path andb:transmission.
-
-  andb:typeShape
-    a sh:PropertyShape;#
-    rdfs:isDefinedBy andb:;#
-    sh:datatype xsd:string;#
-    sh:maxCount 1;
     sh:nodeKind sh:Literal;#
-    sh:path andb:type.
+    sh:path andb:transmission.
 }

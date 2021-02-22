@@ -2,6 +2,8 @@ prefix dcat: <http://www.w3.org/ns/dcat#>
 prefix dct: <http://purl.org/dc/terms/>
 prefix entailment: <http://www.w3.org/ns/entailment/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix hg: <http://rdf.histograph.io/>
+prefix org: <http://www.w3.org/ns/org#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -14,41 +16,49 @@ prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
 prefix id: <https://iisg.amsterdam/id/adb-andb/>
+prefix vocab: <https://iisg.amsterdam/vocab/adb-andb/>
 
-<https://iisg.amsterdam/andb/andb> {
-  <https://druid.datalegend.net> dcat:dataset <https://iisg.amsterdam/andb/andb>.
+<https://iisg.amsterdam/andb/ANDB-ADB-all> {
+  <https://druid.datalegend.net> dcat:dataset <https://iisg.amsterdam/andb/ANDB-ADB-all>.
 
-  <https://iisg.amsterdam/andb/andb>
+  <https://iisg.amsterdam/andb/ANDB-ADB-all>
     a void:Dataset;
     dct:contributor
       <https://druid.datalegend.net/MiconSchorsij>,
       <https://druid.datalegend.net/wouter>;
     dct:creator <https://iisg.amsterdam/iisg>;
-    dct:created "2020-11-23"^^xsd:date;
-    dct:date "2020-11-23"^^xsd:date;
-    dct:description """<p>This is the Linked Data version of the <a href="https://diamantbewerkers.nl/en">ANDB dataset</a>.</p>"""^^rdf:HTML;
-    dct:issued "2020-11-23"^^xsd:date;
-    dct:language "iso639-1:nl";
+    dct:created "2021-02-21"^^xsd:date;
+    dct:description """<p>This is the Linked Data version of the <a href="https://diamantbewerkers.nl/en">ADB and ANDB datasets</a>.</p>"""^^rdf:HTML;
+    dct:language
+      "iso639-1:en",
+      "iso639-1:nl";
    #dct:license
-    dct:modified "2020-11-23"^^xsd:date;
+    dct:modified "2021-02-21"^^xsd:date;
     dct:publisher <https://iisg.amsterdam/iisg>;
-    dct:source "https://surfdrive.surf.nl/files/index.php/s/HMX1l8hU8d8s7I4"^^xsd:anyURI;
-    dct:subject "Geschiedenis";
+    dct:source "https://datasets.iisg.amsterdam/dataverse/andb"^^xsd:anyURI;
+    dct:subject
+      "Diamantbewerkers"@nl,
+      "Diamantindustrie"@nl,
+      "Diamond Industry"@en,
+      "Diamond Workers"@en,
+      "Geschiedenis"@nl,
+      "History"@en,
+      "Social History"@en,
+      "Sociale geschiedenis"@nl;
     dct:title "Algemene Nederlandse Diamantbewerkers Bond"@nl;
     foaf:depiction "https://druid.datalegend.net/imgs/avatars/d/5e466b1020e09b037eea7cd1.png?v=1"^^xsd:anyURI;
     foaf:homepage "https://diamantbewerkers.nl/en"^^xsd:anyURI;
-    owl:versionInfo "0.0.0";
+    owl:versionInfo "2.0.0";
     schema:distribution
-      [ schema:contentUrl "https://iisg.amsterdam/andb/andb/download.trig.gz"^^xsd:anyURI ],
-      [ schema:contentUrl "https://iisg.amsterdam/andb/andb/download.nq.gz"^^xsd:anyURI ],
-      [ schema:contentUrl "https://iisg.amsterdam/andb/andb/download.nt.gz"^^xsd:anyURI ],
-      [ schema:contentUrl "https://iisg.amsterdam/andb/andb/download.ttl.gz"^^xsd:anyURI ];
+      [ schema:contentUrl "https://iisg.amsterdam/andb/ANDB-ADB-all/download.trig.gz"^^xsd:anyURI ],
+      [ schema:contentUrl "https://iisg.amsterdam/andb/ANDB-ADB-all/download.nq.gz"^^xsd:anyURI ],
+      [ schema:contentUrl "https://iisg.amsterdam/andb/ANDB-ADB-all/download.nt.gz"^^xsd:anyURI ],
+      [ schema:contentUrl "https://iisg.amsterdam/andb/ANDB-ADB-all/download.ttl.gz"^^xsd:anyURI ];
     void:exampleResource <https://iisg.amsterdam/resource/adb-andb/card/andb-leden-11>;
-    void:sparqlEndpoint <https://iisg.amsterdam/andb/andb/sparql/andb>;
+    void:sparqlEndpoint <https://iisg.amsterdam/andb/ANDB-ADB-all/sparql/default>;
     void:subSet
-      andb:,
+      vocab:,
       id:instantiesGraaf;
     void:vocabulary
       dcat:,
@@ -61,23 +71,28 @@ prefix id: <https://iisg.amsterdam/id/adb-andb/>
       time:,
       vann:.
 
-  andb:
+  vocab:
     a owl:Ontology;
     owl:imports
+      dct:,
+      foaf:,
+      hg:,
+      org:,
       owl:,
       rdf:,
       rdfs:,
       schema:,
       skos:,
-      time:;
+      time:,
+      xsd:;
     vann:preferredNamespacePrefix "andb";
     vann:preferredNamespaceUri "https://iisg.amsterdam/vocab/adb-andb/".
 
-  id:instantiesGraaf sh:shapesGraph andb:.
+  id:instantiesGraaf sh:shapesGraph vocab:.
 
-  <https://iisg.amsterdam/andb/andb/sparql/andb>
+  <https://iisg.amsterdam/andb/ANDB-ADB-all/sparql/default>
     dct:title "andb";
-    sd:availableGraphs <https://iisg.amsterdam/andb/andb/graphs>;
+    sd:availableGraphs <https://iisg.amsterdam/andb/ANDB-ADB-all/graphs>;
     sd:defaultEntailmentRegime entailment:Simple;
-    sd:endpoint "https://api.druid.datalegend.net/datasets/andb/andb/services/andb/sparql"^^xsd:anyURI.
+    sd:endpoint "https://api.druid.datalegend.net/datasets/andb/ANDB-ADB-all/services/default/sparql"^^xsd:anyURI.
 }
