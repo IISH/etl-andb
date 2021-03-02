@@ -147,7 +147,7 @@ andb: {
     rdfs:range andb:Residency;
     rdfs:subPropertyOf foaf:topic.
 
-  andb:aboutStepfather
+  andb:aboutStepFather
     a owl:ObjectProperty;
     rdfs:comment
       "The relatonship between a person's registration card and a stepfather of that person, as described on that card."@en,
