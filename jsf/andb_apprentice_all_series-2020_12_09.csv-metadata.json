@@ -65,6 +65,14 @@
     "csvw:value": "Leerlingkaart van {{name}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{{adm_id}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Apprentice card of {{name}}"
+   },
+   {
     "@id": "https://iisg.amsterdam/id/andb/andb_apprentice_all_series.csv/column/adm_image_no",
     "name": "adm_image_no",
     "propertyUrl": "vocab:inventoryNumber",
@@ -90,13 +98,21 @@
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Originele afbeelding van kaart ', adm_id]|join)}}"
+    "csvw:value": "{{(['Afbeelding van kaart ', adm_id]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Depiction of card ', adm_id]|join)}}"
    },
    {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-master']|join)}}",
     "propertyUrl": "schema:contentUrl",
-    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:master",
+    "csvw:value": "{{image_uuid}}?locatt=view:master",
     "datatype": "xsd:anyURI"
    },
    {
@@ -127,10 +143,18 @@
     "csvw:value": "{{(['Schermvriendelijke versie van kaart ', adm_id]|join)}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level2']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Screenversion of card ', adm_id]|join)}}"
+   },
+   {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-level2']|join)}}",
     "propertyUrl": "schema:contentUrl",
-    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level2",
+    "csvw:value": "{{image_uuid}}?locatt=view:level2",
     "datatype": "xsd:anyURI"
    },
    {
@@ -161,10 +185,18 @@
     "csvw:value": "{{(['Miniatuurafbeelding van kaart ', adm_id]|join)}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{{([adm_image_no, '-level3']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Thumbnail of card ', adm_id]|join)}}"
+   },
+   {
     "virtual": "true",
     "aboutUrl": "{{([adm_image_no, '-level3']|join)}}",
     "propertyUrl": "schema:contentUrl",
-    "csvw:value": "https://hdl.handle.net/10622/{{adm_image_uuid}}?locatt=view:level3",
+    "csvw:value": "{{image_uuid}}?locatt=view:level3",
     "datatype": "xsd:anyURI"
    },
    {
@@ -344,6 +376,15 @@
     "csvw:value": "{{(['Bewoning van ', sdn_street_01, ' ', sdn_street_no_01, ' ', sdn_city_01, ' door ', name]|join)}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (sdn_street_01 != '' ) or (sdn_street_no_01 != '') or (sdn_city_01 != '') ) %}{{([adm_id, '-residency_01']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Residency at ', sdn_street_01, ' ', sdn_street_no_01, ' ', sdn_city_01, ' by ', name]|join)}}"
+   },
+   {
     "virtual": "true", 
     "null": "__",
     "aboutUrl": "{% if ( (sdn_street_01 != '' ) or (sdn_street_no_01 != '') or (sdn_city_01 != '') ) %}{{([adm_id, '-residency_01']|join)}}{% endif %}",
@@ -458,6 +499,14 @@
     "csvw:value": "{{(['Duur van de bewoning van ', sdn_street_01, ' ', sdn_street_no_01, ' ', sdn_city_01, ' door ', name]|join)}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (sdn_street_01 != '' ) or (sdn_street_no_01 != '') or (sdn_city_01 != '') ) %}{{([adm_id, '-residency_01-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Duration of the residency at ', sdn_street_01, ' ', sdn_street_no_01, ' ', sdn_city_01, ' by ', name]|join)}}"
+   },
+   {
     "virtual": "true",
     "aboutUrl": "{% if ( (sdn_street_01 != '' ) or (sdn_street_no_01 != '') or (sdn_city_01 != '') ) %}{{([adm_id, '-residency_01-interval']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
@@ -514,6 +563,15 @@
     "aboutUrl": "{% if ( (sdn_street_02 != '' ) or (sdn_street_no_02 != '') or (sdn_city_02 != '') ) %}{{([adm_id, '-residency_02']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{(['Bewoning van ', sdn_street_02, ' ', sdn_street_no_02, ' ', sdn_city_02, ' door ', name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (sdn_street_02 != '' ) or (sdn_street_no_02 != '') or (sdn_city_02 != '') ) %}{{([adm_id, '-residency_02']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Residency at ', sdn_street_02, ' ', sdn_street_no_02, ' ', sdn_city_02, ' by ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -630,6 +688,14 @@
     "csvw:value": "{{(['Duur van de bewoning van ', sdn_street_02, ' ', sdn_street_no_02, ' ', sdn_city_02, ' door ', name]|join)}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (sdn_street_02 != '' ) or (sdn_street_no_02 != '') or (sdn_city_02 != '') ) %}{{([adm_id, '-residency_02-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Duration of the residency at ', sdn_street_02, ' ', sdn_street_no_02, ' ', sdn_city_02, ' by ', name]|join)}}"
+   },
+   {
     "virtual": "true",
     "aboutUrl": "{% if ( (sdn_street_02 != '' ) or (sdn_street_no_02 != '') or (sdn_city_02 != '') ) %}{{([adm_id, '-residency_02-interval']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
@@ -692,6 +758,15 @@
     "aboutUrl": "{% if ( (sdn_street_03 != '' ) or (sdn_street_no_03 != '') or (sdn_city_03 != '') ) %}{{([adm_id, '-residency_03']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{(['Bewoning van ', sdn_street_03, ' ', sdn_street_no_03, ' ', sdn_city_03, ' door ', name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (sdn_street_03 != '' ) or (sdn_street_no_03 != '') or (sdn_city_03 != '') ) %}{{([adm_id, '-residency_03']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Residency at ', sdn_street_03, ' ', sdn_street_no_03, ' ', sdn_city_03, ' by ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -808,6 +883,14 @@
     "csvw:value": "{{(['Duur van de bewoning van ', sdn_street_03, ' ', sdn_street_no_03, ' ', sdn_city_03, ' door ', name]|join)}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (sdn_street_03 != '' ) or (sdn_street_no_03 != '') or (sdn_city_03 != '') ) %}{{([adm_id, '-residency_03-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Duration of the residency at ', sdn_street_03, ' ', sdn_street_no_03, ' ', sdn_city_03, ' by ', name]|join)}}"
+   },
+   {
     "virtual": "true",
     "aboutUrl": "{% if ( (sdn_street_03 != '' ) or (sdn_street_no_03 != '') or (sdn_city_03 != '') ) %}{{([adm_id, '-residency_03-interval']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
@@ -870,6 +953,15 @@
     "aboutUrl": "{% if ( (sdn_street_04 != '' ) or (sdn_street_no_04 != '') or (sdn_city_04 != '') ) %}{{([adm_id, '-residency_04']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{(['Bewoning van ', sdn_street_04, ' ', sdn_street_no_04, ' ', sdn_city_04, ' door ', name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (sdn_street_04 != '' ) or (sdn_street_no_04 != '') or (sdn_city_04 != '') ) %}{{([adm_id, '-residency_04']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Residency at ', sdn_street_04, ' ', sdn_street_no_04, ' ', sdn_city_04, ' by ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -986,6 +1078,14 @@
     "csvw:value": "{{(['Duur van de bewoning van ', sdn_street_04, ' ', sdn_street_no_04, ' ', sdn_city_04, ' door ', name]|join)}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (sdn_street_04 != '' ) or (sdn_street_no_04 != '') or (sdn_city_04 != '') ) %}{{([adm_id, '-residency_04-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Duration of the residency at ', sdn_street_04, ' ', sdn_street_no_04, ' ', sdn_city_04, ' by ', name]|join)}}"
+   },
+   {
     "virtual": "true",
     "aboutUrl": "{% if ( (sdn_street_04 != '' ) or (sdn_street_no_04 != '') or (sdn_city_04 != '') ) %}{{([adm_id, '-residency_04-interval']|join)}}{% endif %}",
     "propertyUrl": "rdf:type",
@@ -1048,6 +1148,15 @@
     "aboutUrl": "{% if ( (sdn_street_05 != '' ) or (sdn_street_no_05 != '') or (sdn_city_05 != '') ) %}{{([adm_id, '-residency_05']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{(['Bewoning van ', sdn_street_05, ' ', sdn_street_no_05, ' ', sdn_city_05, ' door ', name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "null": "",
+    "aboutUrl": "{% if ( (sdn_street_05 != '' ) or (sdn_street_no_05 != '') or (sdn_city_05 != '') ) %}{{([adm_id, '-residency_05']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Residency at ', sdn_street_05, ' ', sdn_street_no_05, ' ', sdn_city_05, ' by ', name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1163,6 +1272,14 @@
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{(['Duur van de bewoning van ', sdn_street_05, ' ', sdn_street_no_05, ' ', sdn_city_05, ' door ', name]|join)}}"
    },
+    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (sdn_street_05 != '' ) or (sdn_street_no_05 != '') or (sdn_city_05 != '') ) %}{{([adm_id, '-residency_05-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Duration of the residency at ', sdn_street_05, ' ', sdn_street_no_05, ' ', sdn_city_05, ' by ', name]|join)}}"
+   },
    {
     "virtual": "true",
     "aboutUrl": "{% if ( (sdn_street_05 != '' ) or (sdn_street_no_05 != '') or (sdn_city_05 != '') ) %}{{([adm_id, '-residency_05-interval']|join)}}{% endif %}",
@@ -1231,6 +1348,14 @@
     "aboutUrl": "{{([adm_id, '-education']|join)}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{(['Opleiding van ',name]|join)}}"
+   },
+    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{{([adm_id, '-education']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['Education of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1502,7 +1627,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 1 van ',name]|join)}}"
+    "csvw:value": "{{(['1e Stage van ',name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['1st Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1628,6 +1761,14 @@
     "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_01 != '' ) or (wsp_street_01 != '') or (mst_name_01 != '') ) %}{{([adm_id, '-internship_01-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -1761,7 +1902,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 2 van ',name]|join)}}"
+    "csvw:value": "{{(['2e Stage van ',name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['2nd Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -1887,6 +2036,14 @@
     "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de tweede stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_02 != '' ) or (wsp_street_02 != '') or (mst_name_02 != '') ) %}{{([adm_id, '-internship_02-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the second internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -2026,7 +2183,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 3 van ',name]|join)}}"
+    "csvw:value": "{{(['3e Stage van ',name]|join)}}"
+   },
+    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['3th Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2152,6 +2317,14 @@
     "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de derde stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_03 != '' ) or (wsp_street_03 != '') or (mst_name_03 != '') ) %}{{([adm_id, '-internship_03-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the third internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -2291,7 +2464,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 4 van ',name]|join)}}"
+    "csvw:value": "{{(['4e Stage van ',name]|join)}}"
+   },
+    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['4th Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2417,6 +2598,14 @@
     "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de vierde stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_04 != '' ) or (wsp_street_04 != '') or (mst_name_04 != '') ) %}{{([adm_id, '-internship_04-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the fourth internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -2556,7 +2745,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 5 van ',name]|join)}}"
+    "csvw:value": "{{(['5e Stage van ',name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['5e Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2682,6 +2879,14 @@
     "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de vijfde stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_05 != '' ) or (wsp_street_05 != '') or (mst_name_05 != '') ) %}{{([adm_id, '-internship_05-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the fifth internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -2821,7 +3026,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 6 van ',name]|join)}}"
+    "csvw:value": "{{(['6e Stage van ',name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['6th Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -2947,6 +3160,14 @@
     "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de zesde stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_06 != '' ) or (wsp_street_06 != '') or (mst_name_06 != '') ) %}{{([adm_id, '-internship_06-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the sixth internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -3086,7 +3307,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 7 van ',name]|join)}}"
+    "csvw:value": "{{(['7e Stage van ',name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['7th Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -3212,6 +3441,14 @@
     "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de zevende stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_07 != '' ) or (wsp_street_07 != '') or (mst_name_07 != '') ) %}{{([adm_id, '-internship_07-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the seventh internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -3351,7 +3588,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 8 van ',name]|join)}}"
+    "csvw:value": "{{(['8e Stage van ',name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['8th Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -3477,6 +3722,14 @@
     "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de achtste stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_08 != '' ) or (wsp_street_08 != '') or (mst_name_08 != '') ) %}{{([adm_id, '-internship_08-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the eight internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -3616,7 +3869,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 9 van ',name]|join)}}"
+    "csvw:value": "{{(['9e Stage van ',name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['9th Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -3742,6 +4003,14 @@
     "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de negende stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_09 != '' ) or (wsp_street_09 != '') or (mst_name_09 != '') ) %}{{([adm_id, '-internship_09-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the ninth internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -3881,7 +4150,15 @@
     "virtual": "true", 
     "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
-    "csvw:value": "{{(['Stage 10 van ',name]|join)}}"
+    "csvw:value": "{{(['10e Stage van ',name]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true", 
+    "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{(['10th Internship of ',name]|join)}}"
    },
    {
     "virtual": "true", 
@@ -4007,6 +4284,14 @@
     "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10-interval']|join)}}{% endif %}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "Duur van de tiende stage van {{name}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "aboutUrl": "{% if ( (wsp_name_10 != '' ) or (wsp_street_10 != '') or (mst_name_10 != '') ) %}{{([adm_id, '-internship_10-interval']|join)}}{% endif %}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "Duration of the tenth internship of {{name}}"
    },
    {
     "virtual": "true", 
@@ -4160,6 +4445,15 @@
     "csvw:value": "{{([un_name, ' lidmaatschap van ',name, ' (leerling)']|join)}}"
    },
     {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_name", "null": ""}]},
+    "aboutUrl": "{{([adm_id, ' ', un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([un_name, ' membership of ',name, ' (apprentice)']|join)}}"
+   },
+    {
     "virtual": "true",
     "null": {"@list": [{"name": "un_section_no", "null": ""}]},
     "aboutUrl": "{{([adm_id, ' ', un_section, ' ', un_section_no]|join)|replace(' ', '_')}}",
@@ -4190,6 +4484,15 @@
     "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([un_name, ' sectie ', un_section]|join)}}"
+   },
+   {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "null": {"@list": [{"name": "un_section", "null": ""}]},
+    "aboutUrl": "{{([un_name, ' ', un_section]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([un_name, ' section ', un_section]|join)}}"
    },
    {
     "virtual": "true", 
@@ -4449,7 +4752,7 @@
     "virtual": "true",
     "null": {"@list": [{"name": "parent_relation", "null": ""}]},
     "aboutUrl": "{{adm_id}}",
-    "propertyUrl": "vocab:about{{parent_relation}}",
+    "propertyUrl": "vocab:{{about_parent_relation}}",
     "valueUrl": "{{([adm_id, '-parent']|join)}}"
    },
    {
@@ -4554,6 +4857,15 @@
     "csvw:value": "{{([par_un_name, ' lidmaatschap van ', par_first_name, ' ', par_last_name]|join)}}"
    },
    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "null": {"@list": [{"name": "par_un_name", "null": ""}]},
+    "aboutUrl": "{{([adm_id, '-par_membership']|join)}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([par_un_name, ' membership of ', par_first_name, ' ', par_last_name]|join)}}"
+   },
+   {
     "virtual": "true",
     "null": {"@list": [{"name": "par_un_section_no", "null": ""}]},
     "aboutUrl": "{{([adm_id, '-par_membership']|join)}}",
@@ -4583,6 +4895,15 @@
     "aboutUrl": "{{([par_un_name, ' ', par_un_section]|join)|replace(' ', '_')}}",
     "propertyUrl": "rdfs:label",
     "csvw:value": "{{([par_un_name, ' sectie ', par_un_section]|join)}}"
+   },
+    {
+    "lang": "en",
+    "datatype": "xsd:string",
+    "virtual": "true",
+    "null": {"@list": [{"name": "par_un_section", "null": ""}]},
+    "aboutUrl": "{{([par_un_name, ' ', par_un_section]|join)|replace(' ', '_')}}",
+    "propertyUrl": "rdfs:label",
+    "csvw:value": "{{([par_un_name, ' section ', par_un_section]|join)}}"
    },
    {
     "virtual": "true",

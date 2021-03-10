@@ -10,8 +10,8 @@ andb: {
   andb:AdbCard
     a owl:Class;#
     rdfs:comment
-      "A card that describes a membership at the Antwerp Diamondworker Union"@en,
-      "Een kaart die een lidmaatschap bij de Antwerpse Diamantbewerkersbond beschrijft."@nl;
+      "A card that registers the membership of a person at the Antwerp Diamondworker Union"@en,
+      "Een kaart die het lidmaatschap van een persoon bij de Antwerpse Diamantbewerkersbond beschrijft."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "ADB membership card"@en,
@@ -21,10 +21,10 @@ andb: {
   andb:AndbCard
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "A card that describes a membership at the General Diamond Workers' Union of the Netherlands."@en,
-      "Een kaart die een lidmaatschap bij de Algemene Nederlandse Diamantbewerkersbond beschrijft."@nl;
     rdfs:comment
+      "A card that registers the membership of a person at the General Diamond Workers' Union of the Netherlands."@en,
+      "Een kaart die het lidmaatschap van een persoon bij de Algemene Nederlandse Diamantbewerkersbond beschrijft."@nl;
+    rdfs:label
       "ANDB membership card"@en,
       "ANDB lidmaatschapskaart"@nl;
     rdfs:subClassOf andb:MembershipCard.
@@ -32,10 +32,10 @@ andb: {
   andb:ApprenticeCard
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
-    rdfs:label
-      "A card that describes that apprenticeship of a specific person at a labor union."@en,
-      "Een kaart die een leertraject van een specifieke leerling bij een vakbond beschrijft."@nl;
     rdfs:comment
+      "A card that registers the apprenticeship of a person in the diamond industry."@en,
+      "Een kaart die een leertraject van een persoon in de diamantindustrie beschrijft."@nl;
+    rdfs:label
       "Apprentice card"@en,
       "Leerlingkaart"@nl;
     rdfs:subClassOf andb:Card.
@@ -43,8 +43,8 @@ andb: {
   andb:Card
     a owl:Class;#
     rdfs:comment
-      "A card that registers properties of a specific person."@en,
-      "Een kaart waarop aspecten van een specifieke persoon zijn vastgelegd."@nl;
+      "A card that registers information about a specific person."@en,
+      "Een kaart waarop informatie over een specifieke persoon is geregistreerd."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Card"@en,
@@ -66,8 +66,8 @@ andb: {
   andb:Dismission
     a owl:Class;#
     rdfs:comment
-      "An event in which the membership at a union is terminated."@en,
-      "Een evenement waarbij het lidmaatschap bij een bond wordt ingetrokken."@nl;
+      "An event in which the membership of a union is revoked."@en,
+      "Een gebeurtenis waarbij het lidmaatschap van een vakbond wordt ingetrokken."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Dismission"@en,
@@ -78,7 +78,7 @@ andb: {
     a owl:Class;#
     rdfs:comment
       "An education program."@en,
-      "Een oderwijstraject."@nl;
+      "Een onderwijstraject."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Education"@en,
@@ -93,7 +93,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Internship"@en,
-      "Stage"@nl;
+      "Leerwerktraject"@nl;
     rdfs:subClassOf schema:Event.
 
   andb:Master
@@ -101,14 +101,14 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Master"@en,
-      "Meester"@nl;
+      "Leermeester"@nl;
     rdfs:subClassOf schema:Person.
 
   andb:MembershipCard
     a owl:Class;#
     rdfs:comment
-      "A card describing the membership of a specific person at a labor union."@en,
-      "Een kaart die het lidmaatschap van een specifieke persoon bij een vakbond beschrijft."@nl;
+      "A card describing the membership of a person at a labor union."@en,
+      "Een kaart die het lidmaatschap van een persoon bij een vakbond beschrijft."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Membership card"@en,
@@ -127,18 +127,18 @@ andb: {
     a owl:Class;#
     rdfs:comment
       "A change to a union membership."@en,
-      "Een verandering van een lidmaatschap bij een bond."@nl;
+      "Een verandering in het lidmaatschap van een vakbond."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Membership mutation"@en,
-      "Lidmaatschapsverandering"@en;
+      "Lidmaatschapsmutatie"@en;
     rdfs:subClassOf schema:Event.
 
   andb:Readmission
     a owl:Class;#
     rdfs:comment
-      "A readmission event of a previous member to a union."@en,
-      "De wedertoelating van een voormalig lid bij een bond."@nl;
+      "A readmission of a previous member to a union."@en,
+      "De wedertoelating van een voormalig lid bij een vakbond."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Readmission"@en,
@@ -148,7 +148,7 @@ andb: {
   andb:Residency
     a owl:Class;#
     rdfs:comment
-      "A residency event of a person at a certain address."@en,
+      "A residency of a person at a certain address."@en,
       "De bewoning van een huis of appartement door een persoon."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -171,7 +171,7 @@ andb: {
     a owl:Class;#
     rdfs:comment
       "The termination of a union membership by a member."@en,
-      "De opzegging van een lidmaatschap bij een bond."@nl;
+      "De opzegging van een lidmaatschap van een vakbond."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Membership withdrawal"@en,

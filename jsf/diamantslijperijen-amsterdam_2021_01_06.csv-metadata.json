@@ -85,49 +85,25 @@
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_1",
     "name": "Naamsvariatie_1",
     "propertyUrl": "schema:alternateName",
-    "valueUrl": "{{Naamsvariatie_1}}",
-    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
-   },
-      {
-    "lang": "nl",
-    "null": {"@list": [{"name": "Naamsvariatie_1", "null": ""}]},
-    "virtual": "true",
-    "aboutUrl": "{{Naamsvariatie_1}}",
-    "propertyUrl": "rdfs:label",
     "csvw:value": "{{Naamsvariatie_1}}",
-    "datatype": "xsd:string"
+    "datatype": "xsd:string",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
    },
    {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_2",
     "name": "Naamsvariatie_2",
     "propertyUrl": "schema:alternateName",
-    "valueUrl": "{{Naamsvariatie_2}}",
-    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
-   },
-      {
-    "lang": "nl",
-    "null": {"@list": [{"name": "Naamsvariatie_2", "null": ""}]},
-    "virtual": "true",
-    "aboutUrl": "{{Naamsvariatie_2}}",
-    "propertyUrl": "rdfs:label",
     "csvw:value": "{{Naamsvariatie_2}}",
-    "datatype": "xsd:string"
+    "datatype": "xsd:string",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
    },
    {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Naamsvariatie_3",
     "name": "Naamsvariatie_3",
     "propertyUrl": "schema:alternateName",
-    "valueUrl": "{{Naamsvariatie_3}}",
-    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
-   },
-      {
-    "lang": "nl",
-    "null": {"@list": [{"name": "Naamsvariatie_3", "null": ""}]},
-    "virtual": "true",
-    "aboutUrl": "{{Naamsvariatie_3}}",
-    "propertyUrl": "rdfs:label",
     "csvw:value": "{{Naamsvariatie_3}}",
-    "datatype": "xsd:string"
+    "datatype": "xsd:string",
+    "dc:description": "Andere naam waaronder de slijperij bekend is geweest"
    },
    {
     "@id": "https://iisg.amsterdam/id/andb/diamantslijperijen-amsterdam.csv/column/Eigenaar_1",

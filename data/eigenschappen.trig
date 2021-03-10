@@ -17,7 +17,7 @@ andb: {
     a owl:ObjectProperty;
     rdfs:comment
       "The relationship between a person's registration card and an education event of that person, as described on that card."@en,
-      "De relatie tussen een persoonsgebonden kaartregistratie en een onderwijstraject van die persoon zoals op dit kaart beschreven."@nl;
+      "De relatie tussen een persoonsgebonden kaartregistratie en een onderwijstraject van die persoon zoals op dit kaart beschreven is."@nl;
     rdfs:domain andb:ApprenticeCard;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -29,7 +29,7 @@ andb: {
   andb:aboutFather
     a owl:ObjectProperty;
     rdfs:comment
-      "The relatonship between a person's registration card and the father of that person, as described on that card."@en,
+      "The relationship between a person's registration card and the father of that person, as described on that card."@en,
       "De relatie tussen een persoonsgebonden kaartregistratie en de vader van de op die kaart beschreven persoon."@nl;
     rdfs:domain andb:ApprenticeCard;
     rdfs:isDefinedBy andb:;#
@@ -42,7 +42,7 @@ andb: {
   andb:aboutFosterFather
     a owl:ObjectProperty;
     rdfs:comment
-      "The relatonship between a person's registration card and a foster father of that person, as described on that card."@en,
+      "The relationship between a person's registration card and a foster father of that person, as described on that card."@en,
       "De relatie tussen een persoonsgebonden kaartregistratie en een pleegvader van de op die kaart beschreven persoon."@nl;
     rdfs:domain andb:ApprenticeCard;
     rdfs:isDefinedBy andb:;#
@@ -67,7 +67,7 @@ andb: {
   andb:aboutMembershipBrother
     a owl:ObjectProperty;
     rdfs:comment
-      "The relatonship between a person's registration card and a union membership of a brother of that person, as described on that card."@en,
+      "The relationship between a person's registration card and a union membership of a brother of that person, as described on that card."@en,
       "De relatie tussen een persoonsgebonden kaartregistratie en een op die kaart beschreven lidmaatschap van een broer van die persoon."@nl;
     rdfs:domain andb:ApprenticeCard;
     rdfs:isDefinedBy andb:;#
@@ -79,7 +79,7 @@ andb: {
   andb:aboutMembershipSister
     a owl:ObjectProperty;
     rdfs:comment
-      "The relatonship between a person's registration card and a union membership of a sister of that person, as described on that card."@en,
+      "The relationship between a person's registration card and a union membership of a sister of that person, as described on that card."@en,
       "De relatie tussen een persoonsgebonden kaartregistratie en een op die kaart beschreven lidmaatschap van een zus van die persoon."@nl;
     rdfs:domain andb:ApprenticeCard;
     rdfs:isDefinedBy andb:;#
@@ -101,7 +101,7 @@ andb: {
   andb:aboutMother
     a owl:ObjectProperty;
     rdfs:comment
-      "The relatonship between a person's registration card and the mother of that person, as described on that card."@en,
+      "The relationship between a person's registration card and the mother of that person, as described on that card."@en,
       "De relatie tussen een persoonsgebonden kaartregistratie en de moeder van de op die kaart beschreven persoon."@nl;
     rdfs:domain andb:ApprenticeCard;
     rdfs:isDefinedBy andb:;#
@@ -117,14 +117,14 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "mentions membership mutation"@en,
-      "vermeldt lidmaatschapsverandering"@nl;
+      "vermeldt lidmaatschapsmutatie"@nl;
     rdfs:range andb:Mutation;
     rdfs:subPropertyOf foaf:topic.
 
   andb:aboutParent
     a owl:ObjectProperty;
     rdfs:comment
-      "The relatonship between a person's registration card and a parent of that person, as described on that card."@en,
+      "The relationship between a person's registration card and a parent of that person, as described on that card."@en,
       "De relatie tussen een persoonsgebonden kaartregistratie en een op die kaart beschreven ouder van die persoon."@nl;
     rdfs:domain andb:ApprenticeCard;
     rdfs:isDefinedBy andb:;#
@@ -137,20 +137,20 @@ andb: {
   andb:aboutResidency
     a owl:ObjectProperty;
     rdfs:comment
-      "The relatonship between a person's registration card and a residency event of that person, as described on that card."@en,
-      "De relatie tussen een persoonsgebonden kaartregistratie en de bewoning van een verblijfsadres door die persoon, zoals beschreven op die kaart."@nl;
+      "The relationship between a person's registration card and a residency event of that person, as described on that card."@en,
+      "De relatie tussen een persoonsgebonden kaartregistratie en de bewoning van een woonadres door die persoon, zoals beschreven op die kaart."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "mentions residency"@en,
-      "vermeldt woonachtig"@nl;
+      "vermeldt woonadres"@nl;
     rdfs:range andb:Residency;
     rdfs:subPropertyOf foaf:topic.
 
   andb:aboutStepFather
     a owl:ObjectProperty;
     rdfs:comment
-      "The relatonship between a person's registration card and a stepfather of that person, as described on that card."@en,
+      "The relationship between a person's registration card and a stepfather of that person, as described on that card."@en,
       "De relatie tussen een persoonsgebonden kaartregistratie en een stiefvader van de op die kaart beschreven persoon."@nl;
     rdfs:domain andb:ApprenticeCard;
     rdfs:isDefinedBy andb:;#
@@ -171,8 +171,8 @@ andb: {
   andb:birthDate
     a owl:DatatypeProperty;
     rdfs:comment
-      "The person's birth date as presented on a card that describes the person."@en,
-      "De geboortedatum van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+      "The person's birth date as presented on a that person's registration card."@en,
+      "De geboortedatum van een persoon, zoals vermeldt op de registratiekaart van die persoon."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -183,8 +183,8 @@ andb: {
   andb:birthPlace
     a owl:DatatypeProperty;
     rdfs:comment
-      "The person's place of birth as presented on a card that describes the person."@en,
-      "De geboorteplaats van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+      "The person's place of birth as presented on that person's registration card."@en,
+      "De geboorteplaats van een persoon, zoals vermeldt op de registratiekaart van die persoon."@nl;
     rdfs:domain schema:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -219,8 +219,8 @@ andb: {
     rdfs:domain andb:Workshop;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "closed in"@en,
-      "sloot op"@nl;
+      "closed"@en,
+      "gesloten"@nl;
     rdfs:range xsd:string.
 
   andb:daughter
@@ -236,25 +236,25 @@ andb: {
   andb:deathDate
     a owl:DatatypeProperty;
     rdfs:comment
-      "The person's death date as presented on a card that describes the person."@en,
-      "De overleidensdatum van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+      "The person's death date as presented on that person's registration card."@en,
+      "De overlijdensdatum van een persoon, zoals vermeldt op de registratiekaart van die persoon."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "mentions death date"@en,
-      "vermeldt datum van overleiden"@nl;
+      "vermeldt datum van overlijden"@nl;
     rdfs:range xsd:date.
 
   andb:deathPlace
     a owl:DatatypeProperty;
     rdfs:comment
-      "The person's death place as presented on a card that describes the person."@en,
-      "De plaats van overleiden van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+      "The person's death place as presented on that person's registration card."@en,
+      "De plaats van overlijden van een persoon, zoals vermeldt op de registratiekaart van die persoon."@nl;
     rdfs:domain schema:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "mentions place of death"@en,
-      "vermeldt plaats plaats van overleiden"@nl;
+      "vermeldt plaats van overlijden"@nl;
     rdfs:range xsd:string.
 
   andb:duration
@@ -263,7 +263,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has duration"@en,
-      "heeft duur"@nl;
+      "heeft tijdsduur"@nl;
     rdfs:range time:ProperInterval.
 
   andb:education
@@ -292,8 +292,8 @@ andb: {
     rdfs:domain andb:Workshop;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "expanded on"@en,
-      "had uitbreiding"@nl;
+      "expanded"@en,
+      "uitgebreid"@nl;
     rdfs:range xsd:string.
 
   andb:expansionDate
@@ -309,13 +309,13 @@ andb: {
   andb:familyName
     a owl:DatatypeProperty;
     rdfs:comment
-      "The person's family name as presented on a card that describes the person."@en,
-      "De familienaam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+      "The person's family name as presented on that person's registration card."@en,
+      "De familienaam van een persoon, zoals vermeldt op de registratiekaart van die persoon."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "mentions family name"@en,
-      "noemt familienaam"@nl;
+      "vermeldt familienaam"@nl;
     rdfs:range xsd:string.
 
   andb:father
@@ -390,13 +390,13 @@ andb: {
   andb:givenName
     a owl:DatatypeProperty;
     rdfs:comment
-      "The person's given name as presented on a card that describes the person."@en,
-      "De toegekende naam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+      "The person's given name as presented on that person's registration card."@en,
+      "De toegekende naam van een persoon, zoals vermeldt op de registratiekaart van die persoon."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "mentions given name"@en,
-      "noemt toegekende naam"@nl;
+      "vermeldt voornaam"@nl;
     rdfs:range xsd:string.
 
   andb:houseNumber
@@ -446,12 +446,14 @@ andb: {
 
   andb:internship
     a owl:ObjectProperty;
-    rdfs:comment "Internship at diamond factory as part of the formal education"@en;
+    rdfs:comment 
+      "Internship at diamond factory as part of the formal education"@en;,
+      "Leerwerktraject bij een diamantslijperij of diamantzagerij, als onderdeel van een beroepsopleiding."@nl;
     rdfs:domain andb:Education;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has internship"@en,
-      "volgt stage"@nl;
+      "volgt leerwerktraject"@nl;
     rdfs:range andb:Internship.
 
   andb:inventoryNumber
@@ -466,8 +468,8 @@ andb: {
   andb:maidenName
     a owl:DatatypeProperty;
     rdfs:comment
-      "The person's maiden name as presented on a card that describes the person."@en,
-      "De meisjesnaam van een persoon, zoals vermeldt op een kaart die de persoon beschrijft."@nl;
+      "The person's maiden name as presented on that person's registration card."@en,
+      "De meisjesnaam van een persoon, zoals vermeldt op de registratiekaart van die persoon."@nl;
     rdfs:domain andb:Card;
     rdfs:isDefinedBy andb:;#
     rdfs:label
@@ -481,7 +483,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has maiden name prefix"@en,
-      "heeft meisjesnaam voorvoegsel"@nl;
+      "heeft voorvoegsel meisjesnaam"@nl;
     rdfs:range xsd:string.
 
   andb:marriageDate
@@ -499,7 +501,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has master"@en,
-      "heeft meester"@nl;
+      "heeft leermeester"@nl;
     rdfs:range andb:Master.
 
   andb:masterMembership
@@ -508,7 +510,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has master membership"@en,
-      "heeft lidmaatschap meester"@nl;
+      "heeft lidmaatschap leermeester"@nl;
     rdfs:range xsd:string.
 
   andb:md5
@@ -610,7 +612,7 @@ andb: {
     rdfs:domain schema:Person;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "sister"@en,
+      "has sister"@en,
       "heeft zus"@nl;
     rdfs:range schema:Person;
     rdfs:subPropertyOf andb:relative.
@@ -631,7 +633,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has spouse"@en,
-      "heeft echtgenoot"@nl;
+      "heeft echtgeno(o)t(e)"@nl;
     rdfs:range schema:Person;
     rdfs:subPropertyOf andb:relative.
 
@@ -723,7 +725,7 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "student"@en,
-      "student"@nl;
+      "leerling"@nl;
     rdfs:range schema:Person.
 
   andb:transmission
@@ -741,6 +743,6 @@ andb: {
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "has union"@en,
-      "heeft bond"@nl;
+      "heeft vakbondbond"@nl;
     rdfs:range schema:Organization.
 }
