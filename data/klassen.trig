@@ -47,8 +47,8 @@ andb: {
       "Een kaart waarop informatie over een specifieke persoon is geregistreerd."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "Card"@en,
-      "Kaart"@nl;
+      "Registration card"@en,
+      "Registratiekaart"@nl;
     rdfs:subClassOf foaf:Document.
 
   andb:Diamantslijperij
@@ -88,8 +88,8 @@ andb: {
   andb:Internship
     a owl:Class;#
     rdfs:comment
-      "An internship at a diamond factory, as part of an education program."@en,
-      "Een stage bij een diamantslijperij of diamantzagerij, als onderdeel van een onderwijstraject."@nl;
+      "An internship at a diamond factory as part of the formal education."@en,
+      "Een leerwerktraject bij een diamantslijperij of diamantzagerij, als onderdeel van een beroepsopleiding."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Internship"@en,
