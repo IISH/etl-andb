@@ -79,6 +79,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/adb/{{adb_identifier}}",
     "propertyUrl": "rdfs:label",
@@ -93,6 +94,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id3}}",
     "propertyUrl": "rdfs:label",
@@ -107,6 +109,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id2}}",
     "propertyUrl": "rdfs:label",
@@ -121,6 +124,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{sdn_adm_id1}}",
     "propertyUrl": "rdfs:label",
@@ -135,6 +139,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id3}}",
     "propertyUrl": "rdfs:label",
@@ -149,6 +154,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id2}}",
     "propertyUrl": "rdfs:label",
@@ -163,6 +169,7 @@
    },
    {
     "lang": "nl",
+    "datatype": "xsd:string",
     "virtual": "true",
     "aboutUrl": "https://iisg.amsterdam/id/andb/{{adm_id1}}",
     "propertyUrl": "rdfs:label",

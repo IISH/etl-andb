@@ -1,53 +1,73 @@
 prefix foaf: <http://xmlns.com/foaf/0.1/>
-prefix geo: <http://www.opengis.net/ont/geosparql#>
 prefix org: <http://www.w3.org/ns/org#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix schema: <https://schema.org/>
-prefix skos: <http://www.w3.org/2004/02/skos/core#>
-prefix time: <http://www.w3.org/2006/time#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
-prefix id: <https://iisg.amsterdam/id/adb-andb/>
 
 andb: {
   andb:AdbCard
     a owl:Class;#
+    rdfs:comment
+      "A card that registers the membership of a person at the Antwerp Diamondworker Union"@en,
+      "Een kaart die het lidmaatschap van een persoon bij de Antwerpse Diamantbewerkersbond beschrijft."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "ADB member card"@en,
+      "ADB membership card"@en,
       "ADB lidmaatschapskaart"@nl;
-    rdfs:subClassOf andb:Card.
+    rdfs:subClassOf andb:MembershipCard.
 
   andb:AndbCard
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
+    rdfs:comment
+      "A card that registers the membership of a person at the General Diamond Workers' Union of the Netherlands."@en,
+      "Een kaart die het lidmaatschap van een persoon bij de Algemene Nederlandse Diamantbewerkersbond beschrijft."@nl;
     rdfs:label
-      "ANDB member card"@en,
+      "ANDB membership card"@en,
       "ANDB lidmaatschapskaart"@nl;
-    rdfs:subClassOf andb:Card.
+    rdfs:subClassOf andb:MembershipCard.
 
   andb:ApprenticeCard
     a owl:Class;#
     rdfs:isDefinedBy andb:;#
+    rdfs:comment
+      "A card that registers the apprenticeship of a person in the diamond industry."@en,
+      "Een kaart die een leertraject van een persoon in de diamantindustrie beschrijft."@nl;
     rdfs:label
       "Apprentice card"@en,
-      "Leerlingenkaart"@nl;
+      "Leerlingkaart"@nl;
     rdfs:subClassOf andb:Card.
 
   andb:Card
     a owl:Class;#
+    rdfs:comment
+      "A card that registers information about a specific person."@en,
+      "Een kaart waarop informatie over een specifieke persoon is geregistreerd."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
-      "Card"@en,
-      "Kaart"@nl;
+      "Registration card"@en,
+      "Registratiekaart"@nl;
     rdfs:subClassOf foaf:Document.
+
+  andb:Diamantslijperij
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label "Diamantslijperij"@nl;
+    rdfs:subClassOf andb:Workshop.
+
+  andb:Diamantzagerij
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label "Diamantzagerij"@nl;
+    rdfs:subClassOf andb:Workshop.
 
   andb:Dismission
     a owl:Class;#
-    rdfs:comment "The membership is ended by the union."@en;
+    rdfs:comment
+      "An event in which the membership of a union is revoked."@en,
+      "Een gebeurtenis waarbij het lidmaatschap van een vakbond wordt ingetrokken."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Dismission"@en,
@@ -56,6 +76,9 @@ andb: {
 
   andb:Education
     a owl:Class;#
+    rdfs:comment
+      "An education program."@en,
+      "Een onderwijstraject."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Education"@en,
@@ -64,12 +87,33 @@ andb: {
 
   andb:Internship
     a owl:Class;#
-    rdfs:comment "Internship at diamond factory as part of the formal education."@en;
+    rdfs:comment
+      "An internship at a diamond factory as part of the formal education."@en,
+      "Een leerwerktraject bij een diamantslijperij of diamantzagerij, als onderdeel van een beroepsopleiding."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Internship"@en,
-      "Stage"@nl;
+      "Leerwerktraject"@nl;
     rdfs:subClassOf schema:Event.
+
+  andb:Master
+    a owl:Class;#
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "Master"@en,
+      "Leermeester"@nl;
+    rdfs:subClassOf schema:Person.
+
+  andb:MembershipCard
+    a owl:Class;#
+    rdfs:comment
+      "A card describing the membership of a person at a labor union."@en,
+      "Een kaart die het lidmaatschap van een persoon bij een vakbond beschrijft."@nl;
+    rdfs:isDefinedBy andb:;#
+    rdfs:label
+      "Membership card"@en,
+      "Lidmaatschapskaart"@nl;
+    rdfs:subClassOf andb:Card.
 
   andb:Migration
     a owl:Class;#
@@ -81,23 +125,31 @@ andb: {
 
   andb:Mutation
     a owl:Class;#
+    rdfs:comment
+      "A change to a union membership."@en,
+      "Een verandering in het lidmaatschap van een vakbond."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Membership mutation"@en,
-      "Lidmaatschapsverandering"@en;
+      "Lidmaatschapsmutatie"@en;
     rdfs:subClassOf schema:Event.
 
   andb:Readmission
     a owl:Class;#
-    rdfs:comment "The member is readmitted by the union union."@en;
+    rdfs:comment
+      "A readmission of a previous member to a union."@en,
+      "De wedertoelating van een voormalig lid bij een vakbond."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Readmission"@en,
-      "Toelating"@nl;
+      "Wedertoelating"@nl;
     rdfs:subClassOf andb:Mutation.
 
   andb:Residency
     a owl:Class;#
+    rdfs:comment
+      "A residency of a person at a certain address."@en,
+      "De bewoning van een huis of appartement door een persoon."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Residency"@en,
@@ -106,6 +158,9 @@ andb: {
 
   andb:Union
     a owl:Class;#
+    rdfs:comment
+      "A labor union."@en,
+      "Een vakbond."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Labor union"@en,
@@ -114,7 +169,9 @@ andb: {
 
   andb:Withdrawal
     a owl:Class;#
-    rdfs:comment "The member ends his membership of the union."@en;
+    rdfs:comment
+      "The termination of a union membership by a member."@en,
+      "De opzegging van een lidmaatschap van een vakbond."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Membership withdrawal"@en,
@@ -123,6 +180,9 @@ andb: {
 
   andb:Workshop
     a owl:Class;#
+    rdfs:comment
+      "A workshop where diamonds are handled."@en,
+      "Een werkplaats waar met diamanten gewerkt wordt."@nl;
     rdfs:isDefinedBy andb:;#
     rdfs:label
       "Workshop"@en,

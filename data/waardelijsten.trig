@@ -1,6 +1,7 @@
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix geo: <http://www.opengis.net/ont/geosparql#>
 prefix hg: <http://rdf.histograph.io/>
+prefix hisco: <https://iisg.amsterdam/resource/hisco/code/hisco/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -8,8 +9,10 @@ prefix schema: <https://schema.org/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
 prefix id: <https://iisg.amsterdam/id/adb-andb/>
+prefix id-adb: <https://iisg.amsterdam/id/adb/>
+prefix id-andb: <https://iisg.amsterdam/id/andb/>
+prefix andb: <https://iisg.amsterdam/vocab/adb-andb/>
 
 andb: {
   [ a owl:AllDifferentFrom;
@@ -17,6 +20,7 @@ andb: {
       ( id:brillantslijpen
         id:brillantsnijden
         id:brillantverstellen
+        id:eigenwerkmaken
         id:kapbewerken
         id:klooven
         id:roosjesslijpen
@@ -26,37 +30,80 @@ andb: {
 
   id:brillantslijpen
     a schema:Occupation;
-    rdfs:label "brillantslijpen"@nl.
+    rdfs:comment "Een brillant is een slijpvorm waarbij zowel de boven- als de onderkant wordt gefacetteerd op een manier die optimale lichtreflectie en dus schittering geeft.  Slijpen gebeurt op een snel draaiende, horizontale slijpschijf met diamantpoeder (boort) erop.  De te slijpen diamant wordt in een houder (dop) geplaatst en tegen de slijpschijf gedrukt.  Zo wordt facet voor facet geslepen."@nl;
+    rdfs:label "brillantslijpen"@nl;
+    schema:occupationalCategory hisco:88030.
 
   id:brillantsnijden
     a schema:Occupation;
-    rdfs:label "brillantsnijden"@nl.
+    rdfs:comment "Een brillantsnijder snijdt de ruwe, gekloofde of gezaagde diamanten, die later tot brillanten geslepen worden.  Het snijden kan met de hand gebeuren, door twee diamanten die met cement op stokken zijn gezet tegen elkaar te wrijven, of machinaal."@nl;
+    rdfs:label "brillantsnijden"@nl;
+    schema:occupationalCategory hisco:88030.
 
   id:brillantverstellen
     a schema:Occupation;
-    rdfs:label "brillantverstellen"@nl.
+    rdfs:comment "Een brilliantversteller stelt en verstelt de te slijpen diamant in de dop (houder) zodat de brillantslijper het juiste stukje diamant voor zich heeft dat tot facet geslepen moet worden op de slijpschijf."@nl;
+    rdfs:label "brillantverstellen"@nl;
+    schema:occupationalCategory hisco:88030.
+
+  id:eigenwerkmaken
+    a schema:Occupation;
+    rdfs:comment "Een eigenwerkmaker is een diamantbewerker die ruwe diamant koopt en deze zelf of met knechten bewerkt en later weer verkoopt."@nl;
+    rdfs:label "eigenwerkmaken"@nl;
+    schema:occupationalCategory hisco:88030.
 
   id:kapbewerken
     a schema:Occupation;
-    rdfs:label "kapbewerken"@nl.
+    rdfs:comment "Een kapje is een stuk diamant dat al de  kristalvorm heeft, van nature of door kloven, en dat doorgaans tot brillant geslepen wordt.  Kapbewerkers kunnen zowel kapslijpers als kapverstellers zijn."@nl;
+    rdfs:label "kapbewerken"@nl;
+    schema:occupationalCategory hisco:88030.
 
   id:klooven
     a schema:Occupation;
-    rdfs:label "klooven"@nl.
+    rdfs:comment "Een klover maakt eerst met een andere diamant een kerf in de ruwe steen en splijt deze vervolgens met hulp van een kloversmes en een klovershamer.  Het kloven is de eerste behandeling die de diamant ondergaat om de steen een regelmatige (kristal) vorm te geven en om te ruwe steen te ontdoen van onzuiverheden."@nl;
+    rdfs:label "klooven"@nl;
+    schema:occupationalCategory hisco:88030.
 
   id:roosjesslijpen
     a schema:Occupation;
-    rdfs:label "roosjesslijpen"@nl.
+    rdfs:comment "Een roosje is een diamant waarvan alleen de bovenkant wordt gefacetteerd, de onderkant is plat.  Slijpen gebeurt op een snel draaiende, horizontale slijpschijf met diamantpoeder (boort) erop.  De te slijpen diamant wordt in een houder (dop) geplaatst en tegen de slijpschijf gedrukt.  Zo wordt facet voor facet geslepen."@nl;
+    rdfs:label "roosjesslijpen"@nl;
+    schema:occupationalCategory hisco:88030.
 
   id:roosjessnijden
     a schema:Occupation;
-    rdfs:label "roosjessnijden"@nl.
+    rdfs:comment "Een roosje is een diamant waarvan alleen de bovenkant wordt gefacetteerd, de onderkant is plat.  Het snijden kan met de hand gebeuren, door twee diamanten die met cement op stokken zijn gezet tegen elkaar te wrijven, of machinaal."@nl;
+    rdfs:label "roosjessnijden"@nl;
+    schema:occupationalCategory hisco:88030.
 
   id:roosjesverstellen
     a schema:Occupation;
-    rdfs:label "roosjesverstellen"@nl.
+    rdfs:comment "Een roosjesversteller stelt en verstelt de te slijpen diamant in de dop (houder) zodat de roosjesslijper het juiste stukje diamant voor zich heeft dat tot facet geslepen moet worden op de slijpschijf."@nl;
+    rdfs:label "roosjesverstellen"@nl;
+    schema:occupationalCategory hisco:88030.
 
   id:zagen
     a schema:Occupation;
-    rdfs:label "zagen"@nl.
+    rdfs:comment "Met zagen kan de diamant zijn regelmatige vorm krijgen en van onzuiverheden ontdaan worden.  Dit gebeurt met een snel draaiende, vertikale bronzen schijf waar diamantpoeder (boort) op zit.  Zagen is een alternatief voor kloven."@nl;
+    rdfs:label "zagen"@nl;
+    schema:occupationalCategory hisco:88030.
+
+  id-andb:ANDB_1 andb:occupation id:zagen.
+  id-andb:ANDB_2 andb:occupation id:brillantslijpen.
+  id-andb:ANDB_3 andb:occupation id:brillantverstellen.
+  id-andb:ANDB_4 andb:occupation id:brillantsnijden.
+  id-andb:ANDB_5 andb:occupation id:roosjesslijpen.
+  id-andb:ANDB_6 andb:occupation id:roosjesverstellen.
+  id-andb:ANDB_7 andb:occupation id:roosjessnijden.
+  id-andb:ANDB_8 andb:occupation id:kapbewerken.
+  id-andb:ANDB_9 andb:occupation id:klooven.
+  id-andb:ANDB_10 andb:occupation id:eigenwerkmaken.
+
+  id-andb:ANDB
+    a andb:Union;
+    schema:name "Algemene Nederlandse Diamantbewerkersbond"@nl.
+
+  id-adb:ADB
+    a andb:Union;
+    schema:name "Antwerpse Diamantbewerkersbond"@nl.
 }
